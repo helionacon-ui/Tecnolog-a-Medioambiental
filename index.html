@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tecnología Medioambiental · Guía para aprobar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<style>
+/* Layout: columna de lectura con índice lateral fijo en escritorio; el disco unidad del plano z como motivo */
+:root{
+  --bg:#f3f6f9; --surface:#ffffff; --fg:#15202b; --muted:#566472; --line:#d3dbe4;
+  --accent:#1565a8; --accent-soft:#e1edf8; --warn:#b2482a; --warn-soft:#f7e6df;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0e141b; --surface:#161f29; --fg:#e3eaf2; --muted:#98a7b7; --line:#2a3744;
+  --accent:#6db3ee; --accent-soft:#12293f; --warn:#ef8a68; --warn-soft:#3a221a; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#0e141b; --surface:#161f29; --fg:#e3eaf2; --muted:#98a7b7; --line:#2a3744;
+  --accent:#6db3ee; --accent-soft:#12293f; --warn:#ef8a68; --warn-soft:#3a221a; color-scheme:dark; }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 64px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}.toc{display:none}}
+header.hero{max-width:1120px;margin:0 auto;padding-block:40px 28px;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:32px;align-items:center;border-bottom:1px solid var(--line);margin-bottom:32px}
+@media (max-width:600px){header.hero{grid-template-columns:minmax(0,1fr)}header.hero svg{display:none}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.08;margin:8px 0 12px;text-wrap:balance}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+h2{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.2;margin:56px 0 8px;text-wrap:balance;scroll-margin-top:16px}
+h3{font-family:var(--display);font-weight:500;font-size:20px;margin:32px 0 8px;text-wrap:balance}
+h4{font-size:13px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:24px 0 6px;font-weight:500}
+p,li{max-width:70ch}
+main{min-width:0}
+.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:8px;max-height:100vh;overflow:auto}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:14px;padding:4px 0 4px 10px;border-left:2px solid var(--line)}
+.toc a:hover,.toc a:focus-visible{color:var(--fg);border-left-color:var(--accent);outline:none}
+.toc .grp{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:18px 0 6px}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-right:6px}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:16px 0}
+.box.key{border-left:3px solid var(--accent)}
+.box.trap{border-left:3px solid var(--warn)}
+.box > :first-child{margin-top:0}.box > :last-child{margin-bottom:0}
+.math{overflow-x:auto;overflow-y:hidden;max-width:100%}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:2px 0}
+ol.steps{padding-left:22px}ol.steps li{margin:6px 0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:14px 0}
+details>summary{cursor:pointer;padding:12px 18px;font-weight:600;list-style:none;display:flex;gap:10px;align-items:baseline}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"+";font-family:var(--mono);color:var(--accent);width:1ch}
+details[open]>summary::before{content:"−"}
+details>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+details .inner{padding:0 20px 16px;border-top:1px solid var(--line)}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400}
+table{border-collapse:collapse;width:100%;font-size:15px}
+.tw{overflow-x:auto;margin:12px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto;font-family:var(--mono);font-size:13.5px;line-height:1.5}
+code{font-family:var(--mono);font-size:.92em}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid2 .box{margin:0}
+.check{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}
+.check input{margin-top:5px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.check label{cursor:pointer}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px;max-width:420px}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+.muted{color:var(--muted)}
+a{color:var(--accent)}
+
+figure.fig{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+figure.fig figcaption{font-size:14px;color:var(--muted);margin-top:8px;max-width:70ch}
+figure.fig .ft{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.plot{width:100%;height:auto;display:block}
+.plot .grid{stroke:var(--line);stroke-width:1}
+.plot .ax{stroke:var(--muted);stroke-width:1}
+.plot .tk,.plot .lb{fill:var(--muted);font-family:var(--mono);font-size:11px;stroke:none}
+.plot .lb.s1{fill:var(--accent)} .plot .lb.s2{fill:var(--warn)} .plot .lb.s3{fill:var(--fg)}
+.s1{stroke:var(--accent);fill:var(--accent)} .s2{stroke:var(--warn);fill:var(--warn)} .s3{stroke:var(--fg);fill:var(--fg)}
+.plot .st{stroke-width:1.6}
+.plot .ln{fill:none;stroke-width:2}
+.plot .ar{stroke:none}
+.plot .ar.area{fill:var(--accent);fill-opacity:.18}
+.plot .ar.areaw{fill:var(--warn);fill-opacity:.22}
+.plot .vl{stroke-width:1.2}
+.plot .dbg{fill:var(--surface)}
+details .inner{overflow-x:auto}
+main{overflow-wrap:break-word}
+.plot .disk{fill:var(--accent);fill-opacity:.12;stroke:var(--accent);stroke-width:1.5}
+.plot .outz{fill:var(--warn);fill-opacity:.10}
+.plot .zr{fill:none;stroke:var(--fg);stroke-width:1.8}
+.plot .px{stroke-width:2.5;fill:none}
+.plot .blk{fill:var(--surface);stroke:var(--fg);stroke-width:1.4}
+.plot .wire{stroke:var(--fg);stroke-width:1.4;fill:none}
+.plot .ahd{fill:var(--fg)}
+.plot .bt{fill:var(--fg);font-family:var(--body);font-size:13px}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:14px;margin:4px 0 10px}
+.ctrl label{display:flex;gap:8px;align-items:center}
+.ctrl input[type=range]{width:190px;max-width:60vw;accent-color:var(--accent)}
+.ctrl output{font-family:var(--mono);font-size:13px;min-width:5ch}
+.pill{font-family:var(--mono);font-size:12px;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.pill.bad{background:var(--warn-soft);color:var(--warn)}
+.figrow{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:16px;align-items:center}
+@media (max-width:640px){.figrow{grid-template-columns:minmax(0,1fr)}}
+.fig3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.fig3 p{margin:0;font-size:13px;color:var(--muted);text-align:center}
+.fcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.fcards .box{margin:0}
+.fcards ul{padding-left:18px;margin:0}.fcards li{margin:5px 0}
+dl.gl{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:8px 0}
+dl.gl div{padding:10px 0;border-bottom:1px solid var(--line)}
+dl.gl dt{font-weight:600}
+dl.gl div{border-left:3px solid color-mix(in srgb,var(--tc,var(--accent)) 35%,transparent);padding-left:12px}
+dl.gl dd{margin:2px 0 0 0;max-width:72ch}
+dl.gl .tt{font-family:var(--mono);font-size:12px;color:var(--accent);margin-left:6px;font-weight:400}
+
+.ctrl[hidden]{display:none!important}
+.zero{background:var(--accent-soft);border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:16px 0}
+.zero > :first-child{margin-top:0}.zero > :last-child{margin-bottom:0}
+.zero .ft{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.zero ol,.zero ul{padding-left:20px}
+.map{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.map a{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);text-decoration:none;font-size:14px}
+.map a:hover,.map a:focus-visible{border-color:var(--accent);outline:none}
+.map a b{color:var(--accent);font-family:var(--mono);font-weight:500;margin-right:4px}
+.map span{color:var(--muted);font-family:var(--mono)}
+.ctrl label{flex-wrap:wrap;min-width:0;max-width:100%}
+.ctrl select{max-width:100%;min-width:0}
+.ctrl select,.ctrl input[type=text]{font:inherit;font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.ctrl input[type=text]{width:220px;max-width:70vw;font-family:var(--mono)}
+.ctrl input[type=checkbox]{accent-color:var(--accent);width:16px;height:16px}
+.ctrl button{font:inherit;font-size:14px;padding:5px 12px;border:1px solid var(--accent);border-radius:6px;background:var(--surface);color:var(--accent);cursor:pointer}
+.ctrl button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+.readout{font-family:var(--mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin:8px 0;overflow-x:auto;white-space:pre-wrap}
+.props{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:8px 0}
+.props div{border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:13px;background:var(--surface)}
+.props b{display:block;font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.props .y b{color:var(--accent)} .props .n b{color:var(--warn)}
+
+/* ===== Rediseño visual ===== */
+:root{
+  --c0:#1565a8; --c0s:#e1edf8;
+  --c1:#4652c4; --c1s:#e6e8f8;
+  --c2:#0b7f93; --c2s:#dff1f4;
+  --c3:#7d45c9; --c3s:#efe7f9;
+  --c4:#b8730c; --c4s:#f7ecda;
+  --c5:#c43d63; --c5s:#f8e3e9;
+  --c6:#2c8a52; --c6s:#e1f2e8;
+  --c7:#4b5b70; --c7s:#e6eaef;
+  --c8:#c25a1c; --c8s:#f8e7dc;
+  --shadow:0 1px 2px rgba(20,40,34,.06),0 6px 24px rgba(20,40,34,.06);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --c0:#6db3ee; --c0s:#12293f; --c1:#8f98ff; --c1s:#1f2240; --c2:#4cc6d9; --c2s:#13303a; --c3:#c09bff; --c3s:#2a1f3d;
+  --c4:#f0b252; --c4s:#3a2b12; --c5:#ff8aa8; --c5s:#3d1c27; --c6:#6fd39a; --c6s:#163322; --c7:#a9b6c8; --c7s:#232a33; --c8:#ff9e66; --c8s:#3a2316;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.25); } }
+:root[data-theme="dark"]{
+  --c0:#6db3ee; --c0s:#12293f; --c1:#8f98ff; --c1s:#1f2240; --c2:#4cc6d9; --c2s:#13303a; --c3:#c09bff; --c3s:#2a1f3d;
+  --c4:#f0b252; --c4s:#3a2b12; --c5:#ff8aa8; --c5s:#3d1c27; --c6:#6fd39a; --c6s:#163322; --c7:#a9b6c8; --c7s:#232a33; --c8:#ff9e66; --c8s:#3a2316;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.25); }
+
+body{line-height:1.65}
+/* portada */
+header.hero{display:block;max-width:none;border:0;margin:0 calc(-1*max(16px, env(safe-area-inset-left, 0px))) 36px;padding-block:0;
+  background:linear-gradient(135deg,var(--accent-soft),var(--bg) 70%);border-bottom:1px solid var(--line)}
+.hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center;
+  padding:48px max(16px, env(safe-area-inset-right, 0px)) 44px max(16px, env(safe-area-inset-left, 0px))}
+@media (max-width:760px){.hero-in{grid-template-columns:minmax(0,1fr);padding-block:32px 28px}.hero-art{display:none}}
+header.hero h1{font-size:clamp(38px,6.4vw,64px);line-height:1.02;margin:10px 0 4px;letter-spacing:-.01em}
+header.hero h1 span{color:var(--accent)}
+header.hero .sub{font-family:var(--display);font-size:clamp(20px,2.6vw,26px);font-weight:500;color:var(--muted);margin:0 0 14px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0 18px;max-width:640px}
+@media (max-width:520px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stats div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}
+.stats b{display:block;font-family:var(--display);font-size:28px;line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums}
+.stats span{font-size:12.5px;color:var(--muted);line-height:1.3;display:block}
+.cta{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none;font-weight:600;font-size:14px}
+.btn:hover,.btn:focus-visible{border-color:var(--accent);outline:none}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.zart{width:100%;height:auto;max-width:300px}
+.orbit{transform-origin:0 0;animation:orb 9s linear infinite}
+@keyframes orb{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+@media (prefers-reduced-motion:reduce){.orbit{animation:none;transform:rotate(-40deg)}}
+.art-cap{font-size:13px;color:var(--muted);text-align:center;margin:6px 0 0}
+
+/* rejilla general */
+.wrap{max-width:1180px;gap:40px;grid-template-columns:230px minmax(0,1fr)}
+main{display:flex;flex-direction:column;gap:28px}
+
+/* tarjetas de sección */
+section.sec{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:8px 32px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden;min-width:0}
+section.sec::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--tc)}
+@media (max-width:640px){section.sec{padding:6px 18px 22px;border-radius:14px}}
+.sh{display:flex;gap:16px;align-items:center;margin:24px 0 10px}
+.badge{flex:none;min-width:58px;height:58px;padding:0 10px;border-radius:16px;background:var(--tc);color:var(--surface);display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;box-shadow:0 4px 14px color-mix(in srgb,var(--tc) 35%,transparent)}
+.shx{min-width:0}
+.kick{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--tc)}
+.sh h2{margin:2px 0 0;font-size:clamp(24px,3.2vw,32px)}
+.tags{margin-top:6px}
+section.sec h2{scroll-margin-top:70px}
+section.sec h3{font-size:21px;margin:34px 0 10px;padding-left:12px;border-left:4px solid var(--tc)}
+section.sec h4{color:var(--tc)}
+
+/* cajas */
+.box{border-radius:12px;padding:18px 22px}
+.box.key{border-left:4px solid var(--tc,var(--accent));background:color-mix(in srgb,var(--tcs,var(--accent-soft)) 45%,var(--surface))}
+.box.trap{border-left:4px solid var(--warn);background:color-mix(in srgb,var(--warn-soft) 55%,var(--surface))}
+.zero{background:var(--tcs,var(--accent-soft));border:0;border-radius:14px;padding:20px 24px;position:relative}
+.zero .ft{color:var(--tc,var(--accent))}
+.zero::after{content:"";position:absolute;right:18px;top:16px;width:34px;height:34px;border-radius:50%;border:3px solid var(--tc,var(--accent));opacity:.25}
+.grid2{gap:18px}
+
+/* figuras / simuladores */
+figure.fig{border-radius:14px;padding:18px 20px;border:1px solid var(--line);background:linear-gradient(180deg,var(--tcs,var(--accent-soft)) 0,var(--surface) 64px);margin:24px 0}
+figure.fig .ft{display:inline-block;background:var(--tc,var(--accent));color:var(--surface);padding:3px 10px;border-radius:999px;font-size:11.5px;margin-bottom:12px}
+figure.fig figcaption{font-size:14.5px}
+.ctrl input[type=range]{accent-color:var(--tc,var(--accent))}
+.readout{border-radius:10px}
+
+/* desplegables */
+details{border-radius:12px;transition:box-shadow .2s}
+details[open]{box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--tc,var(--accent)) 45%,var(--line))}
+details>summary{padding:14px 18px;border-radius:12px}
+details>summary::before{content:"";width:9px;height:9px;flex:none;border-right:2.5px solid var(--tc,var(--accent));border-bottom:2.5px solid var(--tc,var(--accent));transform:rotate(-45deg);margin:0 4px 0 2px;transition:transform .2s;align-self:center}
+details[open]>summary::before{content:"";transform:rotate(45deg)}
+details>summary:hover{background:var(--tcs,var(--accent-soft))}
+@media (prefers-reduced-motion:reduce){details>summary::before,details{transition:none}}
+.tag{border-radius:999px;padding:2px 10px;background:var(--tcs,var(--accent-soft));color:var(--tc,var(--accent))}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+
+/* tablas */
+.tw{border:1px solid var(--line);border-radius:12px}
+.tw table{margin:0}
+.tw th{background:var(--tcs,var(--accent-soft))}
+.tw tr:last-child td{border-bottom:0}
+
+/* mapa de temas como tarjetas */
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.map span{display:none}
+.map a{padding:14px;border-radius:12px;font-weight:600;line-height:1.3;border-top:4px solid var(--accent)}
+.map a b{display:block;font-family:var(--display);font-size:24px;margin-bottom:4px}
+.map a:nth-of-type(1){border-top-color:var(--c1)}.map a:nth-of-type(1) b{color:var(--c1)}
+.map a:nth-of-type(2){border-top-color:var(--c2)}.map a:nth-of-type(2) b{color:var(--c2)}
+.map a:nth-of-type(3){border-top-color:var(--c3)}.map a:nth-of-type(3) b{color:var(--c3)}
+.map a:nth-of-type(4){border-top-color:var(--c4)}.map a:nth-of-type(4) b{color:var(--c4)}
+.map a:nth-of-type(5){border-top-color:var(--c5)}.map a:nth-of-type(5) b{color:var(--c5)}
+.map a:nth-of-type(6){border-top-color:var(--c6)}.map a:nth-of-type(6) b{color:var(--c6)}
+
+/* índice */
+.toc{padding-top:4px;top:16px}
+.toc a{border-left:3px solid color-mix(in srgb,var(--tc,var(--line)) 30%,transparent);border-radius:0 6px 6px 0;padding:5px 10px;margin:1px 0;transition:background .15s}
+.toc a:hover{background:var(--surface)}
+.toc a.on{border-left-color:var(--tc);color:var(--fg);background:var(--surface);font-weight:600}
+@media (max-width:860px){
+  .toc{display:flex;position:sticky;top:env(safe-area-inset-top,0px);z-index:20;overflow-x:auto;gap:6px;max-height:none;padding:10px 0;margin:0 0 6px;
+    background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);scrollbar-width:none}
+  .toc::-webkit-scrollbar{display:none}
+  .toc .grp{display:none}
+  .toc a{flex:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface);font-size:13px;white-space:nowrap}
+  .toc a.on{border-color:var(--tc);color:var(--tc)}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
+}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+/* volver arriba */
+.totop{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;
+  background:var(--accent);color:var(--surface);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;font-weight:700;box-shadow:var(--shadow);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s}
+.totop.show{opacity:1;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.totop{transition:none}}
+
+details.nom{border:1px dashed color-mix(in srgb,var(--tc,var(--accent)) 55%,var(--line));background:var(--surface)}
+details.nom>summary{font-weight:600}
+.nom-ic{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--tcs,var(--accent-soft));color:var(--tc,var(--accent));font-family:var(--display);font-weight:700;font-size:14px;flex:none}
+details.nom td.sym{white-space:nowrap;font-size:16px;width:1%}
+details.nom td.u{color:var(--muted);font-size:14px}
+details.nom .inner{padding-top:14px}
+
+/* ===== bloques nuevos ===== */
+.srch-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow)}
+.srch-lab{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+#srch{width:100%;font:inherit;font-size:16px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+#srch:focus{outline:2px solid var(--accent);outline-offset:1px}
+.srch-out{display:grid;gap:6px;margin-top:10px;max-height:420px;overflow:auto}
+.sres{display:block;text-align:left;font:inherit;font-size:14px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--tc,var(--accent));border-radius:8px;padding:8px 12px;cursor:pointer}
+.sres:hover,.sres:focus-visible{border-color:var(--tc,var(--accent));outline:none}
+.sres-t{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--tc,var(--accent));margin-bottom:2px}
+.sres mark{background:var(--accent-soft);color:inherit;padding:0 2px;border-radius:3px}
+.flash{animation:fl 1.8s ease}
+@keyframes fl{0%,40%{background:var(--accent-soft)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){.flash{animation:none;outline:2px solid var(--accent)}}
+.timer .tm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.tm-lab{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--tc)}
+.tm-o{font-family:var(--display);font-size:34px;font-weight:700;font-variant-numeric:tabular-nums;min-width:5ch}
+.tm-o.low{color:var(--warn)}
+.quiz-tabs{gap:6px}
+.qt{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.qt[aria-pressed="true"]{background:var(--tc);border-color:var(--tc);color:var(--surface)}
+.qp{font-weight:600;font-size:17px;margin:0 0 12px}
+.qops{display:grid;gap:8px}
+.qo{font:inherit;text-align:left;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);cursor:pointer}
+.qo:hover:not(:disabled){border-color:var(--tc,var(--accent))}
+.qo.ok{border-color:var(--c6);background:var(--c6s)}
+.qo.ko{border-color:var(--warn);background:var(--warn-soft)}
+.qo:disabled{cursor:default}
+.qex{margin:10px 0 0;font-size:14.5px;color:var(--muted)}
+.qnav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.qnav span{margin-right:auto;font-size:13px}
+.qnav .btn:disabled{opacity:.45;cursor:default}
+.qscore{margin:8px 0 0;font-weight:600;color:var(--tc,var(--accent))}
+.gq{font-weight:600;font-size:16px;margin:0 0 8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.card{font:inherit;min-height:96px;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;text-align:left;display:flex;align-items:center;box-shadow:var(--shadow)}
+.card .cf{font-weight:600}
+.card.flip{background:var(--tcs,var(--accent-soft));border-color:var(--tc,var(--accent))}
+</style><style>
+/* ===== Extras de esta guía ===== */
+.theme{position:fixed;top:10px;right:10px;z-index:40;font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.qz{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 18px;margin:14px 0}
+.qz .qh{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--tc,var(--accent));margin:0 0 6px}
+.qz .qt{font-weight:600;margin:0 0 10px;max-width:none}
+.qz .opts{display:grid;gap:8px}
+.qz button.op{font:inherit;text-align:left;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);cursor:pointer}
+.qz button.op:hover:not(:disabled){border-color:var(--tc,var(--accent))}
+.qz button.op.ok{border-color:var(--c6);background:var(--c6s)}
+.qz button.op.no{border-color:var(--warn);background:var(--warn-soft)}
+.qz .ex{margin:10px 0 0;padding:10px 14px;border-radius:10px;background:var(--accent-soft);font-size:15px;display:none;max-width:none}
+.qz.done .ex{display:block}
+.qbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 14px}
+.qbar select,.qbar button{font:inherit;font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);cursor:pointer}
+.qbar button.pri{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.score{font-family:var(--display);font-size:20px}
+.star{color:var(--c4);letter-spacing:2px;font-size:15px;white-space:nowrap}
+.ans{font-family:var(--mono);font-size:13px;color:var(--c6);margin-top:6px}
+.num{font-variant-numeric:tabular-nums}
+.lim{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin:10px 0}
+.lim div{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:8px 12px;font-size:14px}
+.lim b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--tc,var(--accent))}
+.lim span.v{font-family:var(--display);font-size:20px}
+@media print{.toc,.theme,.totop,.qbar{display:none!important}.wrap{display:block}section.sec{break-inside:avoid-page;box-shadow:none}}
+</style>
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<header class="hero">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <div class="eyebrow">UPCT · GIEyA · 3.º curso · Curso 2026-27</div>
+      <h1>Tecnología <span>Medioambiental</span></h1>
+      <p class="sub">Guía para aprobar · Temas 1 a 7</p>
+      <p class="lede">Hecha a partir de tu carpeta <code>medioambientales pagehtml</code>: los 7 temas del profesor Bayo (PDF del curso 26-27) el <b>primer parcial de 2024 resuelto</b> y el test de 2.º parcial de febrero de 2024 como modelo de cómo se pregunta. Cada tema tiene lo esencial, los números que hay que saberse, las trampas típicas y una autoevaluación con corrección. Los cálculos de los problemas están comprobados con código.</p>
+      <div class="stats">
+        <div><b>7</b><span>temas del curso</span></div>
+        <div><b id="nq">0</b><span>preguntas de autoevaluación</span></div>
+        <div><b>19</b><span>problemas resueltos</span></div>
+        <div><b>36</b><span>preguntas del parcial 2024 resueltas</span></div>
+      </div>
+      <div class="cta"><a class="btn pri" href="#cero">Empieza aquí</a><a class="btn" href="#examen">Cómo es el examen</a><a class="btn" href="#parcial2024">Parcial 2024 resuelto</a><a class="btn" href="#problemas">Problemas resueltos</a><a class="btn" href="#auto">Autoevaluación</a><a class="btn" href="#formulario">Formulario</a><a class="btn" href="#plan">Plan de estudio</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 240 200" class="zart">
+        <defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--accent)" stop-opacity=".30"/><stop offset="100%" stop-color="var(--accent)" stop-opacity=".06"/></linearGradient></defs>
+        <rect x="8" y="150" width="224" height="40" rx="8" fill="url(#wg)" stroke="var(--accent)" stroke-width="1.6"/>
+        <rect x="30" y="86" width="14" height="64" fill="var(--muted)" opacity=".7"/><rect x="26" y="78" width="22" height="10" fill="var(--muted)"/>
+        <path d="M37 78 C 60 56, 86 70, 112 52 S 170 34, 226 20" fill="none" stroke="var(--warn)" stroke-width="14" stroke-linecap="round" opacity=".22"/>
+        <path d="M37 78 C 60 62, 86 72, 112 58 S 170 44, 226 34" fill="none" stroke="var(--fg)" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <g fill="var(--accent)"><circle cx="90" cy="168" r="3"/><circle cx="120" cy="174" r="3"/><circle cx="150" cy="166" r="3"/><circle cx="180" cy="172" r="3"/></g>
+        <text x="8" y="14" fill="var(--muted)" font-size="11" font-family="IBM Plex Mono, monospace">fuente → atmósfera → receptor</text>
+        <text x="132" y="195" fill="var(--muted)" font-size="10" font-family="IBM Plex Mono, monospace" text-anchor="middle">agua · aire · medida · control</text>
+      </svg>
+      <p class="art-cap">La idea que une el curso: toda contaminación va de una fuente a un receptor, y se controla midiéndola y actuando en la fuente.</p>
+    </div>
+  </div>
+</header>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Empezar</div>
+  <a href="#cero" style="--tc:var(--c0)">Empieza aquí</a>
+  <a href="#examen" style="--tc:var(--c0)">Cómo es el examen</a>
+  <a href="#prior" style="--tc:var(--c0)">Prioridades</a>
+  <a href="#progreso" style="--tc:var(--c0)">Tu progreso</a>
+  <div class="grp">Agua</div>
+  <a href="#t1" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="#t2" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="#t3" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="#t4" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="#t5" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="#t6" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="#t7" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="#parcial2024" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="#problemas" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="#auto" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="#formulario" style="--tc:var(--c0)">Formulario</a>
+  <a href="#glosario" style="--tc:var(--c0)">Glosario</a>
+  <a href="#plan" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<main>
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">0</span><div class="shx"><p class="kick">Empezar</p><h2 id="cero">Empieza aquí</h2></div></div>
+<div class="zero">
+<p class="ft">La asignatura en un párrafo</p>
+<p>La tecnología medioambiental responde a una pregunta: <b>¿cómo evito que una actividad humana (una fábrica, una ciudad, un chip) dañe al agua, al aire o a las personas?</b> Para eso hay que saber <b>qué contamina</b> y <b>cómo se mide</b> (parámetros de calidad del agua, medida de contaminantes del aire), <b>cómo se limpia</b> (potabilización, depuración, dispositivos de control de emisiones), <b>cómo se dispersa</b> (modelo gaussiano) y <b>qué dice la ley</b> (valores límite, obligaciones de las empresas). Casi todo se pregunta con números concretos de la normativa y con fórmulas cortas.</p>
+</div>
+<p>El mapa del primer parcial, en dos bloques que se parecen mucho entre sí:</p>
+<div class="map">
+<a href="#t1"><b>1</b>Introducción y normas UE</a><span>→</span>
+<a href="#t2"><b>2</b>Parámetros del agua</a><span>→</span>
+<a href="#t3"><b>3</b>Potabilizar</a><span>→</span>
+<a href="#t4"><b>4</b>Depurar y reutilizar</a><span>→</span>
+<a href="#t5"><b>5</b>Aire: dispersión</a><span>→</span>
+<a href="#t6"><b>6</b>Aire: medida</a><span>→</span>
+<a href="#t7"><b>7</b>Aire: control</a>
+</div>
+<div class="grid2">
+<div class="box key"><h4>Bloque agua (T2–T4)</h4>
+<p>T2 define <i>qué se mide</i> (DBO, DQO, sólidos, turbidez…). T3 limpia el agua <b>antes</b> de beberla (ETAP). T4 limpia el agua <b>después</b> de usarla (EDAR) y fija cuándo se puede reutilizar. Si entiendes T2, T3 y T4 son «cómo bajo esos números».</p></div>
+<div class="box key"><h4>Bloque aire (T5–T7)</h4>
+<p>T5 explica <i>adónde va</i> el contaminante (estabilidad, penachos, gaussiano). T6 <i>cómo se mide</i> cada gas y el ruido. T7 <i>cómo se controla</i> (filtros, ciclones, lavadores) y qué obligaciones tiene la empresa.</p></div>
+</div>
+<h3>Cómo usar esta guía</h3>
+<ol class="steps">
+<li>Lee <a href="#examen">Cómo es el examen</a> y <a href="#prior">Prioridades</a> (5 minutos).</li>
+<li>Por cada tema: la caja «Lo esencial», la tabla de números y las trampas. Después contesta el test de ese tema en <a href="#auto">Autoevaluación</a>.</li>
+<li>Haz los <a href="#problemas">problemas resueltos</a> tapando la solución; si fallas, vuelve a la receta.</li>
+<li>La víspera, repasa solo el <a href="#formulario">formulario</a> y los tests que hayas fallado.</li>
+</ol>
+<div class="box trap"><h4>Sobre las respuestas</h4><p>Hay un <b>primer parcial real de 2024</b> (en <code>Recopilacion medioambientales</code>) y está resuelto en <a href="#parcial2024">esta guía</a>, pero su archivo «resuelto» no trae clave oficial: las respuestas las he deducido de los apuntes. Las prioridades de abajo mezclan el peso de cada tema en los apuntes y las preguntas de ese examen. Si el profesor avisó en clase de algo distinto, manda lo que dijo él.</p></div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">?</span><div class="shx"><p class="kick">Empezar</p><h2 id="examen">Cómo es el examen</h2></div></div>
+<p>Los exámenes que he leído son el <b>1.º parcial de 2024</b> (unas 36 preguntas de los temas 1 a 7, resuelto <a href="#parcial2024">aquí</a>) y el <b>test del 2.º parcial de febrero de 2024</b> (45 preguntas; está en las fotos de WhatsApp del 3-11 y en <code>parcial-2.pdf</code>). Ambos son <b>tests con cuatro opciones (A–D)</b>. Esto es lo que se repite:</p>
+<div class="tw"><table>
+<tr><th>Tipo de pregunta</th><th>Ejemplo real (resumido)</th><th>Qué hacer</th></tr>
+<tr><td><b>Una sola opción correcta</b></td><td>«¿Cuál es el tiempo máximo de almacenamiento de residuos peligrosos por parte de un productor?» (2, 4, 6 u 8 meses)</td><td>Dato memorizado. Aprende los números.</td></tr>
+<tr><td><b>«Indica las proposiciones FALSAS / VERDADERAS»</b></td><td>Cinco afirmaciones numeradas y opciones del tipo «A) 1 y 3 · B) 2 y 3 · C) 1 y 4 · D) 2 y 4».</td><td>Marca V/F en cada afirmación <i>antes</i> de mirar las opciones. Atención a si piden falsas o verdaderas.</td></tr>
+<tr><td><b>Con figura</b></td><td>Un esquema (separador balístico, etiqueta de residuo, función de transformación) y «¿para qué se usa?».</td><td>Aprende los esquemas de cada tema: los de esta guía están en palabras.</td></tr>
+<tr><td><b>De laboratorio</b></td><td>Indicador del punto final de la valoración de cloruros; alcalinidad con fenolftaleína y naranja de metilo; periodos del ruido; fundamento de la DBO5.</td><td>Repasa la <a href="#t2">sección de prácticas del tema 2</a>.</td></tr>
+<tr><td><b>Casos reales</b></td><td>Una empresa, un plan o un documento concreto y hay que identificar el tipo de norma o medida.</td><td>Aprende las definiciones y distingue los términos parecidos.</td></tr>
+</table></div>
+<div class="box key"><h4>Método para las preguntas de proposiciones</h4>
+<ol class="steps">
+<li>Subraya si piden <b>falsas</b> o <b>verdaderas</b>.</li>
+<li>Decide V o F de cada afirmación numerada, sin mirar las opciones.</li>
+<li>Elige la opción que coincide <i>exactamente</i> con tu conjunto. Si una afirmación te deja dudas, descarta primero las opciones donde aparece una que sí sabes que es incorrecta.</li>
+<li>Las afirmaciones falsas suelen cambiar <b>un solo dato</b>: un plazo, una cifra, «siempre/nunca», o intercambiar dos conceptos parecidos (reglamento/directiva, coagulación/floculación, emisión/inmisión).</li>
+</ol></div>
+<div class="box trap"><h4>Cuidado con las preguntas «de definición parecida»</h4>
+<p>El test de 2024 juega con pares parecidos como <b>agente / negociante</b>, <b>estabilización / inertización / solidificación</b> o <b>medida preventiva / protectora / correctora / compensatoria</b>. En los temas 1 a 7 los pares parecidos son: <b>coagulación (reversible) vs floculación (irreversible)</b>, <b>emisión vs inmisión</b>, <b>muestreo isocinético vs no isocinético</b>, <b>cloro libre vs combinado</b>, <b>DBO vs DQO</b>, <b>Reglamento vs Directiva vs Decisión</b>.</p></div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">★</span><div class="shx"><p class="kick">Empezar</p><h2 id="prior">Prioridades</h2></div></div>
+<p><span class="tag w">Estimación</span> Ordenadas por dónde hay más datos exactos y fórmulas en los apuntes. Pero el primer parcial de 2024 repartió las preguntas casi por igual: T1 1 · T2 6 · T3 6 · T4 6 · T5 6 · T6 6 · T7 5. No dejes ningún tema sin repasar.</p>
+<div class="tw"><table>
+<tr><th>Tema</th><th>Prioridad</th><th>Lo que más rinde</th></tr>
+<tr><td><a href="#t2">T2 Contaminantes y parámetros</a></td><td class="star">★★★★★</td><td>Valores paramétricos y límites de vertido, sólidos (qué es cada uno y cómo se mide), turbidez, DBO5 y cinética, DQO, DBO5/DQO, Microtox (EC50, TII50), E. coli.</td></tr>
+<tr><td><a href="#t4">T4 Depuración y reutilización</a></td><td class="star">★★★★★</td><td>Parámetros de fangos activos (θ, θc, Cm, Cv, E, R), tabla de cargas, límites del efluente 25/125/35, digestión anaerobia, clases de agua A+…D.</td></tr>
+<tr><td><a href="#t3">T3 Potabilización y membranas</a></td><td class="star">★★★★</td><td>Línea de la ETAP, coagulación vs floculación, jar-test, tipos de decantador, filtración, desinfección (ozono, UV, cloro), ósmosis inversa y su nomenclatura.</td></tr>
+<tr><td><a href="#t5">T5 Transporte y dispersión</a></td><td class="star">★★★★</td><td>Estabilidad y tasas de cambio, inversiones, los 6 penachos, hipótesis y fórmula gaussiana, ICA.</td></tr>
+<tr><td><a href="#t6">T6 Medida</a></td><td class="star">★★★★</td><td>Qué técnica mide cada gas (fluorescencia UV, NDIR, quimioluminiscencia, fotometría UV), muestreo, ruido en dB, valores límite.</td></tr>
+<tr><td><a href="#t7">T7 Control</a></td><td class="star">★★★</td><td>Dispositivos para partículas y gases, jerarquía de control, obligaciones (grupos A/B/C, ECA, plazos), ZBE.</td></tr>
+<tr><td><a href="#t1">T1 Introducción y legislación</a></td><td class="star">★★</td><td>Tipos de acto jurídico de la UE (vinculantes y no), taxonomía europea (3 condiciones, 6 objetivos), ODS, contaminación digital.</td></tr>
+</table></div>
+<div class="box key"><h4>Las 12 cosas que no puedes dejar de saber</h4>
+<ol class="steps">
+<li>Reglamento (se aplica directo) · Directiva (se transpone; obliga a resultados) · Decisión (obliga a su destinatario).</li>
+<li>Taxonomía UE: contribución sustancial a 1 de 6 objetivos + DNSH + salvaguardas sociales.</li>
+<li>DBO5: 5 días, 20 ºC, oscuridad; $L_t=L_a e^{-K_1 t}$; $y_t=L_a(1-e^{-K_1 t})$.</li>
+<li>DQO &gt; DBO5 siempre; DBO5/DQO &gt; 0,6 biodegradable, &lt; 0,2 poco biodegradable.</li>
+<li>Sólidos: filtro de 0,45 µm, estufa 105 ºC, calcinación 550 ± 50 ºC; decantables en cono de Imhoff (1 L, 1 h).</li>
+<li>TII50 = 100 / EC50 (EC50 en %); mayor TII50 = más tóxico. Límite en Murcia 25 Equitox/m³.</li>
+<li>ETAP: pretratamiento → coagulación-floculación → sedimentación → filtración → desinfección.</li>
+<li>Fangos activos: Cm 0,15–0,4 = media carga; efluente máximo 25 mg/L DBO5, 125 mg/L DQO, 35 mg/L SST.</li>
+<li>Clases de agua regenerada A+ (máxima) a D (mínima); parámetro principal E. coli.</li>
+<li>Tasa adiabática seca Γ = 0,98 ºC/100 m; inestable si −dT/dz &gt; Γ; inversión = máxima estabilidad.</li>
+<li>Gaussiano a nivel de suelo: $C(x,0,0)=\dfrac{Q}{\pi\sigma_y\sigma_z U}\,e^{-h_e^2/2\sigma_z^2}$.</li>
+<li>Dispositivos de control: gravedad, ciclón, precipitador electrostático (&lt; 5 µm), filtro de mangas, lavador; para gases, absorción/adsorción/oxidación térmica/biofiltración/SCR.</li>
+</ol></div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">✓</span><div class="shx"><p class="kick">Empezar</p><h2 id="progreso">Tu progreso</h2></div></div>
+<p>Marca lo que ya domines. Se guarda en este navegador.</p>
+<div class="bar" aria-hidden="true"><i id="pbar"></i></div><p class="muted" id="ptxt">0 de 0</p>
+<div id="checks"></div>
+</section>
+<section class="sec" style="--tc:var(--c1);--tcs:var(--c1s)">
+<div class="sh"><span class="badge" aria-hidden="true">T1</span><div class="shx"><p class="kick">Tema 1 · Agua</p><h2 id="t1">Introducción a la tecnología medioambiental</h2><div class="tags"><span class="tag">22 págs</span><span class="tag">legislación UE</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<ul>
+<li><b>Contaminación</b>: entrada en el medio de sustancias dañinas para personas, plantas y animales. El origen puede ser <b>natural</b> (La Palma 2021: más de 10.000 t de SO₂ al día) o <b>antrópico</b>; a escala mundial las fuentes naturales aportan más.</li>
+<li><b>Seinfeld</b>: <i>fuentes → atmósfera/transporte → receptores</i>. Solo hay contaminación si hay <b>efecto adverso en un receptor</b>; el elemento de control más conveniente es la <b>fuente</b>. El control del 100 % es imposible: hay que equilibrar el coste de controlar con el coste de la degradación.</li>
+<li>El problema se resuelve <b>al revés</b>: efecto en el receptor → sustancia y umbral → fuente → mezcla y transformación → control de la fuente (5 pasos).</li>
+<li><b>Contaminación digital</b>: TIC = 2–4 % de las emisiones globales de CO₂; centros de datos (energía y agua), acciones cotidianas (un correo ≈ 19 g de CO₂ de media), basura digital, residuos electrónicos.</li>
+</ul></div>
+<h3>Taxonomía europea y desarrollo sostenible</h3>
+<div class="grid2">
+<div class="box key"><h4>Informe Brundtland (1987)</h4><p>«Nuestro futuro común». Acuña <b>desarrollo sostenible</b>: satisfacer las necesidades actuales sin comprometer las de las generaciones futuras. Sigue vigente pero insuficiente.</p></div>
+<div class="box key"><h4>Taxonomía UE: 3 condiciones</h4>
+<ol><li><b>Contribución sustancial</b> a ≥ 1 de 6 objetivos: mitigación del cambio climático, adaptación, uso sostenible del agua, economía circular, prevención de la contaminación, biodiversidad y ecosistemas.</li>
+<li><b>DNSH</b> (no causar daño significativo) a los otros objetivos.</li>
+<li><b>Salvaguardas sociales</b> mínimas (derechos humanos, laborales, éticos).</li></ol>
+<p class="muted">Sirve para evitar el <i>greenwashing</i> y orientar la inversión.</p></div>
+</div>
+<p><b>Herramientas de gestión</b>: de la actividad completa → <b>Sistemas de Gestión Medioambiental (SGMA)</b> y <b>auditorías</b>; de un producto → <b>Análisis del Ciclo de Vida (ACV)</b> y <b>etiquetado ecológico</b>. Proyectos y obras requieren estudio de impacto ambiental.</p>
+<p><b>Reglamento UE 2025/40 (envases, PPWR)</b>: todos los envases reciclables en 2030, entre 30 y 35 % de plástico reciclado mínimo, espacio vacío máx. 50 % en transporte, restricciones a PFAS en envases alimentarios.</p>
+<h3>Agenda 2030 y ODS</h3>
+<p>Septiembre de 2015, ONU, más de 150 jefes de Estado y de Gobierno. <b>17 ODS</b> en vigor desde el 1-1-2016, de aplicación universal y <b>no jurídicamente obligatorios</b>.</p>
+<div class="tw"><table>
+<tr><th>ODS</th><th>Resumen</th><th>ODS</th><th>Resumen</th></tr>
+<tr><td>1</td><td>Fin de la pobreza</td><td>10</td><td>Reducir desigualdades</td></tr>
+<tr><td>2</td><td>Hambre cero</td><td>11</td><td>Ciudades y comunidades sostenibles</td></tr>
+<tr><td>3</td><td>Salud y bienestar</td><td>12</td><td>Producción y consumo responsables</td></tr>
+<tr><td>4</td><td>Educación de calidad</td><td>13</td><td>Acción por el clima</td></tr>
+<tr><td>5</td><td>Igualdad de género</td><td>14</td><td>Vida submarina (océanos y mares)</td></tr>
+<tr><td>6</td><td>Agua limpia y saneamiento</td><td>15</td><td>Vida de ecosistemas terrestres</td></tr>
+<tr><td>7</td><td>Energía asequible y no contaminante</td><td>16</td><td>Paz, justicia e instituciones</td></tr>
+<tr><td>8</td><td>Trabajo decente y crecimiento</td><td>17</td><td>Alianzas (0,7 % del PIB de los países desarrollados)</td></tr>
+<tr><td>9</td><td>Industria, innovación, infraestructuras</td><td></td><td></td></tr>
+</table></div>
+<h3>Instrumentos jurídicos de la UE</h3>
+<div class="tw"><table>
+<tr><th>Acto</th><th>¿Vinculante?</th><th>Idea clave</th><th>Ejemplo del curso</th></tr>
+<tr><td><b>Reglamento</b></td><td>Sí</td><td>Alcance general. <b>Directamente aplicable</b> desde su publicación en el DOUE, <b>sin transposición</b>; invalida normas nacionales contrarias.</td><td>Reg. 2025/40 (envases); Reg. 2021/1119 (Ley Europea del Clima: neutralidad climática en 2050)</td></tr>
+<tr><td><b>Directiva</b></td><td>Sí, en objetivos</td><td><b>Hay que transponerla</b>; obliga a resultados, no a los medios. Plazo de 2 a 5 años. Obliga solo a sus destinatarios.</td><td>Dir. 2024/3019 (aguas residuales urbanas); Dir. 91/271/CEE</td></tr>
+<tr><td><b>Decisión</b></td><td>Sí, para su destinatario</td><td>Híbrida. No necesita transposición. No es preceptiva su publicación, sí su comunicación.</td><td>Dec. 2024/3179 (Ecolabel); Dec. delegada 2024/1441 (microplásticos en agua de consumo)</td></tr>
+<tr><td><b>Recomendación</b></td><td>No (soft law)</td><td>Invitación a actuar.</td><td>Rec. 2021/472 (SARS-CoV-2 en aguas residuales); Rec. 2016/1318 (nZEB)</td></tr>
+<tr><td><b>Dictamen</b></td><td>No</td><td>Opinión consultiva.</td><td>Dictamen del CESE «de plantas de residuos a plantas de recursos»</td></tr>
+<tr><td><b>Comunicación</b></td><td>Acto atípico</td><td>Documento estratégico de la Comisión.</td><td>COM(2020) 788 Pacto Europeo por el Clima; COM(2019) 640 Pacto Verde</td></tr>
+<tr><td><b>Planes y programas</b></td><td>Acto atípico</td><td>Planificación; no siempre vinculante.</td><td>Estrategia de la UE sobre Biodiversidad 2030</td></tr>
+</table></div>
+<div class="box key"><h4>Directiva 2024/3019 (aguas residuales urbanas)</h4><p>Aprobada el 27-11-2024. Recogida y tratamiento obligatorios desde <b>1.000 h-e</b> (antes 2.000), exigencia más estricta de eliminación de nutrientes, reutilización y neutralidad energética en depuración. Está en trasposición en España. Mientras tanto sigue en vigor la 91/271/CEE, traspuesta por RDL 11/1995 y RD 509/1996.</p></div>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>«Reglamento ⇒ hay que transponerlo» es falso; eso es la <b>Directiva</b>.</li>
+<li>Los ODS <b>no</b> son jurídicamente obligatorios.</li>
+<li>La UE tiene muchas normas ambientales, pero también el porcentaje <b>más alto de incumplimiento</b> de legislación comunitaria.</li>
+<li>Natural ≠ inocuo: a escala mundial, las fuentes naturales representan el mayor porcentaje de los principales contaminantes.</li></ul></div>
+</section>
+
+<section class="sec" style="--tc:var(--c2);--tcs:var(--c2s)">
+<div class="sh"><span class="badge" aria-hidden="true">T2</span><div class="shx"><p class="kick">Tema 2 · Agua</p><h2 id="t2">Contaminantes del agua y parámetros de calidad</h2><div class="tags"><span class="tag">39 págs</span><span class="tag">el más largo</span><span class="tag w">muchos números</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<ul>
+<li><b>Contaminación del agua</b> (Ley de Aguas, RDL 1/2001, art. 93): introducir materias o energía, o inducir condiciones, que alteren perjudicialmente su calidad respecto a los usos posteriores o su función ecológica.</li>
+<li><b>Fuentes</b>: naturales o antrópicas; <b>puntuales</b> (fáciles de tratar) o <b>difusas</b> (escorrentía y retornos de regadío: sólidos, fertilizantes, plaguicidas).</li>
+<li><b>ARU</b> (negras + grises + limpieza pública + pluviales = «aguas domésticas o sépticas») · <b>ARI</b> (muy variables, casi una por industria) · <b>mixtas</b> (la mayoría en España).</li>
+<li>Un <b>habitante-equivalente</b> = carga orgánica biodegradable con <b>DBO5 de 60 g de O₂/día</b>.</li>
+</ul></div>
+<h3>Valores a memorizar (inorgánicos y oligoelementos)</h3>
+<p>VP = valor paramétrico del <b>RD 3/2023</b> (agua de consumo). «Vertido» = máximo que una industria puede verter al alcantarillado en la Región de Murcia (Decreto 16/1999).</p>
+<div class="tw"><table>
+<tr><th>Parámetro</th><th>VP agua de consumo</th><th>Vertido (Murcia)</th><th>Para recordar</th></tr>
+<tr><td>Cloruro Cl⁻</td><td class="num">250 mg/L</td><td>—</td><td>Corrosión; se valora con el índice de Langelier</td></tr>
+<tr><td>Sulfato SO₄²⁻</td><td class="num">250 mg/L</td><td>—</td><td>Excepción regional 500 mg/L; no aptitud 750; &gt; 300 mg/L ataca al cemento</td></tr>
+<tr><td>Fluoruro F⁻</td><td class="num">1,5 mg/L</td><td class="num">15 mg/L (estatal Ley 5/2002: 12)</td><td>Semiconductores (HF); se precipita como CaF₂</td></tr>
+<tr><td>Arsénico</td><td class="num">10 µg/L</td><td class="num">1 mg/L</td><td>As(III) más tóxico que As(V)</td></tr>
+<tr><td>Cadmio</td><td class="num">5 µg/L</td><td class="num">0,5 mg/L</td><td>Baterías Ni/Cd</td></tr>
+<tr><td>Cromo total</td><td class="num">25 µg/L (50 hasta 2-1-2030)</td><td class="num">5 mg/L total; 1 mg/L Cr(VI)</td><td>Cr(VI) muy tóxico → se reduce a Cr(III) con NaHSO₃</td></tr>
+<tr><td>Cobre</td><td class="num">2,0 mg/L</td><td class="num">5 mg/L</td><td>CuSO₄·5H₂O bactericida y alguicida</td></tr>
+<tr><td>Hierro</td><td>—</td><td class="num">10 mg/L</td><td>Fe(II)→Fe(III), precipita Fe(OH)₃</td></tr>
+<tr><td>Plomo</td><td>—</td><td class="num">2 mg/L</td><td>Restringido en aparatos eléctricos desde 2006</td></tr>
+<tr><td>Mercurio</td><td class="num">1 µg/L</td><td class="num">0,1 mg/L</td><td>Metilmercurio (Minamata): vida media 70 días</td></tr>
+<tr><td>Trihalometanos (suma de 4)</td><td class="num">100 µg/L</td><td>—</td><td>Subproducto de la cloración; precursores: sustancias húmicas</td></tr>
+</table></div>
+<ul>
+<li><b>Cianuro</b> CN⁻ → se oxida a <b>cianato</b> CNO⁻, 1000 veces menos tóxico. <b>Nitrito</b>: oxidación del NH₃ o reducción de nitratos.</li>
+<li><b>THM</b>: cloroformo, bromoformo, dibromoclorometano, diclorobromometano. Ozono y ClO₂ generan menos.</li>
+<li><b>Contaminantes emergentes</b> (ng/L–mg/L; fármacos, cuidado personal…) y <b>microplásticos</b>: 5 mm a 1 µm; <b>nanoplásticos</b> &lt; 1 µm; primarios (se fabrican así) o secundarios (fragmentación).</li>
+<li><b>PBDE</b>: retardantes de llama bromados, COPs.</li>
+</ul>
+<h3>Adsorción de metales: isoterma de Freundlich</h3>
+<div class="box key">
+$$q_e=K_f\,C_e^{1/n}\qquad\ln q_e=\ln K_f+\tfrac{1}{n}\ln C_e\qquad D\ \left[\tfrac{g}{L}\right]=\frac{C_i-C_e}{q_e}$$
+<p>$q_e$ (mg/g) retenido en equilibrio · $C_e$ (mg/L) concentración residual · $K_f$ capacidad · $1/n$ intensidad · $D$ dosis mínima de adsorbente · $C_i$ influente, $C_e$ efluente. Mayor $q_e$ ⇒ menor dosis. El carbón activo puede ser granular (GAC) o en polvo (PAC, menos efectivo).</p></div>
+<h3>Parámetros físicos</h3>
+<ul>
+<li><b>Temperatura</b>: al subir, aumenta la solubilidad de los sólidos y <b>baja la de los gases</b> (menos O₂). Calor específico: agua ≈ 4180 J/g·K, aire ≈ 1012 J/g·K.</li>
+<li><b>Organolépticos</b>: color (real = disueltos; aparente = suspendidos), olor y sabor (diluciones sucesivas hasta umbral; nariz y lengua electrónicas).</li>
+<li><b>Sólidos</b>: clasificación en el cuadro siguiente.</li>
+</ul>
+<div class="tw"><table>
+<tr><th>Sólidos</th><th>Cómo se miden</th><th>Fórmula</th></tr>
+<tr><td><b>SST</b> (en suspensión)</td><td>Filtro de fibra de vidrio de <b>0,45 µm</b>; filtro seco a <b>105 ºC</b>; pesar antes (P₁) y después (P₂).</td><td class="num">$\dfrac{P_2-P_1}{V}$</td></tr>
+<tr><td><b>SS fijos</b></td><td>Calcinar el filtro a <b>550 ± 50 ºC</b> (P₃).</td><td class="num">$\dfrac{P_3-P_1}{V}$</td></tr>
+<tr><td><b>SS volátiles</b></td><td>Diferencia SST − SSf.</td><td class="num">$\dfrac{P_2-P_3}{V}$</td></tr>
+<tr><td><b>SDT</b> (disueltos)</td><td>El filtrado se evapora en cápsula a baño maría y 105 ºC.</td><td class="num">$\dfrac{P_2-P_1}{V}$</td></tr>
+<tr><td><b>Materia decantable (MD)</b></td><td><b>Cono de Imhoff</b>, 1 L, 1 hora. Da idea de los lodos de la decantación primaria.</td><td>ml/L</td></tr>
+<tr><td><b>ST</b> (totales)</td><td>SS + SD, o muestra sin filtrar completa.</td><td></td></tr>
+</table></div>
+<p class="muted">Fijos ≠ inorgánicos y volátiles ≠ orgánicos: al calcinar se descomponen algunos inorgánicos (p. ej. bicarbonatos → CO₂). Por eso se habla de sólidos <i>fijos</i> y <i>volátiles</i>.</p>
+<h3>Parámetros químicos</h3>
+<div class="grid2">
+<div class="box key"><h4>Oxígeno disuelto y turbidez</h4>
+<ul><li>OD en agua a T y P ambientales ≈ <b>9–10 mg/L</b>; <b>&lt; 3 mg/L</b> estresa a la mayoría de organismos. Sonda de membrana (UNE-EN ISO 5814).</li>
+<li>Turbidez en UNF/NTU, medida con luz dispersada; <b>720 nm</b> (el color no influye). VP: <b>4 UNF</b> en red; <b>0,8 UNF</b> a la salida de la ETAP (antes 1); no aptitud 2 UNF (ETAP) y 6 UNF (red).</li></ul></div>
+<div class="box key"><h4>DBO₅ y DQO</h4>
+<ul><li><b>DBO₅</b>: O₂ (mg/L) que consumen bacterias aerobias oxidando la materia orgánica en <b>5 días, 20 ºC, oscuridad</b> (≈ 2/3 del carbono biodegradable).</li>
+<li><b>DQO</b>: O₂ consumido por las materias reductoras, sin organismos. <b>DQO &gt; DBO₅ siempre</b>.</li>
+<li>DBO₅/DQO &gt; 0,6 fácilmente biodegradable (ARU) · &lt; 0,2 escasamente biodegradable.</li></ul></div>
+</div>
+<div class="box key"><h4>Cinética de la DBO</h4>
+$$\frac{dL_t}{dt}=-K_1L_t\ \Rightarrow\ L_t=L_a\,e^{-K_1t}\qquad y_t=L_a-L_t=L_a\left(1-e^{-K_1t}\right)$$
+<p>$L_t$ DBO remanente · $L_a$ DBO última (carbonosa) · $K_1$ constante de desoxigenación (d⁻¹) · $y_t$ O₂ ya consumido. <b>$L_a$ no depende de $K_1$</b>; un $K_1$ mayor da una DBO₅ mayor. Carga diaria: $\text{kg/día}=\text{DBO}_5\,(\text{g/m}^3)\cdot Q\,(\text{m}^3/\text{día})/1000$.</p></div>
+<div class="grid2">
+<div class="box key"><h4>Parámetros biológicos</h4>
+<ul><li><b>E. coli</b>: indicador de contaminación fecal; es más fácil de medir que los patógenos.</li>
+<li><b>Coliformes totales</b>: fermentan lactosa con gas a <b>35 ºC</b>. <b>Fecales o termotolerantes</b>: a <b>44 ºC</b>.</li></ul></div>
+<div class="box key"><h4>Toxicidad: Microtox®</h4>
+<p>Reducción de la luz de <i>Aliivibrio fischeri</i>. <b>EC50</b> = concentración que reduce la luz el 50 %.</p>
+<ul><li>EC50 en mg/L: ≤ 1 muy tóxica · 1–10 tóxica · 10–100 dañina · &gt; 100 no dañina. <b>Menor EC50 ⇒ más tóxico.</b></li>
+<li>$TII_{50}=\text{Equitox/m}^3=100/EC_{50}$ (EC50 en %): 0–1 muy baja · 1–10 baja · 10–100 moderada · &gt; 100 alta. <b>Mayor TII ⇒ más tóxico.</b> Límite de vertido en Murcia y Madrid: <b>25 Equitox/m³</b>.</li></ul></div>
+</div>
+<h3>Datos de la EDAR «Cabezo Beaza» (Cartagena), entrada a los reactores</h3>
+<div class="tw"><table>
+<tr><th></th><th>pH</th><th>Sól. sediment. (ml/L)</th><th>ST (mg/L)</th><th>SS (mg/L)</th><th>SD (mg/L)</th><th>DQO (mg/L)</th><th>DBO₅ (mg/L)</th></tr>
+<tr><td>Máx.</td><td>8,36</td><td>4,00</td><td>4.320</td><td>600</td><td>4.260</td><td>1.540</td><td>500</td></tr>
+<tr><td>Media</td><td>7,81</td><td>0,59</td><td>2.122</td><td>117</td><td>2.008</td><td>817</td><td>327</td></tr>
+<tr><td>Mín.</td><td>7,17</td><td>0,01</td><td>440</td><td>20</td><td>400</td><td>382</td><td>100</td></tr>
+</table></div>
+<h3>Prácticas de laboratorio que se preguntan</h3>
+<ul>
+<li><b>Cloruros (método de Mohr)</b>: el indicador del punto final es el <b>cromato potásico</b>.</li>
+<li><b>Alcalinidad</b>: se valora con HCl primero con <b>fenolftaleína</b> (V₁) y luego con <b>naranja de metilo</b>. Si el gasto con naranja de metilo supera claramente al de fenolftaleína (&gt; 2V₁) la alcalinidad es de <b>carbonatos y bicarbonatos</b>.</li>
+<li><b>DBO₅</b> en el laboratorio: método <b>manométrico</b>.</li>
+<li><b>Ruido</b>: el RD estatal (1367/2007) define 3 periodos: día, tarde y noche (el Decreto 48/1998 de Murcia usa solo día y noche).</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Mezclar unidades: <b>µg/L</b> (agua de consumo) y <b>mg/L</b> (vertido) van en la misma tabla; compara en la misma unidad.</li>
+<li>EC50 y TII50 se mueven en <b>sentidos opuestos</b>.</li>
+<li>Una DBO₅ baja <b>no</b> garantiza poca contaminación: puede haber sustancias tóxicas que inhiben el proceso o poco biodegradables.</li>
+<li>Los SST se miden con filtro de 0,45 µm; no confundir con la materia decantable (cono de Imhoff).</li>
+<li>La electrocoagulación y la precipitación con calcio no son lo mismo: el F⁻ se elimina precipitándolo con Ca²⁺ (o con ósmosis inversa).</li></ul></div>
+</section>
+<section class="sec" style="--tc:var(--c3);--tcs:var(--c3s)">
+<div class="sh"><span class="badge" aria-hidden="true">T3</span><div class="shx"><p class="kick">Tema 3 · Agua</p><h2 id="t3">Potabilización y tecnologías de membrana</h2><div class="tags"><span class="tag">34 págs</span><span class="tag">ETAP</span><span class="tag">ósmosis inversa</span></div></div></div>
+<div class="zero"><p class="ft">La ETAP en una línea</p>
+<p><b>Pretratamiento</b> (almacenamiento, desbaste, aireación, pretratamiento químico) → <b>tratamiento estándar</b> (coagulación-floculación → sedimentación → filtración) → <b>desinfección</b> → <b>fluoración</b>. Más una línea de fangos. Las tecnologías de membrana se usan como pretratamiento o para agua de muy alta pureza.</p></div>
+<h3>Coagulación y floculación</h3>
+<div class="tw"><table>
+<tr><th></th><th>Coagulación</th><th>Floculación</th></tr>
+<tr><td>Qué es</td><td>Neutralización y deshidratación de coloides → microflóculos</td><td>Aglomeración de microflóculos → macroflóculos visibles</td></tr>
+<tr><td>¿Reversible?</td><td><b>Sí</b> (un exceso de coagulante o cambio de pH puede reestabilizar los coloides)</td><td><b>No</b></td></tr>
+<tr><td>Duración</td><td>Fracciones de segundo</td><td>Mezcla lenta</td></tr>
+</table></div>
+<div class="box key">
+$$N_{12}=\tfrac16\,n_1n_2\,(d_1+d_2)^3\,G\qquad(\text{Smoluchowski})$$
+<p>$G$ es el gradiente medio de velocidad. Subir $G$ aumenta los choques, pero demasiado rompe los flóculos: hay un <b>$G$ óptimo, decreciente</b> a lo largo de la operación.</p></div>
+<ul>
+<li><b>Factores</b>: tipo de coagulante (un ión trivalente es 600–1000 veces más eficaz que uno monovalente), cantidad, <b>pH (la variable más importante)</b>, temperatura (agua fría ⇒ flóculos más lentos).</li>
+<li><b>Jar-test</b>: vasos de 1–2 L con dosis crecientes de coagulante, paletas de 20–300 rpm, mezcla rápida 20–60 s, y se elige el vaso con mejor sedimentación.</li>
+<li><b>Coagulantes</b>: inorgánicos (sulfato de aluminio Al₂(SO₄)₃·14H₂O es el más usado; FeCl₃, CaCl₂) y orgánicos o polielectrolitos (no iónicos, aniónicos, catiónicos; sobre todo para espesar y deshidratar fangos).</li>
+<li><b>Según el agua</b>: ↑turbidez y ↑alcalinidad: fácil · ↑turbidez y ↓alcalinidad: añadir <b>cal</b> · ↓turbidez y ↓alcalinidad: cal y <b>polielectrolito aniónico</b>.</li>
+<li><b>Coadyuvante</b>: <b>sílice activada</b> (silicato sódico + H₂SO₄). Exige una ligera sobredosis de coagulante pero da flóculos más densos y rápidos.</li>
+</ul>
+<h3>Sedimentación y decantadores</h3>
+<p>Separación sólido-líquido por gravedad. Es <b>complementaria</b> de la filtración (esta retiene lo de densidad parecida al agua). Los decantadores del curso son de <b>flujo vertical ascendente</b> y <b>contacto de fangos</b>: conservar fango en el agua aumenta la concentración y, por Smoluchowski, los choques.</p>
+<div class="tw"><table>
+<tr><th>Tipo</th><th>Rasgo distintivo</th></tr>
+<tr><td><b>Manto o lecho de lodos</b></td><td>El agua entra por el fondo y atraviesa un manto que actúa como filtro. Partículas del manto = 1–5 % de su volumen. Velocidad ascensional ≤ <b>3 m/h</b>, TRH <b>1–2 h</b>. Régimen turbulento.</td></tr>
+<tr><td><b>Pulsator</b> (lecho pulsado)</td><td>Campana de vacío que da caudales instantáneos fuertes: llenado cada <b>30–40 s</b>, vaciado en <b>5–10 s</b>. Mantiene el lecho expandido.</td></tr>
+<tr><td><b>Superpulsator</b></td><td>Pulsator + <b>lamelas</b> (placas inclinadas) = decantación laminar; más superficie a igual velocidad ascensional.</td></tr>
+<tr><td><b>Circulator</b></td><td>Circular, floculador central, recirculación hidráulica continua del precipitado; barrido de fangos hacia el centro.</td></tr>
+<tr><td><b>Accelator®</b></td><td>Circular con <b>turbina</b> en la zona de mezcla primaria y campana de vacío periódico (zona de mezcla secundaria).</td></tr>
+</table></div>
+<p class="muted">Tanque de Dortmund: concepto libre de patente basado en el contacto de fangos (Sillar y Wigner, 1869).</p>
+<h3>Filtración</h3>
+<ul>
+<li><b>Mecanismos de transporte</b>: cernido, sedimentación (Hazen, 1904), intercepción, impacto inercial, difusión (movimiento browniano) y filtración biológica.</li>
+<li>Filtros <b>rápidos por gravedad</b>: tanque de 3,5–5 m, lecho de 0,5–2 m sobre drenaje, simples (arena o carbón activo) o duales. Agua filtrada &lt; <b>1 UNF</b>. Cuatro flujos: entrada de agua decantada, salida de agua filtrada, entrada de agua de lavado y desagüe del lavado.</li>
+<li><b>Carbón activo granular (GAC)</b>: elimina olores y sabores (COVs), pero cuesta ≈ 10 veces más que la arena, el lavado es delicado (<b>nunca agua y aire a la vez</b>) y se regenera térmicamente a unos <b>800 ºC</b>.</li>
+<li>La pérdida de carga aumenta por colmatación → <b>lavado a contracorriente</b> en 3 fases: (a) esponjamiento con aire a presión (15–60 s); (b) agua + aire (excepto carbón activo); (c) aclarado con agua (5–10 min). El agua de lavado vuelve a cabecera de planta.</li>
+</ul>
+<h3>Desinfección</h3>
+<div class="box key">
+$$\frac{dN}{dt}=-kN\ \Rightarrow\ \frac{N_t}{N_0}=e^{-kt}\qquad t=\frac{\ln(N_0/N_t)}{k}$$
+<p>Cinética de primer orden. Baja eficiencia si hay mucha materia orgánica (consume desinfectante), Fe²⁺ y Mn²⁺ (consumen o enmascaran) u organismos resistentes.</p></div>
+<div class="tw"><table>
+<tr><th></th><th>Ozono O₃</th><th>Radiación UV</th><th>Cloro Cl₂</th></tr>
+<tr><td>Naturaleza</td><td>Oxidante químico muy potente; 3O₂ → 2O₃ con campo eléctrico, se produce <b>in situ</b></td><td><b>Físico</b>: lámparas de Hg de baja presión, <b>254 nm</b>; daña el <b>ADN</b></td><td>Gas amarillo-verdoso, 2,5 veces más pesado que el aire; se almacena líquido (1,74 atm a −18 ºC)</td></tr>
+<tr><td>Ventajas</td><td>Destruye virus y protozoos; no genera THM; microfloculante; convierte lo no biodegradable en biodegradable</td><td>Sin productos químicos, sin corrosión, no altera el sabor</td><td>Eficiente, fácil de aplicar, <b>deja residual</b> medible</td></tr>
+<tr><td>Inconvenientes</td><td>Residual de vida corta; gran inversión</td><td><b>Sin acción residual</b>; el agua debe ser de poco espesor y sin turbidez</td><td>Subproductos (THM)</td></tr>
+</table></div>
+<ul>
+<li><b>Hidrólisis del cloro</b> → HClO + ClO⁻ = <b>cloro libre residual</b>.</li>
+<li><b>Oxidación-reducción</b>: con N amoniacal → <b>cloraminas</b> (cloro combinado <i>utilizable</i>); con aminoácidos, proteínas, Fe²⁺, Mn²⁺ → cloro combinado <i>no utilizable</i> o <b>demanda de cloro</b> (incluye THM).</li>
+</ul>
+<h3>Ósmosis inversa (OI)</h3>
+<p>Se aplica una presión <b>mayor que la osmótica</b> (de 5 a 20 veces) para invertir el flujo de agua hacia el lado menos concentrado. Es la tecnología principal de desalación y de agua ultrapura (industria electrónica).</p>
+<div class="tw"><table>
+<tr><th>Tipo de agua</th><th>Salinidad (mg/L de SDT)</th></tr>
+<tr><td>Ultrapura</td><td class="num">0,03</td></tr><tr><td>Pura (calderas)</td><td class="num">0,3</td></tr><tr><td>Desionizada</td><td class="num">3</td></tr>
+<tr><td>Dulce (potable)</td><td class="num">&lt; 1.000</td></tr><tr><td>Salobre</td><td class="num">1.000 – 10.000</td></tr><tr><td>Mar</td><td class="num">30.000 – 50.000</td></tr>
+</table></div>
+<div class="grid2">
+<div class="box key"><h4>Nomenclatura</h4><ul>
+<li><b>Aportación</b> (alimentación, feed): caudal que entra.</li>
+<li><b>Permeado</b> (producto): agua desalada.</li>
+<li><b>Rechazo</b> (salmuera, concentrado): contiene la mayor parte de las sales.</li>
+<li><b>Coeficiente de permeabilidad A</b>: m³/m²·día·bar.</li>
+<li><b>% recuperación</b> $=Q_p/Q_f\cdot100$: 50–90 % en general; <b>25–45 %</b> en agua de mar.</li></ul></div>
+<div class="box key"><h4>Presión de trabajo</h4><ul>
+<li><b>Muy baja</b> 2–10 bar: salinidad 500–1.500; agua ultrapura.</li>
+<li><b>Baja</b> 10–20 bar: 1.500–4.000; reduce nitratos y pirógenos.</li>
+<li><b>Media</b> 20–40 bar: 4.000–10.000 (las primeras comerciales).</li>
+<li><b>Alta</b> 50–80 bar: agua de mar (π del mar = 20–27 bar).</li></ul></div>
+</div>
+<ul>
+<li><b>Estructura</b>: en OI solo <b>asimétricas</b> (capa activa densa + soporte poroso). <b>Integrales</b> (mismo polímero) o <b>compuestas de capa fina</b> (3 capas).</li>
+<li><b>Forma</b>: planas, tubulares (6–25 mm), <b>fibra hueca</b> (interior 42–120 µm; solo integrales).</li>
+<li><b>Material</b>: acetato de celulosa (la primera; tolera cloro libre, se degrada), triacetato (más resistente a la hidrólisis), <b>poliamidas</b> (las más habituales). Inorgánicas: cerámicas (alúmina, hasta 250 ºC) y de vidrio.</li>
+<li><b>Módulos</b>: placas (el más antiguo), tubulares (líquidos con muchos sólidos), <b>espirales</b> (los más comunes en desalación), fibra hueca. Agrupación <b>en serie</b> para muy baja salinidad (industria electrónica); en paralelo para más caudal.</li>
+<li><b>Ensuciamiento</b>: coloides, precipitación de carbonatos y sulfatos (se evita con ácidos), Fe y Mn, <b>cloro</b> (se elimina con <b>NaHSO₃</b>) y bacterias. <b>Polarización</b>: acumulación de sales sobre la superficie. Limpieza: mecánica, con permeado a presión (<i>flushing</i>) o química.</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>En OI, «rechazo» es el <b>caudal de salmuera</b>, no un porcentaje.</li>
+<li>La coagulación es <b>reversible</b>; la floculación, no.</li>
+<li>UV: no deja residual; ozono: residual de vida corta; cloro: residual medible.</li>
+<li>Un filtro de carbón activo <b>no</b> se lava con agua y aire a la vez.</li></ul></div>
+</section>
+
+<section class="sec" style="--tc:var(--c4);--tcs:var(--c4s)">
+<div class="sh"><span class="badge" aria-hidden="true">T4</span><div class="shx"><p class="kick">Tema 4 · Agua</p><h2 id="t4">Depuración y reutilización</h2><div class="tags"><span class="tag">30 págs</span><span class="tag">fangos activos</span><span class="tag w">fórmulas</span></div></div></div>
+<div class="zero"><p class="ft">La EDAR en una línea</p>
+<p><b>Pretratamiento</b> (desbaste → desarenado → grasas) → <b>decantación primaria</b> (~2 h) → <b>reactor biológico</b> (fangos activos) → <b>decantador secundario</b> → desinfección. Los fangos se espesan, se <b>digieren</b> y se <b>deshidratan</b>.</p></div>
+<h3>Pretratamiento y decantación primaria</h3>
+<ul>
+<li><b>Desbaste</b>: rejas de barras (≈ 25 mm, separación 50–100 mm) y tamices; velocidad de paso <b>0,6–1,0 m/s</b>.</li>
+<li><b>Desarenado</b>: flujo horizontal (velocidad ≈ <b>0,3 m/s</b>) o <b>aireado</b> (movimiento en espiral; la arena sale más limpia y mantiene ambiente aerobio). No suele haber arena en las ARI.</li>
+<li><b>Grasas y aceites</b>: por <b>flotación</b>. Tres tipos: libres, emulsionados (hay que romper la emulsión) y disueltos (tratamiento biológico). Problemas: película en decantadores, recubren electrodos, dificultan la digestión bacteriana, impiden el paso de O₂ y luz.</li>
+<li><b>Decantador primario</b>: reduce la <b>materia decantable</b> y algo de DBO₅; homogeneiza carga y caudales.</li>
+</ul>
+<h3>Fangos activos: parámetros de diseño</h3>
+<p>Arden y Lockett (1913): aire + fango preformado (15–25 %) estabilizan el agua en 6 h. El contenido del reactor es el <b>licor mezcla</b>; la biomasa se expresa como <b>SSVLM</b> (X), el 70–80 % de los SST del licor. Sustrato = DBO₅ ($S_0$ entrada, $S_f$ salida).</p>
+<div class="tw"><table>
+<tr><th>Parámetro</th><th>Fórmula</th><th>Unidades</th></tr>
+<tr><td><b>TRH</b> (θ)</td><td>$\theta=\dfrac{V}{Q}$</td><td>h o d</td></tr>
+<tr><td><b>TRC</b> o edad del fango (θc)</td><td>$\theta_c=\dfrac{V\cdot X}{[(S_0-S_f)\,Q]\,X_e}$</td><td>d</td></tr>
+<tr><td><b>Carga másica</b> (Cm)</td><td>$C_m=\dfrac{S_0\,Q}{V\,X}$</td><td>kg DBO₅/kg SSVLM·d</td></tr>
+<tr><td><b>Carga volúmica</b> (Cv)</td><td>$C_v=\dfrac{S_0\,Q}{V}$</td><td>kg DBO₅/m³·d</td></tr>
+<tr><td><b>Rendimiento</b> (E)</td><td>$E=\dfrac{S_0-S_f}{S_0}\cdot100$</td><td>%</td></tr>
+<tr><td><b>Tasa de recirculación</b> (R)</td><td>$R=\dfrac{X}{X_R-X}$, con $X_R=6$ kg/m³</td><td>—</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Proceso</th><th>Carga másica Cm</th><th>Carga volúmica Cv</th><th>X (kg/m³)</th><th>E (%)</th></tr>
+<tr><td><b>Alta carga</b></td><td>&gt; 0,4</td><td>&gt; 1,5</td><td class="num">2,5</td><td class="num">80</td></tr>
+<tr><td><b>Media carga</b></td><td>0,15 – 0,4</td><td>0,5 – 1,5</td><td class="num">3,3</td><td class="num">90</td></tr>
+<tr><td><b>Baja carga</b> (aireación prolongada)</td><td>0,07 – 0,15</td><td>&lt; 0,5</td><td class="num">4,0</td><td class="num">96</td></tr>
+<tr><td><b>Muy baja carga</b></td><td>&lt; 0,07</td><td>&lt; 0,5</td><td class="num">5,0</td><td class="num">&gt; 96</td></tr>
+</table></div>
+<p class="muted">La Tabla 4.1 del PDF también indica si la decantación primaria es optativa, obligatoria o inexistente según el proceso; el texto extraído no deja claro a qué fila corresponde cada valor, así que mira la tabla en el PDF. En θc, «Xe» está descrito de forma poco clara («tasa de purga»): en los problemas usa el dato del enunciado.</p>
+<div class="grid2">
+<div class="box key"><h4>Decantador secundario</h4>
+<p>$V_{ASC}=\dfrac{Q}{S}$ (m³/m²·h) · $C_S=\dfrac{Q\,X}{S}$ (kg SS/m²·h). Se calculan con el <b>caudal punta</b>.</p>
+<p><b>Efluente máximo</b> (Directiva 91/271/CEE): <b>25 mg/L DBO₅ · 125 mg/L DQO · 35 mg/L SST</b>.</p></div>
+<div class="box key"><h4>Otros</h4><ul>
+<li><b>Aireación</b>: difusa (difusores sumergidos) o mecánica (agitación superficial).</li>
+<li><b>MBR</b>: reactor biológico + membranas (MF/UF) en vez de decantador secundario; efluente de alta calidad y más biomasa en menos volumen.</li>
+<li><b>N y P</b>: nitrificación-desnitrificación (acaba en N₂); P por microorganismos específicos.</li></ul></div>
+</div>
+<div class="box trap"><h4>Problemas de explotación</h4><p><b>Bulking filamentoso</b> (<i>Sphaerotilus natans</i>): el fango sedimenta lentamente y sale con el efluente. <b>Desnitrificación en el decantador</b>: el N₂ sube y arrastra el fango.</p></div>
+<h3>Tratamiento de fangos</h3>
+<ul>
+<li><b>Digestión anaerobia</b> (la más común): reduce los volátiles, reduce microorganismos, produce biogás (CH₄ + CO₂). Baja carga: sin calentar, retención de 30–60 días. Alta carga: calentada, &lt; 15 días. Tres etapas: <b>hidrolítica → acetogénica → metanogénica</b>. Metano: $4\,H_2+CO_2\to CH_4+\dots$ y $CH_3COOH\to CH_4+CO_2$.</li>
+<li><b>Deshidratación</b>: con polielectrolitos como acondicionadores. <b>Centrífuga de camisa maciza</b> (torta con 75–80 % de humedad, es decir 20–25 % de sólidos) y <b>filtro banda</b> (zona de drenaje por gravedad + zona de presión).</li>
+</ul>
+<h3>Aguas de la industria electrónica</h3>
+<div class="grid2">
+<div class="box key"><h4>Electrocoagulación</h4>
+<p>Celda con ánodo (Fe, Al o Ti) y cátodo. El catión coagulante sale del <b>propio ánodo</b>. Ánodo: $Fe^0\to Fe^{3+}+3e^-$ · cátodo: $H_2O+3e^-\to \tfrac32H_2+3OH^-$.</p>
+<p>3 procesos en serie: reacciones en electrodos → formación de coagulantes → adsorción de contaminantes y eliminación por sedimentación o flotación. <b>No elimina iones muy solubles</b> (menores que Ca²⁺ y Mg²⁺). CMP: hasta el 40 % del agua ultrapura y DQO &gt; 500 mg/L.</p></div>
+<div class="box key"><h4>Electrodiálisis</h4>
+<p>Membranas de intercambio catiónico y aniónico alternadas + campo eléctrico: cationes → cátodo, aniones → ánodo.</p>
+$$\tfrac{\text{eq-g}}{t}=QN\eta\qquad I=\frac{F\,Q\,N\,\eta}{n\,E_c}\qquad P=R\,I^2$$
+<p>$F=96485$ A·s/eq-g · $n$ nº de celdas · $E_c$ eficiencia de corriente · $CD/N$ típico 500–800 mA/cm²·N.</p></div>
+</div>
+<h3>Reutilización del agua (RD 1085/2024)</h3>
+<p>Sustituye al RD 1620/2007 y adapta el <b>Reglamento (UE) 2020/741</b>. <b>Gestión del riesgo obligatoria</b> (sanitario y ambiental) y <b>autorización administrativa</b> para producir, suministrar y usar.</p>
+<div class="tw"><table>
+<tr><th>Clase</th><th>Calidad</th><th>Ejemplos de uso</th></tr>
+<tr><td><b>A+</b></td><td>Máxima</td><td>Contacto directo humano: riego de jardines privados, descarga de inodoros</td></tr>
+<tr><td><b>A</b></td><td>Muy alta</td><td>Cultivos que se consumen crudos (lechuga, tomate), estanques accesibles</td></tr>
+<tr><td><b>B</b></td><td>Intermedia</td><td>Parques, baldeo de calles</td></tr>
+<tr><td><b>C</b></td><td>Baja</td><td>Riego sin contacto con el producto, ornamental no accesible</td></tr>
+<tr><td><b>D</b></td><td>Mínima</td><td>Cultivos industriales (algodón, lino, tabaco), energéticos y de biomasa</td></tr>
+</table></div>
+<ul>
+<li><b>Parámetros</b>: <b>E. coli</b> (principal; define la clase), nematodos intestinales, bacteriófagos, <i>Legionella</i> (riego por aspersión); turbidez, SS y DBO₅.</li>
+<li><b>Prohibida</b> para: consumo humano directo (salvo catástrofe), empresa alimentaria en ciertos casos, instalaciones hospitalarias, acuicultura de moluscos filtradores, baño en instalaciones artificiales.</li>
+<li>Por tipo de cultivo: crudo → A/A+; procesado (cereal) → A/B; industrial, energético o biomasa → C/D.</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Cm y Cv suenan igual: la másica divide por <b>biomasa</b> (V·X), la volúmica por <b>volumen</b> (V).</li>
+<li>La clase <b>A+</b> es la de mayor exigencia; <b>D</b> la de menor.</li>
+<li>La electrodiálisis <b>no</b> es lo mismo que la electrocoagulación: una separa iones con membranas, la otra coagula con cationes del ánodo.</li>
+<li>El decantador secundario se dimensiona a <b>caudal punta</b>, no al medio.</li></ul></div>
+</section>
+<section class="sec" style="--tc:var(--c5);--tcs:var(--c5s)">
+<div class="sh"><span class="badge" aria-hidden="true">T5</span><div class="shx"><p class="kick">Tema 5 · Aire</p><h2 id="t5">Transporte y dispersión de contaminantes</h2><div class="tags"><span class="tag">30 págs</span><span class="tag">modelo gaussiano</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<ul>
+<li><b>Contaminante primario</b>: sale directo de la fuente (aerosoles, SOₓ, NOₓ, CO, CO₂, HC, metales pesados). <b>Secundario</b>: se forma en la atmósfera por reacción del primario, normalmente fotoquímica (O₃, aldehídos, cetonas, ácidos, H₂O₂, PAN).</li>
+<li>El <b>80 %</b> de los contaminantes antropogénicos procede de combustibles fósiles. Ley 34/2007 de calidad del aire.</li>
+<li><b>Emisión</b>: descarga a la atmósfera desde una fuente. <b>Inmisión</b> (nivel de contaminación): cantidad de contaminante en el aire ambiente o depositada, en un periodo; se asocia al objetivo de calidad del aire. <b>MTD</b> (mejores técnicas disponibles): fase más eficaz y avanzada de desarrollo, base de los valores límite de emisión.</li>
+</ul></div>
+<h3>La atmósfera por capas</h3>
+<div class="tw"><table>
+<tr><th>Capa</th><th>Qué pasa con la temperatura</th><th>Datos</th></tr>
+<tr><td><b>Troposfera</b></td><td>Disminuye con la altura (hasta ≈ 10 ºC/km)</td><td>≈ 80 % de la masa de la atmósfera y casi todo el vapor de agua; ahí está «el aire ambiente». Tropopausa: 18 km (−80 ºC) en el ecuador, 8 km (−50 ºC) en los polos.</td></tr>
+<tr><td><b>Estratosfera</b></td><td>Aumenta (el ozono absorbe UV)</td><td>Capa de ozono centrada en ≈ 22 km. Estratopausa a 50 km, ≈ 0 ºC.</td></tr>
+<tr><td><b>Mesosfera</b></td><td>Disminuye</td><td>Hasta 85 km; las temperaturas más bajas (≈ −100 ºC).</td></tr>
+<tr><td><b>Termosfera</b></td><td>Aumenta</td><td>Absorción de UV extremo (&lt; 100 nm); hasta 250 ºC y más de 800 ºC con máxima actividad solar.</td></tr>
+</table></div>
+<h3>Contaminantes por estado de agregación</h3>
+<div class="tw"><table>
+<tr><th>Término</th><th>Qué es</th></tr>
+<tr><td><b>Gases</b></td><td>Gaseosos a 25 ºC y 760 mm Hg (CO₂, SO₂, CO, NOₓ, O₃)</td></tr>
+<tr><td><b>Aerosoles</b></td><td>Partículas sólidas o líquidas en gas, Ø &lt; 100 µm y velocidad de sedimentación &lt; 0,24 m/s</td></tr>
+<tr><td>Vapores</td><td>Sustancias que a 25 ºC y 760 mm Hg son sólidas o líquidas (alcoholes, aldehídos, ésteres…)</td></tr>
+<tr><td>Nieblas (<i>mist</i>)</td><td>Líquido-gas, partículas raramente visibles</td></tr>
+<tr><td>Bruma (<i>fog</i>)</td><td>Líquido-gas, partículas visibles; 2 &lt; Ø &lt; 60 µm</td></tr>
+<tr><td>Polvo (<i>dust</i>)</td><td>Disgregación mecánica; tamaños diversos</td></tr>
+<tr><td>Humo metálico (<i>fume</i>)</td><td>Condensación; Ø &lt; 1 µm</td></tr>
+<tr><td><i>Smoke</i></td><td>Combustión incompleta; Ø &lt; 1 µm</td></tr>
+<tr><td><i>Smog</i></td><td>Smoke + fog; 0,01 &lt; Ø &lt; 2 µm</td></tr>
+<tr><td>Fibras</td><td>Longitud &gt; 5 veces el diámetro</td></tr>
+</table></div>
+<h3>Estabilidad atmosférica</h3>
+<p>Una parcela de aire que sube se expande <b>adiabáticamente</b> y se enfría. La <b>tasa de cambio</b> es el negativo del gradiente de temperatura con la altura, $-dT/dz$.</p>
+<div class="tw"><table>
+<tr><th>Tasa</th><th>Valor</th></tr>
+<tr><td>Adiabática seca Γ</td><td class="num">0,98 ºC/100 m = 9,8 ºC/km</td></tr>
+<tr><td>Adiabática saturada</td><td class="num">0,5 ºC/100 m = 5 ºC/km</td></tr>
+<tr><td>Normal internacional</td><td class="num">0,66 ºC/100 m = 6,6 ºC/km</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Comparación con la tasa ambiental</th><th>Atmósfera</th><th>Efecto</th></tr>
+<tr><td>$-dT/dz&gt;\Gamma$</td><td><b>Inestable</b> (superadiabática)</td><td>Mucho mezclado vertical</td></tr>
+<tr><td>$-dT/dz=\Gamma$</td><td><b>Neutra</b></td><td></td></tr>
+<tr><td>$-dT/dz&lt;\Gamma$</td><td><b>Débilmente estable</b></td><td></td></tr>
+<tr><td>$-dT/dz\ll\Gamma$</td><td><b>Fuertemente estable</b> (subadiabática)</td><td>Los contaminantes se quedan cerca del suelo</td></tr>
+<tr><td>$dT/dz&gt;0$ (T sube con la altura)</td><td><b>Inversión</b></td><td>Máxima estabilidad</td></tr>
+</table></div>
+<div class="grid2">
+<div class="box key"><h4>Inversión por radiación</h4><ul><li>Noches despejadas de invierno: el suelo se enfría.</li><li>Altura &lt; 500 m, en la capa baja → importante para la contaminación <b>local</b>.</li><li>La suprimen el viento fuerte y las nubes. Máxima al amanecer; se rompe con el sol → <b>fumigación</b>.</li></ul></div>
+<div class="box key"><h4>Inversión por subsidencia</h4><ul><li>Asociada a <b>anticiclones</b>: el aire que desciende se comprime y se calienta.</li><li>Más alta, puede durar <b>meses</b>, más común en verano.</li><li>Pueden darse las dos a la vez.</li></ul></div>
+</div>
+<h3>Los 6 penachos</h3>
+<p>La dispersión depende del viento medio (transporte) y de la turbulencia (mecánica y convectiva).</p>
+<div class="tw"><table>
+<tr><th>Penacho</th><th>Cuándo</th><th>Cómo es</th></tr>
+<tr><td><b>Espiral</b></td><td>Muy inestable (superadiabática), fuerte calentamiento solar, viento ligero</td><td>Remolinos térmicos arrastran el penacho al suelo por momentos</td></tr>
+<tr><td><b>Cono</b></td><td>Neutra; turbulencia mecánica; cielo nublado, de día o de noche</td><td>Las concentraciones máximas llegan al suelo lejos de la chimenea</td></tr>
+<tr><td><b>Abanico</b></td><td>Estable (tasa de cambio negativa)</td><td>Se mueve a elevación casi constante; muy poco llega al suelo</td></tr>
+<tr><td><b>Fumigación</b></td><td>Capa estable por encima de la emisión e inestable por debajo; primeras horas de la mañana tras una inversión nocturna</td><td>Concentraciones altas en el suelo, dura &lt; 30 min</td></tr>
+<tr><td><b>Flotación</b></td><td>Contraria a fumigación: inversión por debajo y capa inestable por encima; al caer la tarde con cielo despejado</td><td>Situación favorable; sin concentraciones significativas en el suelo</td></tr>
+<tr><td><b>Atrapamiento</b></td><td>Inversión por debajo <i>y</i> por encima de la chimenea</td><td>Dispersión severamente restringida a la capa intermedia</td></tr>
+</table></div>
+<h3>Modelo gaussiano de dispersión</h3>
+<p>Fuente puntual, régimen estacionario. <b>Hipótesis</b>: viento uniforme y distinto de cero, constante en dirección e intensidad con la altura; flujo homogéneo sobre terreno plano; contaminantes inertes; <b>reflexión perfecta</b> en el suelo.</p>
+<p>Altura efectiva: $h_e=h_s+\Delta h$ (altura de la chimenea + sobreelevación). $Q$ en g/s, $U$ velocidad del viento.</p>
+<div class="box key">
+$$C(x,y,z)=\frac{Q}{2\pi\sigma_y\sigma_zU}\exp\!\Big[-\tfrac12\Big(\tfrac{y}{\sigma_y}\Big)^2\Big]\left\{\exp\!\Big[-\tfrac12\Big(\tfrac{z-h_e}{\sigma_z}\Big)^2\Big]+\exp\!\Big[-\tfrac12\Big(\tfrac{z+h_e}{\sigma_z}\Big)^2\Big]\right\}$$
+<p><b>Eje del penacho</b> ($y=0$): se elimina el primer exponencial. <b>Suelo y eje</b> ($y=0$, $z=0$):</p>
+$$C(x,0,0)=\frac{Q}{\pi\,\sigma_y(x)\,\sigma_z(x)\,U}\;e^{-h_e^2/(2\sigma_z^2)}$$
+<p>$\sigma_y$ y $\sigma_z$: desviaciones estándar lateral y vertical a la distancia $x$ (curvas de Pasquill-Gifford o fórmulas de Martin, con $x$ en <b>km</b> y σ en m):</p>
+$$\sigma_y=a\,x^{0,894}\qquad\sigma_z=c\,x^{d}+f$$
+</div>
+<div class="tw"><table>
+<tr><th>Estabilidad</th><th>a</th><th>c (x&gt;1 km)</th><th>d</th><th>f</th><th>c (x≤1 km)</th><th>d</th><th>f</th></tr>
+<tr><td>A muy inestable</td><td>213</td><td>440,8</td><td>1,941</td><td>9,27</td><td>459,7</td><td>2,094</td><td>−9,6</td></tr>
+<tr><td>B inestable</td><td>156</td><td>106,6</td><td>1,149</td><td>3,3</td><td>108,2</td><td>1,098</td><td>2,0</td></tr>
+<tr><td>C ligeramente inestable</td><td>104</td><td>61,0</td><td>0,911</td><td>0</td><td>61,0</td><td>0,911</td><td>0</td></tr>
+<tr><td>D neutra</td><td>68</td><td>33,2</td><td>0,725</td><td>−1,7</td><td>44,5</td><td>0,516</td><td>−13,0</td></tr>
+<tr><td>E ligeramente estable</td><td>50,5</td><td>22,8</td><td>0,678</td><td>−1,3</td><td>55,4</td><td>0,305</td><td>−34,0</td></tr>
+<tr><td>F estable</td><td>34</td><td>14,35</td><td>0,740</td><td>−0,35</td><td>62,6</td><td>0,180</td><td>−48,6</td></tr>
+</table></div>
+<p class="muted">Tabla 5.4 (Martin, 1976). La clase de estabilidad sale de la velocidad del viento y de la radiación solar (Tabla 5.5 de Pasquill, en el PDF). Para estimar se suele tomar la clase típica de la región que dé el <b>peor episodio</b>. Ejemplo resuelto en <a href="#problemas">Problemas</a>.</p>
+<h3>Índice Nacional de Calidad del Aire (ICA)</h3>
+<p>Orden TEC/351/2019, basado en el RD 102/2011. Usa <b>PM₁₀, PM₂,₅, O₃, NO₂ y SO₂</b>; el valor final de la estación lo marca <b>el contaminante con la peor categoría</b>.</p>
+<div class="tw"><table>
+<tr><th>Categoría</th><th>PM₁₀</th><th>PM₂,₅</th><th>NO₂</th><th>O₃</th><th>SO₂</th></tr>
+<tr><td>1 Buena (azul)</td><td>0–20</td><td>0–10</td><td>0–40</td><td>0–80</td><td>0–100</td></tr>
+<tr><td>2 Razonablemente buena (verde)</td><td>21–35</td><td>11–20</td><td>41–90</td><td>81–120</td><td>101–200</td></tr>
+<tr><td>3 Regular (amarillo)</td><td>36–50</td><td>21–25</td><td>91–120</td><td>121–180</td><td>201–350</td></tr>
+<tr><td>4 Desfavorable (naranja)</td><td>51–100</td><td>26–50</td><td>121–230</td><td>181–240</td><td>351–500</td></tr>
+<tr><td>5 Muy desfavorable (rojo)</td><td>101–200</td><td>51–75</td><td>231–340</td><td>&gt; 240</td><td>501–750</td></tr>
+<tr><td>6 Extremadamente desfavorable (morado)</td><td>&gt; 200</td><td>&gt; 75</td><td>&gt; 340</td><td>—</td><td>&gt; 750</td></tr>
+</table></div>
+<p class="muted">µg/m³. Categoría 3 afecta ya a grupos sensibles; la 4 recomienda reducir actividades intensas al aire libre.</p>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>La tasa ambiental se compara con Γ <b>con signo menos</b>: $-dT/dz$. Una inversión es $dT/dz&gt;0$.</li>
+<li>Fumigación y flotación son opuestas; abanico y atrapamiento también se confunden.</li>
+<li>Fumigación → riesgo alto en suelo; flotación → casi nada en suelo.</li>
+<li>Las inversiones por radiación son <b>locales y bajas</b>; las de subsidencia son <b>altas y duraderas</b>.</li>
+<li>En el gaussiano, $\sigma$ se calcula con $x$ en <b>km</b>, no en m.</li></ul></div>
+</section>
+
+<section class="sec" style="--tc:var(--c6);--tcs:var(--c6s)">
+<div class="sh"><span class="badge" aria-hidden="true">T6</span><div class="shx"><p class="kick">Tema 6 · Aire</p><h2 id="t6">Medida de contaminantes</h2><div class="tags"><span class="tag">39 págs</span><span class="tag">qué técnica mide qué</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<p>Métodos <b>continuos</b> (captación y análisis automático en el punto) frente a <b>discontinuos</b> (captar, llevar al laboratorio y analizar). Ambos sirven para emisión e inmisión. La mayoría de analizadores de referencia para gases son <b>ópticos</b>; aprende la <b>pareja contaminante ↔ técnica</b>.</p></div>
+<h3>Muestreo</h3>
+<div class="tw"><table>
+<tr><th>Muestreador</th><th>Cómo funciona</th><th>Datos</th></tr>
+<tr><td><b>Pasivo</b></td><td>Difusión molecular (1.ª ley de Fick), sin bomba. Solo gases, vapores y humo metálico. Discontinuo.</td><td>$C=\dfrac{m}{Q\,t}$ con $Q=\dfrac{D\,A}{L}$ (caudal de captación, m³/s)</td></tr>
+<tr><td>Pasivo de sedimentables</td><td>Colector en trípode para partículas &gt; 10 µm</td><td>Frasco de 10–20 L, ≈ 1 mes</td></tr>
+<tr><td><b>Activo</b></td><td>Bomba + filtro (papel, fibra de vidrio…). Partículas &lt; 10 µm. Discontinuo.</td><td>Bajo volumen ≈ 10 L/min (0,6 m³/h); alto volumen 40–60 m³/h; 24–48 h</td></tr>
+<tr><td><b>Analizadores automáticos</b></td><td>Continuos, en tiempo real, específicos de cada contaminante</td><td>Casetas con control de temperatura</td></tr>
+<tr><td><b>Sensores de bajo coste</b></td><td>Compactos y baratos (PM, NO₂, CO, O₃, COVs). Redes ciudadanas (PurpleAir)</td><td>Requieren calibración, sensibles a la meteorología; <b>complementan</b> a los de referencia</td></tr>
+</table></div>
+<ul>
+<li><b>PM₁₀ y PM₂,₅</b>: partículas que pasan un cabezal selectivo de 10 o 2,5 µm con eficiencia de corte del <b>50 %</b>. Las PM₂,₅ penetran en los pulmones. Valor límite anual PM₂,₅ según los apuntes: <b>25 µg/m³</b> (el RD preveía bajarlo a 20 en 2020).</li>
+<li><b>Muestreo en emisión</b>: <b>isocinético</b> (misma velocidad que el gas en el conducto; el preferible para fuentes fijas) o no isocinético (transporte, ITV). Si $v_{muestreo}&lt;v_{gas}$ → concentración de partículas <b>sobreestimada</b>; si $v_{muestreo}&gt;v_{gas}$ → <b>subestimada</b>.</li>
+</ul>
+<h3>Contaminante ↔ técnica de referencia</h3>
+<div class="tw"><table>
+<tr><th>Contaminante</th><th>Técnica (norma UNE-EN)</th><th>Fundamento</th><th>Valores límite (RD 102/2011)</th></tr>
+<tr><td><b>SO₂</b></td><td>Fluorescencia UV (14212)</td><td>Excitación con UV de 190–230 nm (≈ 214); emite 220–240 nm; fotomultiplicador; $I=K\cdot C$</td><td>350 µg/m³ horario (≤ 24 veces/año) · 125 µg/m³ diario (≤ 3 veces)</td></tr>
+<tr><td><b>CO</b></td><td>Espectrometría IR no dispersiva (14626)</td><td>Absorción selectiva a <b>4.600 nm</b>; celda de muestra y de referencia (N₂ o He)</td><td>10 mg/m³ (en los apuntes, valor límite «diario»)</td></tr>
+<tr><td><b>NO / NO₂</b></td><td>Quimioluminiscencia (14211)</td><td>NO + O₃ → NO₂* que emite luz (&gt; 600 nm, centrada en 1200 nm). NO₂ <b>por diferencia</b> tras convertir NOₓ → NO con catalizador de <b>molibdeno a 300–400 ºC</b></td><td>NO₂: 200 µg/m³ horario (≤ 18 veces) · 40 µg/m³ anual</td></tr>
+<tr><td><b>O₃</b></td><td>Fotometría UV (14625)</td><td>Atenuación de la luz UV de <b>254 nm</b>; celda de referencia sin ozono (conversión catalítica a O₂)</td><td>Ver RD 102/2011, Anejo I</td></tr>
+<tr><td>Hidrocarburos</td><td>Oxidación a CO y detección eléctrica entre dos electrodos polarizados</td><td></td><td>Benceno: VLA 5 µg/m³ · benzo(a)pireno: valor objetivo 1 ng/m³</td></tr>
+</table></div>
+<h3>Familias de contaminantes</h3>
+<ul>
+<li><b>H₂S</b>: olor a huevos podridos; la exposición prolongada anula el olfato (peligro en locales mal ventilados); vida media &lt; 40 días.</li>
+<li><b>SOₓ</b>: de combustibles fósiles con S (0,1–5 %). Relación SO₃:SO₂ en chimeneas de 1:40 a 1:80. SO₃ + H₂O → H₂SO₄ (secundario).</li>
+<li><b>CO</b>: combustión incompleta (80 % de fuentes móviles); mata por anoxia al unirse a la hemoglobina. <b>CO₂</b>: tolerancia hasta 5.000 ppm (0,5 %). <b>Efecto invernadero</b>: natural y necesario (sin él, −20 ºC en lugar de 15 ºC); el problema es el exceso.</li>
+<li><b>NOₓ</b>: se forman por la temperatura de combustión; el NO es precursor del NO₂ y del ozono. NO₂: gas pardo rojizo, causa de lluvia ácida (HNO₃).</li>
+<li><b>COVs</b> (BTX y 1,3-butadieno cancerígenos), <b>PAH</b> (benzo(a)pireno), <b>COPs</b>: persistentes, lipofílicos, bioacumulativos y transfronterizos. <b>Convenio de Estocolmo</b>: «docena sucia» (8 plaguicidas — aldrín, endrín, dieldrín, toxafeno, mirex, heptacloro, DDT, clordano —, más HCB, PCBs, dioxinas y furanos).</li>
+</ul>
+<h3>Materia particulada: analizadores automáticos</h3>
+<div class="tw"><table>
+<tr><th>Técnica</th><th>Idea</th><th>Ecuación</th></tr>
+<tr><td><b>Microbalanza de cristal piezoeléctrico</b></td><td>Precipitación electrostática de partículas sobre cuarzo; cambia la frecuencia de resonancia. Hasta ≈ 100 µg/m³.</td><td>$\Delta f=K_p\,\Delta m=K_p\,Q\,t\,c_m$</td></tr>
+<tr><td><b>TEOM®</b> (elementos cónicos)</td><td>Filtro en un elemento que vibra; al acumular masa baja su frecuencia. ≈ 3 L/min.</td><td>$\Delta m=K_0\left(\dfrac1{f_b^2}-\dfrac1{f_a^2}\right)$</td></tr>
+<tr><td><b>Atenuación β</b></td><td>Cinta con filtro de teflón; los rayos β (¹⁴C o ¹⁴⁷Pm) se atenúan con la masa.</td><td>$\ln\dfrac{I}{I_0}=K_b\,\Delta m=K_b\,Q\,t\,c_m$</td></tr>
+</table></div>
+<h3>Ozono</h3>
+<ul>
+<li><b>Estratosférico</b>: ≈ 90 % del total (80 % entre 10 y 35 km, centrado en 22 km). Absorbe UV-B (280–320 nm). Capa de ≈ 3 mm. Se forma: $O_2+h\nu(&lt;240\text{ nm})\to 2O\cdot$; $O\cdot+O_2+N_2\to O_3+N_2$.</li>
+<li><b>Troposférico</b>: ≈ 10 %; gas de invernadero y oxidante nocivo; se forma a partir de NOₓ y COVs (reacciones fotoquímicas).</li>
+<li><b>Destrucción antrópica</b>: NOₓ, metano y compuestos con cloro (CFC) o bromo (halones), que no tienen sumideros en la troposfera y llegan a la estratosfera.</li>
+</ul>
+<h3>Ruido</h3>
+<div class="box key">
+$$L_p=10\log\frac{p^2}{p_0^2}=20\log\frac{p}{p_0}\ \ (p_0=20\ \mu\text{Pa})\qquad L_{Aeq,T}=10\log\!\left[\frac1T\int_{t_1}^{t_2}\Big(\frac{p_A(t)}{p_0}\Big)^2dt\right]$$
+<p>Rango audible: 20 µPa (0 dB) a 200 Pa (140 dB). Respuesta logarítmica del oído (Weber-Fechner). <b>Sonómetro</b>; ponderación <b>A</b> (la más adecuada a niveles débiles, 25–55 dB). $L_{Aeq,T}$ = nivel continuo equivalente ponderado A.</p></div>
+<div class="tw"><table>
+<tr><th>Presión (µPa)</th><th>dB</th><th>Ambiente</th><th>Presión (µPa)</th><th>dB</th><th>Ambiente</th></tr>
+<tr><td>200.000.000</td><td>140</td><td>Dolor</td><td>20.000</td><td>60</td><td>Oficina</td></tr>
+<tr><td>20.000.000</td><td>120</td><td>Avión despegando</td><td>2.000</td><td>40</td><td>Biblioteca</td></tr>
+<tr><td>2.000.000</td><td>100</td><td>Martillo neumático</td><td>200</td><td>20</td><td>Campo</td></tr>
+<tr><td>200.000</td><td>80</td><td>Tráfico intenso</td><td>20</td><td>0</td><td>Umbral de audición</td></tr>
+</table></div>
+<p><b>Normativa</b>: no hay límite europeo de ruido de instalaciones industriales (solo para vehículos, aeronaves y máquinas); la IPPC (Ley 16/2002) lo incluye en los permisos. En Murcia, <b>Decreto 48/1998</b>; a nivel estatal, <b>RD 1367/2007</b>. Día: 7–22 h; noche: 22–7 h (Decreto 48/1998).</p>
+<div class="tw"><table>
+<tr><th>Uso del suelo (exterior, Leq dB(A))</th><th>Día</th><th>Noche</th></tr>
+<tr><td>Sanitario, docente, cultural, espacios naturales protegidos, parques públicos</td><td class="num">60</td><td class="num">50</td></tr>
+<tr><td>Viviendas, hoteles, áreas recreativas y deportivas no masivas</td><td class="num">65</td><td class="num">55</td></tr>
+<tr><td>Oficinas, locales y centros comerciales, restaurantes, bares, áreas deportivas de asistencia masiva</td><td class="num">70</td><td class="num">60</td></tr>
+<tr><td>Industria, estaciones de viajeros</td><td class="num">75</td><td class="num">65</td></tr>
+<tr><td><b>Interior</b>: sanitario, docente y cultural</td><td class="num">45</td><td class="num">35</td></tr>
+<tr><td><b>Interior</b>: viviendas y hoteles</td><td class="num">50</td><td class="num">40</td></tr>
+</table></div>
+<h3>Contaminación lumínica y Legionella</h3>
+<ul>
+<li><b>Lumínica</b>: iluminancia en <b>lux</b> (lm/m²); flujo luminoso en <b>lumen</b>. Criterios: niveles realmente necesarios, luminarias que no emitan por encima de 75º de la vertical (evitar las ornamentales tipo bola), no dirigir el haz al cielo ni fuera de la zona, superficies de alta reflectancia.</li>
+<li><b><i>Legionella</i></b>: RD 487/2022. <i>L. pneumophila</i>. Formas: <b>Enfermedad del Legionario</b> (neumonía) y <b>Fiebre de Pontiac</b> (leve). Se transmite por <b>aerosoles inhalados</b>; <b>no</b> por beber agua, alimentos, contacto entre personas ni de animales. Causas: mal diseño, falta de mantenimiento, agua estancada. Riesgo: torres de refrigeración, condensadores evaporativos, ACS, AFCH, duchas, humidificadores, spas, fuentes ornamentales…</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>NO₂ no se mide directamente: es <b>NOₓ − NO</b>.</li>
+<li>Muestreo isocinético: si aspiras <b>más lento</b> que el gas, <b>sobreestimas</b> la concentración de partículas.</li>
+<li>Los muestreadores pasivos <b>no</b> sirven para partículas.</li>
+<li>Duplicar la presión sonora son +6 dB; duplicar la <b>energía</b> (dos fuentes iguales) son +3 dB.</li>
+<li>Los valores límite de NO₂ y SO₂ tienen versión <b>horaria</b> (con nº máximo de superaciones) y otra diaria o anual.</li></ul></div>
+</section>
+
+<section class="sec" style="--tc:var(--c7);--tcs:var(--c7s)">
+<div class="sh"><span class="badge" aria-hidden="true">T7</span><div class="shx"><p class="kick">Tema 7 · Aire</p><h2 id="t7">Control de la contaminación atmosférica</h2><div class="tags"><span class="tag">24 págs</span><span class="tag">dispositivos y obligaciones</span></div></div></div>
+<div class="zero"><p class="ft">Jerarquía de control (por orden de importancia)</p>
+<ol><li><b>Mejores técnicas disponibles (MTD)</b> para <i>no</i> generar el contaminante.</li><li><b>Dispositivos de control «corriente abajo»</b>, en la fuente (partículas y gases).</li><li><b>Mejora de la dispersión</b>.</li></ol>
+<p>Principios de la Ley 34/2007: cautela y acción preventiva, corrección en la fuente y «quien contamina paga». «Disponibles» = aplicables en el sector en condiciones técnica y económicamente viables, y accesibles al titular.</p></div>
+<h3>Control de partículas</h3>
+<div class="tw"><table>
+<tr><th>Dispositivo</th><th>Cómo funciona</th><th>Datos</th></tr>
+<tr><td><b>Sedimentador por gravedad</b></td><td>Cámara larga; las partículas caen por gravedad. Tres tipos: flujo horizontal, multibandejas, baffle. Modelos de flujo pistón o de mezcla.</td><td>$v_{hp}=\dfrac{Q}{WH}$ · $\eta=\dfrac{L\,v_t}{H\,v_{hp}}$</td></tr>
+<tr><td><b>Ciclón</b> (separador centrífugo)</td><td>Cámara de sedimentación con aceleración centrífuga en vez de gravitatoria; doble vórtice (espiral descendente exterior, ascendente interior). Punto de corte; ciclones en serie para partículas menores.</td><td>$\dfrac{F_c}{F_g}=\dfrac{V^2}{r\,g}$ (con 20 m/s y 0,25 m ⇒ 163)</td></tr>
+<tr><td><b>Precipitador electrostático</b> (ESP)</td><td>Carga las partículas y un campo eléctrico las lleva a placas colectoras a tierra. Se forma una «torta» que se retira.</td><td>Para Ø &lt; <b>5 µm</b>. Húmedo: ≈ 99,99 % para 0,01 µm, menos mantenimiento</td></tr>
+<tr><td><b>Filtro de mangas</b></td><td>Medio poroso que retiene partículas. La <b>torta filtrante</b> mejora la captura pero eleva la caída de presión hasta 10 veces.</td><td>Parámetros: eficiencia y caída de presión. Medios: fieltro, papel, plástico, cerámica (alta T)</td></tr>
+<tr><td><b>Lavador (<i>scrubber</i>)</b></td><td>Contacto del gas con gotas de líquido. Flujo cruzado, a <b>contracorriente</b> o coordinado. El relleno poroso reduce el tamaño de la torre pero aumenta la caída de presión.</td><td>Sirve también para gases solubles</td></tr>
+</table></div>
+<h3>Control de gases</h3>
+<div class="tw"><table>
+<tr><th>Contaminante</th><th>Técnica</th></tr>
+<tr><td><b>H₂S</b></td><td>Absorción en columna a contracorriente con álcalis: mono-, di- o trietanolamina en agua (desplazan el equilibrio y disuelven más H₂S).</td></tr>
+<tr><td><b>SO₂</b></td><td>Reacción con cal viva CaO (→ CaSO₃ → CaSO₄ con O₂), NaOH, Na₂CO₃ o MgCO₃.</td></tr>
+<tr><td><b>NOₓ</b></td><td>(1) Modificar la combustión: poco aire en exceso, recirculación de gases, inyección de agua. (2) <b>Reducción catalítica selectiva (SCR)</b>: urea al 32,5 % (<b>AdBlue</b>) → NH₃, que reduce NOₓ a N₂ + H₂O.</td></tr>
+<tr><td><b>COVs</b></td><td>(1) Cambio de materiales · (2) sellado de recipientes · (3) <b>oxidación térmica regenerativa (RTO)</b>, la más extendida · (4) <b>adsorción</b> con carbón activado (100 kg retienen hasta 8 kg de acetona) · (5) <b>biofiltración</b> (<i>Bacillus, Micrococcus, Acinetobacter</i>, levaduras).</td></tr>
+<tr><td><b>Gases fluorados</b></td><td>RD 115/2017: personal certificado para instalar y manipular equipos de refrigeración, climatización y bombas de calor con estos gases (no afecta a la climatización de vehículos).</td></tr>
+</table></div>
+<h3>Mejora de la dispersión</h3>
+<ul>
+<li><b>Chimeneas altas</b>: aumentar $h_s$. Si $W/U&gt;1{,}5$ no hay <b>lavado descendente</b>. Chimenea de sección circular. Bocas de muestreo: a <b>8D</b> de una perturbación anterior y <b>2D</b> de una posterior.</li>
+<li><b>Control intermitente</b>: reducir producción o parar la planta cuando se superan límites; <b>predictivo</b> (modelización) u <b>observacional</b> (red de calidad del aire).</li>
+<li><b>Reubicación</b> de la planta lejos de zonas residenciales. «La dilución es la solución» solo traslada el problema.</li>
+</ul>
+<h3>Obligaciones de las empresas (APCA)</h3>
+<p>Catálogo CAPCA (Anexo IV de la Ley 34/2007, RD 100/2011): 10 grupos de actividades, clasificadas en <b>A, B y C</b> de mayor a menor potencial contaminador. Las emisiones deben respetar los niveles de inmisión del RD 102/2011.</p>
+<div class="tw"><table>
+<tr><th>Grupo</th><th>Trámite en la CARM</th><th>Informe de certificación</th><th>Informe de emisiones</th></tr>
+<tr><td><b>A</b></td><td>Autorización</td><td class="num">cada 2 años</td><td class="num">cada 2 años</td></tr>
+<tr><td><b>B</b></td><td>Autorización</td><td class="num">cada 3 años</td><td class="num">cada 3 años</td></tr>
+<tr><td><b>C</b></td><td>Notificación previa</td><td>—</td><td class="num">cada 5 años</td></tr>
+</table></div>
+<ul>
+<li><b>ECA</b> (Entidad Colaboradora con la Administración): entidad pública o privada que asiste técnicamente y emite los informes de certificación y de emisiones.</li>
+<li><b>Libro de registro</b> actualizado por cada foco emisor, conservado <b>≥ 10 años</b>; se rellena con limpiezas, revisiones, paradas por avería, incidencias, inspecciones y autocontroles.</li>
+<li><b>Vigencia</b> de la autorización de APCA: <b>8 años</b>.</li>
+<li>Comunicar de inmediato a la comunidad autónoma una amenaza inminente de daño o una contaminación con daño, y adoptar medidas preventivas sin esperar requerimiento.</li>
+</ul>
+<h3>Zonas de bajas emisiones (ZBE)</h3>
+<p>Ley 7/2021 de cambio climático. Obligatorias <b>desde 1-1-2023</b> en municipios de más de <b>50.000 habitantes</b> y en los de más de 20.000 que superen los niveles de calidad del aire. Restringen el acceso de los vehículos más contaminantes según la etiqueta: <b>cero emisiones, ECO, C y B</b>. El transporte genera el 27 % de los GEI en España y el 31 % de los NOₓ.</p>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Los ciclones son <b>más eficaces</b> que los sedimentadores por gravedad (la fuerza centrífuga es muy superior a la gravedad).</li>
+<li>ESP: solo para partículas pequeñas (&lt; 5 µm); no confundir con el filtro de mangas.</li>
+<li>Grupo C = <b>notificación</b> y solo informe de emisiones; A y B = autorización.</li>
+<li>El orden de control es MTD → corriente abajo → dispersión; la dispersión es la <b>última</b> opción.</li></ul></div>
+</section>
+<section class="sec" style="--tc:var(--c8);--tcs:var(--c8s)">
+<div class="sh"><span class="badge" aria-hidden="true">24</span><div class="shx"><p class="kick">Practicar</p><h2 id="parcial2024">Primer parcial 2024, resuelto</h2><div class="tags"><span class="tag">examen real</span><span class="tag">2 versiones</span><span class="tag w">respuestas deducidas por mí</span></div></div></div>
+<p>Está en <code>Recopilacion medioambientales</code> (<code>medioambiental 1ºparcial 2024.pdf</code>): un test de <b>unas 36 preguntas de los temas 1 a 7</b>, con dos versiones que cambian el enunciado o piden lo contrario (verdaderas ↔ falsas). Reparto: T1 1 · T2 6 · T3 6 · T4 6 · T5 6 · T6 6 · T7 5. El archivo «resuelto _revisar» solo trae comentarios, <b>no una clave oficial</b>: las respuestas de abajo las he deducido de los apuntes. Tápalas y compara.</p>
+<p><b>Versión A</b> = la que numera «1)», «2)»… · <b>Versión B</b> = la que numera «1.-», «2.-»… cuando la pregunta es distinta. Si solo hay una respuesta, vale para las dos.</p>
+<div class="tw"><table>
+<tr><th>Nº</th><th>Tema</th><th>Pregunta</th><th>Respuesta</th><th>Por qué</th></tr>
+<tr><td>1</td><td>T1</td><td>Reglamentos UE: marcar V (A) o F (B)</td><td>A: <b>D</b> (2 y 4) · B: <b>A</b> (1 y 3)</td><td>Es la norma de más peso y vinculante; <b>no</b> se transpone y <b>sí</b> se publica en el DOUE.</td></tr>
+<tr><td>2</td><td>T2</td><td>Parámetros físicos del agua</td><td>A (falsa): <b>D</b> · B (verdadera): <b>D</b></td><td>Los SD fijos no se obtienen calcinando el filtro, sino la cápsula del filtrado. El color verdadero es solo de sustancias disueltas.</td></tr>
+<tr><td>3</td><td>T2</td><td>Microtox, EC₅₀ A = 2, B = 7, C = 10 mg/L</td><td>A (verdadera): <b>A</b> · B (falsa): <b>C</b></td><td>TU = 100/EC₅₀: A = 50, B = 14,3, C = 10. A menor EC₅₀, más toxicidad; C no es mayor que B.</td></tr>
+<tr><td>4</td><td>T2</td><td>DBO con $L_a$ y $y_5$ o remanente</td><td>A: <b>B</b> (160 mg/L) · B: <b>C</b> (405 mg/L)</td><td>A: $L_5=853-693=160$. B: $y_5=527-122=405$.</td></tr>
+<tr><td>5</td><td>T2</td><td>Oligoelementos</td><td>A (verdadera): <b>B</b> · B (falsa): <b>A</b></td><td>El plomo está como galena (PbS). Las sales mercuriosas son <b>menos</b> solubles. As(III) y As(V), no As(IV). Sí hay cobre libre.</td></tr>
+<tr><td>6</td><td>T2</td><td>Figura: esquema de sólidos</td><td>—</td><td>Mira la Fig. 2.11 del tema 2 (secuencia de determinación de sólidos).</td></tr>
+<tr><td>7</td><td>T2</td><td>Dosis de carbón: 150 → 100 mg/L con $q_e=0{,}5$ mg/g</td><td><b>C</b> (100 g/L)</td><td>$D=(150-100)/0{,}5=100$ g/L.</td></tr>
+<tr><td>8</td><td>T3</td><td>Figura: módulo de fibra hueca</td><td>—</td><td>Partes: bloque poroso, placa tubular, tubo central, permeado y rechazo (Fig. 3.17).</td></tr>
+<tr><td>9</td><td>T3</td><td>Filtración con velocidad alta y partículas grandes</td><td><b>D</b> impacto inercial</td><td>Intercepción y sedimentación son de velocidades bajas.</td></tr>
+<tr><td>10</td><td>T3</td><td>Coadyuvantes</td><td><b>B</b> (2 y 4)</td><td>Son una impureza artificial y obligan a una ligera sobredosis de coagulante; se usan en cantidades <b>menores</b>.</td></tr>
+<tr><td>11</td><td>T3</td><td>Tamaño de poro de mayor a menor</td><td><b>A</b></td><td>Microfiltración &gt; ultrafiltración &gt; nanofiltración &gt; ósmosis inversa.</td></tr>
+<tr><td>11 (B)</td><td>T3</td><td>Figura: membrana de OI</td><td>—</td><td>En OI solo se usan membranas <b>asimétricas</b>; mira si el dibujo es integral o compuesta.</td></tr>
+<tr><td>12</td><td>T3</td><td>Pulsator → Superpulsator (más área)</td><td><b>D</b> (mayor caudal)</td><td>Los apuntes: a igual velocidad ascensional, más superficie permite más caudal; si se mantiene el caudal, mejora la calidad. El enunciado es ambiguo.</td></tr>
+<tr><td>13</td><td>T3</td><td>Funciones de los espaciadores (módulo de placas)</td><td>A: <b>A</b> (2 y 4) · B: <b>C</b> (1 y 4)</td><td>Separan capas activas, reparten la aportación y recogen de forma uniforme el rechazo.</td></tr>
+<tr><td>14</td><td>T4</td><td>Esquema de fangos activos</td><td><b>D</b></td><td>3 reactor biológico, 6 fango primario, 7 recirculación, 8 fango secundario.</td></tr>
+<tr><td>15</td><td>T4</td><td>Arenas y grasas</td><td><b>D</b></td><td>Se usa un doble dispositivo (arenas por sedimentación, grasas por flotación). El desarenador <b>protege</b> de la abrasión.</td></tr>
+<tr><td>16</td><td>T4</td><td>Fórmula de la carga volúmica</td><td><b>C</b></td><td>$C_v=S_0Q_m/V$ (sin $X$).</td></tr>
+<tr><td>19</td><td>T4</td><td>Tiempo de retención hidráulica</td><td><b>B</b></td><td>Volumen del reactor entre caudal.</td></tr>
+<tr><td>20</td><td>T4</td><td>Etapa con solo anaerobias estrictas</td><td><b>D</b> metanogénica</td><td>La hidrolítica y la acetogénica incluyen facultativas.</td></tr>
+<tr><td>21</td><td>T4</td><td>Ánodo en electrocoagulación (1 hierro, 2 aluminio, 3 óxido de magnesio, 4 óxido de silicio)</td><td><b>C</b> (1 y 2)</td><td>Ánodos de Fe, Al o Ti.</td></tr>
+<tr><td>22</td><td>T5</td><td>Penachos 1 y 2 (figura)</td><td>—</td><td>Espiral = turbulencia convectiva (muy inestable). Cono = estabilidad neutra con turbulencia mecánica.</td></tr>
+<tr><td>23</td><td>T5</td><td>Hipótesis falsas del gaussiano</td><td><b>C</b> (1 y 3)</td><td>Son contaminantes inertes y el viento es uniforme y constante.</td></tr>
+<tr><td>24</td><td>T5</td><td>Inversiones por radiación y subsidencia</td><td>A (verdadera): <b>A</b> · B (falsa): <b>A</b></td><td>La subsidencia nace del calentamiento por compresión de aire descendente (no la radiación).</td></tr>
+<tr><td>25</td><td>T5</td><td>Ecuación del gaussiano</td><td>B: <b>B</b> (difusividad lateral $G_y$)</td><td>En A es una figura: reconoce $C(x,0,0)$ por el factor $e^{-h_e^2/2\sigma_z^2}$ con $Q/\pi\sigma_y\sigma_zU$.</td></tr>
+<tr><td>26</td><td>T5</td><td>Tasa adiabática seca</td><td>A: <b>A</b> (−9,8 ºC/km) · B: <b>D</b> (−1,0)</td><td>Las tasas son −9,8, −5,0 y −6,6 ºC/km.</td></tr>
+<tr><td>27</td><td>T5</td><td>Estados de agregación (falsas)</td><td><b>C</b> (1 y 4)</td><td>Los vapores son sólidos o líquidos a 25 ºC. La combustión incompleta da <i>smoke</i>, no niebla.</td></tr>
+<tr><td>28</td><td>T6</td><td>Muestreador pasivo (falsa)</td><td>A: <b>D</b> · B: <b>A</b></td><td>No usa bomba y no es isocinético. $C=mL/(DAt)$: inversamente proporcional a $D$.</td></tr>
+<tr><td>29</td><td>T6</td><td>Captador de partículas (V)</td><td><b>C</b> (2 y 5)</td><td>El discontinuo analiza en laboratorio y los activos son más seguros. (Deducida: la figura no se ve.)</td></tr>
+<tr><td>30</td><td>T6</td><td>$\Delta m=K_0(1/f_s^2-1/f_n^2)$</td><td><b>B</b> TEOM</td><td>Microbalanza oscilante de elementos cónicos.</td></tr>
+<tr><td>31</td><td>T6</td><td>Gas de la celda de referencia en NDIR para CO</td><td><b>C</b> nitrógeno</td><td>N₂ o He.</td></tr>
+<tr><td>32</td><td>T6</td><td>265.000 µPa en dB</td><td><b>A</b> (82 dB)</td><td>$20\log(265.000/20)=82{,}4$ dB.</td></tr>
+<tr><td>33</td><td>T6</td><td>Muestreo isocinético en chimenea</td><td><b>B</b></td><td>Si aspiras más lento que el gas, la concentración obtenida es mayor que la real.</td></tr>
+<tr><td>34</td><td>T7</td><td>Obligaciones de una APCA (enunciado ilegible)</td><td>—</td><td>Repasa: valores límite de emisión, informe de certificación de una ECA (A: cada 2 años).</td></tr>
+<tr><td>35</td><td>T7</td><td>Líquido y gas en ángulo recto</td><td><b>C</b> flujo cruzado</td><td>Contraflujo: opuestos. Coordinado: misma dirección.</td></tr>
+<tr><td>36</td><td>T7</td><td>Chimeneas altas (V)</td><td><b>C</b> (2 y 3)</td><td>Lavado descendente con edificios; $W/U&gt;1{,}5$ lo evita. Muestreo a <b>8D</b> (no 10D) y la sección es circular a ser posible.</td></tr>
+<tr><td>37</td><td>T7</td><td>Patente de un filtro nuevo: ¿MTD?</td><td><b>D</b></td><td>La MTD exige capacidad práctica demostrada (en explotación).</td></tr>
+<tr><td>38</td><td>T7</td><td>APCA del grupo C autorizada en 2021: ¿renovación?</td><td><b>A</b> (2029)</td><td>Vigencia de 8 años. Pregunta con trampa: el grupo C en realidad se tramita por notificación.</td></tr>
+</table></div>
+<div class="box key"><h4>Lo que enseña este examen</h4><ul>
+<li><b>Todos los temas pesan parecido</b> (5–6 preguntas cada uno, salvo T1). T6 y T7 no son de relleno.</li>
+<li>Casi la mitad son <b>de dato o fórmula</b> que se resuelve en 30 segundos (Q4, Q7, Q16, Q26, Q31, Q32).</li>
+<li>Hay <b>figuras</b> en unas 6 preguntas: tabla de sólidos, módulo de fibra hueca, tipo de membrana, esquema de la EDAR, penachos, captador. Repasa los esquemas de los apuntes.</li>
+<li>La versión B suele <b>invertir</b> la pregunta (falsas por verdaderas): lee bien el enunciado.</li></ul></div>
+</section>
+<section class="sec" style="--tc:var(--c8);--tcs:var(--c8s)">
+<div class="sh"><span class="badge" aria-hidden="true">Σ</span><div class="shx"><p class="kick">Practicar</p><h2 id="problemas">Problemas resueltos</h2><div class="tags"><span class="tag">19 problemas</span><span class="tag">resultados comprobados con código</span></div></div></div>
+<p>Los enunciados los he montado yo con los <b>datos y fórmulas de los apuntes</b> (P1–P16 son míos; P17–P19 son los entregables del curso 23-24). Tápalos, resuélvelos y compara. Las cifras están redondeadas.</p>
+<h3>Agua</h3>
+
+<details><summary>P1 · DBO₅ a partir de la DBO última (y al revés) <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Un agua tiene $L_a=300$ mg/L y $K_1=0{,}23$ d⁻¹. (a) ¿DBO₅? (b) Otra muestra tiene DBO₅ = 220 mg/L y $K_1=0{,}2$ d⁻¹: ¿$L_a$ y DBO remanente a los 5 días?</p>
+<ol class="steps"><li>$y_5=L_a(1-e^{-K_1 t})=300\,(1-e^{-1{,}15})=300\cdot 0{,}6834$.</li>
+<li>(b) $L_a=\dfrac{y_5}{1-e^{-K_1\cdot5}}=\dfrac{220}{1-e^{-1}}=\dfrac{220}{0{,}6321}$ ; $L_5=L_a-y_5$.</li></ol>
+<p class="ans">(a) DBO₅ = 205,0 mg/L · (b) $L_a$ = 348,0 mg/L y $L_5$ = 128,0 mg/L.</p></div></details>
+
+<details><summary>P2 · Carga contaminante y habitantes-equivalentes <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Una EDAR recibe 50.000 m³/día con DBO₅ media de 327 mg/L. Calcula la carga diaria en kg DBO₅/día y en h-e (1 h-e = 60 g O₂/día). Comprueba además los 123.000 h-e de Fini Golosinas (24,6 kg DBO₅/m³ y 300 m³/día).</p>
+<ol class="steps"><li>$327\ \text{g/m}^3\times50.000\ \text{m}^3/\text{d}=16{,}35\cdot10^{6}$ g/d = 16.350 kg/d.</li>
+<li>h-e = $16.350\ \text{kg}/0{,}060\ \text{kg}$.</li>
+<li>Fini: $24{,}6\times300=7.380$ kg/d; $7.380/0{,}06=123.000$ h-e ✓.</li></ol>
+<p class="ans">16.350 kg DBO₅/día = 272.500 h-e. Fini: 123.000 h-e.</p></div></details>
+
+<details><summary>P3 · Sólidos en suspensión totales, fijos y volátiles <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Se filtran 250 mL. Filtro seco antes: $P_1=95{,}2$ mg; tras filtrar y secar a 105 ºC: $P_2=112{,}7$ mg; tras calcinar a 550 ºC: $P_3=98{,}9$ mg.</p>
+<ol class="steps"><li>SST $=(P_2-P_1)/V=(112{,}7-95{,}2)/0{,}25$.</li><li>SSf $=(P_3-P_1)/V=(98{,}9-95{,}2)/0{,}25$.</li><li>SSv = SST − SSf.</li></ol>
+<p class="ans">SST = 70,0 mg/L · SSf = 14,8 mg/L · SSv = 55,2 mg/L. (Mucha materia volátil: ~79 %.)</p></div></details>
+
+<details><summary>P4 · Toxicidad: TII₅₀ frente al límite de vertido <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Un lixiviado da EC₅₀ = 10 %. Otro da EC₅₀ = 2 %. Límite en Murcia: 25 Equitox/m³. ¿Cuál se puede verter? ¿Qué EC₅₀ mínima exige el límite?</p>
+<ol class="steps"><li>$TII_{50}=100/EC_{50}$: $100/10=10$; $100/2=50$ Equitox/m³.</li><li>Límite: $EC_{50}\ge100/25=4\ \%$.</li></ol>
+<p class="ans">El primero (10 &lt; 25; toxicidad baja, rango 1–10) sí; el segundo (50 &gt; 25; moderada) no. EC₅₀ mínima = 4 %.</p></div></details>
+
+<details><summary>P5 · Dosis de adsorbente con Freundlich <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> $K_f=2{,}5$ mg/g, $1/n=0{,}5$. Se quiere bajar un metal de $C_i=24$ mg/L a $C_e=4$ mg/L. ¿Dosis mínima?</p>
+<ol class="steps"><li>$q_e=K_fC_e^{1/n}=2{,}5\cdot4^{0{,}5}=5$ mg/g.</li><li>$D=(C_i-C_e)/q_e=(24-4)/5$.</li></ol>
+<p class="ans">$q_e$ = 5 mg/g · D = 4 g de adsorbente por litro de agua.</p></div></details>
+
+<details><summary>P6 · Tiempo de desinfección (cinética de primer orden) <span class="src">T3</span></summary><div class="inner">
+<p><b>Enunciado.</b> $k=0{,}8$ min⁻¹. ¿Tiempo para inactivar el 99,9 % y el 99,99 %?</p>
+<ol class="steps"><li>$t=\ln(N_0/N_t)/k$.</li><li>99,9 %: $N_t/N_0=10^{-3}$ → $\ln1000=6{,}908$. 99,99 %: $\ln10^4=9{,}210$.</li></ol>
+<p class="ans">8,6 min y 11,5 min.</p></div></details>
+
+<details><summary>P7 · Ósmosis inversa: recuperación y balance de sales <span class="src">T3</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q_f=100$ m³/h con 2.000 mg/L de sales; recuperación 75 %; permeado de 50 mg/L. Calcula $Q_p$, $Q_r$ y la salinidad del rechazo.</p>
+<ol class="steps"><li>$Q_p=0{,}75\cdot100=75$ m³/h; $Q_r=Q_f-Q_p=25$ m³/h.</li><li>Balance de sales: $Q_fC_f=Q_pC_p+Q_rC_r$ → $200.000=75\cdot50+25\,C_r$ → $C_r=(200.000-3.750)/25$.</li></ol>
+<p class="ans">Qp = 75 m³/h · Qr = 25 m³/h · Cr = 7.850 mg/L (el rechazo se concentra ≈ 4 veces). Rechazo de sales de la membrana $=1-50/2000$ = 97,5 % (concepto añadido; en los apuntes «rechazo» es el caudal de salmuera).</p></div></details>
+
+<details><summary>P8 · Fangos activos: todos los parámetros del reactor <span class="src">T4</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q=10.000$ m³/d; $S_0=300$ mg/L DBO₅; $S_f=20$ mg/L; $V=4.000$ m³; $X=3$ kg SSVLM/m³; $X_R=6$ kg/m³; producción de fango = 0,4 kg por kg de DBO₅ eliminada (dato de enunciado para $X_e$). Calcula θ, Cm, Cv, E, R y θc y clasifica el proceso.</p>
+<ol class="steps"><li>$\theta=V/Q=0{,}4$ d = 9,6 h.</li>
+<li>Carga diaria $S_0Q=300\ \text{g/m}^3\cdot10.000=3.000$ kg DBO₅/d.</li>
+<li>$C_m=\dfrac{3.000}{4.000\cdot3}=0{,}25$ kg DBO₅/kg SSVLM·d · $C_v=\dfrac{3.000}{4.000}=0{,}75$ kg DBO₅/m³·d.</li>
+<li>$E=(300-20)/300\cdot100=93{,}3\ \%$ · $R=\dfrac{3}{6-3}=1$.</li>
+<li>Fango en exceso $=(S_0-S_f)Q\cdot0{,}4=2.800\cdot0{,}4=1.120$ kg/d → $\theta_c=\dfrac{VX}{1.120}=\dfrac{12.000}{1.120}$.</li></ol>
+<p class="ans">θ = 9,6 h · Cm = 0,25 · Cv = 0,75 · E = 93,3 % · R = 1 · θc = 10,7 d. Cm entre 0,15 y 0,4 y Cv entre 0,5 y 1,5 ⇒ <b>media carga</b>. Efluente: 20 mg/L DBO₅ &lt; 25 (cumple ese límite).</p></div></details>
+
+<details><summary>P9 · Decantador secundario: velocidad ascensional y carga de sólidos <span class="src">T4</span></summary><div class="inner">
+<p><b>Enunciado.</b> Con el caudal del problema anterior (se toma como caudal de cálculo), $S=300$ m² y $X=3$ kg/m³.</p>
+<ol class="steps"><li>$Q=10.000/24=416{,}7$ m³/h.</li><li>$V_{ASC}=Q/S=416{,}7/300$.</li><li>$C_S=QX/S=416{,}7\cdot3/300$.</li></ol>
+<p class="ans">V_ASC = 1,39 m/h · C_S = 4,17 kg SS/m²·h. En un caso real se calcula con el <b>caudal punta</b>.</p></div></details>
+
+<details><summary>P10 · Electrodiálisis: corriente y potencia <span class="src">T4</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q=10$ L/s, $N=0{,}02$ eq-g/L, se elimina el 50 % de los iones ($\eta=0{,}5$), $n=100$ celdas, $E_c=0{,}9$, $R=0{,}5\ \Omega$.</p>
+<ol class="steps"><li>$\text{eq-g/s}=QN\eta=10\cdot0{,}02\cdot0{,}5=0{,}1$.</li>
+<li>$I=\dfrac{F\,QN\eta}{nE_c}=\dfrac{96.485\cdot0{,}1}{100\cdot0{,}9}$.</li>
+<li>$P=RI^2=0{,}5\cdot107{,}2^2$.</li></ol>
+<p class="ans">I = 107,2 A · P = 5,75 kW.</p></div></details>
+
+<h3>Aire</h3>
+<details><summary>P11 · ¿Estable o inestable? ¿Qué penacho? <span class="src">T5</span></summary><div class="inner">
+<p><b>Enunciado.</b> (a) T = 15,0 ºC a 100 m y 13,6 ºC a 300 m. (b) T = 14,0 ºC a 500 m y 15,5 ºC a 700 m. Clasifica.</p>
+<ol class="steps"><li>(a) $-dT/dz=(15{,}0-13{,}6)/200\ \text{m}=0{,}7\ \text{ºC}/100\text{ m}$. Γ = 0,98 ºC/100 m → $-dT/dz&lt;\Gamma$.</li>
+<li>(b) La temperatura <b>sube</b> con la altura: $dT/dz&gt;0$.</li></ol>
+<p class="ans">(a) Atmósfera <b>estable</b> (débilmente: 0,7 es próximo a Γ; no hay inversión). (b) <b>Inversión</b>: máxima estabilidad. Una chimenea dentro de la inversión da un penacho de <b>abanico</b>; si hay inversión por debajo y por encima, <b>atrapamiento</b>.</p></div></details>
+
+<details><summary>P12 · Concentración en el suelo con el modelo gaussiano <span class="src">T5</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q=100$ g/s, $U=4$ m/s, $h_e=60$ m, estabilidad D (neutra), a $x=2$ km del foco sobre el eje del penacho.</p>
+<ol class="steps"><li>$x=2$ km &gt; 1 km: $\sigma_z=33{,}2\cdot2^{0{,}725}-1{,}7=53{,}2$ m.</li>
+<li>$\sigma_y=68\cdot2^{0{,}894}=126{,}4$ m.</li>
+<li>$C=\dfrac{Q}{\pi\sigma_y\sigma_zU}e^{-h_e^2/(2\sigma_z^2)}=\dfrac{100}{\pi\cdot126{,}4\cdot53{,}2\cdot4}\,e^{-3600/(2\cdot53{,}2^2)}$.</li>
+<li>Primer factor: $1{,}184\cdot10^{-3}$ g/m³; exponencial: $e^{-0{,}637}=0{,}529$.</li></ol>
+<p class="ans">$C(2\ \text{km},0,0)=6{,}27\cdot10^{-4}$ g/m³ = <b>627 µg/m³</b>. (A 1,5 km sale 713 µg/m³; a 3 km, 430 µg/m³.)</p></div></details>
+
+<details><summary>P13 · Muestreador pasivo <span class="src">T6</span></summary><div class="inner">
+<p><b>Enunciado.</b> $D=1{,}0\cdot10^{-5}$ m²/s, $A=7{,}2\cdot10^{-5}$ m², $L=1$ cm. Tras 7 días se recogen 2,5 µg del contaminante. ¿Concentración media?</p>
+<ol class="steps"><li>$Q=\dfrac{DA}{L}=\dfrac{10^{-5}\cdot7{,}2\cdot10^{-5}}{0{,}01}=7{,}2\cdot10^{-8}$ m³/s.</li><li>$t=7\cdot86.400=604.800$ s → $Qt=0{,}0435$ m³.</li><li>$C=m/(Qt)=2{,}5/0{,}0435$.</li></ol>
+<p class="ans">C ≈ 57 µg/m³ (equivale a que el captador «ha respirado» 43,5 L de aire).</p></div></details>
+
+<details><summary>P14 · Ruido: nivel, suma de fuentes y nivel equivalente <span class="src">T6</span></summary><div class="inner">
+<p><b>Enunciado.</b> (a) ¿Nivel de una presión de 2 Pa? (b) Suma de dos máquinas de 80 dB. (c) Durante una jornada de 8 h hay 4 h a 70 dB(A) y 4 h a 60 dB(A): $L_{Aeq,8h}$.</p>
+<ol class="steps"><li>(a) $L_p=20\log(2/20\cdot10^{-6})=20\log10^5$.</li>
+<li>(b) $L=10\log(10^{8}+10^{8})=80+10\log2$.</li>
+<li>(c) $L_{Aeq}=10\log\left[\tfrac{4\cdot10^{7}+4\cdot10^{6}}{8}\right]=10\log(5{,}5\cdot10^{6})$ (forma discreta de la integral; se promedian <b>energías</b>, no decibelios).</li></ol>
+<p class="ans">(a) 100 dB · (b) 83 dB (+3 dB) · (c) 67,4 dB(A), no 65.</p></div></details>
+
+<details><summary>P15 · Sedimentador por gravedad frente a ciclón <span class="src">T7</span></summary><div class="inner">
+<p><b>Enunciado.</b> Cámara con $Q=2$ m³/s, $W=3$ m, $H=2$ m, $L=10$ m; velocidad terminal de la partícula $v_t=0{,}05$ m/s. ¿Eficiencia? ¿Cuánto mayor es la fuerza centrífuga que la gravedad en un ciclón con $V=20$ m/s y $r=0{,}25$ m?</p>
+<ol class="steps"><li>$v_{hp}=Q/(WH)=2/6=0{,}333$ m/s.</li><li>$\eta=\dfrac{Lv_t}{Hv_{hp}}=\dfrac{10\cdot0{,}05}{2\cdot0{,}333}$.</li><li>$F_c/F_g=V^2/(rg)=400/(0{,}25\cdot9{,}8)$.</li></ol>
+<p class="ans">η = 0,75 (75 % de las partículas de ese tamaño) · $F_c/F_g$ = 163 ⇒ el ciclón es mucho más eficaz.</p></div></details>
+
+<details><summary>P16 · Categoría del ICA de una estación <span class="src">T5</span></summary><div class="inner">
+<p><b>Enunciado.</b> Una estación mide (µg/m³): PM₁₀ = 38, PM₂,₅ = 12, NO₂ = 125, O₃ = 130, SO₂ = 60. ¿Categoría del ICA?</p>
+<ol class="steps"><li>PM₁₀ 38 → cat. 3 (36–50) · PM₂,₅ 12 → cat. 2 (11–20) · NO₂ 125 → cat. 4 (121–230) · O₃ 130 → cat. 3 (121–180) · SO₂ 60 → cat. 1 (0–100).</li><li>Manda el <b>peor</b> contaminante.</li></ol>
+<p class="ans">Categoría 4: <b>desfavorable</b> (naranja), por el NO₂. Se recomienda reducir actividades intensas al aire libre.</p></div></details>
+
+<h3>Entregables del curso 2023-24 (Tema 2)</h3>
+<p>Son tres problemas de la carpeta <code>Recopilacion medioambientales</code>; los he resuelto con los datos del enunciado.</p>
+<details><summary>P17 · Dos adsorbentes de Cr(VI): isotermas de Freundlich y dosis <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Datos de equilibrio $(q_e\ 	ext{mg/g},\,C_e\ 	ext{mg/L})$. Adsorbente 1: (19,87; 259,50), (11,33; 136,60), (9,02; 45,54), (3,87; 15,31), (2,24; 8,87). Adsorbente 2: (14,57; 259,50), (10,43; 136,60), (7,70; 60,63), (4,08; 13,62), (2,38; 6,51). El agua tiene 5,22 mg/L de Cr(VI) y debe bajar al máximo del Decreto 16/1999 (<b>1 mg/L</b>). Calcula la regresión lineal, $K_f$ y la dosis mínima.</p>
+<ol class="steps"><li>Se hace la regresión de $\ln q_e$ frente a $\ln C_e$: $\ln q_e=\ln K_f+	frac1n\ln C_e$.</li>
+<li>Adsorbente 1: pendiente $1/n=0{,}5994$, ordenada $-0{,}3473$, $R^2=0{,}959$ → $K_f=e^{-0{,}3473}=0{,}707$ mg/g.</li>
+<li>Adsorbente 2: $1/n=0{,}4697$, ordenada $0{,}0767$, $R^2=0{,}990$ → $K_f=e^{0{,}0767}=1{,}080$ mg/g.</li>
+<li>Con $C_e=1$ mg/L, $\ln C_e=0$ y $q_{e0}=K_f$. Dosis $D=(C_i-C_e)/q_{e0}=(5{,}22-1)/q_{e0}$.</li></ol>
+<p class="ans">Mayor $K_f$: el adsorbente 2 (1,08 mg/g). Dosis: adsorbente 1 ≈ 5,97 g/L · adsorbente 2 ≈ 3,91 g/L. (Si tu enunciado trae otros datos, el método es el mismo; en ejemplos de otros años salen $K_f$ distintas.)</p></div></details>
+<details><summary>P18 · Sólidos con cápsula y filtro (esquema completo) <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> 200 mL de agua residual. Cápsula: 23,5167 g. Filtro: 1,2792 g. Sin filtrar: cápsula + residuo a 105 ºC = 23,5391 g; tras calcinar a 550 ºC = 23,5322 g. Filtrado: cápsula + filtro + residuo a 105 ºC = 24,7972 g; tras calcinar = 24,7968 g. Determina todos los sólidos (mg/L).</p>
+<ol class="steps"><li>Sin filtrar: STT $=(23{,}5391-23{,}5167)/0{,}2$ = 112 mg/L · STF $=(23{,}5322-23{,}5167)/0{,}2$ = 77,5 mg/L · STV = 34,5 mg/L.</li>
+<li>Con filtro (suspendidos): SST $=(24{,}7972-23{,}5167-1{,}2792)/0{,}2$ = 6,5 mg/L · SSF $=(24{,}7968-23{,}5167-1{,}2792)/0{,}2$ = 4,5 mg/L · SSV = 2,0 mg/L.</li>
+<li>Disueltos por diferencia: SDT = 112 − 6,5 · SDF = 77,5 − 4,5 · SDV = 34,5 − 2,0.</li></ol>
+<p class="ans">STT 112 · STF 77,5 · STV 34,5 · SST 6,5 · SSF 4,5 · SSV 2,0 · SDT 105,5 · SDF 73,0 · SDV 32,5 (mg/L). Comprobación: fijos + volátiles = totales en cada fila.</p></div></details>
+<details><summary>P19 · DBO ejercida día a día <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> $L_a=635$ mg/L y $K_1=0{,}21$ d⁻¹. Calcula la DBO ejercida a los 1, 2, 3, 4, 5, 8, 10 y 20 días y dibuja la curva.</p>
+<ol class="steps"><li>$y_t=L_a(1-e^{-K_1t})=635\,(1-e^{-0{,}21\,t})$.</li></ol>
+<div class="tw"><table><tr><th>t (d)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>8</td><td>10</td><td>20</td></tr><tr><th>y_t (mg/L)</th><td>120,3</td><td>217,8</td><td>296,8</td><td>360,9</td><td>412,8</td><td>516,7</td><td>557,2</td><td>625,5</td></tr></table></div>
+<p class="ans">La curva sube y tiende asintóticamente a $L_a=635$ mg/L (a los 20 días ya es el 98,5 %). La DBO₅ es 412,8 mg/L.</p></div></details>
+</section>
+<section class="sec" style="--tc:var(--c8);--tcs:var(--c8s)">
+<div class="sh"><span class="badge" aria-hidden="true">✎</span><div class="shx"><p class="kick">Practicar</p><h2 id="auto">Autoevaluación</h2><div class="tags"><span class="tag" id="nq2">0 preguntas</span><span class="tag">con corrección</span></div></div></div>
+<p>Preguntas tipo test al estilo del examen (cuatro opciones, proposiciones verdaderas o falsas, y numéricas sencillas). Las opciones se barajan cada vez. Pulsa una respuesta para ver la corrección y la explicación.</p>
+<div class="qbar">
+<label>Tema <select id="qtema"><option value="all">Todos</option><option value="T1">T1</option><option value="T2">T2</option><option value="T3">T3</option><option value="T4">T4</option><option value="T5">T5</option><option value="T6">T6</option><option value="T7">T7</option></select></label>
+<button class="pri" id="qgo" type="button">Nuevo test de 10</button>
+<button id="qall" type="button">Ver todas las del tema</button>
+<span class="score" id="qscore" aria-live="polite"></span>
+</div>
+<div id="qlist"></div>
+</section>
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">Fx</span><div class="shx"><p class="kick">Repaso final</p><h2 id="formulario">Formulario de una página</h2><div class="tags"><span class="tag">para la víspera</span></div></div></div>
+<div class="fcards">
+<div class="box key" style="--tc:var(--c2)"><h4>Agua · T2</h4><ul>
+<li>$L_t=L_ae^{-K_1t}$ · $y_t=L_a(1-e^{-K_1t})$</li>
+<li>kg/día = DBO₅ (g/m³) · Q (m³/d) / 1000 · 1 h-e = 60 g O₂/d</li>
+<li>SST $=(P_2-P_1)/V$ · SSf $=(P_3-P_1)/V$ · filtro 0,45 µm, 105 ºC, 550 ºC</li>
+<li>DBO₅/DQO &gt; 0,6 biodegradable · &lt; 0,2 poco</li>
+<li>$TII_{50}=100/EC_{50}$ (%) · límite Murcia 25</li>
+<li>$q_e=K_fC_e^{1/n}$ · $D=(C_i-C_e)/q_e$</li>
+<li>Turbidez 720 nm: 4 UNF red · 0,8 UNF ETAP</li>
+<li>VP: Cl⁻ 250 · SO₄²⁻ 250 · F⁻ 1,5 (mg/L) · As 10 · Cd 5 · Hg 1 (µg/L) · THM 100 µg/L</li></ul></div>
+<div class="box key" style="--tc:var(--c3)"><h4>Agua · T3</h4><ul>
+<li>$N_{12}=\tfrac16n_1n_2(d_1+d_2)^3G$</li>
+<li>$N_t/N_0=e^{-kt}$ → $t=\ln(N_0/N_t)/k$</li>
+<li>Manto de lodos: ≤ 3 m/h, TRH 1–2 h</li>
+<li>Recuperación OI $=Q_p/Q_f$ (25–45 % mar; 50–90 %)</li>
+<li>Presión OI: 2–10 · 10–20 · 20–40 · 50–80 bar (mar π = 20–27)</li>
+<li>Salinidad: dulce &lt; 1.000 · salobre 1.000–10.000 · mar 30.000–50.000 mg/L</li>
+<li>UV 254 nm · cloro libre = HClO + ClO⁻ · cloraminas = combinado utilizable</li></ul></div>
+<div class="box key" style="--tc:var(--c4)"><h4>Agua · T4</h4><ul>
+<li>$\theta=V/Q$ · $C_m=S_0Q/(VX)$ · $C_v=S_0Q/V$</li>
+<li>$E=(S_0-S_f)/S_0$ · $R=X/(X_R-X)$, $X_R=6$</li>
+<li>$\theta_c=VX/([(S_0-S_f)Q]X_e)$</li>
+<li>Cm: &gt; 0,4 alta · 0,15–0,4 media · 0,07–0,15 baja · &lt; 0,07 muy baja</li>
+<li>$V_{ASC}=Q/S$ · $C_S=QX/S$ (caudal punta)</li>
+<li>Efluente: 25 DBO₅ · 125 DQO · 35 SST (mg/L)</li>
+<li>$I=FQN\eta/(nE_c)$ · $P=RI^2$ · F = 96485</li>
+<li>Reutilización: A+ máxima … D mínima; E. coli</li></ul></div>
+<div class="box key" style="--tc:var(--c5)"><h4>Aire · T5</h4><ul>
+<li>Γ seca 0,98 · saturada 0,5 · normal 0,66 (ºC/100 m)</li>
+<li>−dT/dz &gt; Γ inestable · = neutra · &lt; estable · dT/dz &gt; 0 inversión</li>
+<li>$h_e=h_s+\Delta h$</li>
+<li>$C(x,0,0)=\dfrac{Q}{\pi\sigma_y\sigma_zU}e^{-h_e^2/2\sigma_z^2}$</li>
+<li>$\sigma_y=ax^{0,894}$ · $\sigma_z=cx^d+f$ (x en km)</li>
+<li>ICA: manda el peor de PM₁₀, PM₂,₅, NO₂, O₃, SO₂</li>
+<li>Penachos: espiral, cono, abanico, fumigación, flotación, atrapamiento</li></ul></div>
+<div class="box key" style="--tc:var(--c6)"><h4>Aire · T6</h4><ul>
+<li>Pasivo: $C=m/(Qt)$, $Q=DA/L$</li>
+<li>SO₂ fluorescencia UV · CO NDIR 4.600 nm · NO/NO₂ quimioluminiscencia · O₃ UV 254 nm</li>
+<li>$\Delta f=K_pQtc_m$ · $\Delta m=K_0(1/f_b^2-1/f_a^2)$ · $\ln(I/I_0)=K_b\Delta m$</li>
+<li>$L_p=20\log(p/20\ \mu Pa)$ · +3 dB al duplicar energía</li>
+<li>Límites: SO₂ 350 h / 125 d · NO₂ 200 h / 40 a · PM₂,₅ 25 a (µg/m³) · CO 10 mg/m³ · benceno 5 · BaP 1 ng/m³</li>
+<li>Ruido exterior: 60/50 · 65/55 · 70/60 · 75/65 dB(A)</li>
+<li>Legionella RD 487/2022: aerosol, no por beber</li></ul></div>
+<div class="box key" style="--tc:var(--c7)"><h4>Aire · T7</h4><ul>
+<li>$v_{hp}=Q/(WH)$ · $\eta=Lv_t/(Hv_{hp})$ · $F_c/F_g=V^2/(rg)$</li>
+<li>ESP &lt; 5 µm · mangas: torta ×10 pérdida de carga</li>
+<li>SCR: urea 32,5 % → NH₃ · RTO para COVs · carbón: 100 kg ↔ 8 kg acetona</li>
+<li>W/U &gt; 1,5 evita lavado descendente · muestreo 8D / 2D</li>
+<li>Grupos: A 2 + 2 años · B 3 + 3 · C 5 (emisiones)</li>
+<li>Libro de registro ≥ 10 años · autorización 8 años</li>
+<li>ZBE: Ley 7/2021, &gt; 50.000 hab, 1-1-2023</li></ul></div>
+<div class="box key" style="--tc:var(--c1)"><h4>Introducción · T1</h4><ul>
+<li>Reglamento: directo · Directiva: transponer (2–5 años) · Decisión: destinatario</li>
+<li>Recomendación y Dictamen: no vinculantes · Comunicaciones, planes: atípicos</li>
+<li>Taxonomía: 6 objetivos + DNSH + salvaguardas</li>
+<li>17 ODS (2015; vigor 2016; no vinculantes)</li>
+<li>Brundtland 1987 · TIC 2–4 % del CO₂</li>
+<li>Dir. 2024/3019: desde 1.000 h-e</li></ul></div>
+</div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">Aa</span><div class="shx"><p class="kick">Repaso final</p><h2 id="glosario">Glosario</h2></div></div>
+<dl class="gl">
+<div><dt>Aerosol</dt><dd>Partículas sólidas o líquidas en suspensión en un gas (Ø &lt; 100 µm).</dd></div>
+<div><dt>APCA / CAPCA</dt><dd>Actividad potencialmente contaminadora de la atmósfera / su catálogo (grupos A, B, C).</dd></div>
+<div><dt>Bulking</dt><dd>Fango que sedimenta mal por organismos filamentosos.</dd></div>
+<div><dt>Carga másica (Cm)</dt><dd>Alimento (DBO₅) que entra por unidad de biomasa y día.</dd></div>
+<div><dt>Coagulación / floculación</dt><dd>Desestabilización reversible de coloides / aglomeración irreversible en flóculos.</dd></div>
+<div><dt>Demanda de cloro</dt><dd>Cloro combinado no utilizable que consumen la materia orgánica y los iones reductores.</dd></div>
+<div><dt>DBO₅ / DQO</dt><dd>Oxígeno consumido biológicamente en 5 días / químicamente por las materias reductoras.</dd></div>
+<div><dt>DNSH</dt><dd>«Do no significant harm»: no causar daño significativo a los demás objetivos.</dd></div>
+<div><dt>ECA</dt><dd>Entidad colaboradora con la Administración; emite los informes de certificación y de emisiones.</dd></div>
+<div><dt>EC₅₀ / TII₅₀</dt><dd>Concentración que reduce la luminiscencia el 50 % / 100/EC₅₀ en Equitox/m³.</dd></div>
+<div><dt>EDAR / ETAP</dt><dd>Estación depuradora de aguas residuales / de tratamiento de agua potable.</dd></div>
+<div><dt>Emisión / inmisión</dt><dd>Lo que sale de la fuente / lo que llega a un punto (nivel de contaminación).</dd></div>
+<div><dt>Fumigación</dt><dd>Penacho que baja al suelo al romperse una inversión por la mañana; también el proceso en sí.</dd></div>
+<div><dt>Habitante-equivalente</dt><dd>60 g de O₂/día de DBO₅.</dd></div>
+<div><dt>Inversión térmica</dt><dd>La temperatura aumenta con la altura; máxima estabilidad.</dd></div>
+<div><dt>Isocinético</dt><dd>Muestreo a la misma velocidad que el gas del conducto.</dd></div>
+<div><dt>Jar-test</dt><dd>Ensayo para hallar la dosis óptima de coagulante.</dd></div>
+<div><dt>Licor mezcla</dt><dd>Contenido del reactor biológico (agua + biomasa); SSVLM = biomasa.</dd></div>
+<div><dt>MTD</dt><dd>Mejores técnicas disponibles.</dd></div>
+<div><dt>Permeado / rechazo</dt><dd>Agua que pasa la membrana / salmuera que no la atraviesa.</dd></div>
+<div><dt>Polarización</dt><dd>Acumulación de sales sobre la membrana de OI.</dd></div>
+<div><dt>Primario / secundario</dt><dd>Contaminante emitido directamente / formado en la atmósfera.</dd></div>
+<div><dt>SCR</dt><dd>Reducción catalítica selectiva de NOₓ con NH₃ (AdBlue).</dd></div>
+<div><dt>Smoluchowski</dt><dd>Ecuación de la frecuencia de choques entre partículas en la floculación.</dd></div>
+<div><dt>TRH / TRC</dt><dd>Tiempo de retención hidráulica / celular (edad del fango).</dd></div>
+<div><dt>Valor paramétrico (VP)</dt><dd>Nivel máximo o mínimo de un parámetro en agua de consumo (RD 3/2023).</dd></div>
+<div><dt>ZBE</dt><dd>Zona de bajas emisiones.</dd></div>
+</dl>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">⏱</span><div class="shx"><p class="kick">Repaso final</p><h2 id="plan">Plan de estudio</h2></div></div>
+<p>Elige según el tiempo que tengas. En todos los casos, <b>cada bloque termina con el test del tema</b>: no pases al siguiente hasta sacar al menos 8 de cada 10.</p>
+<div class="grid2">
+<div class="box key"><h4>Si tienes 7 días</h4><ol class="steps">
+<li><b>Día 1</b> · T1 y T2 (parámetros, DBO, sólidos, valores).</li>
+<li><b>Día 2</b> · T3 (ETAP y membranas).</li>
+<li><b>Día 3</b> · T4 (fangos activos y reutilización) + P1–P10.</li>
+<li><b>Día 4</b> · T5 (estabilidad, penachos, gaussiano).</li>
+<li><b>Día 5</b> · T6 (técnicas de medida, ruido).</li>
+<li><b>Día 6</b> · T7 + P11–P16.</li>
+<li><b>Día 7</b> · Formulario, tests mezclados y fallos.</li></ol></div>
+<div class="box key"><h4>Si tienes 3 días</h4><ol class="steps">
+<li><b>Día 1</b> · T2, T3, T4: «Lo esencial», tablas y sus tests.</li>
+<li><b>Día 2</b> · T5, T6, T7: igual, y problemas P11–P16.</li>
+<li><b>Día 3</b> · T1 (media hora), formulario y 3 tests mezclados de 10.</li></ol>
+<h4>Si solo tienes la noche anterior</h4><ol class="steps"><li>Lee las <a href="#prior">12 cosas</a>.</li><li>Formulario.</li><li>Tests de T2 y T4, después T3, T5, T6.</li></ol></div>
+</div>
+<div class="box key"><h4>Qué hacer el día del examen</h4><ul>
+<li>Lee dos veces las preguntas de «FALSAS / VERDADERAS». Haz V/F antes de mirar las opciones.</li>
+<li>En las numéricas, escribe la fórmula y las <b>unidades</b> antes de sustituir (mg/L = g/m³; x en km en el gaussiano).</li>
+<li>No dejes en blanco: si dudas entre dos, quédate con la que cambia menos un dato respecto a lo estudiado.</li></ul></div>
+<p class="muted" style="margin-top:20px">Proyecto personal de estudio hecho con el material de la carpeta del curso; no es un documento oficial de la UPCT ni sustituye a los apuntes del profesor. Si algún valor no coincide con lo que dijo el profesor en clase, manda lo de clase.</p>
+</section>
+</main>
+</div>
+<script>
+window.__QS=(function(){const QS=[
+['T1','¿Qué norma vinculante de la UE se aplica directamente tras su publicación en el DOUE, con alcance general y sin transposición?',['Directiva','Decisión','Reglamento','Recomendación'],2,'Es el Reglamento. La Directiva obliga en resultados y hay que transponerla; la Decisión obliga a su destinatario; la Recomendación no es vinculante.'],
+['T1','Indica las proposiciones VERDADERAS sobre las Directivas: 1. Obligan en cuanto a los objetivos, no en cuanto a los medios. 2. Se aplican directamente sin transposición. 3. Incluyen un plazo (2 a 5 años) para su transposición. 4. Obligan siempre a todos los ciudadanos de la UE.',['1 y 3','2 y 4','1 y 4','2 y 3'],0,'Son verdaderas la 1 y la 3. La 2 es de los Reglamentos y la 4 es falsa: solo obligan a los destinatarios que designan.'],
+['T1','Según la taxonomía europea, una actividad es sostenible si…',['Reduce sus emisiones de CO₂ respecto al año anterior','Contribuye sustancialmente a al menos 1 de 6 objetivos, no daña significativamente a los demás y respeta salvaguardas sociales mínimas','Cumple al menos 10 de los 17 ODS','Dispone de un sistema de gestión ambiental certificado'],1,'Son las tres condiciones: contribución sustancial, DNSH y salvaguardas sociales.'],
+['T1','Indica la proposición FALSA sobre los ODS:',['Son 17 objetivos','Se aprobaron en la Cumbre de la ONU de 2015','Son jurídicamente obligatorios para todos los países','Se aplican a países ricos, de ingresos medios y pobres'],2,'Los ODS no son jurídicamente obligatorios, aunque rigen los esfuerzos de los países desde 2016.'],
+['T1','En el esquema de Seinfeld (fuente → atmósfera → receptor), ¿qué elemento es el control más conveniente y cuál el que define que existe contaminación?',['Control: la atmósfera. Define la contaminación: la fuente','Control: la fuente. Define la contaminación: el receptor','Control: el receptor. Define la contaminación: la fuente','Control: la atmósfera. Define la contaminación: el receptor'],1,'Se controla en la fuente, pero solo hay contaminación si hay efectos adversos en un receptor.'],
+['T1','¿Qué porcentaje de las emisiones globales de CO₂ se atribuye a las tecnologías de la información (contaminación digital) según los apuntes?',['0,2–0,4 %','2–4 %','12–14 %','20–25 %'],1,'Entre el 2 % y el 4 %.'],
+['T2','La DBO₅ se determina tras incubar la muestra…',['3 días, 20 ºC, con luz','5 días, 20 ºC, en oscuridad','5 días, 35 ºC, en oscuridad','7 días, 20 ºC, en oscuridad'],1,'5 días, 20 ºC y oscuridad; se consume aproximadamente 2/3 del carbono biodegradable.'],
+['T2','Un agua residual tiene DBO₅ = 120 mg/L y DQO = 650 mg/L. Es…',['Fácilmente biodegradable (como un ARU típica)','Escasamente biodegradable','Imposible: la DBO₅ no puede ser menor que la DQO','Segura: tiene poca contaminación'],1,'DBO₅/DQO = 0,18 < 0,2 ⇒ escasamente biodegradable. Y una DBO₅ baja no implica poca contaminación.'],
+['T2','Los sólidos en suspensión totales (SST) se determinan…',['Dejando 1 L en un cono de Imhoff durante 1 hora','Filtrando con filtro de 0,45 µm y pesando el filtro seco a 105 ºC','Calcinando la muestra a 550 ºC','Evaporando el filtrado a baño maría'],1,'El cono de Imhoff mide materia decantable; la calcinación da los fijos; el filtrado evaporado da los disueltos.'],
+['T2','Si se aumenta la constante de desoxigenación K₁ manteniendo la misma carga orgánica…',['Aumenta la DBO última (Lₐ)','Aumenta la DBO₅ y no cambia Lₐ','Disminuye la DBO₅','Cambian ambas'],1,'Lₐ es independiente de K₁; con K₁ mayor, en 5 días se consume más.'],
+['T2','Un efluente tiene EC₅₀ = 5 %. ¿Cuál es su TII₅₀ y cumple el límite de vertido de Murcia (25 Equitox/m³)?',['0,05 Equitox/m³; cumple','20 Equitox/m³; cumple','20 Equitox/m³; no cumple','500 Equitox/m³; no cumple'],1,'TII₅₀ = 100/5 = 20 < 25.'],
+['T2','Indica las proposiciones VERDADERAS: 1. El VP del cloruro en agua de consumo es 250 mg/L. 2. El fluoruro puede llegar a 1,5 mg/L en agua de bebida. 3. El cianuro se oxida a cianato, mucho menos tóxico. 4. El Cr(III) es más tóxico que el Cr(VI).',['1, 2 y 3','1, 3 y 4','2 y 4','1 y 2'],0,'La 4 es falsa: el Cr(VI) es el fuertemente tóxico.'],
+['T2','La turbidez se mide a… y el VP a la salida de la ETAP es…',['254 nm; 4 UNF','720 nm; 0,8 UNF','720 nm; 4 UNF','254 nm; 0,8 UNF'],1,'720 nm (el color no influye); 4 UNF en la red y 0,8 UNF a la salida de la ETAP.'],
+['T2','Una concentración de oxígeno disuelto inferior a… se considera estresante para la mayoría de organismos acuáticos.',['9 mg/L','6 mg/L','3 mg/L','0,5 mg/L'],2,'Por debajo de 3 mg/L; el valor normal a T y P ambientales es de 9–10 mg/L.'],
+['T2','De dos muestras, ¿cuál es más tóxica según Microtox?',['La de mayor EC₅₀ y menor TII₅₀','La de menor EC₅₀ y mayor TII₅₀','La de menor EC₅₀ y menor TII₅₀','La de mayor EC₅₀ y mayor TII₅₀'],1,'EC₅₀ pequeña = basta poco tóxico para inhibir la luz; TII₅₀ = 100/EC₅₀ sube.'],
+['T2','En la isoterma de Freundlich, si aumenta la capacidad de adsorción qₑ del adsorbente, la dosis mínima D…',['Aumenta','Disminuye','No cambia','Depende solo de n'],1,'D = (Cᵢ − Cₑ)/qₑ.'],
+['T2','Los coliformes fecales o termotolerantes se incuban a…',['20 ºC','35 ºC','37 ºC','44 ºC'],3,'35 ºC para los totales; 44 ºC para los termotolerantes.'],
+['T3','¿Cuál es la secuencia del tratamiento estándar de una ETAP?',['Filtración → sedimentación → coagulación-floculación','Coagulación-floculación → sedimentación → filtración (y después desinfección)','Desinfección → coagulación → filtración','Sedimentación → coagulación → filtración'],1,'Pretratamiento → coagulación-floculación → sedimentación → filtración → desinfección → fluoración.'],
+['T3','Indica las proposiciones FALSAS: 1. La coagulación es reversible. 2. La floculación es reversible. 3. La coagulación dura fracciones de segundo. 4. El pH es la variable más importante.',['1 y 2','Solo la 2','3 y 4','1 y 4'],1,'La floculación es irreversible. Las demás son verdaderas.'],
+['T3','Según la ecuación de Smoluchowski, si se aumenta mucho el gradiente de velocidad G…',['Siempre mejora la floculación','Aumentan los choques pero se pueden romper los flóculos: hay un G óptimo','Disminuyen los choques','No afecta a la floculación'],1,'El G óptimo debe ser decreciente a lo largo de la operación.'],
+['T3','¿Qué decantador lleva una turbina de agitación y una campana de vacío?',['Pulsator','Circulator','Accelator','Superpulsator'],2,'Accelator. El Pulsator usa campana de vacío para pulsos; el Superpulsator le añade lamelas.'],
+['T3','Indica la afirmación FALSA sobre los filtros de carbón activo granular (GAC):',['Eliminan olores y sabores','Cuestan unas 10 veces más que los de arena','Pueden lavarse con agua y aire simultáneamente','Se regeneran térmicamente a unos 800 ºC'],2,'Nunca se lavan con agua y aire a la vez (sí por separado).'],
+['T3','Desinfectante físico, con lámparas de Hg de baja presión a 254 nm y sin acción residual:',['Ozono','Cloro','Radiación ultravioleta','Dióxido de cloro'],2,'La UV daña el ADN y no deja residual.'],
+['T3','En la cloración, las cloraminas forman parte del…',['Cloro libre residual','Cloro combinado residual utilizable','Cloro combinado no utilizable (demanda de cloro)','Cloro gas'],1,'El cloro libre es HClO + ClO⁻; las cloraminas son cloro combinado utilizable.'],
+['T3','Una planta de ósmosis inversa se alimenta con 200 m³/h y trabaja con una recuperación del 75 %. El caudal de permeado es…',['50 m³/h','100 m³/h','150 m³/h','175 m³/h'],2,'Recuperación = Qp/Qf.'],
+['T3','¿Qué módulo de membrana es el más habitual en plantas de desalación?',['De placas','Tubular','Espiral enrollada','Se usan solo de fibra hueca'],2,'Espiral enrollada (spiral-wound).'],
+['T3','Para obtener agua de muy baja salinidad (industria electrónica), los módulos de ósmosis inversa se agrupan…',['En paralelo','En serie','Solo en un módulo','Sin agrupar'],1,'En serie se logra muy baja salinidad; en paralelo se aumenta el caudal.'],
+['T4','Un reactor tiene S₀·Q = 2.400 kg DBO₅/d, V = 3.000 m³ y X = 2,5 kg/m³. Su carga másica y tipo de proceso son…',['0,08 · baja carga','0,32 · media carga','0,8 · alta carga','1,2 · alta carga'],1,'Cm = 2.400/(3.000·2,5) = 0,32 ∈ (0,15–0,4): media carga.'],
+['T4','V = 5.000 m³ y Q = 20.000 m³/d. El tiempo de retención hidráulica es…',['6 horas','12 horas','4 días','1,5 horas'],0,'θ = V/Q = 0,25 d = 6 h.'],
+['T4','Con S₀ = 250 mg/L y S_f = 25 mg/L, el rendimiento de depuración es…',['10 %','90 %','75 %','25 %'],1,'E = (250 − 25)/250 = 90 %.'],
+['T4','Con X = 2,5 kg/m³ y X_R = 6 kg/m³, la tasa de recirculación R = X/(X_R − X) vale…',['0,42','0,71','1,4','2,4'],1,'R = 2,5/3,5 = 0,71.'],
+['T4','Valores máximos del efluente urbano depurado (DBO₅ / DQO / SST):',['25 / 125 / 35 mg/L','35 / 125 / 25 mg/L','125 / 25 / 35 mg/L','25 / 35 / 125 mg/L'],0,'Transposición de la Directiva 91/271/CEE.'],
+['T4','El orden de las etapas de la digestión anaerobia es…',['Hidrolítica → acetogénica → metanogénica','Metanogénica → acetogénica → hidrolítica','Acetogénica → hidrolítica → metanogénica','Hidrolítica → metanogénica → acetogénica'],0,'Hidrólisis, formación de ácidos (acético) y formación de metano.'],
+['T4','En una celda de electrodiálisis, los cationes migran hacia…',['El ánodo (+)','El cátodo (−)','La membrana aniónica','No migran'],1,'Cationes al cátodo, aniones al ánodo.'],
+['T4','¿Qué calidad de agua regenerada corresponde al riego de lechugas que se consumen crudas?',['D','C','B','A o A+'],3,'Alimento consumido crudo → A / A+. Los cultivos industriales, energéticos o de biomasa → C / D.'],
+['T4','Indica la afirmación FALSA sobre el RD 1085/2024:',['Sustituye al RD 1620/2007','Permite siempre el uso del agua regenerada para consumo humano directo','Exige gestión del riesgo','El parámetro principal de clasificación es E. coli'],1,'El consumo humano directo está prohibido salvo situaciones de catástrofe.'],
+['T4','El fango filamentoso (Sphaerotilus natans) provoca…',['Una sedimentación lenta del fango, que sale con el efluente','Mayor producción de biogás','Una mejor decantación','Menor consumo de oxígeno'],0,'Es el bulking filamentoso.'],
+['T4','En la electrocoagulación el catión coagulante procede…',['De sulfato de aluminio añadido','De la disolución del propio ánodo metálico','De un polielectrolito','Del cátodo'],1,'Ánodo de Fe, Al o Ti: Fe⁰ → Fe³⁺ + 3e⁻.'],
+['T5','La tasa de cambio adiabática seca es…',['0,5 ºC/100 m','0,66 ºC/100 m','0,98 ºC/100 m','1,5 ºC/100 m'],2,'Γ = 9,8 ºC/km. La saturada es 0,5 y la normal internacional 0,66.'],
+['T5','Si el gradiente térmico ambiental es −dT/dz = 1,2 ºC/100 m, la atmósfera es…',['Estable','Neutra','Inestable (superadiabática)','Una inversión'],2,'1,2 > 0,98.'],
+['T5','El penacho que aparece por la mañana al romperse una inversión nocturna es el de…',['Espiral','Cono','Fumigación','Flotación'],2,'Fumigación: grandes concentraciones llegan al suelo en menos de media hora.'],
+['T5','Indica la afirmación FALSA sobre las inversiones por radiación:',['Típicas de noches despejadas de invierno','Importantes en contaminación local','Pueden durar meses y se asocian a anticiclones','Suelen estar a menos de 500 m de altura'],2,'Eso describe las de subsidencia.'],
+['T5','NO es una hipótesis del modelo gaussiano de dispersión:',['Viento uniforme y no nulo','Terreno plano','Contaminantes inertes con reflexión perfecta en el suelo','Una topografía accidentada que altera el flujo'],3,'El modelo supone terreno plano y flujo homogéneo.'],
+['T5','Con las fórmulas de Martin, σy y σz se obtienen en metros con x expresada en…',['Metros','Kilómetros','Centímetros','Millas'],1,'x en km.'],
+['T5','¿Cómo se fija la categoría global del ICA de una estación?',['Con la media de los contaminantes','Con el contaminante que presente la peor categoría','Solo con el ozono','Solo con PM₁₀'],1,'Se usan PM₁₀, PM₂,₅, O₃, NO₂ y SO₂.'],
+['T5','Si se duplica el caudal de emisión Q en el modelo gaussiano (resto igual), la concentración C…',['Se duplica','Se multiplica por 4','Se reduce a la mitad','No cambia'],0,'C es proporcional a Q.'],
+['T6','La técnica de referencia para medir SO₂ es…',['Quimioluminiscencia','Fluorescencia UV','Espectrometría IR no dispersiva','Fotometría UV a 254 nm'],1,'Fluorescencia UV (UNE-EN 14212). La quimioluminiscencia es para NOₓ; NDIR para CO; fotometría UV para O₃.'],
+['T6','El NO₂ por quimioluminiscencia se obtiene…',['Directamente, porque emite luz','Por diferencia entre NOₓ (convertido a NO con molibdeno a 300–400 ºC) y NO','Con absorción IR a 4.600 nm','Con luz UV de 254 nm'],1,'La reacción NO + O₃ solo da luz con NO.'],
+['T6','En un muestreo isocinético, si la velocidad de aspiración es menor que la del gas en el conducto, la concentración de partículas obtenida es…',['Menor que la real','Igual a la real','Mayor que la real','No se puede medir'],2,'Entran por inercia las partículas grandes y parte del gas no se recoge.'],
+['T6','Los muestreadores pasivos sirven para…',['Partículas PM₂,₅','Gases y vapores (por difusión)','Solo ozono','Cualquier contaminante, con bomba'],1,'Se basan en la 1.ª ley de Fick y no sirven para partículas.'],
+['T6','Dos máquinas iguales de 70 dB funcionan a la vez. El nivel total es…',['140 dB','73 dB','72 dB','70 dB'],1,'10·log(2·10⁷) = 73 dB.'],
+['T6','El monóxido de carbono se mide por…',['Fluorescencia UV','Absorción infrarroja no dispersiva (≈ 4.600 nm)','Quimioluminiscencia','Fotometría UV'],1,'Celda de muestra y de referencia.'],
+['T6','Indica la afirmación FALSA sobre la legionelosis:',['Se regula por el RD 487/2022','Se transmite por inhalación de aerosoles','Se transmite al beber agua contaminada','Las torres de refrigeración son instalaciones de riesgo'],2,'No se transmite al beber, por alimentos ni de persona a persona.'],
+['T6','El ozono estratosférico…',['Es ≈ 10 % del total y absorbe radiación IR','Es ≈ 90 % del total y absorbe UV-B','Se forma a partir de NOₓ y COVs','Se destruye solo por procesos naturales'],1,'El troposférico (≈ 10 %) viene de NOₓ y COVs. Lo destruyen NOₓ, CH₄, CFC y halones.'],
+['T7','La jerarquía de control de la contaminación atmosférica es…',['Dispersión → dispositivos al final → MTD','MTD → dispositivos corriente abajo → mejora de la dispersión','Dispositivos corriente abajo → MTD → dispersión','Reubicación → MTD → dispositivos'],1,'La dispersión es la última opción: diluir solo traslada el problema.'],
+['T7','El precipitador electrostático se emplea para partículas de diámetro inferior a…',['0,01 µm','5 µm','50 µm','100 µm'],1,'Menos de 5 µm.'],
+['T7','En la reducción catalítica selectiva (AdBlue) la urea se descompone en…',['N₂','NH₃','NO','H₂S'],1,'El NH₃ reduce los NOₓ a N₂ y H₂O.'],
+['T7','Una APCA del grupo B debe presentar informe de certificación y de emisiones cada…',['2 años','3 años','5 años','8 años'],1,'A: 2 años; B: 3 años; C: solo emisiones cada 5 años.'],
+['T7','El libro de registro de focos emisores se conserva al menos…',['2 años','5 años','10 años','20 años'],2,'La vigencia de la autorización de APCA es de 8 años.'],
+['T7','Para evitar el lavado descendente de un penacho, la relación velocidad de salida / velocidad del viento (W/U) debe ser mayor que…',['0,5','1,5','5','10'],1,'W/U > 1,5.'],
+['T7','Las zonas de bajas emisiones son obligatorias desde 2023 en municipios de más de…',['10.000 habitantes','20.000 habitantes (siempre)','50.000 habitantes','100.000 habitantes'],2,'También en los de más de 20.000 que superen los niveles de calidad del aire.'],
+['T7','¿Cuál es la técnica más extendida para destruir COVs?',['Oxidación térmica regenerativa (RTO)','Precipitador electrostático','Ciclón','Sedimentador por gravedad'],0,'También: cambio de materiales, sellado, adsorción con carbón activo y biofiltración.']
+];
+return QS;})();
+</script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
+/* tema claro/oscuro */
+(function(){
+  const root=document.documentElement,b=$('theme');
+  const saved=store.get('ma-theme',null); if(saved) root.setAttribute('data-theme',saved);
+  b.addEventListener('click',()=>{
+    const cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    const nx=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',nx); store.set('ma-theme',nx);
+  });
+})();
+/* índice activo y volver arriba */
+(function(){
+  const links=[...document.querySelectorAll('.toc a')];
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const heads=[...map.keys()].map(id=>$(id)).filter(Boolean);
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));const a=map.get(e.target.id);if(a)a.classList.add('on');}});},{rootMargin:'-20% 0px -70% 0px'});
+    heads.forEach(h=>io.observe(h));
+  }
+  const t=$('totop');
+  addEventListener('scroll',()=>{t.classList.toggle('show',scrollY>700);},{passive:true});
+})();
+/* progreso */
+(function(){
+  const box=$('checks'); if(!box) return;
+  const items=[];
+  const names={T1:'T1 Introducción',T2:'T2 Parámetros',T3:'T3 Potabilización',T4:'T4 Depuración',T5:'T5 Dispersión',T6:'T6 Medida',T7:'T7 Control'};
+  Object.keys(names).forEach(k=>{
+    items.push([k+'-a',names[k]+': he leído «Lo esencial» y las tablas']);
+    items.push([k+'-b',names[k]+': test con 8 de 10 o más']);
+  });
+  items.push(['pa','Problemas P1–P10 (agua) sin mirar la solución']);
+  items.push(['pb','Problemas P11–P16 (aire) sin mirar la solución']);
+  items.push(['fo','Formulario repasado la víspera']);
+  let st=store.get('ma-prog',{});
+  box.innerHTML=items.map(([k,t])=>`<div class="check"><input type="checkbox" id="c-${k}" data-k="${k}"${st[k]?' checked':''}><label for="c-${k}">${t}</label></div>`).join('');
+  const upd=()=>{const n=items.filter(([k])=>st[k]).length;$('pbar').style.width=(100*n/items.length)+'%';$('ptxt').textContent=n+' de '+items.length;};
+  box.addEventListener('change',e=>{const k=e.target.dataset.k; if(!k)return; st[k]=e.target.checked; store.set('ma-prog',st); upd();});
+  upd();
+})();
+/* autoevaluación */
+(function(){
+  const QS=window.__QS; if(!QS) return;
+  $('nq').textContent=QS.length; $('nq2').textContent=QS.length+' preguntas';
+  let res=store.get('ma-qres',{});
+  const list=$('qlist'),score=$('qscore');
+  const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+  const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const tc={T1:'c1',T2:'c2',T3:'c3',T4:'c4',T5:'c5',T6:'c6',T7:'c7'};
+  let shown=0,okNow=0,answered=0;
+  const upd=()=>{const dom=Object.values(res).filter(v=>v===1).length;score.textContent=(answered?`Esta tanda: ${okNow}/${answered} · `:'')+`Acertadas alguna vez: ${dom} de ${QS.length}`;};
+  function render(idxs){
+    shown=idxs.length;okNow=0;answered=0;
+    list.innerHTML=idxs.map((qi,n)=>{
+      const q=QS[qi];const order=shuffle([0,1,2,3]);
+      return `<div class="qz" data-qi="${qi}" style="--tc:var(--${tc[q[0]]})"><p class="qh">${q[0]} · pregunta ${n+1}</p><p class="qt">${esc(q[1])}</p><div class="opts">${order.map(o=>`<button type="button" class="op" data-o="${o}">${esc(q[2][o])}</button>`).join('')}</div><p class="ex">${esc(q[4])}</p></div>`;
+    }).join('');
+    upd();
+  }
+  list.addEventListener('click',e=>{
+    const b=e.target.closest('button.op'); if(!b) return;
+    const card=b.closest('.qz'); if(card.classList.contains('done')) return;
+    const qi=+card.dataset.qi,q=QS[qi],pick=+b.dataset.o,good=pick===q[3];
+    card.classList.add('done');
+    card.querySelectorAll('button.op').forEach(x=>{x.disabled=true; if(+x.dataset.o===q[3]) x.classList.add('ok');});
+    if(!good) b.classList.add('no');
+    answered++; if(good) okNow++;
+    res[qi]=good?1:(res[qi]===1?1:0); store.set('ma-qres',res); upd();
+  });
+  const pool=()=>{const t=$('qtema').value;return QS.map((q,i)=>i).filter(i=>t==='all'||QS[i][0]===t);};
+  $('qgo').addEventListener('click',()=>{
+    const p=pool().map(i=>[i,(res[i]===1?1:0)+Math.random()]).sort((a,b)=>a[1]-b[1]).slice(0,10).map(x=>x[0]);
+    render(shuffle(p));
+  });
+  $('qall').addEventListener('click',()=>render(pool()));
+  $('qtema').addEventListener('change',()=>{list.innerHTML='';score.textContent='';upd();});
+  upd();
+  $('qgo').click();
+})();
+})();
+
+</script>
+</body>
+</html>
