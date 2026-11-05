@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Problemas resueltos · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" class="on" aria-current="page" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>Problemas resueltos</b><span class="np">10 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c8);--tcs:var(--c8s)">
+<div class="sh"><span class="badge" aria-hidden="true">Σ</span><div class="shx"><p class="kick">Practicar</p><h2 id="problemas">Problemas resueltos</h2><div class="tags"><span class="tag">19 problemas</span><span class="tag">resultados comprobados con código</span></div></div></div>
+<p>Los enunciados los he montado yo con los <b>datos y fórmulas de los apuntes</b> (P1–P16 son míos; P17–P19 son los entregables del curso 23-24). Tápalos, resuélvelos y compara. Las cifras están redondeadas.</p>
+<h3>Agua</h3>
+
+<details><summary>P1 · DBO₅ a partir de la DBO última (y al revés) <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Un agua tiene $L_a=300$ mg/L y $K_1=0{,}23$ d⁻¹. (a) ¿DBO₅? (b) Otra muestra tiene DBO₅ = 220 mg/L y $K_1=0{,}2$ d⁻¹: ¿$L_a$ y DBO remanente a los 5 días?</p>
+<ol class="steps"><li>$y_5=L_a(1-e^{-K_1 t})=300\,(1-e^{-1{,}15})=300\cdot 0{,}6834$.</li>
+<li>(b) $L_a=\dfrac{y_5}{1-e^{-K_1\cdot5}}=\dfrac{220}{1-e^{-1}}=\dfrac{220}{0{,}6321}$ ; $L_5=L_a-y_5$.</li></ol>
+<p class="ans">(a) DBO₅ = 205,0 mg/L · (b) $L_a$ = 348,0 mg/L y $L_5$ = 128,0 mg/L.</p></div></details>
+
+<details><summary>P2 · Carga contaminante y habitantes-equivalentes <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Una EDAR recibe 50.000 m³/día con DBO₅ media de 327 mg/L. Calcula la carga diaria en kg DBO₅/día y en h-e (1 h-e = 60 g O₂/día). Comprueba además los 123.000 h-e de Fini Golosinas (24,6 kg DBO₅/m³ y 300 m³/día).</p>
+<ol class="steps"><li>$327\ \text{g/m}^3\times50.000\ \text{m}^3/\text{d}=16{,}35\cdot10^{6}$ g/d = 16.350 kg/d.</li>
+<li>h-e = $16.350\ \text{kg}/0{,}060\ \text{kg}$.</li>
+<li>Fini: $24{,}6\times300=7.380$ kg/d; $7.380/0{,}06=123.000$ h-e ✓.</li></ol>
+<p class="ans">16.350 kg DBO₅/día = 272.500 h-e. Fini: 123.000 h-e.</p></div></details>
+
+<details><summary>P3 · Sólidos en suspensión totales, fijos y volátiles <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Se filtran 250 mL. Filtro seco antes: $P_1=95{,}2$ mg; tras filtrar y secar a 105 ºC: $P_2=112{,}7$ mg; tras calcinar a 550 ºC: $P_3=98{,}9$ mg.</p>
+<ol class="steps"><li>SST $=(P_2-P_1)/V=(112{,}7-95{,}2)/0{,}25$.</li><li>SSf $=(P_3-P_1)/V=(98{,}9-95{,}2)/0{,}25$.</li><li>SSv = SST − SSf.</li></ol>
+<p class="ans">SST = 70,0 mg/L · SSf = 14,8 mg/L · SSv = 55,2 mg/L. (Mucha materia volátil: ~79 %.)</p></div></details>
+
+<details><summary>P4 · Toxicidad: TII₅₀ frente al límite de vertido <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Un lixiviado da EC₅₀ = 10 %. Otro da EC₅₀ = 2 %. Límite en Murcia: 25 Equitox/m³. ¿Cuál se puede verter? ¿Qué EC₅₀ mínima exige el límite?</p>
+<ol class="steps"><li>$TII_{50}=100/EC_{50}$: $100/10=10$; $100/2=50$ Equitox/m³.</li><li>Límite: $EC_{50}\ge100/25=4\ \%$.</li></ol>
+<p class="ans">El primero (10 &lt; 25; toxicidad baja, rango 1–10) sí; el segundo (50 &gt; 25; moderada) no. EC₅₀ mínima = 4 %.</p></div></details>
+
+<details><summary>P5 · Dosis de adsorbente con Freundlich <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> $K_f=2{,}5$ mg/g, $1/n=0{,}5$. Se quiere bajar un metal de $C_i=24$ mg/L a $C_e=4$ mg/L. ¿Dosis mínima?</p>
+<ol class="steps"><li>$q_e=K_fC_e^{1/n}=2{,}5\cdot4^{0{,}5}=5$ mg/g.</li><li>$D=(C_i-C_e)/q_e=(24-4)/5$.</li></ol>
+<p class="ans">$q_e$ = 5 mg/g · D = 4 g de adsorbente por litro de agua.</p></div></details>
+
+<details><summary>P6 · Tiempo de desinfección (cinética de primer orden) <span class="src">T3</span></summary><div class="inner">
+<p><b>Enunciado.</b> $k=0{,}8$ min⁻¹. ¿Tiempo para inactivar el 99,9 % y el 99,99 %?</p>
+<ol class="steps"><li>$t=\ln(N_0/N_t)/k$.</li><li>99,9 %: $N_t/N_0=10^{-3}$ → $\ln1000=6{,}908$. 99,99 %: $\ln10^4=9{,}210$.</li></ol>
+<p class="ans">8,6 min y 11,5 min.</p></div></details>
+
+<details><summary>P7 · Ósmosis inversa: recuperación y balance de sales <span class="src">T3</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q_f=100$ m³/h con 2.000 mg/L de sales; recuperación 75 %; permeado de 50 mg/L. Calcula $Q_p$, $Q_r$ y la salinidad del rechazo.</p>
+<ol class="steps"><li>$Q_p=0{,}75\cdot100=75$ m³/h; $Q_r=Q_f-Q_p=25$ m³/h.</li><li>Balance de sales: $Q_fC_f=Q_pC_p+Q_rC_r$ → $200.000=75\cdot50+25\,C_r$ → $C_r=(200.000-3.750)/25$.</li></ol>
+<p class="ans">Qp = 75 m³/h · Qr = 25 m³/h · Cr = 7.850 mg/L (el rechazo se concentra ≈ 4 veces). Rechazo de sales de la membrana $=1-50/2000$ = 97,5 % (concepto añadido; en los apuntes «rechazo» es el caudal de salmuera).</p></div></details>
+
+<details><summary>P8 · Fangos activos: todos los parámetros del reactor <span class="src">T4</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q=10.000$ m³/d; $S_0=300$ mg/L DBO₅; $S_f=20$ mg/L; $V=4.000$ m³; $X=3$ kg SSVLM/m³; $X_R=6$ kg/m³; producción de fango = 0,4 kg por kg de DBO₅ eliminada (dato de enunciado para $X_e$). Calcula θ, Cm, Cv, E, R y θc y clasifica el proceso.</p>
+<ol class="steps"><li>$\theta=V/Q=0{,}4$ d = 9,6 h.</li>
+<li>Carga diaria $S_0Q=300\ \text{g/m}^3\cdot10.000=3.000$ kg DBO₅/d.</li>
+<li>$C_m=\dfrac{3.000}{4.000\cdot3}=0{,}25$ kg DBO₅/kg SSVLM·d · $C_v=\dfrac{3.000}{4.000}=0{,}75$ kg DBO₅/m³·d.</li>
+<li>$E=(300-20)/300\cdot100=93{,}3\ \%$ · $R=\dfrac{3}{6-3}=1$.</li>
+<li>Fango en exceso $=(S_0-S_f)Q\cdot0{,}4=2.800\cdot0{,}4=1.120$ kg/d → $\theta_c=\dfrac{VX}{1.120}=\dfrac{12.000}{1.120}$.</li></ol>
+<p class="ans">θ = 9,6 h · Cm = 0,25 · Cv = 0,75 · E = 93,3 % · R = 1 · θc = 10,7 d. Cm entre 0,15 y 0,4 y Cv entre 0,5 y 1,5 ⇒ <b>media carga</b>. Efluente: 20 mg/L DBO₅ &lt; 25 (cumple ese límite).</p></div></details>
+
+<details><summary>P9 · Decantador secundario: velocidad ascensional y carga de sólidos <span class="src">T4</span></summary><div class="inner">
+<p><b>Enunciado.</b> Con el caudal del problema anterior (se toma como caudal de cálculo), $S=300$ m² y $X=3$ kg/m³.</p>
+<ol class="steps"><li>$Q=10.000/24=416{,}7$ m³/h.</li><li>$V_{ASC}=Q/S=416{,}7/300$.</li><li>$C_S=QX/S=416{,}7\cdot3/300$.</li></ol>
+<p class="ans">V_ASC = 1,39 m/h · C_S = 4,17 kg SS/m²·h. En un caso real se calcula con el <b>caudal punta</b>.</p></div></details>
+
+<details><summary>P10 · Electrodiálisis: corriente y potencia <span class="src">T4</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q=10$ L/s, $N=0{,}02$ eq-g/L, se elimina el 50 % de los iones ($\eta=0{,}5$), $n=100$ celdas, $E_c=0{,}9$, $R=0{,}5\ \Omega$.</p>
+<ol class="steps"><li>$\text{eq-g/s}=QN\eta=10\cdot0{,}02\cdot0{,}5=0{,}1$.</li>
+<li>$I=\dfrac{F\,QN\eta}{nE_c}=\dfrac{96.485\cdot0{,}1}{100\cdot0{,}9}$.</li>
+<li>$P=RI^2=0{,}5\cdot107{,}2^2$.</li></ol>
+<p class="ans">I = 107,2 A · P = 5,75 kW.</p></div></details>
+
+<h3>Aire</h3>
+<details><summary>P11 · ¿Estable o inestable? ¿Qué penacho? <span class="src">T5</span></summary><div class="inner">
+<p><b>Enunciado.</b> (a) T = 15,0 ºC a 100 m y 13,6 ºC a 300 m. (b) T = 14,0 ºC a 500 m y 15,5 ºC a 700 m. Clasifica.</p>
+<ol class="steps"><li>(a) $-dT/dz=(15{,}0-13{,}6)/200\ \text{m}=0{,}7\ \text{ºC}/100\text{ m}$. Γ = 0,98 ºC/100 m → $-dT/dz&lt;\Gamma$.</li>
+<li>(b) La temperatura <b>sube</b> con la altura: $dT/dz&gt;0$.</li></ol>
+<p class="ans">(a) Atmósfera <b>estable</b> (débilmente: 0,7 es próximo a Γ; no hay inversión). (b) <b>Inversión</b>: máxima estabilidad. Una chimenea dentro de la inversión da un penacho de <b>abanico</b>; si hay inversión por debajo y por encima, <b>atrapamiento</b>.</p></div></details>
+
+<details><summary>P12 · Concentración en el suelo con el modelo gaussiano <span class="src">T5</span></summary><div class="inner">
+<p><b>Enunciado.</b> $Q=100$ g/s, $U=4$ m/s, $h_e=60$ m, estabilidad D (neutra), a $x=2$ km del foco sobre el eje del penacho.</p>
+<ol class="steps"><li>$x=2$ km &gt; 1 km: $\sigma_z=33{,}2\cdot2^{0{,}725}-1{,}7=53{,}2$ m.</li>
+<li>$\sigma_y=68\cdot2^{0{,}894}=126{,}4$ m.</li>
+<li>$C=\dfrac{Q}{\pi\sigma_y\sigma_zU}e^{-h_e^2/(2\sigma_z^2)}=\dfrac{100}{\pi\cdot126{,}4\cdot53{,}2\cdot4}\,e^{-3600/(2\cdot53{,}2^2)}$.</li>
+<li>Primer factor: $1{,}184\cdot10^{-3}$ g/m³; exponencial: $e^{-0{,}637}=0{,}529$.</li></ol>
+<p class="ans">$C(2\ \text{km},0,0)=6{,}27\cdot10^{-4}$ g/m³ = <b>627 µg/m³</b>. (A 1,5 km sale 713 µg/m³; a 3 km, 430 µg/m³.)</p></div></details>
+
+<details><summary>P13 · Muestreador pasivo <span class="src">T6</span></summary><div class="inner">
+<p><b>Enunciado.</b> $D=1{,}0\cdot10^{-5}$ m²/s, $A=7{,}2\cdot10^{-5}$ m², $L=1$ cm. Tras 7 días se recogen 2,5 µg del contaminante. ¿Concentración media?</p>
+<ol class="steps"><li>$Q=\dfrac{DA}{L}=\dfrac{10^{-5}\cdot7{,}2\cdot10^{-5}}{0{,}01}=7{,}2\cdot10^{-8}$ m³/s.</li><li>$t=7\cdot86.400=604.800$ s → $Qt=0{,}0435$ m³.</li><li>$C=m/(Qt)=2{,}5/0{,}0435$.</li></ol>
+<p class="ans">C ≈ 57 µg/m³ (equivale a que el captador «ha respirado» 43,5 L de aire).</p></div></details>
+
+<details><summary>P14 · Ruido: nivel, suma de fuentes y nivel equivalente <span class="src">T6</span></summary><div class="inner">
+<p><b>Enunciado.</b> (a) ¿Nivel de una presión de 2 Pa? (b) Suma de dos máquinas de 80 dB. (c) Durante una jornada de 8 h hay 4 h a 70 dB(A) y 4 h a 60 dB(A): $L_{Aeq,8h}$.</p>
+<ol class="steps"><li>(a) $L_p=20\log(2/20\cdot10^{-6})=20\log10^5$.</li>
+<li>(b) $L=10\log(10^{8}+10^{8})=80+10\log2$.</li>
+<li>(c) $L_{Aeq}=10\log\left[\tfrac{4\cdot10^{7}+4\cdot10^{6}}{8}\right]=10\log(5{,}5\cdot10^{6})$ (forma discreta de la integral; se promedian <b>energías</b>, no decibelios).</li></ol>
+<p class="ans">(a) 100 dB · (b) 83 dB (+3 dB) · (c) 67,4 dB(A), no 65.</p></div></details>
+
+<details><summary>P15 · Sedimentador por gravedad frente a ciclón <span class="src">T7</span></summary><div class="inner">
+<p><b>Enunciado.</b> Cámara con $Q=2$ m³/s, $W=3$ m, $H=2$ m, $L=10$ m; velocidad terminal de la partícula $v_t=0{,}05$ m/s. ¿Eficiencia? ¿Cuánto mayor es la fuerza centrífuga que la gravedad en un ciclón con $V=20$ m/s y $r=0{,}25$ m?</p>
+<ol class="steps"><li>$v_{hp}=Q/(WH)=2/6=0{,}333$ m/s.</li><li>$\eta=\dfrac{Lv_t}{Hv_{hp}}=\dfrac{10\cdot0{,}05}{2\cdot0{,}333}$.</li><li>$F_c/F_g=V^2/(rg)=400/(0{,}25\cdot9{,}8)$.</li></ol>
+<p class="ans">η = 0,75 (75 % de las partículas de ese tamaño) · $F_c/F_g$ = 163 ⇒ el ciclón es mucho más eficaz.</p></div></details>
+
+<details><summary>P16 · Categoría del ICA de una estación <span class="src">T5</span></summary><div class="inner">
+<p><b>Enunciado.</b> Una estación mide (µg/m³): PM₁₀ = 38, PM₂,₅ = 12, NO₂ = 125, O₃ = 130, SO₂ = 60. ¿Categoría del ICA?</p>
+<ol class="steps"><li>PM₁₀ 38 → cat. 3 (36–50) · PM₂,₅ 12 → cat. 2 (11–20) · NO₂ 125 → cat. 4 (121–230) · O₃ 130 → cat. 3 (121–180) · SO₂ 60 → cat. 1 (0–100).</li><li>Manda el <b>peor</b> contaminante.</li></ol>
+<p class="ans">Categoría 4: <b>desfavorable</b> (naranja), por el NO₂. Se recomienda reducir actividades intensas al aire libre.</p></div></details>
+
+<h3>Entregables del curso 2023-24 (Tema 2)</h3>
+<p>Son tres problemas; los he resuelto con los datos del enunciado.</p>
+<details><summary>P17 · Dos adsorbentes de Cr(VI): isotermas de Freundlich y dosis <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> Datos de equilibrio $(q_e\ \text{mg/g},\,C_e\ \text{mg/L})$. Adsorbente 1: (19,87; 259,50), (11,33; 136,60), (9,02; 45,54), (3,87; 15,31), (2,24; 8,87). Adsorbente 2: (14,57; 259,50), (10,43; 136,60), (7,70; 60,63), (4,08; 13,62), (2,38; 6,51). El agua tiene 5,22 mg/L de Cr(VI) y debe bajar al máximo del Decreto 16/1999 (<b>1 mg/L</b>). Calcula la regresión lineal, $K_f$ y la dosis mínima.</p>
+<ol class="steps"><li>Se hace la regresión de $\ln q_e$ frente a $\ln C_e$: $\ln q_e=\ln K_f+\tfrac1n\ln C_e$.</li>
+<li>Adsorbente 1: pendiente $1/n=0{,}5994$, ordenada $-0{,}3473$, $R^2=0{,}959$ → $K_f=e^{-0{,}3473}=0{,}707$ mg/g.</li>
+<li>Adsorbente 2: $1/n=0{,}4697$, ordenada $0{,}0767$, $R^2=0{,}990$ → $K_f=e^{0{,}0767}=1{,}080$ mg/g.</li>
+<li>Con $C_e=1$ mg/L, $\ln C_e=0$ y $q_{e0}=K_f$. Dosis $D=(C_i-C_e)/q_{e0}=(5{,}22-1)/q_{e0}$.</li></ol>
+<p class="ans">Mayor $K_f$: el adsorbente 2 (1,08 mg/g). Dosis: adsorbente 1 ≈ 5,97 g/L · adsorbente 2 ≈ 3,91 g/L. (Si tu enunciado trae otros datos, el método es el mismo; en ejemplos de otros años salen $K_f$ distintas.)</p></div></details>
+<details><summary>P18 · Sólidos con cápsula y filtro (esquema completo) <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> 200 mL de agua residual. Cápsula: 23,5167 g. Filtro: 1,2792 g. Sin filtrar: cápsula + residuo a 105 ºC = 23,5391 g; tras calcinar a 550 ºC = 23,5322 g. Filtrado: cápsula + filtro + residuo a 105 ºC = 24,7972 g; tras calcinar = 24,7968 g. Determina todos los sólidos (mg/L).</p>
+<ol class="steps"><li>Sin filtrar: STT $=(23{,}5391-23{,}5167)/0{,}2$ = 112 mg/L · STF $=(23{,}5322-23{,}5167)/0{,}2$ = 77,5 mg/L · STV = 34,5 mg/L.</li>
+<li>Con filtro (suspendidos): SST $=(24{,}7972-23{,}5167-1{,}2792)/0{,}2$ = 6,5 mg/L · SSF $=(24{,}7968-23{,}5167-1{,}2792)/0{,}2$ = 4,5 mg/L · SSV = 2,0 mg/L.</li>
+<li>Disueltos por diferencia: SDT = 112 − 6,5 · SDF = 77,5 − 4,5 · SDV = 34,5 − 2,0.</li></ol>
+<p class="ans">STT 112 · STF 77,5 · STV 34,5 · SST 6,5 · SSF 4,5 · SSV 2,0 · SDT 105,5 · SDF 73,0 · SDV 32,5 (mg/L). Comprobación: fijos + volátiles = totales en cada fila.</p></div></details>
+<details><summary>P19 · DBO ejercida día a día <span class="src">T2</span></summary><div class="inner">
+<p><b>Enunciado.</b> $L_a=635$ mg/L y $K_1=0{,}21$ d⁻¹. Calcula la DBO ejercida a los 1, 2, 3, 4, 5, 8, 10 y 20 días y dibuja la curva.</p>
+<ol class="steps"><li>$y_t=L_a(1-e^{-K_1t})=635\,(1-e^{-0{,}21\,t})$.</li></ol>
+<div class="tw"><table><tr><th>t (d)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>8</td><td>10</td><td>20</td></tr><tr><th>y_t (mg/L)</th><td>120,3</td><td>217,8</td><td>296,8</td><td>360,9</td><td>412,8</td><td>516,7</td><td>557,2</td><td>625,5</td></tr></table></div>
+<p class="ans">La curva sube y tiende asintóticamente a $L_a=635$ mg/L (a los 20 días ya es el 98,5 %). La DBO₅ es 412,8 mg/L.</p></div></details>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="parcial-2024.html" style="--tc:var(--c8)"><small>← Anterior</small><strong>Primer parcial 2024 resuelto</strong></a><a class="nx" href="autoevaluacion.html" style="--tc:var(--c8)"><small>Siguiente →</small><strong>Autoevaluación</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

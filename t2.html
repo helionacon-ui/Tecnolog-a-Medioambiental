@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T2 Contaminantes y parámetros · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" class="on" aria-current="page" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T2 Contaminantes y parámetros</b><span class="np">3 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c2);--tcs:var(--c2s)">
+<div class="sh"><span class="badge" aria-hidden="true">T2</span><div class="shx"><p class="kick">Tema 2 · Agua</p><h2 id="t2">Contaminantes del agua y parámetros de calidad</h2><div class="tags"><span class="tag">39 págs</span><span class="tag">el más largo</span><span class="tag w">muchos números</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<ul>
+<li><b>Contaminación del agua</b> (Ley de Aguas, RDL 1/2001, art. 93): introducir materias o energía, o inducir condiciones, que alteren perjudicialmente su calidad respecto a los usos posteriores o su función ecológica.</li>
+<li><b>Fuentes</b>: naturales o antrópicas; <b>puntuales</b> (fáciles de tratar) o <b>difusas</b> (escorrentía y retornos de regadío: sólidos, fertilizantes, plaguicidas).</li>
+<li><b>ARU</b> (negras + grises + limpieza pública + pluviales = «aguas domésticas o sépticas») · <b>ARI</b> (muy variables, casi una por industria) · <b>mixtas</b> (la mayoría en España).</li>
+<li>Un <b>habitante-equivalente</b> = carga orgánica biodegradable con <b>DBO5 de 60 g de O₂/día</b>.</li>
+</ul></div>
+<h3>Valores a memorizar (inorgánicos y oligoelementos)</h3>
+<p>VP = valor paramétrico del <b>RD 3/2023</b> (agua de consumo). «Vertido» = máximo que una industria puede verter al alcantarillado en la Región de Murcia (Decreto 16/1999).</p>
+<div class="tw"><table>
+<tr><th>Parámetro</th><th>VP agua de consumo</th><th>Vertido (Murcia)</th><th>Para recordar</th></tr>
+<tr><td>Cloruro Cl⁻</td><td class="num">250 mg/L</td><td>—</td><td>Corrosión; se valora con el índice de Langelier</td></tr>
+<tr><td>Sulfato SO₄²⁻</td><td class="num">250 mg/L</td><td>—</td><td>Excepción regional 500 mg/L; no aptitud 750; &gt; 300 mg/L ataca al cemento</td></tr>
+<tr><td>Fluoruro F⁻</td><td class="num">1,5 mg/L</td><td class="num">15 mg/L (estatal Ley 5/2002: 12)</td><td>Semiconductores (HF); se precipita como CaF₂</td></tr>
+<tr><td>Arsénico</td><td class="num">10 µg/L</td><td class="num">1 mg/L</td><td>As(III) más tóxico que As(V)</td></tr>
+<tr><td>Cadmio</td><td class="num">5 µg/L</td><td class="num">0,5 mg/L</td><td>Baterías Ni/Cd</td></tr>
+<tr><td>Cromo total</td><td class="num">25 µg/L (50 hasta 2-1-2030)</td><td class="num">5 mg/L total; 1 mg/L Cr(VI)</td><td>Cr(VI) muy tóxico → se reduce a Cr(III) con NaHSO₃</td></tr>
+<tr><td>Cobre</td><td class="num">2,0 mg/L</td><td class="num">5 mg/L</td><td>CuSO₄·5H₂O bactericida y alguicida</td></tr>
+<tr><td>Hierro</td><td>—</td><td class="num">10 mg/L</td><td>Fe(II)→Fe(III), precipita Fe(OH)₃</td></tr>
+<tr><td>Plomo</td><td>—</td><td class="num">2 mg/L</td><td>Restringido en aparatos eléctricos desde 2006</td></tr>
+<tr><td>Mercurio</td><td class="num">1 µg/L</td><td class="num">0,1 mg/L</td><td>Metilmercurio (Minamata): vida media 70 días</td></tr>
+<tr><td>Trihalometanos (suma de 4)</td><td class="num">100 µg/L</td><td>—</td><td>Subproducto de la cloración; precursores: sustancias húmicas</td></tr>
+</table></div>
+<ul>
+<li><b>Cianuro</b> CN⁻ → se oxida a <b>cianato</b> CNO⁻, 1000 veces menos tóxico. <b>Nitrito</b>: oxidación del NH₃ o reducción de nitratos.</li>
+<li><b>THM</b>: cloroformo, bromoformo, dibromoclorometano, diclorobromometano. Ozono y ClO₂ generan menos.</li>
+<li><b>Contaminantes emergentes</b> (ng/L–mg/L; fármacos, cuidado personal…) y <b>microplásticos</b>: 5 mm a 1 µm; <b>nanoplásticos</b> &lt; 1 µm; primarios (se fabrican así) o secundarios (fragmentación).</li>
+<li><b>PBDE</b>: retardantes de llama bromados, COPs.</li>
+</ul>
+<h3>Adsorción de metales: isoterma de Freundlich</h3>
+<div class="box key">
+$$q_e=K_f\,C_e^{1/n}\qquad\ln q_e=\ln K_f+\tfrac{1}{n}\ln C_e\qquad D\ \left[\tfrac{g}{L}\right]=\frac{C_i-C_e}{q_e}$$
+<p>$q_e$ (mg/g) retenido en equilibrio · $C_e$ (mg/L) concentración residual · $K_f$ capacidad · $1/n$ intensidad · $D$ dosis mínima de adsorbente · $C_i$ influente, $C_e$ efluente. Mayor $q_e$ ⇒ menor dosis. El carbón activo puede ser granular (GAC) o en polvo (PAC, menos efectivo).</p></div>
+<h3>Parámetros físicos</h3>
+<ul>
+<li><b>Temperatura</b>: al subir, aumenta la solubilidad de los sólidos y <b>baja la de los gases</b> (menos O₂). Calor específico: agua ≈ 4180 J/g·K, aire ≈ 1012 J/g·K.</li>
+<li><b>Organolépticos</b>: color (real = disueltos; aparente = suspendidos), olor y sabor (diluciones sucesivas hasta umbral; nariz y lengua electrónicas).</li>
+<li><b>Sólidos</b>: clasificación en el cuadro siguiente.</li>
+</ul>
+<div class="tw"><table>
+<tr><th>Sólidos</th><th>Cómo se miden</th><th>Fórmula</th></tr>
+<tr><td><b>SST</b> (en suspensión)</td><td>Filtro de fibra de vidrio de <b>0,45 µm</b>; filtro seco a <b>105 ºC</b>; pesar antes (P₁) y después (P₂).</td><td class="num">$\dfrac{P_2-P_1}{V}$</td></tr>
+<tr><td><b>SS fijos</b></td><td>Calcinar el filtro a <b>550 ± 50 ºC</b> (P₃).</td><td class="num">$\dfrac{P_3-P_1}{V}$</td></tr>
+<tr><td><b>SS volátiles</b></td><td>Diferencia SST − SSf.</td><td class="num">$\dfrac{P_2-P_3}{V}$</td></tr>
+<tr><td><b>SDT</b> (disueltos)</td><td>El filtrado se evapora en cápsula a baño maría y 105 ºC.</td><td class="num">$\dfrac{P_2-P_1}{V}$</td></tr>
+<tr><td><b>Materia decantable (MD)</b></td><td><b>Cono de Imhoff</b>, 1 L, 1 hora. Da idea de los lodos de la decantación primaria.</td><td>ml/L</td></tr>
+<tr><td><b>ST</b> (totales)</td><td>SS + SD, o muestra sin filtrar completa.</td><td></td></tr>
+</table></div>
+<p class="muted">Fijos ≠ inorgánicos y volátiles ≠ orgánicos: al calcinar se descomponen algunos inorgánicos (p. ej. bicarbonatos → CO₂). Por eso se habla de sólidos <i>fijos</i> y <i>volátiles</i>.</p>
+<h3>Parámetros químicos</h3>
+<div class="grid2">
+<div class="box key"><h4>Oxígeno disuelto y turbidez</h4>
+<ul><li>OD en agua a T y P ambientales ≈ <b>9–10 mg/L</b>; <b>&lt; 3 mg/L</b> estresa a la mayoría de organismos. Sonda de membrana (UNE-EN ISO 5814).</li>
+<li>Turbidez en UNF/NTU, medida con luz dispersada; <b>720 nm</b> (el color no influye). VP: <b>4 UNF</b> en red; <b>0,8 UNF</b> a la salida de la ETAP (antes 1); no aptitud 2 UNF (ETAP) y 6 UNF (red).</li></ul></div>
+<div class="box key"><h4>DBO₅ y DQO</h4>
+<ul><li><b>DBO₅</b>: O₂ (mg/L) que consumen bacterias aerobias oxidando la materia orgánica en <b>5 días, 20 ºC, oscuridad</b> (≈ 2/3 del carbono biodegradable).</li>
+<li><b>DQO</b>: O₂ consumido por las materias reductoras, sin organismos. <b>DQO &gt; DBO₅ siempre</b>.</li>
+<li>DBO₅/DQO &gt; 0,6 fácilmente biodegradable (ARU) · &lt; 0,2 escasamente biodegradable.</li></ul></div>
+</div>
+<div class="box key"><h4>Cinética de la DBO</h4>
+$$\frac{dL_t}{dt}=-K_1L_t\ \Rightarrow\ L_t=L_a\,e^{-K_1t}\qquad y_t=L_a-L_t=L_a\left(1-e^{-K_1t}\right)$$
+<p>$L_t$ DBO remanente · $L_a$ DBO última (carbonosa) · $K_1$ constante de desoxigenación (d⁻¹) · $y_t$ O₂ ya consumido. <b>$L_a$ no depende de $K_1$</b>; un $K_1$ mayor da una DBO₅ mayor. Carga diaria: $\text{kg/día}=\text{DBO}_5\,(\text{g/m}^3)\cdot Q\,(\text{m}^3/\text{día})/1000$.</p></div>
+<div class="grid2">
+<div class="box key"><h4>Parámetros biológicos</h4>
+<ul><li><b>E. coli</b>: indicador de contaminación fecal; es más fácil de medir que los patógenos.</li>
+<li><b>Coliformes totales</b>: fermentan lactosa con gas a <b>35 ºC</b>. <b>Fecales o termotolerantes</b>: a <b>44 ºC</b>.</li></ul></div>
+<div class="box key"><h4>Toxicidad: Microtox®</h4>
+<p>Reducción de la luz de <i>Aliivibrio fischeri</i>. <b>EC50</b> = concentración que reduce la luz el 50 %.</p>
+<ul><li>EC50 en mg/L: ≤ 1 muy tóxica · 1–10 tóxica · 10–100 dañina · &gt; 100 no dañina. <b>Menor EC50 ⇒ más tóxico.</b></li>
+<li>$TII_{50}=\text{Equitox/m}^3=100/EC_{50}$ (EC50 en %): 0–1 muy baja · 1–10 baja · 10–100 moderada · &gt; 100 alta. <b>Mayor TII ⇒ más tóxico.</b> Límite de vertido en Murcia y Madrid: <b>25 Equitox/m³</b>.</li></ul></div>
+</div>
+<h3>Datos de la EDAR «Cabezo Beaza» (Cartagena), entrada a los reactores</h3>
+<div class="tw"><table>
+<tr><th></th><th>pH</th><th>Sól. sediment. (ml/L)</th><th>ST (mg/L)</th><th>SS (mg/L)</th><th>SD (mg/L)</th><th>DQO (mg/L)</th><th>DBO₅ (mg/L)</th></tr>
+<tr><td>Máx.</td><td>8,36</td><td>4,00</td><td>4.320</td><td>600</td><td>4.260</td><td>1.540</td><td>500</td></tr>
+<tr><td>Media</td><td>7,81</td><td>0,59</td><td>2.122</td><td>117</td><td>2.008</td><td>817</td><td>327</td></tr>
+<tr><td>Mín.</td><td>7,17</td><td>0,01</td><td>440</td><td>20</td><td>400</td><td>382</td><td>100</td></tr>
+</table></div>
+<h3>Prácticas de laboratorio que se preguntan</h3>
+<ul>
+<li><b>Cloruros (método de Mohr)</b>: el indicador del punto final es el <b>cromato potásico</b>.</li>
+<li><b>Alcalinidad</b>: se valora con HCl primero con <b>fenolftaleína</b> (V₁) y luego con <b>naranja de metilo</b>. Si el gasto con naranja de metilo supera claramente al de fenolftaleína (&gt; 2V₁) la alcalinidad es de <b>carbonatos y bicarbonatos</b>.</li>
+<li><b>DBO₅</b> en el laboratorio: método <b>manométrico</b>.</li>
+<li><b>Ruido</b>: el RD estatal (1367/2007) define 3 periodos: día, tarde y noche (el Decreto 48/1998 de Murcia usa solo día y noche).</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Mezclar unidades: <b>µg/L</b> (agua de consumo) y <b>mg/L</b> (vertido) van en la misma tabla; compara en la misma unidad.</li>
+<li>EC50 y TII50 se mueven en <b>sentidos opuestos</b>.</li>
+<li>Una DBO₅ baja <b>no</b> garantiza poca contaminación: puede haber sustancias tóxicas que inhiben el proceso o poco biodegradables.</li>
+<li>Los SST se miden con filtro de 0,45 µm; no confundir con la materia decantable (cono de Imhoff).</li>
+<li>La electrocoagulación y la precipitación con calcio no son lo mismo: el F⁻ se elimina precipitándolo con Ca²⁺ (o con ósmosis inversa).</li></ul></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t1.html" style="--tc:var(--c1)"><small>← Anterior</small><strong>T1 Introducción y legislación</strong></a><a class="nx" href="t3.html" style="--tc:var(--c3)"><small>Siguiente →</small><strong>T3 Potabilización y membranas</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

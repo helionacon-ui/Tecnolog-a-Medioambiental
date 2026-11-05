@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T6 Medida · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" class="on" aria-current="page" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T6 Medida</b><span class="np">7 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c6);--tcs:var(--c6s)">
+<div class="sh"><span class="badge" aria-hidden="true">T6</span><div class="shx"><p class="kick">Tema 6 · Aire</p><h2 id="t6">Medida de contaminantes</h2><div class="tags"><span class="tag">39 págs</span><span class="tag">qué técnica mide qué</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<p>Métodos <b>continuos</b> (captación y análisis automático en el punto) frente a <b>discontinuos</b> (captar, llevar al laboratorio y analizar). Ambos sirven para emisión e inmisión. La mayoría de analizadores de referencia para gases son <b>ópticos</b>; aprende la <b>pareja contaminante ↔ técnica</b>.</p></div>
+<h3>Muestreo</h3>
+<div class="tw"><table>
+<tr><th>Muestreador</th><th>Cómo funciona</th><th>Datos</th></tr>
+<tr><td><b>Pasivo</b></td><td>Difusión molecular (1.ª ley de Fick), sin bomba. Solo gases, vapores y humo metálico. Discontinuo.</td><td>$C=\dfrac{m}{Q\,t}$ con $Q=\dfrac{D\,A}{L}$ (caudal de captación, m³/s)</td></tr>
+<tr><td>Pasivo de sedimentables</td><td>Colector en trípode para partículas &gt; 10 µm</td><td>Frasco de 10–20 L, ≈ 1 mes</td></tr>
+<tr><td><b>Activo</b></td><td>Bomba + filtro (papel, fibra de vidrio…). Partículas &lt; 10 µm. Discontinuo.</td><td>Bajo volumen ≈ 10 L/min (0,6 m³/h); alto volumen 40–60 m³/h; 24–48 h</td></tr>
+<tr><td><b>Analizadores automáticos</b></td><td>Continuos, en tiempo real, específicos de cada contaminante</td><td>Casetas con control de temperatura</td></tr>
+<tr><td><b>Sensores de bajo coste</b></td><td>Compactos y baratos (PM, NO₂, CO, O₃, COVs). Redes ciudadanas (PurpleAir)</td><td>Requieren calibración, sensibles a la meteorología; <b>complementan</b> a los de referencia</td></tr>
+</table></div>
+<ul>
+<li><b>PM₁₀ y PM₂,₅</b>: partículas que pasan un cabezal selectivo de 10 o 2,5 µm con eficiencia de corte del <b>50 %</b>. Las PM₂,₅ penetran en los pulmones. Valor límite anual PM₂,₅ según los apuntes: <b>25 µg/m³</b> (el RD preveía bajarlo a 20 en 2020).</li>
+<li><b>Muestreo en emisión</b>: <b>isocinético</b> (misma velocidad que el gas en el conducto; el preferible para fuentes fijas) o no isocinético (transporte, ITV). Si $v_{muestreo}&lt;v_{gas}$ → concentración de partículas <b>sobreestimada</b>; si $v_{muestreo}&gt;v_{gas}$ → <b>subestimada</b>.</li>
+</ul>
+<h3>Contaminante ↔ técnica de referencia</h3>
+<div class="tw"><table>
+<tr><th>Contaminante</th><th>Técnica (norma UNE-EN)</th><th>Fundamento</th><th>Valores límite (RD 102/2011)</th></tr>
+<tr><td><b>SO₂</b></td><td>Fluorescencia UV (14212)</td><td>Excitación con UV de 190–230 nm (≈ 214); emite 220–240 nm; fotomultiplicador; $I=K\cdot C$</td><td>350 µg/m³ horario (≤ 24 veces/año) · 125 µg/m³ diario (≤ 3 veces)</td></tr>
+<tr><td><b>CO</b></td><td>Espectrometría IR no dispersiva (14626)</td><td>Absorción selectiva a <b>4.600 nm</b>; celda de muestra y de referencia (N₂ o He)</td><td>10 mg/m³ (en los apuntes, valor límite «diario»)</td></tr>
+<tr><td><b>NO / NO₂</b></td><td>Quimioluminiscencia (14211)</td><td>NO + O₃ → NO₂* que emite luz (&gt; 600 nm, centrada en 1200 nm). NO₂ <b>por diferencia</b> tras convertir NOₓ → NO con catalizador de <b>molibdeno a 300–400 ºC</b></td><td>NO₂: 200 µg/m³ horario (≤ 18 veces) · 40 µg/m³ anual</td></tr>
+<tr><td><b>O₃</b></td><td>Fotometría UV (14625)</td><td>Atenuación de la luz UV de <b>254 nm</b>; celda de referencia sin ozono (conversión catalítica a O₂)</td><td>Ver RD 102/2011, Anejo I</td></tr>
+<tr><td>Hidrocarburos</td><td>Oxidación a CO y detección eléctrica entre dos electrodos polarizados</td><td></td><td>Benceno: VLA 5 µg/m³ · benzo(a)pireno: valor objetivo 1 ng/m³</td></tr>
+</table></div>
+<h3>Familias de contaminantes</h3>
+<ul>
+<li><b>H₂S</b>: olor a huevos podridos; la exposición prolongada anula el olfato (peligro en locales mal ventilados); vida media &lt; 40 días.</li>
+<li><b>SOₓ</b>: de combustibles fósiles con S (0,1–5 %). Relación SO₃:SO₂ en chimeneas de 1:40 a 1:80. SO₃ + H₂O → H₂SO₄ (secundario).</li>
+<li><b>CO</b>: combustión incompleta (80 % de fuentes móviles); mata por anoxia al unirse a la hemoglobina. <b>CO₂</b>: tolerancia hasta 5.000 ppm (0,5 %). <b>Efecto invernadero</b>: natural y necesario (sin él, −20 ºC en lugar de 15 ºC); el problema es el exceso.</li>
+<li><b>NOₓ</b>: se forman por la temperatura de combustión; el NO es precursor del NO₂ y del ozono. NO₂: gas pardo rojizo, causa de lluvia ácida (HNO₃).</li>
+<li><b>COVs</b> (BTX y 1,3-butadieno cancerígenos), <b>PAH</b> (benzo(a)pireno), <b>COPs</b>: persistentes, lipofílicos, bioacumulativos y transfronterizos. <b>Convenio de Estocolmo</b>: «docena sucia» (8 plaguicidas — aldrín, endrín, dieldrín, toxafeno, mirex, heptacloro, DDT, clordano —, más HCB, PCBs, dioxinas y furanos).</li>
+</ul>
+<h3>Materia particulada: analizadores automáticos</h3>
+<div class="tw"><table>
+<tr><th>Técnica</th><th>Idea</th><th>Ecuación</th></tr>
+<tr><td><b>Microbalanza de cristal piezoeléctrico</b></td><td>Precipitación electrostática de partículas sobre cuarzo; cambia la frecuencia de resonancia. Hasta ≈ 100 µg/m³.</td><td>$\Delta f=K_p\,\Delta m=K_p\,Q\,t\,c_m$</td></tr>
+<tr><td><b>TEOM®</b> (elementos cónicos)</td><td>Filtro en un elemento que vibra; al acumular masa baja su frecuencia. ≈ 3 L/min.</td><td>$\Delta m=K_0\left(\dfrac1{f_b^2}-\dfrac1{f_a^2}\right)$</td></tr>
+<tr><td><b>Atenuación β</b></td><td>Cinta con filtro de teflón; los rayos β (¹⁴C o ¹⁴⁷Pm) se atenúan con la masa.</td><td>$\ln\dfrac{I}{I_0}=K_b\,\Delta m=K_b\,Q\,t\,c_m$</td></tr>
+</table></div>
+<h3>Ozono</h3>
+<ul>
+<li><b>Estratosférico</b>: ≈ 90 % del total (80 % entre 10 y 35 km, centrado en 22 km). Absorbe UV-B (280–320 nm). Capa de ≈ 3 mm. Se forma: $O_2+h\nu(&lt;240\text{ nm})\to 2O\cdot$; $O\cdot+O_2+N_2\to O_3+N_2$.</li>
+<li><b>Troposférico</b>: ≈ 10 %; gas de invernadero y oxidante nocivo; se forma a partir de NOₓ y COVs (reacciones fotoquímicas).</li>
+<li><b>Destrucción antrópica</b>: NOₓ, metano y compuestos con cloro (CFC) o bromo (halones), que no tienen sumideros en la troposfera y llegan a la estratosfera.</li>
+</ul>
+<h3>Ruido</h3>
+<div class="box key">
+$$L_p=10\log\frac{p^2}{p_0^2}=20\log\frac{p}{p_0}\ \ (p_0=20\ \mu\text{Pa})\qquad L_{Aeq,T}=10\log\!\left[\frac1T\int_{t_1}^{t_2}\Big(\frac{p_A(t)}{p_0}\Big)^2dt\right]$$
+<p>Rango audible: 20 µPa (0 dB) a 200 Pa (140 dB). Respuesta logarítmica del oído (Weber-Fechner). <b>Sonómetro</b>; ponderación <b>A</b> (la más adecuada a niveles débiles, 25–55 dB). $L_{Aeq,T}$ = nivel continuo equivalente ponderado A.</p></div>
+<div class="tw"><table>
+<tr><th>Presión (µPa)</th><th>dB</th><th>Ambiente</th><th>Presión (µPa)</th><th>dB</th><th>Ambiente</th></tr>
+<tr><td>200.000.000</td><td>140</td><td>Dolor</td><td>20.000</td><td>60</td><td>Oficina</td></tr>
+<tr><td>20.000.000</td><td>120</td><td>Avión despegando</td><td>2.000</td><td>40</td><td>Biblioteca</td></tr>
+<tr><td>2.000.000</td><td>100</td><td>Martillo neumático</td><td>200</td><td>20</td><td>Campo</td></tr>
+<tr><td>200.000</td><td>80</td><td>Tráfico intenso</td><td>20</td><td>0</td><td>Umbral de audición</td></tr>
+</table></div>
+<p><b>Normativa</b>: no hay límite europeo de ruido de instalaciones industriales (solo para vehículos, aeronaves y máquinas); la IPPC (Ley 16/2002) lo incluye en los permisos. En Murcia, <b>Decreto 48/1998</b>; a nivel estatal, <b>RD 1367/2007</b>. Día: 7–22 h; noche: 22–7 h (Decreto 48/1998).</p>
+<div class="tw"><table>
+<tr><th>Uso del suelo (exterior, Leq dB(A))</th><th>Día</th><th>Noche</th></tr>
+<tr><td>Sanitario, docente, cultural, espacios naturales protegidos, parques públicos</td><td class="num">60</td><td class="num">50</td></tr>
+<tr><td>Viviendas, hoteles, áreas recreativas y deportivas no masivas</td><td class="num">65</td><td class="num">55</td></tr>
+<tr><td>Oficinas, locales y centros comerciales, restaurantes, bares, áreas deportivas de asistencia masiva</td><td class="num">70</td><td class="num">60</td></tr>
+<tr><td>Industria, estaciones de viajeros</td><td class="num">75</td><td class="num">65</td></tr>
+<tr><td><b>Interior</b>: sanitario, docente y cultural</td><td class="num">45</td><td class="num">35</td></tr>
+<tr><td><b>Interior</b>: viviendas y hoteles</td><td class="num">50</td><td class="num">40</td></tr>
+</table></div>
+<h3>Contaminación lumínica y Legionella</h3>
+<ul>
+<li><b>Lumínica</b>: iluminancia en <b>lux</b> (lm/m²); flujo luminoso en <b>lumen</b>. Criterios: niveles realmente necesarios, luminarias que no emitan por encima de 75º de la vertical (evitar las ornamentales tipo bola), no dirigir el haz al cielo ni fuera de la zona, superficies de alta reflectancia.</li>
+<li><b><i>Legionella</i></b>: RD 487/2022. <i>L. pneumophila</i>. Formas: <b>Enfermedad del Legionario</b> (neumonía) y <b>Fiebre de Pontiac</b> (leve). Se transmite por <b>aerosoles inhalados</b>; <b>no</b> por beber agua, alimentos, contacto entre personas ni de animales. Causas: mal diseño, falta de mantenimiento, agua estancada. Riesgo: torres de refrigeración, condensadores evaporativos, ACS, AFCH, duchas, humidificadores, spas, fuentes ornamentales…</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>NO₂ no se mide directamente: es <b>NOₓ − NO</b>.</li>
+<li>Muestreo isocinético: si aspiras <b>más lento</b> que el gas, <b>sobreestimas</b> la concentración de partículas.</li>
+<li>Los muestreadores pasivos <b>no</b> sirven para partículas.</li>
+<li>Duplicar la presión sonora son +6 dB; duplicar la <b>energía</b> (dos fuentes iguales) son +3 dB.</li>
+<li>Los valores límite de NO₂ y SO₂ tienen versión <b>horaria</b> (con nº máximo de superaciones) y otra diaria o anual.</li></ul></div>
+</section>
+
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t5.html" style="--tc:var(--c5)"><small>← Anterior</small><strong>T5 Transporte y dispersión</strong></a><a class="nx" href="t7.html" style="--tc:var(--c7)"><small>Siguiente →</small><strong>T7 Control</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

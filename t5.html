@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T5 Transporte y dispersión · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" class="on" aria-current="page" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T5 Transporte y dispersión</b><span class="np">6 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c5);--tcs:var(--c5s)">
+<div class="sh"><span class="badge" aria-hidden="true">T5</span><div class="shx"><p class="kick">Tema 5 · Aire</p><h2 id="t5">Transporte y dispersión de contaminantes</h2><div class="tags"><span class="tag">30 págs</span><span class="tag">modelo gaussiano</span></div></div></div>
+<div class="zero"><p class="ft">Lo esencial</p>
+<ul>
+<li><b>Contaminante primario</b>: sale directo de la fuente (aerosoles, SOₓ, NOₓ, CO, CO₂, HC, metales pesados). <b>Secundario</b>: se forma en la atmósfera por reacción del primario, normalmente fotoquímica (O₃, aldehídos, cetonas, ácidos, H₂O₂, PAN).</li>
+<li>El <b>80 %</b> de los contaminantes antropogénicos procede de combustibles fósiles. Ley 34/2007 de calidad del aire.</li>
+<li><b>Emisión</b>: descarga a la atmósfera desde una fuente. <b>Inmisión</b> (nivel de contaminación): cantidad de contaminante en el aire ambiente o depositada, en un periodo; se asocia al objetivo de calidad del aire. <b>MTD</b> (mejores técnicas disponibles): fase más eficaz y avanzada de desarrollo, base de los valores límite de emisión.</li>
+</ul></div>
+<h3>La atmósfera por capas</h3>
+<div class="tw"><table>
+<tr><th>Capa</th><th>Qué pasa con la temperatura</th><th>Datos</th></tr>
+<tr><td><b>Troposfera</b></td><td>Disminuye con la altura (hasta ≈ 10 ºC/km)</td><td>≈ 80 % de la masa de la atmósfera y casi todo el vapor de agua; ahí está «el aire ambiente». Tropopausa: 18 km (−80 ºC) en el ecuador, 8 km (−50 ºC) en los polos.</td></tr>
+<tr><td><b>Estratosfera</b></td><td>Aumenta (el ozono absorbe UV)</td><td>Capa de ozono centrada en ≈ 22 km. Estratopausa a 50 km, ≈ 0 ºC.</td></tr>
+<tr><td><b>Mesosfera</b></td><td>Disminuye</td><td>Hasta 85 km; las temperaturas más bajas (≈ −100 ºC).</td></tr>
+<tr><td><b>Termosfera</b></td><td>Aumenta</td><td>Absorción de UV extremo (&lt; 100 nm); hasta 250 ºC y más de 800 ºC con máxima actividad solar.</td></tr>
+</table></div>
+<h3>Contaminantes por estado de agregación</h3>
+<div class="tw"><table>
+<tr><th>Término</th><th>Qué es</th></tr>
+<tr><td><b>Gases</b></td><td>Gaseosos a 25 ºC y 760 mm Hg (CO₂, SO₂, CO, NOₓ, O₃)</td></tr>
+<tr><td><b>Aerosoles</b></td><td>Partículas sólidas o líquidas en gas, Ø &lt; 100 µm y velocidad de sedimentación &lt; 0,24 m/s</td></tr>
+<tr><td>Vapores</td><td>Sustancias que a 25 ºC y 760 mm Hg son sólidas o líquidas (alcoholes, aldehídos, ésteres…)</td></tr>
+<tr><td>Nieblas (<i>mist</i>)</td><td>Líquido-gas, partículas raramente visibles</td></tr>
+<tr><td>Bruma (<i>fog</i>)</td><td>Líquido-gas, partículas visibles; 2 &lt; Ø &lt; 60 µm</td></tr>
+<tr><td>Polvo (<i>dust</i>)</td><td>Disgregación mecánica; tamaños diversos</td></tr>
+<tr><td>Humo metálico (<i>fume</i>)</td><td>Condensación; Ø &lt; 1 µm</td></tr>
+<tr><td><i>Smoke</i></td><td>Combustión incompleta; Ø &lt; 1 µm</td></tr>
+<tr><td><i>Smog</i></td><td>Smoke + fog; 0,01 &lt; Ø &lt; 2 µm</td></tr>
+<tr><td>Fibras</td><td>Longitud &gt; 5 veces el diámetro</td></tr>
+</table></div>
+<h3>Estabilidad atmosférica</h3>
+<p>Una parcela de aire que sube se expande <b>adiabáticamente</b> y se enfría. La <b>tasa de cambio</b> es el negativo del gradiente de temperatura con la altura, $-dT/dz$.</p>
+<div class="tw"><table>
+<tr><th>Tasa</th><th>Valor</th></tr>
+<tr><td>Adiabática seca Γ</td><td class="num">0,98 ºC/100 m = 9,8 ºC/km</td></tr>
+<tr><td>Adiabática saturada</td><td class="num">0,5 ºC/100 m = 5 ºC/km</td></tr>
+<tr><td>Normal internacional</td><td class="num">0,66 ºC/100 m = 6,6 ºC/km</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Comparación con la tasa ambiental</th><th>Atmósfera</th><th>Efecto</th></tr>
+<tr><td>$-dT/dz&gt;\Gamma$</td><td><b>Inestable</b> (superadiabática)</td><td>Mucho mezclado vertical</td></tr>
+<tr><td>$-dT/dz=\Gamma$</td><td><b>Neutra</b></td><td></td></tr>
+<tr><td>$-dT/dz&lt;\Gamma$</td><td><b>Débilmente estable</b></td><td></td></tr>
+<tr><td>$-dT/dz\ll\Gamma$</td><td><b>Fuertemente estable</b> (subadiabática)</td><td>Los contaminantes se quedan cerca del suelo</td></tr>
+<tr><td>$dT/dz&gt;0$ (T sube con la altura)</td><td><b>Inversión</b></td><td>Máxima estabilidad</td></tr>
+</table></div>
+<div class="grid2">
+<div class="box key"><h4>Inversión por radiación</h4><ul><li>Noches despejadas de invierno: el suelo se enfría.</li><li>Altura &lt; 500 m, en la capa baja → importante para la contaminación <b>local</b>.</li><li>La suprimen el viento fuerte y las nubes. Máxima al amanecer; se rompe con el sol → <b>fumigación</b>.</li></ul></div>
+<div class="box key"><h4>Inversión por subsidencia</h4><ul><li>Asociada a <b>anticiclones</b>: el aire que desciende se comprime y se calienta.</li><li>Más alta, puede durar <b>meses</b>, más común en verano.</li><li>Pueden darse las dos a la vez.</li></ul></div>
+</div>
+<h3>Los 6 penachos</h3>
+<p>La dispersión depende del viento medio (transporte) y de la turbulencia (mecánica y convectiva).</p>
+<div class="tw"><table>
+<tr><th>Penacho</th><th>Cuándo</th><th>Cómo es</th></tr>
+<tr><td><b>Espiral</b></td><td>Muy inestable (superadiabática), fuerte calentamiento solar, viento ligero</td><td>Remolinos térmicos arrastran el penacho al suelo por momentos</td></tr>
+<tr><td><b>Cono</b></td><td>Neutra; turbulencia mecánica; cielo nublado, de día o de noche</td><td>Las concentraciones máximas llegan al suelo lejos de la chimenea</td></tr>
+<tr><td><b>Abanico</b></td><td>Estable (tasa de cambio negativa)</td><td>Se mueve a elevación casi constante; muy poco llega al suelo</td></tr>
+<tr><td><b>Fumigación</b></td><td>Capa estable por encima de la emisión e inestable por debajo; primeras horas de la mañana tras una inversión nocturna</td><td>Concentraciones altas en el suelo, dura &lt; 30 min</td></tr>
+<tr><td><b>Flotación</b></td><td>Contraria a fumigación: inversión por debajo y capa inestable por encima; al caer la tarde con cielo despejado</td><td>Situación favorable; sin concentraciones significativas en el suelo</td></tr>
+<tr><td><b>Atrapamiento</b></td><td>Inversión por debajo <i>y</i> por encima de la chimenea</td><td>Dispersión severamente restringida a la capa intermedia</td></tr>
+</table></div>
+<h3>Modelo gaussiano de dispersión</h3>
+<p>Fuente puntual, régimen estacionario. <b>Hipótesis</b>: viento uniforme y distinto de cero, constante en dirección e intensidad con la altura; flujo homogéneo sobre terreno plano; contaminantes inertes; <b>reflexión perfecta</b> en el suelo.</p>
+<p>Altura efectiva: $h_e=h_s+\Delta h$ (altura de la chimenea + sobreelevación). $Q$ en g/s, $U$ velocidad del viento.</p>
+<div class="box key">
+$$C(x,y,z)=\frac{Q}{2\pi\sigma_y\sigma_zU}\exp\!\Big[-\tfrac12\Big(\tfrac{y}{\sigma_y}\Big)^2\Big]\left\{\exp\!\Big[-\tfrac12\Big(\tfrac{z-h_e}{\sigma_z}\Big)^2\Big]+\exp\!\Big[-\tfrac12\Big(\tfrac{z+h_e}{\sigma_z}\Big)^2\Big]\right\}$$
+<p><b>Eje del penacho</b> ($y=0$): se elimina el primer exponencial. <b>Suelo y eje</b> ($y=0$, $z=0$):</p>
+$$C(x,0,0)=\frac{Q}{\pi\,\sigma_y(x)\,\sigma_z(x)\,U}\;e^{-h_e^2/(2\sigma_z^2)}$$
+<p>$\sigma_y$ y $\sigma_z$: desviaciones estándar lateral y vertical a la distancia $x$ (curvas de Pasquill-Gifford o fórmulas de Martin, con $x$ en <b>km</b> y σ en m):</p>
+$$\sigma_y=a\,x^{0,894}\qquad\sigma_z=c\,x^{d}+f$$
+</div>
+<div class="tw"><table>
+<tr><th>Estabilidad</th><th>a</th><th>c (x&gt;1 km)</th><th>d</th><th>f</th><th>c (x≤1 km)</th><th>d</th><th>f</th></tr>
+<tr><td>A muy inestable</td><td>213</td><td>440,8</td><td>1,941</td><td>9,27</td><td>459,7</td><td>2,094</td><td>−9,6</td></tr>
+<tr><td>B inestable</td><td>156</td><td>106,6</td><td>1,149</td><td>3,3</td><td>108,2</td><td>1,098</td><td>2,0</td></tr>
+<tr><td>C ligeramente inestable</td><td>104</td><td>61,0</td><td>0,911</td><td>0</td><td>61,0</td><td>0,911</td><td>0</td></tr>
+<tr><td>D neutra</td><td>68</td><td>33,2</td><td>0,725</td><td>−1,7</td><td>44,5</td><td>0,516</td><td>−13,0</td></tr>
+<tr><td>E ligeramente estable</td><td>50,5</td><td>22,8</td><td>0,678</td><td>−1,3</td><td>55,4</td><td>0,305</td><td>−34,0</td></tr>
+<tr><td>F estable</td><td>34</td><td>14,35</td><td>0,740</td><td>−0,35</td><td>62,6</td><td>0,180</td><td>−48,6</td></tr>
+</table></div>
+<p class="muted">Tabla 5.4 (Martin, 1976). La clase de estabilidad sale de la velocidad del viento y de la radiación solar (Tabla 5.5 de Pasquill, en los apuntes). Para estimar se suele tomar la clase típica de la región que dé el <b>peor episodio</b>. Ejemplo resuelto en <a href="problemas.html#problemas">Problemas</a>.</p>
+<h3>Índice Nacional de Calidad del Aire (ICA)</h3>
+<p>Orden TEC/351/2019, basado en el RD 102/2011. Usa <b>PM₁₀, PM₂,₅, O₃, NO₂ y SO₂</b>; el valor final de la estación lo marca <b>el contaminante con la peor categoría</b>.</p>
+<div class="tw"><table>
+<tr><th>Categoría</th><th>PM₁₀</th><th>PM₂,₅</th><th>NO₂</th><th>O₃</th><th>SO₂</th></tr>
+<tr><td>1 Buena (azul)</td><td>0–20</td><td>0–10</td><td>0–40</td><td>0–80</td><td>0–100</td></tr>
+<tr><td>2 Razonablemente buena (verde)</td><td>21–35</td><td>11–20</td><td>41–90</td><td>81–120</td><td>101–200</td></tr>
+<tr><td>3 Regular (amarillo)</td><td>36–50</td><td>21–25</td><td>91–120</td><td>121–180</td><td>201–350</td></tr>
+<tr><td>4 Desfavorable (naranja)</td><td>51–100</td><td>26–50</td><td>121–230</td><td>181–240</td><td>351–500</td></tr>
+<tr><td>5 Muy desfavorable (rojo)</td><td>101–200</td><td>51–75</td><td>231–340</td><td>&gt; 240</td><td>501–750</td></tr>
+<tr><td>6 Extremadamente desfavorable (morado)</td><td>&gt; 200</td><td>&gt; 75</td><td>&gt; 340</td><td>—</td><td>&gt; 750</td></tr>
+</table></div>
+<p class="muted">µg/m³. Categoría 3 afecta ya a grupos sensibles; la 4 recomienda reducir actividades intensas al aire libre.</p>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>La tasa ambiental se compara con Γ <b>con signo menos</b>: $-dT/dz$. Una inversión es $dT/dz&gt;0$.</li>
+<li>Fumigación y flotación son opuestas; abanico y atrapamiento también se confunden.</li>
+<li>Fumigación → riesgo alto en suelo; flotación → casi nada en suelo.</li>
+<li>Las inversiones por radiación son <b>locales y bajas</b>; las de subsidencia son <b>altas y duraderas</b>.</li>
+<li>En el gaussiano, $\sigma$ se calcula con $x$ en <b>km</b>, no en m.</li></ul></div>
+</section>
+
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t4.html" style="--tc:var(--c4)"><small>← Anterior</small><strong>T4 Depuración y reutilización</strong></a><a class="nx" href="t6.html" style="--tc:var(--c6)"><small>Siguiente →</small><strong>T6 Medida</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

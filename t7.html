@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T7 Control · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" class="on" aria-current="page" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T7 Control</b><span class="np">8 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c7);--tcs:var(--c7s)">
+<div class="sh"><span class="badge" aria-hidden="true">T7</span><div class="shx"><p class="kick">Tema 7 · Aire</p><h2 id="t7">Control de la contaminación atmosférica</h2><div class="tags"><span class="tag">24 págs</span><span class="tag">dispositivos y obligaciones</span></div></div></div>
+<div class="zero"><p class="ft">Jerarquía de control (por orden de importancia)</p>
+<ol><li><b>Mejores técnicas disponibles (MTD)</b> para <i>no</i> generar el contaminante.</li><li><b>Dispositivos de control «corriente abajo»</b>, en la fuente (partículas y gases).</li><li><b>Mejora de la dispersión</b>.</li></ol>
+<p>Principios de la Ley 34/2007: cautela y acción preventiva, corrección en la fuente y «quien contamina paga». «Disponibles» = aplicables en el sector en condiciones técnica y económicamente viables, y accesibles al titular.</p></div>
+<h3>Control de partículas</h3>
+<div class="tw"><table>
+<tr><th>Dispositivo</th><th>Cómo funciona</th><th>Datos</th></tr>
+<tr><td><b>Sedimentador por gravedad</b></td><td>Cámara larga; las partículas caen por gravedad. Tres tipos: flujo horizontal, multibandejas, baffle. Modelos de flujo pistón o de mezcla.</td><td>$v_{hp}=\dfrac{Q}{WH}$ · $\eta=\dfrac{L\,v_t}{H\,v_{hp}}$</td></tr>
+<tr><td><b>Ciclón</b> (separador centrífugo)</td><td>Cámara de sedimentación con aceleración centrífuga en vez de gravitatoria; doble vórtice (espiral descendente exterior, ascendente interior). Punto de corte; ciclones en serie para partículas menores.</td><td>$\dfrac{F_c}{F_g}=\dfrac{V^2}{r\,g}$ (con 20 m/s y 0,25 m ⇒ 163)</td></tr>
+<tr><td><b>Precipitador electrostático</b> (ESP)</td><td>Carga las partículas y un campo eléctrico las lleva a placas colectoras a tierra. Se forma una «torta» que se retira.</td><td>Para Ø &lt; <b>5 µm</b>. Húmedo: ≈ 99,99 % para 0,01 µm, menos mantenimiento</td></tr>
+<tr><td><b>Filtro de mangas</b></td><td>Medio poroso que retiene partículas. La <b>torta filtrante</b> mejora la captura pero eleva la caída de presión hasta 10 veces.</td><td>Parámetros: eficiencia y caída de presión. Medios: fieltro, papel, plástico, cerámica (alta T)</td></tr>
+<tr><td><b>Lavador (<i>scrubber</i>)</b></td><td>Contacto del gas con gotas de líquido. Flujo cruzado, a <b>contracorriente</b> o coordinado. El relleno poroso reduce el tamaño de la torre pero aumenta la caída de presión.</td><td>Sirve también para gases solubles</td></tr>
+</table></div>
+<h3>Control de gases</h3>
+<div class="tw"><table>
+<tr><th>Contaminante</th><th>Técnica</th></tr>
+<tr><td><b>H₂S</b></td><td>Absorción en columna a contracorriente con álcalis: mono-, di- o trietanolamina en agua (desplazan el equilibrio y disuelven más H₂S).</td></tr>
+<tr><td><b>SO₂</b></td><td>Reacción con cal viva CaO (→ CaSO₃ → CaSO₄ con O₂), NaOH, Na₂CO₃ o MgCO₃.</td></tr>
+<tr><td><b>NOₓ</b></td><td>(1) Modificar la combustión: poco aire en exceso, recirculación de gases, inyección de agua. (2) <b>Reducción catalítica selectiva (SCR)</b>: urea al 32,5 % (<b>AdBlue</b>) → NH₃, que reduce NOₓ a N₂ + H₂O.</td></tr>
+<tr><td><b>COVs</b></td><td>(1) Cambio de materiales · (2) sellado de recipientes · (3) <b>oxidación térmica regenerativa (RTO)</b>, la más extendida · (4) <b>adsorción</b> con carbón activado (100 kg retienen hasta 8 kg de acetona) · (5) <b>biofiltración</b> (<i>Bacillus, Micrococcus, Acinetobacter</i>, levaduras).</td></tr>
+<tr><td><b>Gases fluorados</b></td><td>RD 115/2017: personal certificado para instalar y manipular equipos de refrigeración, climatización y bombas de calor con estos gases (no afecta a la climatización de vehículos).</td></tr>
+</table></div>
+<h3>Mejora de la dispersión</h3>
+<ul>
+<li><b>Chimeneas altas</b>: aumentar $h_s$. Si $W/U&gt;1{,}5$ no hay <b>lavado descendente</b>. Chimenea de sección circular. Bocas de muestreo: a <b>8D</b> de una perturbación anterior y <b>2D</b> de una posterior.</li>
+<li><b>Control intermitente</b>: reducir producción o parar la planta cuando se superan límites; <b>predictivo</b> (modelización) u <b>observacional</b> (red de calidad del aire).</li>
+<li><b>Reubicación</b> de la planta lejos de zonas residenciales. «La dilución es la solución» solo traslada el problema.</li>
+</ul>
+<h3>Obligaciones de las empresas (APCA)</h3>
+<p>Catálogo CAPCA (Anexo IV de la Ley 34/2007, RD 100/2011): 10 grupos de actividades, clasificadas en <b>A, B y C</b> de mayor a menor potencial contaminador. Las emisiones deben respetar los niveles de inmisión del RD 102/2011.</p>
+<div class="tw"><table>
+<tr><th>Grupo</th><th>Trámite en la CARM</th><th>Informe de certificación</th><th>Informe de emisiones</th></tr>
+<tr><td><b>A</b></td><td>Autorización</td><td class="num">cada 2 años</td><td class="num">cada 2 años</td></tr>
+<tr><td><b>B</b></td><td>Autorización</td><td class="num">cada 3 años</td><td class="num">cada 3 años</td></tr>
+<tr><td><b>C</b></td><td>Notificación previa</td><td>—</td><td class="num">cada 5 años</td></tr>
+</table></div>
+<ul>
+<li><b>ECA</b> (Entidad Colaboradora con la Administración): entidad pública o privada que asiste técnicamente y emite los informes de certificación y de emisiones.</li>
+<li><b>Libro de registro</b> actualizado por cada foco emisor, conservado <b>≥ 10 años</b>; se rellena con limpiezas, revisiones, paradas por avería, incidencias, inspecciones y autocontroles.</li>
+<li><b>Vigencia</b> de la autorización de APCA: <b>8 años</b>.</li>
+<li>Comunicar de inmediato a la comunidad autónoma una amenaza inminente de daño o una contaminación con daño, y adoptar medidas preventivas sin esperar requerimiento.</li>
+</ul>
+<h3>Zonas de bajas emisiones (ZBE)</h3>
+<p>Ley 7/2021 de cambio climático. Obligatorias <b>desde 1-1-2023</b> en municipios de más de <b>50.000 habitantes</b> y en los de más de 20.000 que superen los niveles de calidad del aire. Restringen el acceso de los vehículos más contaminantes según la etiqueta: <b>cero emisiones, ECO, C y B</b>. El transporte genera el 27 % de los GEI en España y el 31 % de los NOₓ.</p>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Los ciclones son <b>más eficaces</b> que los sedimentadores por gravedad (la fuerza centrífuga es muy superior a la gravedad).</li>
+<li>ESP: solo para partículas pequeñas (&lt; 5 µm); no confundir con el filtro de mangas.</li>
+<li>Grupo C = <b>notificación</b> y solo informe de emisiones; A y B = autorización.</li>
+<li>El orden de control es MTD → corriente abajo → dispersión; la dispersión es la <b>última</b> opción.</li></ul></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t6.html" style="--tc:var(--c6)"><small>← Anterior</small><strong>T6 Medida</strong></a><a class="nx" href="parcial-2024.html" style="--tc:var(--c8)"><small>Siguiente →</small><strong>Primer parcial 2024 resuelto</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

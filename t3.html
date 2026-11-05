@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T3 Potabilización y membranas · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" class="on" aria-current="page" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T3 Potabilización y membranas</b><span class="np">4 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c3);--tcs:var(--c3s)">
+<div class="sh"><span class="badge" aria-hidden="true">T3</span><div class="shx"><p class="kick">Tema 3 · Agua</p><h2 id="t3">Potabilización y tecnologías de membrana</h2><div class="tags"><span class="tag">34 págs</span><span class="tag">ETAP</span><span class="tag">ósmosis inversa</span></div></div></div>
+<div class="zero"><p class="ft">La ETAP en una línea</p>
+<p><b>Pretratamiento</b> (almacenamiento, desbaste, aireación, pretratamiento químico) → <b>tratamiento estándar</b> (coagulación-floculación → sedimentación → filtración) → <b>desinfección</b> → <b>fluoración</b>. Más una línea de fangos. Las tecnologías de membrana se usan como pretratamiento o para agua de muy alta pureza.</p></div>
+<h3>Coagulación y floculación</h3>
+<div class="tw"><table>
+<tr><th></th><th>Coagulación</th><th>Floculación</th></tr>
+<tr><td>Qué es</td><td>Neutralización y deshidratación de coloides → microflóculos</td><td>Aglomeración de microflóculos → macroflóculos visibles</td></tr>
+<tr><td>¿Reversible?</td><td><b>Sí</b> (un exceso de coagulante o cambio de pH puede reestabilizar los coloides)</td><td><b>No</b></td></tr>
+<tr><td>Duración</td><td>Fracciones de segundo</td><td>Mezcla lenta</td></tr>
+</table></div>
+<div class="box key">
+$$N_{12}=\tfrac16\,n_1n_2\,(d_1+d_2)^3\,G\qquad(\text{Smoluchowski})$$
+<p>$G$ es el gradiente medio de velocidad. Subir $G$ aumenta los choques, pero demasiado rompe los flóculos: hay un <b>$G$ óptimo, decreciente</b> a lo largo de la operación.</p></div>
+<ul>
+<li><b>Factores</b>: tipo de coagulante (un ión trivalente es 600–1000 veces más eficaz que uno monovalente), cantidad, <b>pH (la variable más importante)</b>, temperatura (agua fría ⇒ flóculos más lentos).</li>
+<li><b>Jar-test</b>: vasos de 1–2 L con dosis crecientes de coagulante, paletas de 20–300 rpm, mezcla rápida 20–60 s, y se elige el vaso con mejor sedimentación.</li>
+<li><b>Coagulantes</b>: inorgánicos (sulfato de aluminio Al₂(SO₄)₃·14H₂O es el más usado; FeCl₃, CaCl₂) y orgánicos o polielectrolitos (no iónicos, aniónicos, catiónicos; sobre todo para espesar y deshidratar fangos).</li>
+<li><b>Según el agua</b>: ↑turbidez y ↑alcalinidad: fácil · ↑turbidez y ↓alcalinidad: añadir <b>cal</b> · ↓turbidez y ↓alcalinidad: cal y <b>polielectrolito aniónico</b>.</li>
+<li><b>Coadyuvante</b>: <b>sílice activada</b> (silicato sódico + H₂SO₄). Exige una ligera sobredosis de coagulante pero da flóculos más densos y rápidos.</li>
+</ul>
+<h3>Sedimentación y decantadores</h3>
+<p>Separación sólido-líquido por gravedad. Es <b>complementaria</b> de la filtración (esta retiene lo de densidad parecida al agua). Los decantadores del curso son de <b>flujo vertical ascendente</b> y <b>contacto de fangos</b>: conservar fango en el agua aumenta la concentración y, por Smoluchowski, los choques.</p>
+<div class="tw"><table>
+<tr><th>Tipo</th><th>Rasgo distintivo</th></tr>
+<tr><td><b>Manto o lecho de lodos</b></td><td>El agua entra por el fondo y atraviesa un manto que actúa como filtro. Partículas del manto = 1–5 % de su volumen. Velocidad ascensional ≤ <b>3 m/h</b>, TRH <b>1–2 h</b>. Régimen turbulento.</td></tr>
+<tr><td><b>Pulsator</b> (lecho pulsado)</td><td>Campana de vacío que da caudales instantáneos fuertes: llenado cada <b>30–40 s</b>, vaciado en <b>5–10 s</b>. Mantiene el lecho expandido.</td></tr>
+<tr><td><b>Superpulsator</b></td><td>Pulsator + <b>lamelas</b> (placas inclinadas) = decantación laminar; más superficie a igual velocidad ascensional.</td></tr>
+<tr><td><b>Circulator</b></td><td>Circular, floculador central, recirculación hidráulica continua del precipitado; barrido de fangos hacia el centro.</td></tr>
+<tr><td><b>Accelator®</b></td><td>Circular con <b>turbina</b> en la zona de mezcla primaria y campana de vacío periódico (zona de mezcla secundaria).</td></tr>
+</table></div>
+<p class="muted">Tanque de Dortmund: concepto libre de patente basado en el contacto de fangos (Sillar y Wigner, 1869).</p>
+<h3>Filtración</h3>
+<ul>
+<li><b>Mecanismos de transporte</b>: cernido, sedimentación (Hazen, 1904), intercepción, impacto inercial, difusión (movimiento browniano) y filtración biológica.</li>
+<li>Filtros <b>rápidos por gravedad</b>: tanque de 3,5–5 m, lecho de 0,5–2 m sobre drenaje, simples (arena o carbón activo) o duales. Agua filtrada &lt; <b>1 UNF</b>. Cuatro flujos: entrada de agua decantada, salida de agua filtrada, entrada de agua de lavado y desagüe del lavado.</li>
+<li><b>Carbón activo granular (GAC)</b>: elimina olores y sabores (COVs), pero cuesta ≈ 10 veces más que la arena, el lavado es delicado (<b>nunca agua y aire a la vez</b>) y se regenera térmicamente a unos <b>800 ºC</b>.</li>
+<li>La pérdida de carga aumenta por colmatación → <b>lavado a contracorriente</b> en 3 fases: (a) esponjamiento con aire a presión (15–60 s); (b) agua + aire (excepto carbón activo); (c) aclarado con agua (5–10 min). El agua de lavado vuelve a cabecera de planta.</li>
+</ul>
+<h3>Desinfección</h3>
+<div class="box key">
+$$\frac{dN}{dt}=-kN\ \Rightarrow\ \frac{N_t}{N_0}=e^{-kt}\qquad t=\frac{\ln(N_0/N_t)}{k}$$
+<p>Cinética de primer orden. Baja eficiencia si hay mucha materia orgánica (consume desinfectante), Fe²⁺ y Mn²⁺ (consumen o enmascaran) u organismos resistentes.</p></div>
+<div class="tw"><table>
+<tr><th></th><th>Ozono O₃</th><th>Radiación UV</th><th>Cloro Cl₂</th></tr>
+<tr><td>Naturaleza</td><td>Oxidante químico muy potente; 3O₂ → 2O₃ con campo eléctrico, se produce <b>in situ</b></td><td><b>Físico</b>: lámparas de Hg de baja presión, <b>254 nm</b>; daña el <b>ADN</b></td><td>Gas amarillo-verdoso, 2,5 veces más pesado que el aire; se almacena líquido (1,74 atm a −18 ºC)</td></tr>
+<tr><td>Ventajas</td><td>Destruye virus y protozoos; no genera THM; microfloculante; convierte lo no biodegradable en biodegradable</td><td>Sin productos químicos, sin corrosión, no altera el sabor</td><td>Eficiente, fácil de aplicar, <b>deja residual</b> medible</td></tr>
+<tr><td>Inconvenientes</td><td>Residual de vida corta; gran inversión</td><td><b>Sin acción residual</b>; el agua debe ser de poco espesor y sin turbidez</td><td>Subproductos (THM)</td></tr>
+</table></div>
+<ul>
+<li><b>Hidrólisis del cloro</b> → HClO + ClO⁻ = <b>cloro libre residual</b>.</li>
+<li><b>Oxidación-reducción</b>: con N amoniacal → <b>cloraminas</b> (cloro combinado <i>utilizable</i>); con aminoácidos, proteínas, Fe²⁺, Mn²⁺ → cloro combinado <i>no utilizable</i> o <b>demanda de cloro</b> (incluye THM).</li>
+</ul>
+<h3>Ósmosis inversa (OI)</h3>
+<p>Se aplica una presión <b>mayor que la osmótica</b> (de 5 a 20 veces) para invertir el flujo de agua hacia el lado menos concentrado. Es la tecnología principal de desalación y de agua ultrapura (industria electrónica).</p>
+<div class="tw"><table>
+<tr><th>Tipo de agua</th><th>Salinidad (mg/L de SDT)</th></tr>
+<tr><td>Ultrapura</td><td class="num">0,03</td></tr><tr><td>Pura (calderas)</td><td class="num">0,3</td></tr><tr><td>Desionizada</td><td class="num">3</td></tr>
+<tr><td>Dulce (potable)</td><td class="num">&lt; 1.000</td></tr><tr><td>Salobre</td><td class="num">1.000 – 10.000</td></tr><tr><td>Mar</td><td class="num">30.000 – 50.000</td></tr>
+</table></div>
+<div class="grid2">
+<div class="box key"><h4>Nomenclatura</h4><ul>
+<li><b>Aportación</b> (alimentación, feed): caudal que entra.</li>
+<li><b>Permeado</b> (producto): agua desalada.</li>
+<li><b>Rechazo</b> (salmuera, concentrado): contiene la mayor parte de las sales.</li>
+<li><b>Coeficiente de permeabilidad A</b>: m³/m²·día·bar.</li>
+<li><b>% recuperación</b> $=Q_p/Q_f\cdot100$: 50–90 % en general; <b>25–45 %</b> en agua de mar.</li></ul></div>
+<div class="box key"><h4>Presión de trabajo</h4><ul>
+<li><b>Muy baja</b> 2–10 bar: salinidad 500–1.500; agua ultrapura.</li>
+<li><b>Baja</b> 10–20 bar: 1.500–4.000; reduce nitratos y pirógenos.</li>
+<li><b>Media</b> 20–40 bar: 4.000–10.000 (las primeras comerciales).</li>
+<li><b>Alta</b> 50–80 bar: agua de mar (π del mar = 20–27 bar).</li></ul></div>
+</div>
+<ul>
+<li><b>Estructura</b>: en OI solo <b>asimétricas</b> (capa activa densa + soporte poroso). <b>Integrales</b> (mismo polímero) o <b>compuestas de capa fina</b> (3 capas).</li>
+<li><b>Forma</b>: planas, tubulares (6–25 mm), <b>fibra hueca</b> (interior 42–120 µm; solo integrales).</li>
+<li><b>Material</b>: acetato de celulosa (la primera; tolera cloro libre, se degrada), triacetato (más resistente a la hidrólisis), <b>poliamidas</b> (las más habituales). Inorgánicas: cerámicas (alúmina, hasta 250 ºC) y de vidrio.</li>
+<li><b>Módulos</b>: placas (el más antiguo), tubulares (líquidos con muchos sólidos), <b>espirales</b> (los más comunes en desalación), fibra hueca. Agrupación <b>en serie</b> para muy baja salinidad (industria electrónica); en paralelo para más caudal.</li>
+<li><b>Ensuciamiento</b>: coloides, precipitación de carbonatos y sulfatos (se evita con ácidos), Fe y Mn, <b>cloro</b> (se elimina con <b>NaHSO₃</b>) y bacterias. <b>Polarización</b>: acumulación de sales sobre la superficie. Limpieza: mecánica, con permeado a presión (<i>flushing</i>) o química.</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>En OI, «rechazo» es el <b>caudal de salmuera</b>, no un porcentaje.</li>
+<li>La coagulación es <b>reversible</b>; la floculación, no.</li>
+<li>UV: no deja residual; ozono: residual de vida corta; cloro: residual medible.</li>
+<li>Un filtro de carbón activo <b>no</b> se lava con agua y aire a la vez.</li></ul></div>
+</section>
+
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t2.html" style="--tc:var(--c2)"><small>← Anterior</small><strong>T2 Contaminantes y parámetros</strong></a><a class="nx" href="t4.html" style="--tc:var(--c4)"><small>Siguiente →</small><strong>T4 Depuración y reutilización</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

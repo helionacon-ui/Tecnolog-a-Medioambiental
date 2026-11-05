@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T4 Depuración y reutilización · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" class="on" aria-current="page" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T4 Depuración y reutilización</b><span class="np">5 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c4);--tcs:var(--c4s)">
+<div class="sh"><span class="badge" aria-hidden="true">T4</span><div class="shx"><p class="kick">Tema 4 · Agua</p><h2 id="t4">Depuración y reutilización</h2><div class="tags"><span class="tag">30 págs</span><span class="tag">fangos activos</span><span class="tag w">fórmulas</span></div></div></div>
+<div class="zero"><p class="ft">La EDAR en una línea</p>
+<p><b>Pretratamiento</b> (desbaste → desarenado → grasas) → <b>decantación primaria</b> (~2 h) → <b>reactor biológico</b> (fangos activos) → <b>decantador secundario</b> → desinfección. Los fangos se espesan, se <b>digieren</b> y se <b>deshidratan</b>.</p></div>
+<h3>Pretratamiento y decantación primaria</h3>
+<ul>
+<li><b>Desbaste</b>: rejas de barras (≈ 25 mm, separación 50–100 mm) y tamices; velocidad de paso <b>0,6–1,0 m/s</b>.</li>
+<li><b>Desarenado</b>: flujo horizontal (velocidad ≈ <b>0,3 m/s</b>) o <b>aireado</b> (movimiento en espiral; la arena sale más limpia y mantiene ambiente aerobio). No suele haber arena en las ARI.</li>
+<li><b>Grasas y aceites</b>: por <b>flotación</b>. Tres tipos: libres, emulsionados (hay que romper la emulsión) y disueltos (tratamiento biológico). Problemas: película en decantadores, recubren electrodos, dificultan la digestión bacteriana, impiden el paso de O₂ y luz.</li>
+<li><b>Decantador primario</b>: reduce la <b>materia decantable</b> y algo de DBO₅; homogeneiza carga y caudales.</li>
+</ul>
+<h3>Fangos activos: parámetros de diseño</h3>
+<p>Arden y Lockett (1913): aire + fango preformado (15–25 %) estabilizan el agua en 6 h. El contenido del reactor es el <b>licor mezcla</b>; la biomasa se expresa como <b>SSVLM</b> (X), el 70–80 % de los SST del licor. Sustrato = DBO₅ ($S_0$ entrada, $S_f$ salida).</p>
+<div class="tw"><table>
+<tr><th>Parámetro</th><th>Fórmula</th><th>Unidades</th></tr>
+<tr><td><b>TRH</b> (θ)</td><td>$\theta=\dfrac{V}{Q}$</td><td>h o d</td></tr>
+<tr><td><b>TRC</b> o edad del fango (θc)</td><td>$\theta_c=\dfrac{V\cdot X}{[(S_0-S_f)\,Q]\,X_e}$</td><td>d</td></tr>
+<tr><td><b>Carga másica</b> (Cm)</td><td>$C_m=\dfrac{S_0\,Q}{V\,X}$</td><td>kg DBO₅/kg SSVLM·d</td></tr>
+<tr><td><b>Carga volúmica</b> (Cv)</td><td>$C_v=\dfrac{S_0\,Q}{V}$</td><td>kg DBO₅/m³·d</td></tr>
+<tr><td><b>Rendimiento</b> (E)</td><td>$E=\dfrac{S_0-S_f}{S_0}\cdot100$</td><td>%</td></tr>
+<tr><td><b>Tasa de recirculación</b> (R)</td><td>$R=\dfrac{X}{X_R-X}$, con $X_R=6$ kg/m³</td><td>—</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Proceso</th><th>Carga másica Cm</th><th>Carga volúmica Cv</th><th>X (kg/m³)</th><th>E (%)</th></tr>
+<tr><td><b>Alta carga</b></td><td>&gt; 0,4</td><td>&gt; 1,5</td><td class="num">2,5</td><td class="num">80</td></tr>
+<tr><td><b>Media carga</b></td><td>0,15 – 0,4</td><td>0,5 – 1,5</td><td class="num">3,3</td><td class="num">90</td></tr>
+<tr><td><b>Baja carga</b> (aireación prolongada)</td><td>0,07 – 0,15</td><td>&lt; 0,5</td><td class="num">4,0</td><td class="num">96</td></tr>
+<tr><td><b>Muy baja carga</b></td><td>&lt; 0,07</td><td>&lt; 0,5</td><td class="num">5,0</td><td class="num">&gt; 96</td></tr>
+</table></div>
+<p class="muted">La Tabla 4.1 de los apuntes también indica si la decantación primaria es optativa, obligatoria o inexistente según el proceso; el texto extraído no deja claro a qué fila corresponde cada valor, así que mira la tabla en los apuntes. En θc, «Xe» está descrito de forma poco clara («tasa de purga»): en los problemas usa el dato del enunciado.</p>
+<div class="grid2">
+<div class="box key"><h4>Decantador secundario</h4>
+<p>$V_{ASC}=\dfrac{Q}{S}$ (m³/m²·h) · $C_S=\dfrac{Q\,X}{S}$ (kg SS/m²·h). Se calculan con el <b>caudal punta</b>.</p>
+<p><b>Efluente máximo</b> (Directiva 91/271/CEE): <b>25 mg/L DBO₅ · 125 mg/L DQO · 35 mg/L SST</b>.</p></div>
+<div class="box key"><h4>Otros</h4><ul>
+<li><b>Aireación</b>: difusa (difusores sumergidos) o mecánica (agitación superficial).</li>
+<li><b>MBR</b>: reactor biológico + membranas (MF/UF) en vez de decantador secundario; efluente de alta calidad y más biomasa en menos volumen.</li>
+<li><b>N y P</b>: nitrificación-desnitrificación (acaba en N₂); P por microorganismos específicos.</li></ul></div>
+</div>
+<div class="box trap"><h4>Problemas de explotación</h4><p><b>Bulking filamentoso</b> (<i>Sphaerotilus natans</i>): el fango sedimenta lentamente y sale con el efluente. <b>Desnitrificación en el decantador</b>: el N₂ sube y arrastra el fango.</p></div>
+<h3>Tratamiento de fangos</h3>
+<ul>
+<li><b>Digestión anaerobia</b> (la más común): reduce los volátiles, reduce microorganismos, produce biogás (CH₄ + CO₂). Baja carga: sin calentar, retención de 30–60 días. Alta carga: calentada, &lt; 15 días. Tres etapas: <b>hidrolítica → acetogénica → metanogénica</b>. Metano: $4\,H_2+CO_2\to CH_4+\dots$ y $CH_3COOH\to CH_4+CO_2$.</li>
+<li><b>Deshidratación</b>: con polielectrolitos como acondicionadores. <b>Centrífuga de camisa maciza</b> (torta con 75–80 % de humedad, es decir 20–25 % de sólidos) y <b>filtro banda</b> (zona de drenaje por gravedad + zona de presión).</li>
+</ul>
+<h3>Aguas de la industria electrónica</h3>
+<div class="grid2">
+<div class="box key"><h4>Electrocoagulación</h4>
+<p>Celda con ánodo (Fe, Al o Ti) y cátodo. El catión coagulante sale del <b>propio ánodo</b>. Ánodo: $Fe^0\to Fe^{3+}+3e^-$ · cátodo: $H_2O+3e^-\to \tfrac32H_2+3OH^-$.</p>
+<p>3 procesos en serie: reacciones en electrodos → formación de coagulantes → adsorción de contaminantes y eliminación por sedimentación o flotación. <b>No elimina iones muy solubles</b> (menores que Ca²⁺ y Mg²⁺). CMP: hasta el 40 % del agua ultrapura y DQO &gt; 500 mg/L.</p></div>
+<div class="box key"><h4>Electrodiálisis</h4>
+<p>Membranas de intercambio catiónico y aniónico alternadas + campo eléctrico: cationes → cátodo, aniones → ánodo.</p>
+$$\tfrac{\text{eq-g}}{t}=QN\eta\qquad I=\frac{F\,Q\,N\,\eta}{n\,E_c}\qquad P=R\,I^2$$
+<p>$F=96485$ A·s/eq-g · $n$ nº de celdas · $E_c$ eficiencia de corriente · $CD/N$ típico 500–800 mA/cm²·N.</p></div>
+</div>
+<h3>Reutilización del agua (RD 1085/2024)</h3>
+<p>Sustituye al RD 1620/2007 y adapta el <b>Reglamento (UE) 2020/741</b>. <b>Gestión del riesgo obligatoria</b> (sanitario y ambiental) y <b>autorización administrativa</b> para producir, suministrar y usar.</p>
+<div class="tw"><table>
+<tr><th>Clase</th><th>Calidad</th><th>Ejemplos de uso</th></tr>
+<tr><td><b>A+</b></td><td>Máxima</td><td>Contacto directo humano: riego de jardines privados, descarga de inodoros</td></tr>
+<tr><td><b>A</b></td><td>Muy alta</td><td>Cultivos que se consumen crudos (lechuga, tomate), estanques accesibles</td></tr>
+<tr><td><b>B</b></td><td>Intermedia</td><td>Parques, baldeo de calles</td></tr>
+<tr><td><b>C</b></td><td>Baja</td><td>Riego sin contacto con el producto, ornamental no accesible</td></tr>
+<tr><td><b>D</b></td><td>Mínima</td><td>Cultivos industriales (algodón, lino, tabaco), energéticos y de biomasa</td></tr>
+</table></div>
+<ul>
+<li><b>Parámetros</b>: <b>E. coli</b> (principal; define la clase), nematodos intestinales, bacteriófagos, <i>Legionella</i> (riego por aspersión); turbidez, SS y DBO₅.</li>
+<li><b>Prohibida</b> para: consumo humano directo (salvo catástrofe), empresa alimentaria en ciertos casos, instalaciones hospitalarias, acuicultura de moluscos filtradores, baño en instalaciones artificiales.</li>
+<li>Por tipo de cultivo: crudo → A/A+; procesado (cereal) → A/B; industrial, energético o biomasa → C/D.</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Cm y Cv suenan igual: la másica divide por <b>biomasa</b> (V·X), la volúmica por <b>volumen</b> (V).</li>
+<li>La clase <b>A+</b> es la de mayor exigencia; <b>D</b> la de menor.</li>
+<li>La electrodiálisis <b>no</b> es lo mismo que la electrocoagulación: una separa iones con membranas, la otra coagula con cationes del ánodo.</li>
+<li>El decantador secundario se dimensiona a <b>caudal punta</b>, no al medio.</li></ul></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t3.html" style="--tc:var(--c3)"><small>← Anterior</small><strong>T3 Potabilización y membranas</strong></a><a class="nx" href="t5.html" style="--tc:var(--c5)"><small>Siguiente →</small><strong>T5 Transporte y dispersión</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

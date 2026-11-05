@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Empieza aquí · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" class="on" aria-current="page" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>Empieza aquí</b><span class="np">1 / 16</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">0</span><div class="shx"><p class="kick">Empezar</p><h2 id="cero">Empieza aquí</h2></div></div>
+<div class="zero">
+<p class="ft">La asignatura en un párrafo</p>
+<p>La tecnología medioambiental responde a una pregunta: <b>¿cómo evito que una actividad humana (una fábrica, una ciudad, un chip) dañe al agua, al aire o a las personas?</b> Para eso hay que saber <b>qué contamina</b> y <b>cómo se mide</b> (parámetros de calidad del agua, medida de contaminantes del aire), <b>cómo se limpia</b> (potabilización, depuración, dispositivos de control de emisiones), <b>cómo se dispersa</b> (modelo gaussiano) y <b>qué dice la ley</b> (valores límite, obligaciones de las empresas). Casi todo se pregunta con números concretos de la normativa y con fórmulas cortas.</p>
+</div>
+<p>El mapa del primer parcial, en dos bloques que se parecen mucho entre sí:</p>
+<div class="map">
+<a href="t1.html#t1"><b>1</b>Introducción y normas UE</a><span>→</span>
+<a href="t2.html#t2"><b>2</b>Parámetros del agua</a><span>→</span>
+<a href="t3.html#t3"><b>3</b>Potabilizar</a><span>→</span>
+<a href="t4.html#t4"><b>4</b>Depurar y reutilizar</a><span>→</span>
+<a href="t5.html#t5"><b>5</b>Aire: dispersión</a><span>→</span>
+<a href="t6.html#t6"><b>6</b>Aire: medida</a><span>→</span>
+<a href="t7.html#t7"><b>7</b>Aire: control</a>
+</div>
+<div class="grid2">
+<div class="box key"><h4>Bloque agua (T2–T4)</h4>
+<p>T2 define <i>qué se mide</i> (DBO, DQO, sólidos, turbidez…). T3 limpia el agua <b>antes</b> de beberla (ETAP). T4 limpia el agua <b>después</b> de usarla (EDAR) y fija cuándo se puede reutilizar. Si entiendes T2, T3 y T4 son «cómo bajo esos números».</p></div>
+<div class="box key"><h4>Bloque aire (T5–T7)</h4>
+<p>T5 explica <i>adónde va</i> el contaminante (estabilidad, penachos, gaussiano). T6 <i>cómo se mide</i> cada gas y el ruido. T7 <i>cómo se controla</i> (filtros, ciclones, lavadores) y qué obligaciones tiene la empresa.</p></div>
+</div>
+<h3>Cómo usar esta guía</h3>
+<ol class="steps">
+<li>Lee <a href="#examen">Cómo es el examen</a> y <a href="#prior">Prioridades</a> (5 minutos).</li>
+<li>Por cada tema: la caja «Lo esencial», la tabla de números y las trampas. Después contesta el test de ese tema en <a href="autoevaluacion.html#auto">Autoevaluación</a>.</li>
+<li>Haz los <a href="problemas.html#problemas">problemas resueltos</a> tapando la solución; si fallas, vuelve a la receta.</li>
+<li>La víspera, repasa solo el <a href="formulario.html#formulario">formulario</a> y los tests que hayas fallado.</li>
+</ol>
+<div class="box trap"><h4>Sobre las respuestas</h4><p>Hay un <b>primer parcial real de 2024</b> y está resuelto en <a href="parcial-2024.html#parcial2024">esta guía</a>, pero su archivo «resuelto» no trae clave oficial: las respuestas las he deducido de los apuntes. Las prioridades de abajo mezclan el peso de cada tema en los apuntes y las preguntas de ese examen. Si el profesor avisó en clase de algo distinto, manda lo que dijo él.</p></div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">?</span><div class="shx"><p class="kick">Empezar</p><h2 id="examen">Cómo es el examen</h2></div></div>
+<p>Los exámenes que he leído son el <b>1.º parcial de 2024</b> (unas 36 preguntas de los temas 1 a 7, resuelto <a href="parcial-2024.html#parcial2024">aquí</a>) y el <b>test del 2.º parcial de febrero de 2024</b> (45 preguntas). Ambos son <b>tests con cuatro opciones (A–D)</b>. Esto es lo que se repite:</p>
+<div class="tw"><table>
+<tr><th>Tipo de pregunta</th><th>Ejemplo real (resumido)</th><th>Qué hacer</th></tr>
+<tr><td><b>Una sola opción correcta</b></td><td>«¿Cuál es el tiempo máximo de almacenamiento de residuos peligrosos por parte de un productor?» (2, 4, 6 u 8 meses)</td><td>Dato memorizado. Aprende los números.</td></tr>
+<tr><td><b>«Indica las proposiciones FALSAS / VERDADERAS»</b></td><td>Cinco afirmaciones numeradas y opciones del tipo «A) 1 y 3 · B) 2 y 3 · C) 1 y 4 · D) 2 y 4».</td><td>Marca V/F en cada afirmación <i>antes</i> de mirar las opciones. Atención a si piden falsas o verdaderas.</td></tr>
+<tr><td><b>Con figura</b></td><td>Un esquema (separador balístico, etiqueta de residuo, función de transformación) y «¿para qué se usa?».</td><td>Aprende los esquemas de cada tema: los de esta guía están en palabras.</td></tr>
+<tr><td><b>De laboratorio</b></td><td>Indicador del punto final de la valoración de cloruros; alcalinidad con fenolftaleína y naranja de metilo; periodos del ruido; fundamento de la DBO5.</td><td>Repasa la <a href="t2.html#t2">sección de prácticas del tema 2</a>.</td></tr>
+<tr><td><b>Casos reales</b></td><td>Una empresa, un plan o un documento concreto y hay que identificar el tipo de norma o medida.</td><td>Aprende las definiciones y distingue los términos parecidos.</td></tr>
+</table></div>
+<div class="box key"><h4>Método para las preguntas de proposiciones</h4>
+<ol class="steps">
+<li>Subraya si piden <b>falsas</b> o <b>verdaderas</b>.</li>
+<li>Decide V o F de cada afirmación numerada, sin mirar las opciones.</li>
+<li>Elige la opción que coincide <i>exactamente</i> con tu conjunto. Si una afirmación te deja dudas, descarta primero las opciones donde aparece una que sí sabes que es incorrecta.</li>
+<li>Las afirmaciones falsas suelen cambiar <b>un solo dato</b>: un plazo, una cifra, «siempre/nunca», o intercambiar dos conceptos parecidos (reglamento/directiva, coagulación/floculación, emisión/inmisión).</li>
+</ol></div>
+<div class="box trap"><h4>Cuidado con las preguntas «de definición parecida»</h4>
+<p>El test de 2024 juega con pares parecidos como <b>agente / negociante</b>, <b>estabilización / inertización / solidificación</b> o <b>medida preventiva / protectora / correctora / compensatoria</b>. En los temas 1 a 7 los pares parecidos son: <b>coagulación (reversible) vs floculación (irreversible)</b>, <b>emisión vs inmisión</b>, <b>muestreo isocinético vs no isocinético</b>, <b>cloro libre vs combinado</b>, <b>DBO vs DQO</b>, <b>Reglamento vs Directiva vs Decisión</b>.</p></div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">★</span><div class="shx"><p class="kick">Empezar</p><h2 id="prior">Prioridades</h2></div></div>
+<p><span class="tag w">Estimación</span> Ordenadas por dónde hay más datos exactos y fórmulas en los apuntes. Pero el primer parcial de 2024 repartió las preguntas casi por igual: T1 1 · T2 6 · T3 6 · T4 6 · T5 6 · T6 6 · T7 5. No dejes ningún tema sin repasar.</p>
+<div class="tw"><table>
+<tr><th>Tema</th><th>Prioridad</th><th>Lo que más rinde</th></tr>
+<tr><td><a href="t2.html#t2">T2 Contaminantes y parámetros</a></td><td class="star">★★★★★</td><td>Valores paramétricos y límites de vertido, sólidos (qué es cada uno y cómo se mide), turbidez, DBO5 y cinética, DQO, DBO5/DQO, Microtox (EC50, TII50), E. coli.</td></tr>
+<tr><td><a href="t4.html#t4">T4 Depuración y reutilización</a></td><td class="star">★★★★★</td><td>Parámetros de fangos activos (θ, θc, Cm, Cv, E, R), tabla de cargas, límites del efluente 25/125/35, digestión anaerobia, clases de agua A+…D.</td></tr>
+<tr><td><a href="t3.html#t3">T3 Potabilización y membranas</a></td><td class="star">★★★★</td><td>Línea de la ETAP, coagulación vs floculación, jar-test, tipos de decantador, filtración, desinfección (ozono, UV, cloro), ósmosis inversa y su nomenclatura.</td></tr>
+<tr><td><a href="t5.html#t5">T5 Transporte y dispersión</a></td><td class="star">★★★★</td><td>Estabilidad y tasas de cambio, inversiones, los 6 penachos, hipótesis y fórmula gaussiana, ICA.</td></tr>
+<tr><td><a href="t6.html#t6">T6 Medida</a></td><td class="star">★★★★</td><td>Qué técnica mide cada gas (fluorescencia UV, NDIR, quimioluminiscencia, fotometría UV), muestreo, ruido en dB, valores límite.</td></tr>
+<tr><td><a href="t7.html#t7">T7 Control</a></td><td class="star">★★★</td><td>Dispositivos para partículas y gases, jerarquía de control, obligaciones (grupos A/B/C, ECA, plazos), ZBE.</td></tr>
+<tr><td><a href="t1.html#t1">T1 Introducción y legislación</a></td><td class="star">★★</td><td>Tipos de acto jurídico de la UE (vinculantes y no), taxonomía europea (3 condiciones, 6 objetivos), ODS, contaminación digital.</td></tr>
+</table></div>
+<div class="box key"><h4>Las 12 cosas que no puedes dejar de saber</h4>
+<ol class="steps">
+<li>Reglamento (se aplica directo) · Directiva (se transpone; obliga a resultados) · Decisión (obliga a su destinatario).</li>
+<li>Taxonomía UE: contribución sustancial a 1 de 6 objetivos + DNSH + salvaguardas sociales.</li>
+<li>DBO5: 5 días, 20 ºC, oscuridad; $L_t=L_a e^{-K_1 t}$; $y_t=L_a(1-e^{-K_1 t})$.</li>
+<li>DQO &gt; DBO5 siempre; DBO5/DQO &gt; 0,6 biodegradable, &lt; 0,2 poco biodegradable.</li>
+<li>Sólidos: filtro de 0,45 µm, estufa 105 ºC, calcinación 550 ± 50 ºC; decantables en cono de Imhoff (1 L, 1 h).</li>
+<li>TII50 = 100 / EC50 (EC50 en %); mayor TII50 = más tóxico. Límite en Murcia 25 Equitox/m³.</li>
+<li>ETAP: pretratamiento → coagulación-floculación → sedimentación → filtración → desinfección.</li>
+<li>Fangos activos: Cm 0,15–0,4 = media carga; efluente máximo 25 mg/L DBO5, 125 mg/L DQO, 35 mg/L SST.</li>
+<li>Clases de agua regenerada A+ (máxima) a D (mínima); parámetro principal E. coli.</li>
+<li>Tasa adiabática seca Γ = 0,98 ºC/100 m; inestable si −dT/dz &gt; Γ; inversión = máxima estabilidad.</li>
+<li>Gaussiano a nivel de suelo: $C(x,0,0)=\dfrac{Q}{\pi\sigma_y\sigma_z U}\,e^{-h_e^2/2\sigma_z^2}$.</li>
+<li>Dispositivos de control: gravedad, ciclón, precipitador electrostático (&lt; 5 µm), filtro de mangas, lavador; para gases, absorción/adsorción/oxidación térmica/biofiltración/SCR.</li>
+</ol></div>
+</section>
+
+<section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
+<div class="sh"><span class="badge" aria-hidden="true">✓</span><div class="shx"><p class="kick">Empezar</p><h2 id="progreso">Tu progreso</h2></div></div>
+<p>Marca lo que ya domines. Se guarda en este navegador.</p>
+<div class="bar" aria-hidden="true"><i id="pbar"></i></div><p class="muted" id="ptxt">0 de 0</p>
+<div id="checks"></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="index.html" style="--tc:var(--accent)"><small>← Inicio</small><strong>Portada de la guía</strong></a><a class="nx" href="t1.html" style="--tc:var(--c1)"><small>Siguiente →</small><strong>T1 Introducción y legislación</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
