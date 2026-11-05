@@ -519,3 +519,18 @@ body.home .hero-in{padding-block:64px 56px}
 .il-big{font-size:36px;fill:var(--fg);text-anchor:middle}
 .il-sigma{font-size:150px;fill:var(--tc,var(--accent));fill-opacity:.85}
 @media(max-width:560px){.illus{padding:14px 10px 12px}.il-txt{font-size:15px}.il-txt-s{font-size:13.5px}}
+
+body.home .hero-txt .hello{font-size:clamp(17px,1.9vw,19px);line-height:1.65;max-width:56ch;color:var(--fg)}
+body.home .hero-txt .hint{margin:20px 0 0;font-size:15px;color:var(--muted);max-width:54ch}
+body.home .hero-txt .hint a{color:var(--accent);font-weight:600}
+body.home .hero-art{display:block}
+body.home .hero-art svg{display:block;width:100%;height:auto;max-width:340px;margin-inline:auto;filter:drop-shadow(0 12px 28px rgba(0,0,0,.08))}
+body.home .hero-art .art-cap{text-align:center;margin:14px auto 0;max-width:30ch;font-size:14px;color:var(--muted)}
+body.home .zart .sm{animation:humo 6s ease-in-out infinite}
+body.home .zart .wv{animation:ola 5s ease-in-out infinite}
+@keyframes humo{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-5px);opacity:.85}}
+@keyframes ola{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+@media(prefers-reduced-motion:reduce){body.home .zart .sm,body.home .zart .wv{animation:none}}
+body.home .hgrp h2{font-size:clamp(26px,3.4vw,34px)}
+body.home .hgrp{margin-bottom:56px}
+@media(max-width:760px){body.home .hero-art{display:block;margin-top:28px}body.home .hero-art svg{max-width:260px}}
