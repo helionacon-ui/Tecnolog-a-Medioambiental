@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T13 Gestión ambiental, ACV y huella de carbono · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a></div>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Suelos y residuos</div>
+  <a href="t8.html" style="--tc:var(--c4)">T8 Contaminación de suelos</a>
+  <a href="t10.html" style="--tc:var(--c3)">T10 Residuos urbanos</a>
+  <a href="t11.html" style="--tc:var(--c5)">T11 Residuos peligrosos, RAEE y pilas</a>
+  <div class="grp">Gestión ambiental</div>
+  <a href="t12.html" style="--tc:var(--c6)">T12 Evaluación de impacto ambiental</a>
+  <a href="t13.html" class="on" aria-current="page" style="--tc:var(--c2)">T13 Gestión ambiental, ACV y huella de carbono</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T13 Gestión ambiental, ACV y huella de carbono</b><span class="np">13 / 21</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c2);--tcs:var(--c2s)">
+<div class="sh"><span class="badge" aria-hidden="true">T13</span><div class="shx"><p class="kick">Tema 13 · Gestión ambiental</p><h2 id="t13">Sistemas de gestión, ciclo de vida y huella de carbono</h2><div class="tags"><span class="tag">29 págs</span><span class="tag">ISO 14001 · EMAS · ACV</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 226" role="img" aria-label="Ciclo PDCA de la gestión ambiental y etapas del ciclo de vida de un producto" xmlns="http://www.w3.org/2000/svg"><rect x="130" y="24" width="96" height="66" rx="14" class="il-box"/><text x="178" y="54" class="il-txt il-b" text-anchor="middle">Plan</text><text x="178" y="74" class="il-txt-s" text-anchor="middle">planificar</text><rect x="230" y="24" width="96" height="66" rx="14" class="il-box"/><text x="278" y="54" class="il-txt il-b" text-anchor="middle">Do</text><text x="278" y="74" class="il-txt-s" text-anchor="middle">hacer</text><rect x="230" y="102" width="96" height="66" rx="14" class="il-box"/><text x="278" y="132" class="il-txt il-b" text-anchor="middle">Check</text><text x="278" y="152" class="il-txt-s" text-anchor="middle">verificar</text><rect x="130" y="102" width="96" height="66" rx="14" class="il-box"/><text x="178" y="132" class="il-txt il-b" text-anchor="middle">Act</text><text x="178" y="152" class="il-txt-s" text-anchor="middle">actuar</text><line x1="228" y1="57" x2="236.6" y2="57.0" class="il-arrow"/><polygon points="242,57 233.9,60.9 233.9,53.1" class="il-ah"/><line x1="278" y1="92" x2="278.0" y2="94.6" class="il-arrow"/><polygon points="278,100 274.1,91.9 281.9,91.9" class="il-ah"/><line x1="228" y1="135" x2="231.4" y2="135.0" class="il-arrow"/><polygon points="226,135 234.1,131.1 234.1,138.9" class="il-ah"/><line x1="178" y1="100" x2="178.0" y2="97.4" class="il-arrow"/><polygon points="178,92 181.9,100.1 174.1,100.1" class="il-ah"/><text x="180" y="200" class="il-txt-s" text-anchor="middle">Mejora continua (ISO 14001)</text><rect x="498.0" y="17.0" width="84" height="30" rx="15" class="il-chip"/><text x="540.0" y="37.0" class="il-txt-s" text-anchor="middle">Materias</text><rect x="602.6162167924668" y="66.75077640500379" width="84" height="30" rx="15" class="il-chip"/><text x="644.6162167924668" y="86.75077640500379" class="il-txt-s" text-anchor="middle">Fabricación</text><rect x="562.656377752172" y="147.2492235949962" width="84" height="30" rx="15" class="il-chip"/><text x="604.656377752172" y="167.2492235949962" class="il-txt-s" text-anchor="middle">Transporte</text><rect x="433.34362224782797" y="147.2492235949962" width="84" height="30" rx="15" class="il-chip"/><text x="475.34362224782797" y="167.2492235949962" class="il-txt-s" text-anchor="middle">Uso</text><rect x="393.3837832075331" y="66.75077640500379" width="84" height="30" rx="15" class="il-chip"/><text x="435.3837832075331" y="86.75077640500379" class="il-txt-s" text-anchor="middle">Residuo</text><circle cx="540" cy="104" r="46" class="il-venn"/><text x="540" y="100" class="il-txt il-b" text-anchor="middle">Ciclo</text><text x="540" y="118" class="il-txt-s" text-anchor="middle">de vida</text></svg><figcaption>La ISO 14001 funciona con un ciclo de mejora continua (planificar, hacer, verificar, actuar). El ACV recorre todas las etapas del producto, de la cuna a la tumba.</figcaption></figure>
+<div class="box" style="--tc:var(--c2);border:1px solid var(--line);border-left:4px solid var(--tc);border-radius:12px;padding:14px 18px"><p style="margin:0"><b>Nota:</b> este tema viene de una versión anterior del temario (curso 2024-25). Comprueba con tus apuntes de este curso que entra en el examen antes de dedicarle mucho tiempo.</p></div>
+<div class="zero"><p class="ft">Lo esencial en 30 segundos</p>
+<p>La <b>ISO 14001:2015</b> y el <b>Reglamento EMAS III</b> son sistemas de gestión medioambiental (SGMA) <b>voluntarios</b> y certificables. El <b>análisis del ciclo de vida (ACV)</b> evalúa el impacto de un producto «<b>de la cuna a la tumba</b>» y la <b>huella de carbono</b> mide los gases de efecto invernadero que genera una organización, producto o servicio.</p></div>
+<h3>ISO 14001:2015 frente a EMAS III</h3>
+<div class="tw"><table>
+<tr><th>Aspecto</th><th>ISO 14001:2015</th><th>EMAS III</th></tr>
+<tr><td>Revisión ambiental inicial</td><td>No obligatoria (aconsejable)</td><td><b>Obligatoria</b></td></tr>
+<tr><td>Auditorías</td><td>Sin periodicidad fija (intervalos planificados)</td><td>Cada <b>3 años</b></td></tr>
+<tr><td>Participa entidad pública en la validación</td><td>No</td><td><b>Sí</b></td></tr>
+<tr><td>Declaración medioambiental pública</td><td>No</td><td><b>Sí</b> (verificada por un organismo externo)</td></tr>
+<tr><td>Logotipo unificado</td><td>No</td><td><b>Sí</b></td></tr>
+<tr><td>Exige cumplir toda la legislación ambiental</td><td>No (basta el compromiso de cumplirla)</td><td><b>Sí</b></td></tr>
+<tr><td>Carácter del organismo que la desarrolla</td><td>Privado</td><td>Público</td></tr>
+<tr><td>Fechas de aparición</td><td>1996 / 2004 / 2015</td><td>1993 / 2001 / 2010</td></tr>
+<tr><td>Ámbito</td><td>Mundial</td><td>Mundial («EMAS Global»), con actuación en la UE</td></tr>
+<tr><td>Ambos</td><td colspan="2">Política ambiental pública, auditorías, objetivos y metas de mejora continua, control de contratistas y proveedores, aplicable a todas las empresas.</td></tr>
+</table></div>
+<p><b>EMAS III</b>: Reglamento (CE) 1221/2009, de 22 de diciembre, en vigor desde enero de 2010. Empezó en el sector industrial y hoy incluye servicios y gobiernos locales.</p>
+<h3>Fases de la ISO 14001: estructura PDCA</h3>
+<div class="tw"><table>
+<tr><th>Fase</th><th>Contenido</th></tr>
+<tr><td><b>Política medioambiental</b></td><td>Declaración de intenciones. Pública, documentada, actualizada y comunicada a <b>todos los empleados</b>. Incluye prevención de la contaminación, mejora continua y cumplimiento legal.</td></tr>
+<tr><td><b>Planificación</b></td><td><b>Aspectos medioambientales</b> (en situación normal, anormal, de emergencia y pasada) · <b>requisitos legales</b> · <b>objetivos y metas</b> (los objetivos son fines generales; las metas, requisitos detallados y cuantificados) · <b>programa</b> con responsables, medios y calendario.</td></tr>
+<tr><td><b>Implantación y funcionamiento</b></td><td>Funciones y responsabilidades, recursos, formación y sensibilización, comunicación (¿quién, cómo, cuándo, dónde?) y control de documentos.</td></tr>
+<tr><td><b>Comprobación y acción correctora</b></td><td>Medir las características clave; tratar las <b>no conformidades</b> investigando sus <b>causas</b>, no solo los efectos.</td></tr>
+<tr><td><b>Revisión por la dirección</b></td><td>A intervalos definidos; puede cambiar política, objetivos y otros elementos. Se registra.</td></tr>
+</table></div>
+<p>La ISO 14001:2015 sustituyó a la de 2004 (entró en vigor el 15 de septiembre de 2015); los certificados de 2004 dejaron de ser válidos en septiembre de 2018.</p>
+<h3>Análisis del ciclo de vida (ACV)</h3>
+<div class="tw"><table>
+<tr><th>Fase (ISO 14040)</th><th>Qué se hace</th></tr>
+<tr><td><b>1. Objetivos y alcance</b></td><td>Límites del sistema, calidad de los datos y <b>unidad funcional</b> (a la que se refieren todos los resultados). Puede ser <b>física</b> (1.000 kg de pintura) o <b>funcional</b> (litros de pintura para 1 m² de pared).</td></tr>
+<tr><td><b>2. Análisis de inventario</b></td><td>Recogida de datos y balances de materia y energía de las entradas y salidas: diagrama de flujo, datos y cálculos, y ajuste de límites.</td></tr>
+<tr><td><b>3. Evaluación de impacto</b></td><td><b>Clasificación</b> (asignar cada contaminante a su categoría) → <b>caracterización</b> (suma ponderada en una sustancia equivalente) → <b>valoración</b> (ordenar categorías por importancia, con criterios socioeconómicos o éticos).</td></tr>
+<tr><td><b>4. Interpretación / mejoras</b></td><td>Conclusiones y recomendaciones: rediseño, comparación de productos, compra verde…</td></tr>
+</table></div>
+<div class="box key" style="--tc:var(--c2)"><h4>Caracterización: ejemplo de acidificación</h4>
+<p>$$A=f_{NH_3}\,m_{NH_3}+f_{SO_2}\,m_{SO_2}+f_{NO_x}\,m_{NO_x}$$
+El resultado se da en <b>kg de SO₂ equivalentes</b>. Factores: <b>SO₂ 1,00</b> (referencia) · <b>NOₓ 0,70</b> · <b>NH₃ 1,88</b> · <b>HCl 0,88</b> · <b>HF 1,60</b>.</p></div>
+<ul>
+<li>Unidades de otras categorías: calentamiento global en <b>kg CO₂ eq.</b>; eutrofización en <b>kg PO₄³⁻ eq.</b>; formación de fotooxidantes en <b>kg de eteno</b>.</li>
+<li>Historia: años 70, <b>REPA</b>; <b>SETAC</b> propuso en 1993 el primer diagrama; en <b>1997</b>, la serie ISO 14040-14043.</li>
+</ul>
+<h3>Huella de carbono</h3>
+<ul>
+<li>Cantidad total de <b>gases de efecto invernadero</b> causados directa e indirectamente por una organización, producto o servicio (UNE-ISO 14064-1). Voluntaria en España.</li>
+<li><b>Seis GEIs de Kioto</b>: CO₂, CH₄, N₂O, HFC, PFC y SF₆.</li>
+<li>Metodología (PAS 2060): <b>medida → reducción → compensación → documentación y validación</b>.</li>
+</ul>
+<div class="tw"><table>
+<tr><th>Alcance</th><th>Emisiones</th><th>Ejemplos</th></tr>
+<tr><td><b>1</b></td><td><b>Directas</b>: fuentes propias o controladas</td><td>Gas natural, fugas de HFC, vehículos de la empresa</td></tr>
+<tr><td><b>2</b></td><td><b>Indirectas</b> por energía comprada</td><td>Electricidad, calor o vapor generados fuera</td></tr>
+<tr><td><b>3</b></td><td><b>Otras indirectas</b>, de fuentes de terceros</td><td>Papel, agua, residuos peligrosos</td></tr>
+</table></div>
+<h3>Calidad ambiental en la contratación pública</h3>
+<ul>
+<li>La orden ministerial de 14 de octubre de 1997 obliga a valorar la calidad ambiental con un <b>20 % en suministros</b>, un <b>10 % en obras</b> y un <b>20 % en servicios</b> y consultoría.</li>
+<li>Se tienen en cuenta: <b>etiqueta ecológica</b>, productos reciclados o reutilizados y obras o servicios hechos bajo un SGMA (<b>EMAS o ISO 14001</b>).</li>
+<li><b>Ventajas</b> de un SGMA: competitivas, mayor rentabilidad, ahorro de sanciones, mejor imagen, cumplimiento legal y más motivación de los empleados.</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>La declaración ambiental pública y la validación por una entidad pública son de <b>EMAS</b>, no de ISO 14001.</li>
+<li>ISO 14001: la revisión inicial <b>no</b> es obligatoria; EMAS: sí.</li>
+<li>Alcance 2 = electricidad comprada; el papel, el agua y los residuos son <b>alcance 3</b>.</li>
+<li>Caracterización (ponderación científica) ≠ valoración (criterios socioeconómicos y éticos).</li>
+<li>Contratación: 20 % suministros, <b>10 % obras</b>, 20 % servicios.</li></ul></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t12.html" style="--tc:var(--c6)"><small>← Anterior</small><strong>T12 Evaluación de impacto ambiental</strong></a><a class="nx" href="parcial-2024.html" style="--tc:var(--c8)"><small>Siguiente →</small><strong>Primer parcial 2024 resuelto</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

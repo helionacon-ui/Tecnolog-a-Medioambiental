@@ -16,7 +16,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a><p class="fecha" style="margin:6px 0 0;max-width:none;font:13px/1.45 system-ui,sans-serif;color:var(--muted,#5b6660)">Proyecto iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time> · Última actualización: <time datetime="2026-11-05">5 de noviembre de 2026</time></p></div>
+<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a></div>
 <button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
 <a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
 <div class="wrap" id="top">
@@ -34,6 +34,13 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
   <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
   <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Suelos y residuos</div>
+  <a href="t8.html" style="--tc:var(--c4)">T8 Contaminación de suelos</a>
+  <a href="t10.html" style="--tc:var(--c3)">T10 Residuos urbanos</a>
+  <a href="t11.html" style="--tc:var(--c5)">T11 Residuos peligrosos, RAEE y pilas</a>
+  <div class="grp">Gestión ambiental</div>
+  <a href="t12.html" style="--tc:var(--c6)">T12 Evaluación de impacto ambiental</a>
+  <a href="t13.html" style="--tc:var(--c2)">T13 Gestión ambiental, ACV y huella de carbono</a>
   <div class="grp">Practicar</div>
   <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
   <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
@@ -46,7 +53,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
 </nav>
 <div style="min-width:0">
-<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T3 Potabilización y membranas</b><span class="np">4 / 16</span></div>
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T3 Potabilización y membranas</b><span class="np">4 / 21</span></div>
 <main class="page">
 <section class="sec" style="--tc:var(--c3);--tcs:var(--c3s)">
 <div class="sh"><span class="badge" aria-hidden="true">T3</span><div class="shx"><p class="kick">Tema 3 · Agua</p><h2 id="t3">Potabilización y tecnologías de membrana</h2><div class="tags"><span class="tag">34 págs</span><span class="tag">ETAP</span><span class="tag">ósmosis inversa</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 236" role="img" aria-label="Línea de potabilización: captación, coagulación-floculación, decantación, filtración, desinfección y depósito, con ósmosis inversa como alternativa" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="60" width="96" height="64" rx="12" class="il-box"/><text x="62.0" y="96.5" class="il-txt" text-anchor="middle">Captación</text><line x1="112" y1="92" x2="124.6" y2="92.0" class="il-arrow"/><polygon points="130,92 121.9,95.9 121.9,88.1" class="il-ah"/><rect x="132" y="60" width="96" height="64" rx="12" class="il-box"/><text x="180.0" y="88.5" class="il-txt" text-anchor="middle">Coagulación</text><text x="180.0" y="104.5" class="il-txt" text-anchor="middle">floculación</text><line x1="230" y1="92" x2="242.6" y2="92.0" class="il-arrow"/><polygon points="248,92 239.9,95.9 239.9,88.1" class="il-ah"/><rect x="250" y="60" width="96" height="64" rx="12" class="il-box"/><text x="298.0" y="96.5" class="il-txt" text-anchor="middle">Decantación</text><line x1="348" y1="92" x2="360.6" y2="92.0" class="il-arrow"/><polygon points="366,92 357.9,95.9 357.9,88.1" class="il-ah"/><rect x="368" y="60" width="96" height="64" rx="12" class="il-box"/><text x="416.0" y="96.5" class="il-txt" text-anchor="middle">Filtración</text><line x1="466" y1="92" x2="478.6" y2="92.0" class="il-arrow"/><polygon points="484,92 475.9,95.9 475.9,88.1" class="il-ah"/><rect x="486" y="60" width="96" height="64" rx="12" class="il-box"/><text x="534.0" y="96.5" class="il-txt" text-anchor="middle">Desinfección</text><line x1="584" y1="92" x2="596.6" y2="92.0" class="il-arrow"/><polygon points="602,92 593.9,95.9 593.9,88.1" class="il-ah"/><rect x="604" y="60" width="96" height="64" rx="12" class="il-box"/><text x="652.0" y="88.5" class="il-txt" text-anchor="middle">Depósito</text><text x="652.0" y="104.5" class="il-txt" text-anchor="middle">y red</text><text x="62.0" y="150" class="il-txt-s" text-anchor="middle">agua bruta</text><text x="652.0" y="150" class="il-txt-s" text-anchor="middle">agua potable</text><path d="M338 196 H494" class="il-ax"/><rect x="328" y="170" width="176" height="46" rx="12" class="il-box il-dash-box"/><text x="416.0" y="197.5" class="il-txt-s" text-anchor="middle">Ósmosis inversa (alternativa)</text><line x1="416.0" y1="128" x2="416.0" y2="160.6" class="il-arrow"/><polygon points="416.0,166 412.1,157.9 419.9,157.9" class="il-ah"/></svg><figcaption>Una ETAP convencional elimina primero lo grueso y lo coloidal, después filtra y por último desinfecta. La ósmosis inversa se usa cuando hay que desalar.</figcaption></figure>

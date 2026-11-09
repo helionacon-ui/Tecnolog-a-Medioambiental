@@ -20,7 +20,7 @@ const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v)
 (function(){
   const box=$('checks'); if(!box) return;
   const items=[];
-  const names={T1:'T1 Introducción',T2:'T2 Parámetros',T3:'T3 Potabilización',T4:'T4 Depuración',T5:'T5 Dispersión',T6:'T6 Medida',T7:'T7 Control'};
+  const names={T1:'T1 Introducción',T2:'T2 Parámetros',T3:'T3 Potabilización',T4:'T4 Depuración',T5:'T5 Dispersión',T6:'T6 Medida',T7:'T7 Control',T8:'T8 Suelos',T10:'T10 Residuos urbanos',T11:'T11 Residuos peligrosos',T12:'T12 Impacto ambiental',T13:'T13 Gestión ambiental'};
   Object.keys(names).forEach(k=>{
     items.push([k+'-a',names[k]+': he leído «Lo esencial» y las tablas']);
     items.push([k+'-b',names[k]+': test con 8 de 10 o más']);
@@ -44,7 +44,7 @@ const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v)
   const list=$('qlist'),score=$('qscore');
   const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
   const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  const tc={T1:'c1',T2:'c2',T3:'c3',T4:'c4',T5:'c5',T6:'c6',T7:'c7'};
+  const tc={T1:'c1',T2:'c2',T3:'c3',T4:'c4',T5:'c5',T6:'c6',T7:'c7',T8:'c4',T10:'c3',T11:'c5',T12:'c6',T13:'c2'};
   let shown=0,okNow=0,answered=0;
   const upd=()=>{const dom=Object.values(res).filter(v=>v===1).length;score.textContent=(answered?`Esta tanda: ${okNow}/${answered} · `:'')+`Acertadas alguna vez: ${dom} de ${QS.length}`;};
   function render(idxs){

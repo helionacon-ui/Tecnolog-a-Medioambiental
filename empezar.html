@@ -16,7 +16,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a><p class="fecha" style="margin:6px 0 0;max-width:none;font:13px/1.45 system-ui,sans-serif;color:var(--muted,#5b6660)">Proyecto iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time> · Última actualización: <time datetime="2026-11-05">5 de noviembre de 2026</time></p></div>
+<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a></div>
 <button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
 <a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
 <div class="wrap" id="top">
@@ -34,6 +34,13 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
   <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
   <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Suelos y residuos</div>
+  <a href="t8.html" style="--tc:var(--c4)">T8 Contaminación de suelos</a>
+  <a href="t10.html" style="--tc:var(--c3)">T10 Residuos urbanos</a>
+  <a href="t11.html" style="--tc:var(--c5)">T11 Residuos peligrosos, RAEE y pilas</a>
+  <div class="grp">Gestión ambiental</div>
+  <a href="t12.html" style="--tc:var(--c6)">T12 Evaluación de impacto ambiental</a>
+  <a href="t13.html" style="--tc:var(--c2)">T13 Gestión ambiental, ACV y huella de carbono</a>
   <div class="grp">Practicar</div>
   <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
   <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
@@ -46,7 +53,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
 </nav>
 <div style="min-width:0">
-<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>Empieza aquí</b><span class="np">1 / 16</span></div>
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>Empieza aquí</b><span class="np">1 / 21</span></div>
 <main class="page">
 <section class="sec" style="--tc:var(--c0);--tcs:var(--c0s)">
 <div class="sh"><span class="badge" aria-hidden="true">0</span><div class="shx"><p class="kick">Empezar</p><h2 id="cero">Empieza aquí</h2></div></div><figure class="illus"><svg viewBox="0 0 720 160" role="img" aria-label="Ruta de estudio en cuatro pasos" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="74" r="30" class="il-acc"/><text x="64" y="84" class="il-num" text-anchor="middle">1</text><text x="64" y="138" class="il-txt" text-anchor="middle">Lee lo esencial</text><line x1="102" y1="74" x2="152.6" y2="74.0" class="il-arrow"/><polygon points="158,74 149.9,77.9 149.9,70.1" class="il-ah"/><circle cx="236" cy="74" r="30" class="il-acc"/><text x="236" y="84" class="il-num" text-anchor="middle">2</text><text x="236" y="138" class="il-txt" text-anchor="middle">Haz problemas</text><line x1="274" y1="74" x2="324.6" y2="74.0" class="il-arrow"/><polygon points="330,74 321.9,77.9 321.9,70.1" class="il-ah"/><circle cx="408" cy="74" r="30" class="il-acc"/><text x="408" y="84" class="il-num" text-anchor="middle">3</text><text x="408" y="138" class="il-txt" text-anchor="middle">Practica test</text><line x1="446" y1="74" x2="496.6" y2="74.0" class="il-arrow"/><polygon points="502,74 493.9,77.9 493.9,70.1" class="il-ah"/><circle cx="580" cy="74" r="30" class="il-acc"/><text x="580" y="84" class="il-num" text-anchor="middle">4</text><text x="580" y="138" class="il-txt" text-anchor="middle">Simula examen</text></svg><figcaption>Una ruta sencilla: lee lo esencial de cada tema, resuelve problemas, practica con tests y termina simulando el examen.</figcaption></figure>
@@ -137,6 +144,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
 <p>Marca lo que ya domines. Se guarda en este navegador.</p>
 <div class="bar" aria-hidden="true"><i id="pbar"></i></div><p class="muted" id="ptxt">0 de 0</p>
 <div id="checks"></div>
+<div class="box key" style="--tc:var(--c0)"><h4>Temas nuevos</h4><p>Se han añadido los temas <b>8, 10, 11, 12 y 13</b> (el 9 no está en la carpeta de temas). Tienen su página, ilustración, trampas y test en la autoevaluación. El tema 13 procede de una versión anterior del temario: confirma que entra este curso.</p></div>
 </section>
 
 <nav class="pn" aria-label="Páginas"><a class="pv" href="index.html" style="--tc:var(--accent)"><small>← Inicio</small><strong>Portada de la guía</strong></a><a class="nx" href="t1.html" style="--tc:var(--c1)"><small>Siguiente →</small><strong>T1 Introducción y legislación</strong></a></nav>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T10 Residuos urbanos · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a></div>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Suelos y residuos</div>
+  <a href="t8.html" style="--tc:var(--c4)">T8 Contaminación de suelos</a>
+  <a href="t10.html" class="on" aria-current="page" style="--tc:var(--c3)">T10 Residuos urbanos</a>
+  <a href="t11.html" style="--tc:var(--c5)">T11 Residuos peligrosos, RAEE y pilas</a>
+  <div class="grp">Gestión ambiental</div>
+  <a href="t12.html" style="--tc:var(--c6)">T12 Evaluación de impacto ambiental</a>
+  <a href="t13.html" style="--tc:var(--c2)">T13 Gestión ambiental, ACV y huella de carbono</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T10 Residuos urbanos</b><span class="np">10 / 21</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c3);--tcs:var(--c3s)">
+<div class="sh"><span class="badge" aria-hidden="true">T10</span><div class="shx"><p class="kick">Tema 10 · Residuos</p><h2 id="t10">Gestión y tratamiento de residuos urbanos</h2><div class="tags"><span class="tag">39 págs</span><span class="tag">incineración y vertedero</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 222" role="img" aria-label="Jerarquía de gestión de residuos en cinco niveles" xmlns="http://www.w3.org/2000/svg"><rect x="80.0" y="14" width="560" height="34" rx="10" style="fill:var(--c1s);stroke:var(--c1);stroke-width:1.6"/><text x="360" y="36" class="il-txt" text-anchor="middle">1 · Prevención</text><rect x="120.0" y="54" width="480" height="34" rx="10" style="fill:var(--c2s);stroke:var(--c2);stroke-width:1.6"/><text x="360" y="76" class="il-txt" text-anchor="middle">2 · Reutilización</text><rect x="160.0" y="94" width="400" height="34" rx="10" style="fill:var(--c3s);stroke:var(--c3);stroke-width:1.6"/><text x="360" y="116" class="il-txt" text-anchor="middle">3 · Reciclado</text><rect x="200.0" y="134" width="320" height="34" rx="10" style="fill:var(--c4s);stroke:var(--c4);stroke-width:1.6"/><text x="360" y="156" class="il-txt" text-anchor="middle">4 · Valorización</text><rect x="240.0" y="174" width="240" height="34" rx="10" style="fill:var(--c5s);stroke:var(--c5);stroke-width:1.6"/><text x="360" y="196" class="il-txt" text-anchor="middle">5 · Eliminación</text><text x="660" y="30" class="il-txt-s" text-anchor="end">más deseable</text><text x="660" y="196" class="il-txt-s" text-anchor="end">menos deseable</text></svg><figcaption>Se prefiere siempre el escalón más alto posible: prevenir, reutilizar, reciclar, valorizar y, solo al final, eliminar.</figcaption></figure>
+<div class="zero"><p class="ft">Jerarquía de gestión de residuos (Ley 7/2022, art. 8)</p>
+<ol><li><b>Prevención</b>: «el mejor residuo es el que no se produce».</li><li><b>Preparación para la reutilización</b>.</li><li><b>Reciclado</b> (incluye compostaje y biometanización, <i>no</i> la incineración con recuperación de energía).</li><li><b>Otro tipo de valorización</b>, incluida la energética.</li><li><b>Eliminación</b> (vertedero, entre otras).</li></ol>
+<p>El PEMAR 2024-2035 es el plan estatal vigente. Cada español genera unos <b>442 kg/hab·año</b> de residuos, un 9 % menos que la media de la UE.</p></div>
+<h3>Tipos de residuo (Ley 7/2022)</h3>
+<div class="tw"><table>
+<tr><th>Tipo</th><th>Definición breve</th></tr>
+<tr><td><b>Doméstico</b></td><td>Generado en los hogares (incluye aceites de cocina usados, RAEE, textil, pilas, muebles, colchones y obras menores) y los similares de servicios; también limpieza viaria, parques y playas.</td></tr>
+<tr><td><b>Comercial</b></td><td>Comercio, restauración y bares, oficinas, mercados y resto del sector servicios.</td></tr>
+<tr><td><b>Industrial</b></td><td>Procesos de producción, fabricación, limpieza o mantenimiento. Excluye emisiones a la atmósfera y vertidos.</td></tr>
+<tr><td><b>Peligroso</b></td><td>Tiene una o más características del <b>Anexo I</b>: explosivo, oxidante, tóxico, inflamable, infeccioso, ecotóxico…, y envases que los contuvieron.</td></tr>
+<tr><td><b>Aceites usados</b></td><td>Aceites industriales o lubricantes que ya no sirven; <b>excluye</b> los de cocina.</td></tr>
+<tr><td><b>Biorresiduo</b></td><td>Residuo biodegradable vegetal y alimentario de hogares, jardines y servicios.</td></tr>
+<tr><td><b>Inerte</b> (RD 646/2020)</td><td>No peligroso, sin transformaciones físicas, químicas ni biológicas significativas. Ej.: construcción y demolición.</td></tr>
+</table></div>
+<h3>Separación y procesamiento</h3>
+<div class="tw"><table>
+<tr><th>Operación</th><th>Cómo funciona</th><th>Dato clave</th></tr>
+<tr><td><b>Trituración</b></td><td>Molinos de martillos, molinos batientes y trituradoras cortantes. Ahorra espacio y prepara el residuo.</td><td>Permite obtener <b>CDR</b> (combustible derivado de residuos) o CSR.</td></tr>
+<tr><td><b>Cribado</b></td><td>Separa por tamaño con una o más superficies: criba vibratoria, <b>trómel</b> (giratoria) y de discos.</td><td>Seco o húmedo.</td></tr>
+<tr><td><b>Separación por densidad</b></td><td><b>Mesa densimétrica</b> con corriente de aire: tres fracciones (densa, lecho fluido, volátil que va a un ciclón).</td><td>Ligeros (papel, plástico) frente a pesados (vidrio, metal).</td></tr>
+<tr><td><b>Separación magnética</b></td><td>Imán que retira los metales <b>férreos</b>.</td><td>Tras triturar y <b>antes</b> de la clasificación neumática.</td></tr>
+<tr><td><b>Foucault</b> (corrientes de eddy)</td><td>Campo magnético variable induce corrientes en metales <b>no férreos</b> y los repele.</td><td>Aplicación principal: recuperar <b>aluminio</b>.</td></tr>
+<tr><td><b>Autosort®</b></td><td>Infrarrojo cercano (NIR) identifica el material de los envases y un chorro de aire los desvía.</td><td>PET, PP, PS… Envases de 30 a 300 mm. Es un <b>separador óptico</b>.</td></tr>
+<tr><td><b>Compactación</b></td><td>Embaladoras que aumentan la densidad para almacenar y transportar.</td><td>Materia orgánica: 200-400 kg/m³ sin compactar, hasta 1.000-1.200 kg/m³ compactada.</td></tr>
+</table></div>
+<p><b>Plásticos urbanos</b> (código moldeado en el fondo): 1 PET · 2 PE-HD · 3 PVC · 4 PE-LD · 5 PP · 6 PS · 7 otros laminados. <b>Cuanto más bajo el número, más fácil el reciclaje.</b></p>
+<h3>Incineración</h3>
+<ul>
+<li>Oxidación química con oxígeno estequiométrico o en exceso. Reduce el volumen de la fracción combustible un <b>85-95 %</b> y recupera energía. Norma: <b>RD 815/2013</b> (Reglamento de emisiones industriales).</li>
+<li><b>Combustión en masa</b> (la más elegida; casi sin pretratamiento) frente a incineradoras de <b>CDR/CSR</b> (más pequeñas, control más eficaz por ser un combustible más homogéneo).</li>
+<li><b>Coincineración</b>: la finalidad principal es generar energía o fabricar productos (cementera, central térmica).</li>
+<li><b>Lecho fluidizado (ILF)</b>: cilindro con lecho de arena (o caliza), alimentación continua, <b>790-950 ºC</b>, admite RUs, fangos y carbón. Con caliza: CaCO₃ + ½O₂ + SO₂ → CaSO₄ + CO₂, y apenas hay SO₂.</li>
+</ul>
+<div class="tw"><table>
+<tr><th>Condición de diseño y explotación</th><th>Valor</th></tr>
+<tr><td>Escorias y cenizas</td><td><b>COT &lt; 3 %</b> o pérdida por combustión <b>&lt; 5 %</b> del peso seco</td></tr>
+<tr><td>Temperatura de los gases (tras la última inyección de aire)</td><td><b>850 ºC</b> durante al menos <b>2 s</b></td></tr>
+<tr><td>Residuos peligrosos con más del 1 % de organohalogenados</td><td><b>1.100 ºC</b>, al menos 2 s</td></tr>
+<tr><td>Quemador auxiliar</td><td>Arranca solo si baja de 850 / 1.100 ºC; también en arranque y parada</td></tr>
+<tr><td>Medidas en continuo</td><td>NOₓ, CO, partículas totales, COT, HCl, HF, SO₂; además temperatura, presión, O₂ y vapor de agua</td></tr>
+<tr><td>Metales, dioxinas y furanos</td><td>Al menos <b>4 al año</b> (trimestral); cada 2 meses los 12 primeros meses</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Valor límite de emisión</th><th>Límite</th></tr>
+<tr><td>Partículas totales</td><td class="num">30 mg/Nm³</td></tr>
+<tr><td>HCl</td><td class="num">10 mg/Nm³</td></tr>
+<tr><td>HF</td><td class="num">1 mg/Nm³</td></tr>
+<tr><td>NOₓ</td><td class="num">500 mg/Nm³</td></tr>
+<tr><td>Cd + Tl</td><td class="num">0,05 mg/Nm³</td></tr>
+<tr><td>Hg</td><td class="num">0,05 mg/Nm³</td></tr>
+<tr><td>Sb + As + Cr + Co + Cu + Mn + Ni + V</td><td class="num">0,5 mg/Nm³</td></tr>
+<tr><td>Dioxinas y furanos</td><td class="num">0,1 ng/Nm³</td></tr>
+</table></div>
+<h3>Control ambiental de la incineración</h3>
+<div class="tw"><table>
+<tr><th>Contaminante</th><th>Origen</th><th>Control</th></tr>
+<tr><td><b>NOₓ</b></td><td><b>Térmico</b> (N₂ y O₂ del aire) y <b>del combustible</b> (N orgánico)</td><td>Separar en origen; poco aire en exceso y quemadores de bajo NOₓ (−40 a 60 %); <b>recirculación</b> de gases (baja la llama); <b>SCR</b>: catalizador (V₂O₅, TiO₂, zeolitas) a 300-400 ºC con NH₃ o urea: NO + NH₃ + ¼O₂ → N₂ + 3/2 H₂O. En diésel: EGR + SCR con <b>AdBlue</b>, hasta 90-95 %.</td></tr>
+<tr><td><b>SO₂</b></td><td>Azufre del residuo</td><td>Separación en origen; depuración seca o húmeda (sulfato de calcio).</td></tr>
+<tr><td><b>CO y HC</b></td><td>Combustión incompleta (poco O₂, baja T, humedad alta)</td><td>Más oxígeno, sin pasarse de temperatura.</td></tr>
+<tr><td><b>Partículas</b></td><td>Combustión incompleta y arrastre</td><td>Lavado de gases.</td></tr>
+<tr><td><b>Metales</b></td><td>Cd, Cr, Hg, Pb</td><td>El <b>Hg</b> es el peor: se volatiliza a solo <b>329 ºC</b>.</td></tr>
+<tr><td><b>Gases ácidos</b></td><td>HF y HCl (el cloro viene sobre todo del PVC, PS y PE)</td><td>Depuración húmeda o seca.</td></tr>
+<tr><td><b>Dioxinas y furanos</b></td><td>Compuestos orgánicos de triple anillo</td><td>Con más de <b>980 ºC</b> se minimiza su emisión. La <b>2,3,7,8-TCDD</b> es cancerígena, muy persistente y con DL50 de 0,6 µg/kg (Times Beach, años 70).</td></tr>
+</table></div>
+<h3>Compostaje y bioestabilización</h3>
+<ul>
+<li><b>Compostaje</b>: proceso biológico <b>aerobio</b> que da <b>compost</b>. Si no hay separación en origen (todo va a «Restos») se obtiene <b>material bioestabilizado</b>.</li>
+<li><b>Sistemas abiertos</b>: pilas estáticas con aireación natural (altura ≤ 1,5 m), pilas estáticas con ventilación forzada y pilas por volteo. <b>Cerrados</b>: reactores, que necesitan mucha menos superficie.</li>
+<li><b>Vermicompostaje</b>: con lombriz roja californiana (<i>Eisenia foetida</i>).</li>
+<li>El compost mejora las propiedades físicas, químicas y biológicas del suelo.</li>
+</ul>
+<h3>Vertedero (RD 646/2020)</h3>
+<div class="tw"><table>
+<tr><th>Concepto</th><th>Qué es</th></tr>
+<tr><td><b>Celda</b></td><td>Residuo depositado en un periodo (normalmente un día) más su recubrimiento de <b>15 a 30 cm</b> de suelo. Evita vuelo de materiales, vectores sanitarios y entrada de agua.</td></tr>
+<tr><td><b>Berma</b></td><td>Terraza que se usa cuando la altura supera los <b>2 m</b>; da estabilidad y aloja drenajes y tuberías del gas.</td></tr>
+<tr><td><b>Lixiviado</b></td><td>Líquido que percola por los residuos por precipitación, escorrentía o riego.</td></tr>
+<tr><td><b>Clausura y posclausura</b></td><td>El explotador vigila y controla los lixiviados durante <b>al menos 30 años</b>.</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Barrera geológica natural</th><th>Permeabilidad k</th><th>Espesor</th></tr>
+<tr><td>Vertedero de residuos <b>peligrosos</b></td><td class="num">≤ 10⁻⁹ m/s</td><td class="num">≥ 5 m</td></tr>
+<tr><td>Residuos <b>no peligrosos</b> (los urbanos)</td><td class="num">≤ 10⁻⁹ m/s</td><td class="num">≥ 1 m</td></tr>
+<tr><td>Residuos <b>inertes</b></td><td class="num">≤ 10⁻⁷ m/s</td><td class="num">≥ 1 m</td></tr>
+</table></div>
+<ul>
+<li>Si la barrera natural no cumple, se complementa con una <b>barrera artificial</b> de arcilla de espesor <b>≥ 0,5 m</b>. El revestimiento usa <b>arcilla</b> y <b>geosintéticos</b>, sobre todo <b>PE-AD</b> (conductividad 10⁻¹⁰ cm/s, barato y resistente).</li>
+<li><b>Lixiviado</b>: capa de drenaje con pendiente y tuberías perforadas hasta los sumideros. Se trata con depuración biológica (como en una EDAR) o físico-química.</li>
+<li><b>Gas de vertedero</b> (CH₄ y CO₂): poder calorífico <b>4.300-6.000 kcal/m³</b> (1 m³ ≈ 0,7 L de gasóleo ≈ 6,8 kWh). Estimación: $G=1868\cdot C\cdot(0{,}014\,T+0{,}28)$, con G en m³/t, C el carbono (kg/t) y T la temperatura interior (ºC).</li>
+<li><b>Extracción pasiva</b>: vertederos pequeños (40.000 m³), respiraderos cada ~7.500 m³. <b>Activa</b>: pozos conectados a un soplador con vacío, en vertederos de al menos <b>8 m</b> de profundidad.</li>
+</ul>
+<h3>Tecnologías emergentes</h3>
+<ul>
+<li><b>IA y robots</b>: clasificación con visión artificial, más del 99 % de precisión y hasta 80 objetos por minuto.</li>
+<li><b>Sensores e IoT</b>: ultrasonidos, RFID y pesaje para optimizar rutas y evitar desbordamientos.</li>
+<li><b>Blockchain</b>: trazabilidad desde el origen hasta el destino final.</li>
+<li><b>Software SaaS</b>: plataformas en la nube con informes <b>ESG</b> (ambiental, social y de gobernanza).</li>
+</ul>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>Reciclado <b>no</b> incluye la incineración con recuperación de energía: ésta es «otro tipo de valorización».</li>
+<li>Magnética = férreos; Foucault = <b>no</b> férreos (aluminio).</li>
+<li>Combustión <b>en masa</b>: casi sin pretratamiento y la más usada; CDR: más pequeña y mejor controlada.</li>
+<li>850 ºC y 2 s; <b>1.100 ºC</b> solo con más del 1 % de organohalogenados.</li>
+<li>Vertedero de peligrosos: espesor ≥ <b>5 m</b>; no peligrosos e inertes: ≥ 1 m. Inertes: k ≤ <b>10⁻⁷</b>.</li>
+<li>Sin separación en origen no hay compost sino <b>material bioestabilizado</b>.</li></ul></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t8.html" style="--tc:var(--c4)"><small>← Anterior</small><strong>T8 Contaminación de suelos</strong></a><a class="nx" href="t11.html" style="--tc:var(--c5)"><small>Siguiente →</small><strong>T11 Residuos peligrosos, RAEE y pilas</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

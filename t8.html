@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T8 Contaminación de suelos · Tecnología Medioambiental</title>
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a></div>
+<button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">◐ Tema</button>
+<a href="#top" class="totop" id="totop" aria-label="Volver arriba">↑</a>
+<div class="wrap" id="top">
+<nav class="toc" aria-label="Índice">
+  <div class="grp">Inicio</div>
+  <a class="home" href="index.html">Portada</a>
+  <div class="grp">Empezar</div>
+  <a href="empezar.html" style="--tc:var(--c0)">Empieza aquí</a>
+  <div class="grp">Agua</div>
+  <a href="t1.html" style="--tc:var(--c1)">T1 Introducción y legislación</a>
+  <a href="t2.html" style="--tc:var(--c2)">T2 Contaminantes y parámetros</a>
+  <a href="t3.html" style="--tc:var(--c3)">T3 Potabilización y membranas</a>
+  <a href="t4.html" style="--tc:var(--c4)">T4 Depuración y reutilización</a>
+  <div class="grp">Aire</div>
+  <a href="t5.html" style="--tc:var(--c5)">T5 Transporte y dispersión</a>
+  <a href="t6.html" style="--tc:var(--c6)">T6 Medida</a>
+  <a href="t7.html" style="--tc:var(--c7)">T7 Control</a>
+  <div class="grp">Suelos y residuos</div>
+  <a href="t8.html" class="on" aria-current="page" style="--tc:var(--c4)">T8 Contaminación de suelos</a>
+  <a href="t10.html" style="--tc:var(--c3)">T10 Residuos urbanos</a>
+  <a href="t11.html" style="--tc:var(--c5)">T11 Residuos peligrosos, RAEE y pilas</a>
+  <div class="grp">Gestión ambiental</div>
+  <a href="t12.html" style="--tc:var(--c6)">T12 Evaluación de impacto ambiental</a>
+  <a href="t13.html" style="--tc:var(--c2)">T13 Gestión ambiental, ACV y huella de carbono</a>
+  <div class="grp">Practicar</div>
+  <a href="parcial-2024.html" style="--tc:var(--c8)">Primer parcial 2024 resuelto</a>
+  <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
+  <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
+  <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
+  <div class="grp">Consultar</div>
+  <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
+  <a href="glosario.html" style="--tc:var(--c0)">Glosario</a>
+  <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
+</nav>
+<div style="min-width:0">
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T8 Contaminación de suelos</b><span class="np">9 / 21</span></div>
+<main class="page">
+<section class="sec" style="--tc:var(--c4);--tcs:var(--c4s)">
+<div class="sh"><span class="badge" aria-hidden="true">T8</span><div class="shx"><p class="kick">Tema 8 · Suelos</p><h2 id="t8">Contaminación de suelos</h2><div class="tags"><span class="tag">18 págs</span><span class="tag">tecnologías in situ</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 222" role="img" aria-label="Perfil del suelo con foco contaminante, lixiviación y volatilización, y tres técnicas de descontaminación" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="20" width="380" height="40" rx="8" class="il-fill2" style="fill-opacity:.35"/><rect x="30" y="60" width="380" height="64" class="il-fill2" style="fill-opacity:.65"/><rect x="30" y="124" width="380" height="40" class="il-fill2" style="fill-opacity:.9"/><rect x="30" y="164" width="380" height="44" rx="8" class="il-venn" style="fill-opacity:.35"/><text x="40" y="44" class="il-txt-s" text-anchor="start">Horizonte superficial</text><text x="40" y="96" class="il-txt-s" text-anchor="start">Suelo (adsorción)</text><text x="40" y="148" class="il-txt-s" text-anchor="start">Zona no saturada</text><text x="40" y="190" class="il-txt" text-anchor="start">Acuífero</text><circle cx="200" cy="42" r="9" class="il-acc"/><text x="214" y="46" class="il-txt-s" text-anchor="start">foco</text><line x1="200" y1="54" x2="200.0" y2="154.6" class="il-arrow"/><polygon points="200,160 196.1,151.9 203.9,151.9" class="il-ah"/><text x="214" y="118" class="il-txt" text-anchor="start">lixiviación</text><line x1="150" y1="38" x2="150.0" y2="15.399999999999999" class="il-arrow"/><polygon points="150,10 153.9,18.1 146.1,18.1" class="il-ah"/><text x="160" y="14" class="il-txt-s" text-anchor="start">volatilización</text><circle cx="240" cy="80" r="5" class="il-acc" style="opacity:.5"/><circle cx="262" cy="96" r="5" class="il-acc" style="opacity:.5"/><circle cx="290" cy="84" r="5" class="il-acc" style="opacity:.5"/><circle cx="318" cy="104" r="5" class="il-acc" style="opacity:.5"/><circle cx="340" cy="88" r="5" class="il-acc" style="opacity:.5"/><text x="486" y="40" class="il-txt" text-anchor="start">Tres técnicas</text><rect x="460" y="56" width="230" height="44" rx="12" class="il-chip"/><text x="476" y="82" class="il-txt il-b" text-anchor="start">Ventilación</text><text x="676" y="82" class="il-txt-s" text-anchor="end">COVs</text><rect x="460" y="110" width="230" height="44" rx="12" class="il-chip"/><text x="476" y="136" class="il-txt il-b" text-anchor="start">Lavado</text><text x="676" y="136" class="il-txt-s" text-anchor="end">inorgánicos</text><rect x="460" y="164" width="230" height="44" rx="12" class="il-chip"/><text x="476" y="190" class="il-txt il-b" text-anchor="start">Landfarming</text><text x="676" y="190" class="il-txt-s" text-anchor="end">biodegradables</text></svg><figcaption>El contaminante se retiene por adsorción, se mueve sobre todo por lixiviación hacia el acuífero y puede volatilizarse. Cada técnica de limpieza encaja con un tipo de contaminante.</figcaption></figure>
+<div class="zero"><p class="ft">Lo esencial en 30 segundos</p>
+<p>El <b>suelo</b> es la capa superior de la corteza terrestre, entre el lecho rocoso y la superficie (partículas minerales, materia orgánica, agua, aire y organismos vivos): es la <b>interfaz entre tierra, aire y agua</b>. Un <b>suelo contaminado</b> es aquel cuyas características se han alterado por componentes químicos peligrosos de origen humano, en una concentración que supone un <b>riesgo inaceptable</b> para la salud o el medio ambiente (Ley 7/2022 y RD 9/2005).</p>
+<p>El <b>nivel genérico de referencia (NGR)</b> es la concentración de una sustancia que no supera el riesgo máximo aceptable para la salud humana o los ecosistemas.</p></div>
+<h3>Cómo se degrada un suelo</h3>
+<div class="tw"><table>
+<tr><th>Tipo</th><th>Qué ocurre</th><th>Ejemplos</th></tr>
+<tr><td><b>Degradación de la fertilidad</b></td><td>El suelo pierde capacidad para soportar vida: cada vez hacen falta más abonos para cosechas menores.</td><td><b>Química</b>: pérdida de nutrientes, acidificación, salinización, toxicidad. <b>Física</b>: pérdida de estructura y de permeabilidad, menos retención de agua. <b>Biológica</b>: menos materia orgánica.</td></tr>
+<tr><td><b>Erosión</b></td><td>Pérdida selectiva de material por agua (<b>hídrica</b>) o viento (<b>eólica</b>).</td><td>La <b>antrópica</b> es rápida y dañina; la <b>geológica</b> es lenta, el suelo se repone igual de deprisa y es incluso <b>beneficiosa</b> para la fertilidad.</td></tr>
+<tr><td><b>Contaminación</b></td><td>Acumulación de sustancias a niveles que perjudican su comportamiento: degradación <b>química</b> que baja la productividad.</td><td>Ver el siguiente apartado.</td></tr>
+</table></div>
+<h3>Contaminación natural y antrópica</h3>
+<div class="cols2">
+<div class="box key" style="--tc:var(--c4)"><h4>Natural o endógena</h4><ul><li>Rocas con Cr, Ni, Cu o Mn que el agua lava y concentra en el suelo.</li><li>Los metales pasan de minerales primarios (no asimilables) a especies más activas.</li><li>Un solo <b>volcán</b> activo puede aportar más cenizas y metales pesados que varias centrales térmicas de carbón.</li></ul></div>
+<div class="box key" style="--tc:var(--c4)"><h4>Antrópica o exógena</h4><ul><li>Es la causa <b>más frecuente</b>: desarrollo sin planificación.</li><li><b>RAEE</b>: incineración al aire libre de cables, fundición de rotores, desmontaje de transformadores sin recoger el aceite.</li><li>Vertedero directo: metales pesados (<b>Pb, Hg, Cr</b>) y aceites de transformadores.</li></ul></div>
+</div>
+<h3>Factores que determinan cuánto le afecta un contaminante</h3>
+<div class="tw"><table>
+<tr><th>Factor</th><th>Significado</th></tr>
+<tr><td><b>Vulnerabilidad</b></td><td>Sensibilidad del suelo ante el agente. <b>A mayor poder de amortiguación, menor vulnerabilidad.</b></td></tr>
+<tr><td><b>Poder de amortiguación</b></td><td>El suelo filtra, descompone, neutraliza, inactiva y almacena. Protege aguas subterráneas y seres vivos. Cuando se supera, pasa de <i>protector</i> a <i>fuente</i> de contaminación.</td></tr>
+<tr><td><b>Biodisponibilidad</b></td><td>Asimilación del contaminante por los organismos, y por tanto posibilidad de causar un efecto.</td></tr>
+<tr><td><b>Movilidad</b></td><td>Regula la distribución y el transporte a otros sistemas.</td></tr>
+<tr><td><b>Persistencia</b></td><td>Tiempo que mantiene su actividad; se mide con la <b>vida media $t_{1/2}$</b>. <b>Más persistencia, más toxicidad</b>, con independencia de la biodisponibilidad.</td></tr>
+<tr><td><b>Carga crítica</b></td><td>Cantidad máxima que admite sin efectos nocivos. Explica por qué la lluvia ácida fue más grave en Escandinavia que en Centroeuropa: allí los suelos son más alcalinos y amortiguan mejor.</td></tr>
+</table></div>
+<h3>Qué le pasa al contaminante dentro del suelo</h3>
+<div class="tw"><table>
+<tr><th>Proceso</th><th>Mecanismo</th><th>Claves</th></tr>
+<tr><td rowspan="1"><b>Acumulación</b></td><td><b>Adsorción</b>: el contaminante (adsorbato) queda retenido en la fase sólida (adsorbente).</td><td>Todo lo del Tema 2 sobre adsorción vale para el suelo.</td></tr>
+<tr><td><b>Transporte</b></td><td>(1) <b>Difusión</b>: por gradiente de concentración. (2) <b>Lixiviación</b>: arrastre por el agua hacia capas profundas y el acuífero. (3) <b>Volatilización</b>: paso a la atmósfera.</td><td>La lixiviación es el parámetro <b>más importante</b> de movimiento. La volatilización depende de la <b>presión de vapor</b> y la temperatura (sube con T). 1 atm = 101.325 Pa = 760 mm Hg (Torr).</td></tr>
+<tr><td><b>Eliminación</b></td><td><b>Química</b> (oxidación, reducción, hidrólisis…), <b>fotoquímica</b> (UV solar) y <b>microbiana</b>.</td><td><b>Biotransformación</b>: pasa a formas menos tóxicas. <b>Mineralización</b>: hasta CO₂ y agua. Ambas son <b>biorremediación</b>.</td></tr>
+</table></div>
+<h3>Actividades potencialmente contaminantes y quién declara el suelo contaminado</h3>
+<ul>
+<li>Normas: <b>Ley 7/2022</b> y <b>RD 9/2005</b> (Anexo I: lista de actividades, por CNAE). Actividad potencialmente contaminante: industrial o comercial que, por manejar sustancias peligrosas o generar residuos, puede contaminar el suelo.</li>
+<li>El titular debe enviar a la comunidad autónoma un <b>informe preliminar de situación</b> por cada suelo donde se desarrolla. También si en el pasado hubo allí una actividad contaminante, aunque la nueva no figure en el Anexo I.</li>
+<li>Son las <b>comunidades autónomas</b> las que <b>declaran y delimitan</b> los suelos contaminados mediante resolución expresa, tras evaluar el riesgo.</li>
+<li>Actividades eléctricas y electrónicas del temario: fabricación de motores, transformadores y generadores (31.1), aparatos de distribución y control (31.2), hilos y cables (31.3), <b>acumuladores y pilas (31.4)</b>, lámparas (31.5), componentes electrónicos (32.1) y equipos de control de procesos (33.3).</li>
+</ul>
+<h3>Tecnologías de descontaminación</h3>
+<div class="tw"><table>
+<tr><th>Tecnología</th><th>Dónde</th><th>Contaminantes</th><th>Ventajas</th><th>Limitaciones</th></tr>
+<tr><td><b>Ventilación del suelo</b></td><td>In situ</td><td>COVs; gasolina</td><td>No excava; rentable; favorece la biodegradación. Pozos verticales, soplantes y vacío; los vapores pasan por <b>carbón activo</b>. Reducción nunca superior al <b>90 %</b>.</td><td>No sirve con combustibles pesados (gasóleo, aceites, queroseno); peor con suelo húmedo. Mejor con capa superficial impermeable.</td></tr>
+<tr><td><b>Lavado de suelos</b></td><td>In situ</td><td>Inorgánicos (incluso radiactivos); también COVs y plaguicidas</td><td>Se inunda con una disolución que arrastra el contaminante hasta pozos de extracción.</td><td>Necesita suelo permeable: en <b>arcillas</b> es muy lento. Si el contaminante es hidrófobo hay que añadir <b>surfactantes</b>. El efluente se trata aparte.</td></tr>
+<tr><td><b>Landfarming</b></td><td>In situ o ex situ</td><td>Hidrocarburos y orgánicos biodegradables</td><td>Bajo coste. Actúan los microorganismos del propio suelo; se controla humedad (riego), aireación (volteo), pH (cal) y nutrientes.</td><td>Lento; no sirve para no biodegradables; necesita espacio y una base impermeable (geotextil o geomembrana).</td></tr>
+</table></div>
+<div class="box trap"><h4>Trampas</h4><ul>
+<li>La erosión que preocupa es la <b>antrópica</b>; la geológica es lenta y beneficiosa.</li>
+<li><b>Mayor amortiguación = menor vulnerabilidad</b> (relación inversa).</li>
+<li>Más persistencia implica más toxicidad, <b>aunque</b> la biodisponibilidad sea la misma.</li>
+<li>El parámetro más importante del transporte es la <b>lixiviación</b>, no la difusión.</li>
+<li>Ventilación = <b>COVs ligeros</b> (gasolina); lavado = <b>inorgánicos</b>; landfarming = <b>biodegradables</b>.</li>
+<li>Quien declara un suelo contaminado es la <b>comunidad autónoma</b>, no el titular de la actividad.</li></ul></div>
+</section>
+
+<nav class="pn" aria-label="Páginas"><a class="pv" href="t7.html" style="--tc:var(--c7)"><small>← Anterior</small><strong>T7 Control</strong></a><a class="nx" href="t10.html" style="--tc:var(--c3)"><small>Siguiente →</small><strong>T10 Residuos urbanos</strong></a></nav>
+</main>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
