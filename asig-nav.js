@@ -57,7 +57,7 @@
   +'.an-pn a[aria-current]{background:var(--surface,#f3f3f3);font-weight:700;color:var(--accent,#0a6)}'
   +'.an-s{grid-column:1/-1;width:100%;box-sizing:border-box;padding:9px 12px;border-radius:10px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);color:var(--fg,#111);font:inherit}'
   +'.an-bar~.wrap .toc{top:56px!important;max-height:calc(100vh - 60px)}'
-  +'@media (max-width:860px){.an-bar~.wrap .toc{top:50px!important;max-height:none}.an-bar .an-hub b{display:none}}@media (max-width:520px){.an-brand b{font-size:20px}.an-brand .an-mk{width:34px;height:34px}.an-bar .an-hub .an-chip{width:54px;height:34px}.an-bar .an-hub .an-chip svg{width:54px;height:33px}.an-hub{margin-right:10px}.an-brand{gap:8px}}'
+  +'@media (max-width:860px){.an-bar~.wrap .toc{top:50px!important;max-height:none}.an-bar .an-hub b{display:none}}@media (max-width:560px){.an-bar .an-hub .an-chip{width:44px!important;height:28px!important}.an-bar .an-hub .an-chip svg{width:44px!important;height:27px!important}.an-bar .an-hub{margin-right:2px;padding:0}.an-bar .an-brand{flex:1 1 calc(100% - 66px)!important;min-width:0!important;margin-right:0}.an-bar .an-brand b{font-size:19px;min-width:0;overflow:hidden;text-overflow:ellipsis}.an-bar .an-brand .an-mk{width:34px;height:34px}.an-bar .an-brand .an-art svg{width:30px;height:30px}.an-bar{column-gap:8px}h1{overflow-wrap:anywhere}}@media (max-width:520px){.an-brand b{font-size:20px}.an-brand .an-mk{width:34px;height:34px}.an-bar .an-hub .an-chip{width:54px;height:34px}.an-bar .an-hub .an-chip svg{width:54px;height:33px}.an-hub{margin-right:10px}.an-brand{gap:8px}}'
 
   +'.an-pr{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--fg,#111);font-size:14px}'
   +'.an-pr:hover{background:var(--surface,#f3f3f3)}'
@@ -302,5 +302,59 @@
     var st=document.createElement('style'); st.id='an-bg-css'; st.textContent=css; document.head.appendChild(st);
     function add(){var b=document.createElement('div');b.id='an-bg';b.setAttribute('aria-hidden','true');document.body.insertBefore(b,document.body.firstChild);}
     if(document.body) add(); else document.addEventListener('DOMContentLoaded',add);
+  })();
+  /* ===== Iconos en los botones de la portada ===== */
+  (function(){
+    var I={
+      play:'<circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/>',
+      sigma:'<path d="M18 5H6l7 7-7 7h12"/>',
+      book:'<path d="M4 5a2 2 0 0 1 2-2h13v14H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13v-4"/><path d="M9 8h6M9 11h4"/>',
+      flask:'<path d="M9 3h6M10 3v6l-5.5 10a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/>',
+      file:'<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 14l2 2 4-4"/>',
+      pencil:'<path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/>',
+      cal:'<path d="M4 6h16v14H4z"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="M9 15l2 2 3-3"/>',
+      target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/>',
+      timer:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 3h6"/>',
+      sliders:'<path d="M4 8h9M17 8h3M13 6v4h4V6zM4 16h3M11 16h9M7 14v4h4v-4z"/>',
+      bulb:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+      search:'<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.5-4.5"/>',
+      term:'<path d="M4 5h16v14H4z"/><path d="M7 10l3 2-3 2M12 15h5"/>',
+      route:'<circle cx="5" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><path d="M7 19h8a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h8"/>',
+      mark:'<path d="M6 3h12v18l-6-4-6 4z"/>'
+    };
+    function pick(lab,href){
+      var l=lab.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''), h=(href||'').toLowerCase();
+      if(/empieza|empezar|^el examen$/.test(l)&&!/examen por/.test(l)) return /^el examen$/.test(l)?'search':'play';
+      if(/que cae|por dentro|como es el examen/.test(l)) return 'search';
+      if(/maxima|practicas r|en c$|sql/.test(l)) return 'term';
+      if(/simulacro|hazte/.test(l)) return 'timer';
+      if(/^simuladores$|^temas y simuladores$/.test(l)) return 'sliders';
+      if(/simulador/.test(l)) return 'sliders';
+      if(/autoevaluaci/.test(l)) return 'target';
+      if(/demostra/.test(l)) return 'bulb';
+      if(/estrategia/.test(l)) return 'route';
+      if(/formulario|chuleta/.test(l)||/formulario/.test(h)) return 'sigma';
+      if(/cuestiones|preguntas|teoria/.test(l)||/cuestiones/.test(h)) return 'book';
+      if(/laboratorio|practicas|proyecto/.test(l)||/laboratorio/.test(h)) return 'flask';
+      if(/examen|ep1|controles/.test(l)||/examenes|ep1|examen-/.test(h)) return 'file';
+      if(/evaluaci|plan/.test(l)||/plan\.html/.test(h)) return 'cal';
+      if(/problemas|hojas|boletines|recopilaci|ejercicios/.test(l)||/problemas/.test(h)) return 'pencil';
+      if(/#t0|t01/.test(h)) return 'sliders';
+      return 'mark';
+    }
+    function run(){
+      var bs=document.querySelectorAll('.hero a.btn,.hero-in a.btn,.hero-txt a.btn');
+      if(!bs.length){var pri=document.querySelector('a.btn.pri');if(pri&&pri.parentNode) bs=pri.parentNode.querySelectorAll('a.btn');}
+      for(var i=0;i<bs.length;i++){
+        var a=bs[i]; if(a.querySelector('svg')||a.dataset.anIc) continue; a.dataset.anIc='1';
+        var k=pick(a.textContent.trim(),a.getAttribute('href'));
+        a.insertAdjacentHTML('afterbegin','<svg class="an-bi" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+I[k]+'</svg>');
+        a.classList.add('an-hasic');
+      }
+    }
+    var st=document.createElement('style'); st.id='an-ic-css';
+    st.textContent='a.btn.an-hasic{display:inline-flex;align-items:center;gap:.55em}.an-bi{flex:none;width:1.25em;height:1.25em}@media print{.an-bi{display:none}}';
+    document.head.appendChild(st);
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
   })();
 })();
