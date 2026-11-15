@@ -22,6 +22,7 @@
   var here=norm(location.href.split('#')[0].split('?')[0]);
   var cur=null;
   for(var i=0;i<LIST.length;i++){var b=norm(LIST[i][2]); if(here===b||here.indexOf(b+'/')===0){cur=LIST[i];break;}}
+  if(cur){try{localStorage.setItem('gieia-last',JSON.stringify({t:cur[1],u:location.href.split('#')[0],p:(document.title||'').split('·')[0].trim(),ts:Date.now()}));}catch(e){}}
   var crumbA=document.querySelector('.crumb a');
   var title=cur?cur[1]:(crumbA?crumbA.textContent.trim():document.title.split('·')[0].trim());
   var home=crumbA&&crumbA.getAttribute('href')?crumbA.getAttribute('href'):'index.html';
