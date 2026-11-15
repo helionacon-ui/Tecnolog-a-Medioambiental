@@ -442,4 +442,18 @@
     function go(){ pcards(); hero(); }
     if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',go); else go();
   })();
+  /* ===== Fondo tintado con el color de la guía (sin blanco liso) ===== */
+  (function(){
+    var n=title.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    var cs=getComputedStyle(document.documentElement);
+    var base=(cs.getPropertyValue('--bg')||'').trim()||'#f5f7f6';
+    var dark=document.documentElement.getAttribute('data-theme')==='dark'||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement.getAttribute('data-theme')!=='light');
+    if(dark) base='#f5f7f6';
+    var css=':root{--bg:color-mix(in srgb,var(--accent,#1f4fd1) 6%,'+base+');--surface:color-mix(in srgb,var(--accent,#1f4fd1) 4%,#fff)}'
+      +'@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:color-mix(in srgb,var(--accent,#7ea4ff) 13%,#0d1318);--surface:color-mix(in srgb,var(--accent,#7ea4ff) 7%,#141b21)}}'
+      +':root[data-theme="dark"]{--bg:color-mix(in srgb,var(--accent,#7ea4ff) 13%,#0d1318);--surface:color-mix(in srgb,var(--accent,#7ea4ff) 7%,#141b21)}'
+      +'html,body{background:var(--bg)!important}header.top,.topbar{background:color-mix(in srgb,var(--accent,#1f4fd1) 5%,var(--bg))!important}.hub-bar,.hubbar,.crumb{background:transparent!important}'
+      +'.an-bar~.topbar .brand{display:none}.an-bar~.topbar .tb-in{justify-content:flex-end}';
+    var st=document.createElement('style'); st.id='an-tint-css'; st.textContent=css; document.head.appendChild(st);
+  })();
 })();
