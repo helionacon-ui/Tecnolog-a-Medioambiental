@@ -3,6 +3,7 @@
   if(window.__asigNav) return; window.__asigNav=1;
   var HUB='https://helionacon-ui.github.io/GIEIA-UPCT/';
   var LIST=[[1, "Matemáticas I", "https://helionacon-ui.github.io/GIEIA-UPCT/matematicas-i/"], [1, "Matemáticas II", "https://helionacon-ui.github.io/GIEIA-UPCT/matematicas-ii/"], [1, "Física I", "https://helionacon-ui.github.io/GIEIA-UPCT/fisica-i/"], [1, "Física II", "https://helionacon-ui.github.io/GIEIA-UPCT/fisica-ii/"], [1, "Química general", "https://helionacon-ui.github.io/GIEIA-UPCT/quimica-general/"], [1, "Informática aplicada", "https://helionacon-ui.github.io/Inform-tica-Aplicada/"], [1, "Expresión gráfica", "https://helionacon-ui.github.io/Expresi-n-gr-fica/"], [1, "Estadística aplicada", "https://helionacon-ui.github.io/GIEIA-UPCT/estadistica-aplicada/"], [1, "Ciencia e ingeniería de materiales", "https://helionacon-ui.github.io/Ciencia-e-ingenier-a-de-materiales/"], [1, "Análisis de circuitos", "https://helionacon-ui.github.io/GIEIA-UPCT/analisis-de-circuitos/"], [2, "Matemáticas III", "https://helionacon-ui.github.io/GIEIA-UPCT/matematicas-iii/"], [2, "Fundamentos de electrónica industrial", "https://helionacon-ui.github.io/GIEIA-UPCT/electronica-industrial/"], [2, "Mecánica de máquinas", "https://helionacon-ui.github.io/GIEIA-UPCT/mecanica-de-maquinas/"], [2, "Termodinámica aplicada", "https://helionacon-ui.github.io/GIEIA-UPCT/termodinamica-aplicada/"], [2, "Resistencia de materiales", "https://helionacon-ui.github.io/GIEIA-UPCT/resistencia-de-materiales/"], [2, "Inglés técnico", "https://helionacon-ui.github.io/GIEIA-UPCT/ingles-tecnico/"], [2, "Mecánica de fluidos", "https://helionacon-ui.github.io/GIEIA-UPCT/mecanica-de-fluidos/"], [2, "Electrotecnia", "https://helionacon-ui.github.io/GIEIA-UPCT/electrotecnia/"], [2, "Diseño y simulación electrónica", "https://helionacon-ui.github.io/GIEIA-UPCT/dise-o-y-simulacion-electronica/"], [2, "Transmisión del calor", "https://helionacon-ui.github.io/GIEIA-UPCT/transmision-del-calor/"], [2, "Regulación automática", "https://helionacon-ui.github.io/GIEIA-UPCT/regulacion-automatica/"], [2, "Organización y gestión de empresas", "https://helionacon-ui.github.io/GIEIA-UPCT/organizacion-gestion-empresas/"], [3, "Control por computador", "https://helionacon-ui.github.io/Control-por-computador-GIEIA/"], [3, "Tecnología medioambiental", "https://helionacon-ui.github.io/Tecnolog-a-Medioambiental/"], [3, "Electrónica digital", "https://helionacon-ui.github.io/Electr-nica-digital/"], [3, "Modelado y simulación de sistemas", "https://helionacon-ui.github.io/Modelado-y-Simulaci-n-de-Sistemas/"], [3, "Electrónica analógica", "https://helionacon-ui.github.io/GIEIA-UPCT/electronica-analogica/"], [3, "Sistemas basados en microprocesador", "https://helionacon-ui.github.io/GIEIA-UPCT/sistemas-microprocesador/"], [3, "Programación de sistemas en tiempo real", "https://helionacon-ui.github.io/GIEIA-UPCT/programacion-tiempo-real/"], [3, "Sistemas robotizados", "https://helionacon-ui.github.io/GIEIA-UPCT/sistemas-robotizados/"], [3, "Automatización industrial", "https://helionacon-ui.github.io/GIEIA-UPCT/automatizacion-industrial/"], [3, "Ingeniería de control", "https://helionacon-ui.github.io/Ingenieria-de-control/"], [3, "Ingeniería de los sistemas de producción", "https://helionacon-ui.github.io/GIEIA-UPCT/sistemas-produccion/"]];
+  var PROG={"mates1-progreso": ["Matemáticas I", "https://helionacon-ui.github.io/GIEIA-UPCT/matematicas-i/", 13], "matematicas2-progreso": ["Matemáticas II", "https://helionacon-ui.github.io/GIEIA-UPCT/matematicas-ii/", 5], "fisica1-progreso": ["Física I", "https://helionacon-ui.github.io/GIEIA-UPCT/fisica-i/", 11], "fisica2-progreso": ["Física II", "https://helionacon-ui.github.io/GIEIA-UPCT/fisica-ii/", 9], "quimica-progreso": ["Química general", "https://helionacon-ui.github.io/GIEIA-UPCT/quimica-general/", 11], "informatica-progreso": ["Informática aplicada", "https://helionacon-ui.github.io/Inform-tica-Aplicada/", 9], "eg-progreso": ["Expresión gráfica", "https://helionacon-ui.github.io/Expresi-n-gr-fica/", 14], "estadistica-progreso": ["Estadística aplicada", "https://helionacon-ui.github.io/GIEIA-UPCT/estadistica-aplicada/", 8], "materiales-progreso": ["Ciencia e ingeniería de materiales", "https://helionacon-ui.github.io/Ciencia-e-ingenier-a-de-materiales/", 16], "circuitos-progreso": ["Análisis de circuitos", "https://helionacon-ui.github.io/GIEIA-UPCT/analisis-de-circuitos/", 10], "matematicas3-progreso": ["Matemáticas III", "https://helionacon-ui.github.io/GIEIA-UPCT/matematicas-iii/", 6], "fei-progreso": ["Fundamentos de electrónica industrial", "https://helionacon-ui.github.io/GIEIA-UPCT/electronica-industrial/", 5], "mecmaq-progreso": ["Mecánica de máquinas", "https://helionacon-ui.github.io/GIEIA-UPCT/mecanica-de-maquinas/", 8], "resmat-progreso": ["Resistencia de materiales", "https://helionacon-ui.github.io/GIEIA-UPCT/resistencia-de-materiales/", 10], "ingles-tecnico-progreso": ["Inglés técnico", "https://helionacon-ui.github.io/GIEIA-UPCT/ingles-tecnico/", 10], "fluidos-progreso": ["Mecánica de fluidos", "https://helionacon-ui.github.io/GIEIA-UPCT/mecanica-de-fluidos/", 10], "electrotecnia-progreso": ["Electrotecnia", "https://helionacon-ui.github.io/GIEIA-UPCT/electrotecnia/", 8], "dse-progreso": ["Diseño y simulación electrónica", "https://helionacon-ui.github.io/GIEIA-UPCT/dise-o-y-simulacion-electronica/", 10], "transmision-calor-progreso": ["Transmisión del calor", "https://helionacon-ui.github.io/GIEIA-UPCT/transmision-del-calor/", 11], "regulacion-automatica-progreso": ["Regulación automática", "https://helionacon-ui.github.io/GIEIA-UPCT/regulacion-automatica/", 9], "oge-progreso": ["Organización y gestión de empresas", "https://helionacon-ui.github.io/GIEIA-UPCT/organizacion-gestion-empresas/", 8], "analogica-progreso": ["Electrónica analógica", "https://helionacon-ui.github.io/GIEIA-UPCT/electronica-analogica/", 8], "micro-progreso": ["Sistemas basados en microprocesador", "https://helionacon-ui.github.io/GIEIA-UPCT/sistemas-microprocesador/", 9], "pstr-progreso": ["Programación de sistemas en tiempo real", "https://helionacon-ui.github.io/GIEIA-UPCT/programacion-tiempo-real/", 10], "robotizados-progreso": ["Sistemas robotizados", "https://helionacon-ui.github.io/GIEIA-UPCT/sistemas-robotizados/", 10], "automatizacion-progreso": ["Automatización industrial", "https://helionacon-ui.github.io/GIEIA-UPCT/automatizacion-industrial/", 10], "produccion-progreso": ["Ingeniería de los sistemas de producción", "https://helionacon-ui.github.io/GIEIA-UPCT/sistemas-produccion/", 10]};
   var CUR={1:'Primer curso',2:'Segundo curso',3:'Tercer curso',4:'Cuarto curso'};
 
   function norm(u){return u.replace(/^https?:\/\//,'').replace(/index\.html$/,'').replace(/\/+$/,'').toLowerCase();}
@@ -34,7 +35,16 @@
   +'.an-s{grid-column:1/-1;width:100%;box-sizing:border-box;padding:9px 12px;border-radius:10px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);color:var(--fg,#111);font:inherit}'
   +'.an-bar~.wrap .toc{top:56px!important;max-height:calc(100vh - 60px)}'
   +'@media (max-width:860px){.an-bar~.wrap .toc{top:50px!important;max-height:none}.an-bar .an-hub span{display:none}}'
-  +'@media print{.an-bar{display:none}}';
+
+  +'.an-pr{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--fg,#111);font-size:14px}'
+  +'.an-pr:hover{background:var(--surface,#f3f3f3)}'
+  +'.an-pr b{flex:1 1 auto;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}'
+  +'.an-pb{flex:0 0 90px;height:7px;border-radius:99px;background:var(--line,#ddd);overflow:hidden}'
+  +'.an-pb i{display:block;height:100%;background:var(--accent,#0a6)}'
+  +'.an-pr span{flex:0 0 64px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted,#666);font-size:13px}'
+  +'.an-tot{grid-column:1/-1;font-weight:700;padding:4px 10px 8px}'
+  +'.an-reset{grid-column:1/-1;justify-self:start;margin:8px 10px 0;font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);color:var(--fg,#111);cursor:pointer}'
+  +'@media print{.an-bar,.totop,.toc,.hub-bar,.pager,#totop{display:none!important}.wrap{display:block!important}body{background:#fff!important;color:#000!important}a{color:#000!important;text-decoration:none!important}section,figure,table,pre,.sol,.ejer,details{break-inside:avoid}h2,h3{break-after:avoid}details>*{display:block!important}}';
   var st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
 
   function el(t,c,h){var e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;}
@@ -45,9 +55,11 @@
   var hub=el('a','an-hub','← <span>&nbsp;Todas las guías</span>'); hub.href=HUB; hub.title='Todas las guías GIEyA';
   var brand=el('a','an-brand'); brand.href=home; brand.textContent=title; brand.title='Portada de '+title;
   var bA=el('button','an-btn','Asignaturas ▾'); bA.type='button'; bA.setAttribute('aria-expanded','false');
+  var bP=el('button','an-btn','Progreso'); bP.type='button'; bP.setAttribute('aria-expanded','false');
+  var bI=el('button','an-btn','🖨 PDF'); bI.type='button'; bI.title='Imprimir esta página o guardarla como PDF';
   var toc=document.querySelector('nav.toc');
   var bT=null; if(toc){bT=el('button','an-btn','Temas ▾'); bT.type='button'; bT.setAttribute('aria-expanded','false');}
-  inn.appendChild(hub); inn.appendChild(brand); inn.appendChild(bA); if(bT) inn.appendChild(bT);
+  inn.appendChild(hub); inn.appendChild(brand); inn.appendChild(bA); if(bT) inn.appendChild(bT); inn.appendChild(bP); inn.appendChild(bI);
   bar.appendChild(inn);
 
   var pA=el('div','an-pn'); pA.hidden=true; var pAi=el('div','an-pi');
@@ -81,20 +93,50 @@
     pT.appendChild(pTi);
   }
 
-  var panels=[[bA,pA],[bT,pT]].filter(function(x){return x[0]&&x[1];});
+  var pP=el('div','an-pn'); pP.hidden=true; var pPi=el('div','an-pi');
+  function buildProg(){
+    pPi.innerHTML=''; var done=0,total=0,rowsP=[];
+    Object.keys(PROG).forEach(function(k){
+      var info=PROG[k], saved={}; try{saved=JSON.parse(localStorage.getItem(k)||'{}');}catch(e){}
+      var n=0; for(var id in saved){ if(saved[id]===true) n++; }
+      if(n>info[2]) n=info[2];
+      done+=n; total+=info[2]; rowsP.push([info,n]);
+    });
+    var pct=total?Math.round(100*done/total):0;
+    pPi.appendChild(el('div','an-tot','Temas marcados en todas las guías: '+done+' de '+total+' ('+pct+' %)'));
+    rowsP.forEach(function(r){
+      var a=el('a','an-pr'); a.href=r[0][1]; var p=r[0][2]?Math.round(100*r[1]/r[0][2]):0;
+      a.innerHTML='<b>'+esc(r[0][0])+'</b><span class="an-pb"><i style="width:'+p+'%"></i></span><span>'+r[1]+'/'+r[0][2]+'</span>';
+      pPi.appendChild(a);
+    });
+    var rs=el('button','an-reset','Borrar todo mi progreso'); rs.type='button';
+    rs.addEventListener('click',function(){
+      if(!confirm('¿Borrar las marcas de todas las guías en este navegador?')) return;
+      Object.keys(PROG).forEach(function(k){try{localStorage.removeItem(k);}catch(e){}});
+      buildProg();
+    });
+    pPi.appendChild(rs);
+  }
+  pP.appendChild(pPi);
+  bI.addEventListener('click',function(){closeAll(); window.print();});
+  window.addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('details'),function(d){if(!d.open){d.setAttribute('data-an-open','1');d.open=true;}});});
+  window.addEventListener('afterprint',function(){[].forEach.call(document.querySelectorAll('details[data-an-open]'),function(d){d.open=false;d.removeAttribute('data-an-open');});});
+
+  var panels=[[bA,pA],[bT,pT],[bP,pP]].filter(function(x){return x[0]&&x[1];});
   function closeAll(except){panels.forEach(function(p){if(p[1]!==except){p[1].hidden=true;p[0].setAttribute('aria-expanded','false');}});}
   panels.forEach(function(p){
     p[0].addEventListener('click',function(e){
       e.stopPropagation(); var open=p[1].hidden; closeAll(p[1]);
       p[1].hidden=!open; p[0].setAttribute('aria-expanded',open?'true':'false');
       if(open&&p[1]===pA){setTimeout(function(){inp.focus();},30);}
+      if(open&&p[1]===pP){buildProg();}
     });
     p[1].addEventListener('click',function(e){if(e.target.tagName==='A')closeAll();});
   });
   document.addEventListener('click',function(e){if(!bar.contains(e.target))closeAll();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();}});
 
-  bar.appendChild(pA); if(pT) bar.appendChild(pT);
+  bar.appendChild(pA); if(pT) bar.appendChild(pT); bar.appendChild(pP);
 
   function mount(){
     document.body.insertBefore(bar,document.body.firstChild);
