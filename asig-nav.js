@@ -25,6 +25,7 @@
   if(cur){try{localStorage.setItem('gieia-last',JSON.stringify({t:cur[1],u:location.href.split('#')[0],p:(document.title||'').split('·')[0].trim(),ts:Date.now()}));}catch(e){}}
   var crumbA=document.querySelector('.crumb a');
   var title=cur?cur[1]:(crumbA?crumbA.textContent.trim():document.title.split('·')[0].trim());
+  if(/^(portada|inicio)$/i.test(title)){var pp=document.title.split('·');title=pp[pp.length-1].trim()||title;}
   var home=crumbA&&crumbA.getAttribute('href')?crumbA.getAttribute('href'):'index.html';
   if(cur&&!crumbA) home=cur[2];
 
@@ -294,6 +295,7 @@
     for(var i=0;i<M.length;i++){ if(M[i][0].test(key)){fn=M[i][1];break;} }
     if(!fn) return;
     var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220"><g '+S+'>'+fn()+'</g></svg>';
+    window.__anMotifSvg=svg;
     var url='url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';
     var fade='radial-gradient(ellipse 80% 70% at 50% 45%,rgba(0,0,0,.25) 0%,rgba(0,0,0,.55) 55%,#000 100%)';
     var css='#an-bg{position:fixed;inset:0;z-index:1;pointer-events:none;background:var(--accent,#1f4fd1);opacity:.055;-webkit-mask-image:'+url+','+fade+';-webkit-mask-size:300px 300px,100% 100%;-webkit-mask-repeat:repeat,no-repeat;-webkit-mask-composite:source-in;mask-image:'+url+','+fade+';mask-size:300px 300px,100% 100%;mask-repeat:repeat,no-repeat;mask-composite:intersect}'
@@ -343,7 +345,7 @@
       return 'mark';
     }
     function run(){
-      var bs=document.querySelectorAll('.hero a.btn,.hero-in a.btn,.hero-txt a.btn');
+      var bs=document.querySelectorAll('.hero a.btn,.hero-in a.btn,.hero-txt a.btn,.an-acts a.btn');
       if(!bs.length){var pri=document.querySelector('a.btn.pri');if(pri&&pri.parentNode) bs=pri.parentNode.querySelectorAll('a.btn');}
       for(var i=0;i<bs.length;i++){
         var a=bs[i]; if(a.querySelector('svg')||a.dataset.anIc) continue; a.dataset.anIc='1';
@@ -355,6 +357,89 @@
     var st=document.createElement('style'); st.id='an-ic-css';
     st.textContent='a.btn.an-hasic{display:inline-flex;align-items:center;gap:.55em}.an-bi{flex:none;width:1.25em;height:1.25em}@media print{.an-bi{display:none}}';
     document.head.appendChild(st);
+    window.__asigIcons=run;
     if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
+  })();
+  /* ===== Portada estándar (guías con estructura propia) ===== */
+  (function(){
+    var HUBU='https://helionacon-ui.github.io/GIEIA-UPCT/';
+    function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/ñ/g,'n').trim();}
+    var key=norm(title);
+    var isIndex=/\/(index\.html)?$/.test(location.pathname)||/\/index\.html$/.test(location.pathname);
+    var css='a[href="'+HUBU+'"]:not(.an-hub):not(.an-brand){display:none!important}.hubbar{display:none!important}'
+      +'.an-hero{background:linear-gradient(135deg,color-mix(in srgb,var(--accent,#1f4fd1) 9%,var(--bg,#f5f7f6)),var(--bg,#f5f7f6) 70%);border-bottom:1px solid var(--line,#d3dcdf);margin-bottom:28px}'
+      +'.an-hero-in{max-width:1180px;margin:0 auto;padding:clamp(28px,5vw,56px) max(16px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}'
+      +'.an-hero .an-k{font:500 12.5px var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#1f4fd1)}'
+      +'.an-hero h1{font-family:var(--display,"Big Shoulders Display","Arial Narrow",Impact,sans-serif);font-weight:800;font-size:clamp(46px,8.6vw,108px);line-height:.94;letter-spacing:.005em;text-transform:uppercase;margin:12px 0 10px;color:var(--fg,#18232b)}'
+      +'.an-hero h1 span{color:var(--accent,#1f4fd1)}'
+      +'.an-hero .an-sub{font-family:var(--display,"Arial Narrow",sans-serif);font-weight:500;font-size:clamp(20px,2.6vw,28px);letter-spacing:.07em;text-transform:uppercase;color:var(--muted,#5a6870);margin:0 0 14px}'
+      +'.an-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0 18px;max-width:660px}'
+      +'.an-stats div{background:var(--surface,#fff);border:1px solid var(--line,#d3dcdf);border-radius:12px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,.05),0 6px 16px -10px rgba(0,0,0,.25)}'
+      +'.an-stats b{display:block;font-family:var(--display,"Arial Narrow",sans-serif);font-size:30px;line-height:1.1;color:var(--accent,#1f4fd1);font-variant-numeric:tabular-nums}'
+      +'.an-stats span{display:block;font-size:12.5px;line-height:1.3;color:var(--muted,#5a6870)}'
+      +'.an-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}'
+      +'.an-acts a.btn{display:inline-flex;align-items:center;gap:.55em;padding:11px 18px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,#fff);color:var(--fg,#18232b);text-decoration:none;font:600 14.5px/1 var(--body,system-ui,sans-serif)}'
+      +'.an-acts a.btn:hover,.an-acts a.btn:focus-visible{border-color:var(--accent,#1f4fd1);outline:none}'
+      +'.an-acts a.btn.pri{background:var(--accent,#1f4fd1);border-color:var(--accent,#1f4fd1);color:var(--surface,#fff)}'
+      +'.an-art{aspect-ratio:1;border-radius:28px;background:var(--surface,#fff);border:1px solid var(--line,#d3dcdf);box-shadow:0 1px 2px rgba(0,0,0,.05),0 16px 40px -20px rgba(0,0,0,.3);position:relative;overflow:hidden}'
+      +'.an-art i{position:absolute;inset:8%;background:var(--accent,#1f4fd1);opacity:.85;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}'
+      +'@media (max-width:820px){.an-hero-in{grid-template-columns:minmax(0,1fr)}.an-art{display:none}.an-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}'
+      +'@media print{.an-art{display:none}}';
+    var st=document.createElement('style'); st.id='an-cover-css'; st.textContent=css; document.head.appendChild(st);
+
+    var CFG=[
+     [/^termodinamica/,{k:'GIEyA · 2.º curso',a:'Termodinámica',b:'aplicada',s:'Ciclos, balances y máquinas térmicas · guía para aprobar',
+       btn:[['Empezar por el tema 1','t01.html',1],['Examen y estrategia','examen.html'],['Exámenes resueltos','examenes.html'],['Autoevaluación','autoevaluacion.html'],['Demostraciones','demos.html'],['Formulario','formulario.html'],['Plan de estudio','plan.html']]}],
+     [/^electronica digital/,{k:'GIEyA · 3.er curso',a:'Electrónica',b:'digital',s:'Del álgebra de Boole a la lógica programable · guía para aprobar',
+       btn:[['Empieza desde cero','empezar.html',1],['Exámenes resueltos','examenes.html'],['Hojas de problemas','hojas.html'],['Prácticas y simulador','laboratorio.html'],['Autoevaluación','autoevaluacion.html'],['Simulacros','simulacros.html'],['Formulario','formulario.html']]}]
+    ];
+    var cfg=null; for(var i=0;i<CFG.length;i++){ if(CFG[i][0].test(key)){cfg=CFG[i][1];break;} }
+
+    function hero(){
+      if(!cfg||!isIndex||document.querySelector('.an-hero')) return;
+      var ic=document.querySelector('.an-ic'); if(!ic) return;
+      var cards=[].slice.call(ic.querySelectorAll('.an-card'));
+      var temas=0,prac=0,rep=0;
+      cards.forEach(function(c){
+        var lab=(c.querySelector('.al')||{}).textContent||'';
+        var m=lab.match(/Temas?\s+(\d+)(?:–(\d+))?/);
+        if(m){temas+=m[2]?(+m[2])-(+m[1])+1:1;}
+        else if(/Pract|Pr[aá]ct/i.test(lab)) prac++;
+        else if(/Repasar|Todo junto/i.test(lab)) rep++;
+      });
+      var stats=[[temas,'temas del programa'],[cards.length,'páginas en la guía'],[prac,'páginas para practicar'],[rep,'páginas de repaso y consulta']].filter(function(x){return x[0]>0;});
+      var h=el('header','an-hero');
+      var btns=cfg.btn.map(function(b){return '<a class="btn'+(b[2]?' pri':'')+'" href="'+esc(b[1])+'">'+esc(b[0])+'</a>';}).join('');
+      h.innerHTML='<div class="an-hero-in"><div><div class="an-k">'+esc(cfg.k)+'</div><h1>'+esc(cfg.a)+' <span>'+esc(cfg.b)+'</span></h1><p class="an-sub">'+esc(cfg.s)+'</p>'
+        +'<div class="an-stats">'+stats.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';}).join('')+'</div><div class="an-acts">'+btns+'</div></div>'
+        +'<div class="an-art" aria-hidden="true"><i></i></div></div>';
+      if(window.__anMotifSvg){ h.querySelector('.an-art i').style.setProperty('--m','url("data:image/svg+xml,'+encodeURIComponent(window.__anMotifSvg)+'")'); }
+      ic.parentNode.insertBefore(h,ic);
+      window.__asigIcons&&window.__asigIcons();
+    }
+    function pcards(){
+      if(document.querySelector('.an-ic')||!document.querySelector('header.hero')) return;
+      var pcs=document.querySelectorAll('a.pcard'); if(pcs.length<6) return;
+      var main=document.querySelector('.home-main'); if(!main) return;
+      var host=main.parentNode;
+      var sec=el('section','an-ic'), steps=el('div','an-steps');
+      ['Elige un tema de la lista o empieza por <b>«desde cero»</b> si partes de cero.','Sigue los temas en orden: <b>teoría, simuladores y vídeos</b>. Marca cada tema al terminarlo.','Practica con los <b>problemas y exámenes resueltos</b> antes de presentarte.'].forEach(function(s,i){steps.appendChild(el('div','an-step','<i>'+(i+1)+'</i><p>'+s+'</p>'));});
+      sec.appendChild(steps); sec.appendChild(el('h2',null,'Las '+pcs.length+' páginas de la guía'));
+      var grid=el('div','an-cards');
+      [].forEach.call(pcs,function(p){
+        var g=p.closest('.hgrp'), kick=g&&g.querySelector('.kick')?g.querySelector('.kick').textContent.trim():'Guía';
+        var gh=g&&g.querySelector('h2')?g.querySelector('h2').textContent.trim():'';
+        var badge=(p.querySelector('.badge')||{}).textContent||'·', t=(p.querySelector('h3')||{}).textContent||p.textContent;
+        var lab=/^T\d+$/i.test(badge.trim())?(gh+' · Tema '+badge.trim().slice(1)):gh||kick;
+        var a=el('a','an-card','<span class="ac">'+esc(badge.trim()||'·')+'</span><span class="al">'+esc(lab)+'</span><span class="at">'+esc(t.trim())+'</span><span class="ag">Abrir →</span>');
+        a.href=p.getAttribute('href');
+        a.style.setProperty('--k',/empezar|consult/i.test(kick)?'var(--fg,#18232b)':/practic|examen/i.test(kick+gh)?'color-mix(in srgb,var(--accent,#1f4fd1) 62%,#000)':'var(--accent,#1f4fd1)');
+        grid.appendChild(a);
+      });
+      sec.appendChild(grid); host.parentNode.insertBefore(sec,host);
+      var s2=document.createElement('style'); s2.textContent='.home-main{display:none!important}'; document.head.appendChild(s2);
+    }
+    function go(){ pcards(); hero(); }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',go); else go();
   })();
 })();
