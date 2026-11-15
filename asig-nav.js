@@ -32,9 +32,16 @@
   +'.an-bar{position:sticky;top:0;z-index:60;background:var(--bg,#fff);border-bottom:1px solid var(--line,#ddd);font:14px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--fg,#111)}'
   +'.an-in{max-width:1180px;margin:0 auto;padding:7px 12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}'
   +'.an-bar a,.an-bar button{font:inherit;color:inherit}'
-  +'.an-hub{display:inline-flex;align-items:center;padding:11px 20px;border-radius:999px;font-size:15.5px;background:#1d3b5c;background:color-mix(in srgb,var(--accent,#0a6) 55%,#000);color:#fff!important;font-weight:800;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;white-space:nowrap;border:1px solid transparent}'
-  +'.an-brand{display:inline-block;flex:0 1 auto;margin-right:auto;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;padding:11px 22px;border-radius:999px;font-size:16px;background:#1d3b5c;background:color-mix(in srgb,var(--accent,#0a6) 55%,#000);color:#fff!important;font-weight:800;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;white-space:nowrap;border:1px solid transparent}'
-  +'.an-hub:hover,.an-brand:hover{filter:brightness(1.18)}.an-bar .an-hub,.an-bar .an-brand{color:#fff!important}.hub-bar a{font-size:15.5px!important;padding:11px 20px!important;background:#1d3b5c!important;background:color-mix(in srgb,var(--accent,#0a6) 55%,#000)!important;color:#fff!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.05em;border-color:transparent!important}'
+  +'.an-hub{display:inline-flex;align-items:center;gap:11px;min-width:0;padding:0 6px 0 0;border:0;background:none;color:var(--fg,#111)!important;text-decoration:none;white-space:nowrap;flex:none}'
+  +'.an-hub .an-mk{flex:none;width:40px;height:40px;border-radius:12px;background:#1f4fd1;display:grid;place-items:center}'
+  +'@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .an-hub .an-mk{background:#7ea4ff}:root:not([data-theme="light"]) .an-hub .an-mk path{stroke:#0f1519}}:root[data-theme="dark"] .an-hub .an-mk{background:#7ea4ff}:root[data-theme="dark"] .an-hub .an-mk path{stroke:#0f1519}'
+  +'.an-hub b{font-family:var(--display,"Big Shoulders Display","Arial Narrow",Impact,sans-serif);font-weight:800;font-size:25px;line-height:1;letter-spacing:.01em;text-transform:uppercase}'
+  +'.an-hub b span{color:#1f4fd1}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .an-hub b span{color:#7ea4ff}}:root[data-theme="dark"] .an-hub b span{color:#7ea4ff}.an-hub:hover .an-mk{filter:brightness(1.15)}.an-hub:hover b{text-decoration:underline;text-underline-offset:5px}'
+  +'.an-brand{display:inline-flex;align-items:center;gap:11px;flex:0 1 auto;margin-right:auto;min-width:0;max-width:100%;padding:0 6px 0 0;border:0;background:none;color:var(--fg,#111)!important;text-decoration:none;white-space:nowrap}'
+  +'.an-brand .an-mk{flex:none;width:40px;height:40px;border-radius:12px;background:var(--accent,#1f4fd1);display:grid;place-items:center}'
+  +'.an-brand b{min-width:0;overflow:hidden;text-overflow:ellipsis;font-family:var(--display,"Big Shoulders Display","Arial Narrow",Impact,sans-serif);font-weight:800;font-size:25px;line-height:1;letter-spacing:.01em;text-transform:uppercase}'
+  +'.an-brand b span{color:var(--accent,#1f4fd1)}.an-brand:hover .an-mk{filter:brightness(1.15)}'
+  +'.an-bar .an-hub{color:var(--fg,#111)!important}'
   +'.an-btn{cursor:pointer;padding:7px 12px;border-radius:999px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);font-weight:600;font-size:13px;white-space:nowrap}'
   +'.an-btn[aria-expanded="true"]{border-color:var(--accent,#0a6);color:var(--accent,#0a6)}'
   +'.an-btn:focus-visible,.an-hub:focus-visible,.an-brand:focus-visible,.an-pn a:focus-visible{outline:3px solid var(--accent,#0a6);outline-offset:2px}'
@@ -47,7 +54,7 @@
   +'.an-pn a[aria-current]{background:var(--surface,#f3f3f3);font-weight:700;color:var(--accent,#0a6)}'
   +'.an-s{grid-column:1/-1;width:100%;box-sizing:border-box;padding:9px 12px;border-radius:10px;border:1px solid var(--line,#ddd);background:var(--surface,#fff);color:var(--fg,#111);font:inherit}'
   +'.an-bar~.wrap .toc{top:56px!important;max-height:calc(100vh - 60px)}'
-  +'@media (max-width:860px){.an-bar~.wrap .toc{top:50px!important;max-height:none}.an-bar .an-hub span{display:none}}'
+  +'@media (max-width:860px){.an-bar~.wrap .toc{top:50px!important;max-height:none}.an-bar .an-hub b{display:none}}@media (max-width:520px){.an-brand b{font-size:20px}.an-brand .an-mk,.an-hub .an-mk{width:34px;height:34px}.an-brand{gap:8px}}'
 
   +'.an-pr{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--fg,#111);font-size:14px}'
   +'.an-pr:hover{background:var(--surface,#f3f3f3)}'
@@ -65,8 +72,9 @@
 
   var bar=el('div','an-bar'); bar.setAttribute('role','navigation'); bar.setAttribute('aria-label','Navegación entre asignaturas');
   var inn=el('div','an-in');
-  var hub=el('a','an-hub','← <span>&nbsp;Todas las guías</span>'); hub.href=HUB; hub.title='Todas las guías GIEyA';
-  var brand=el('a','an-brand'); brand.href=home; brand.textContent=title; brand.title='Portada de '+title;
+  var hub=el('a','an-hub','<span class="an-mk"><svg viewBox="-190 -250 380 500" width="19" height="25" aria-hidden="true"><path d="M18 191L122 64L47 -65M-18 -191L-122 -64L-47 65" fill="none" stroke="#fff" stroke-width="90" stroke-miterlimit="6"/></svg></span><b>Guías para <span>aprobar</span></b>'); hub.href=HUB; hub.title='Todas las guías para aprobar'; hub.setAttribute('aria-label','Todas las guías para aprobar');
+  var brand=el('a','an-brand'); brand.href=home; brand.title='Portada de '+title;
+  (function(){var w=title.trim().split(/\s+/),last=w.length>1?w.pop():'',first=w.join(' ');brand.innerHTML='<span class="an-mk"><svg viewBox="-190 -250 380 500" width="19" height="25" aria-hidden="true"><path d="M18 191L122 64L47 -65M-18 -191L-122 -64L-47 65" fill="none" stroke="#fff" stroke-width="90" stroke-miterlimit="6"/></svg></span><b>'+esc(first)+(last?(first?' ':'')+'<span>'+esc(last)+'</span>':'')+'</b>';})();
   var bA=el('button','an-btn','Asignaturas ▾'); bA.type='button'; bA.setAttribute('aria-expanded','false');
   var bP=el('button','an-btn','Progreso'); bP.type='button'; bP.setAttribute('aria-expanded','false');
   var bI=el('button','an-btn','🖨 PDF'); bI.type='button'; bI.title='Imprimir esta página o guardarla como PDF';
