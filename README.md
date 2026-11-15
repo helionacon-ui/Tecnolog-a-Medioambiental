@@ -2,7 +2,7 @@
 
 **Proyecto iniciado el 5 de noviembre de 2026.**
 
-Guía no oficial de la UPCT para preparar la asignatura. Está dividida en varias páginas:
+Guía no oficial para preparar la asignatura. Está dividida en varias páginas:
 
 - `index.html`: portada con acceso a todas las secciones
 - `empezar.html`, `t1.html` … `t7.html`: temario por temas

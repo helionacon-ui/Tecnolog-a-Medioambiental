@@ -165,4 +165,68 @@
     var hb=document.querySelector('.hub-bar>a'); if(hb) hb.style.display='none';
   }
   if(document.body) mount(); else document.addEventListener('DOMContentLoaded',mount);
+  /* ---- Estilo común «guía de control»: titulares condensados, portada con tarjetas por página y color propio de cada asignatura ---- */
+  (function(){
+    if(window.__asigSkin) return; window.__asigSkin=1;
+    var lk=document.createElement('link'); lk.rel='stylesheet'; lk.href='https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=JetBrains+Mono:wght@400;500&display=swap'; document.head.appendChild(lk);
+    var css='@media screen{'
+    +':root{--display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-display:var(--display);--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;--f-mono:var(--mono)}'
+    +'header.hero h1,.hero h1{font-weight:800!important;text-transform:uppercase;font-size:clamp(46px,7.2vw,84px)!important;line-height:.98!important;letter-spacing:0!important}'
+    +'header.hero .sub,.hero .sub{font-family:var(--display);font-size:clamp(22px,2.8vw,30px)!important;letter-spacing:.05em;text-transform:uppercase;font-weight:500}'
+    +'h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,4.2vw,44px);line-height:1.08;letter-spacing:.015em;text-transform:uppercase}'
+    +'h3{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.15;letter-spacing:.02em}'
+    +'.stats b{font-family:var(--display);font-weight:800;font-size:42px;line-height:1.05}'
+    +'.an-ic{max-width:1180px;margin:0 auto 36px;padding:0 max(16px,env(safe-area-inset-right,0px))}'
+    +'.an-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 38px}'
+    +'.an-step{display:flex;gap:14px;align-items:flex-start;background:var(--surface,#fff);border:1px solid var(--line,#ddd);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow,0 6px 24px rgba(0,0,0,.06));font-size:16.5px;line-height:1.6}'
+    +'.an-step i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--accent,#1f4fd1);color:#fff;display:grid;place-items:center;font:800 19px/1 var(--display);font-style:normal}'
+    +'.an-step p{margin:0}'
+    +'.an-ic h2{font-size:clamp(28px,3.4vw,36px);padding-left:12px;border-left:5px solid var(--accent,#1f4fd1);margin:0 0 18px}'
+    +'.an-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}'
+    +'.an-card{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--surface,#fff);border:1px solid var(--line,#ddd);border-radius:16px;padding:20px 20px 16px;box-shadow:var(--shadow,0 6px 24px rgba(0,0,0,.06));overflow:hidden;text-decoration:none;color:var(--fg,#111);transition:transform .15s,border-color .15s}'
+    +'.an-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--k)}'
+    +'.an-card:hover{transform:translateY(-2px);border-color:var(--k)}'
+    +'.an-card .ac{width:48px;height:48px;border-radius:12px;background:var(--k);color:#fff;display:grid;place-items:center;font:800 20px/1 var(--display);letter-spacing:.02em}'
+    +'.an-card .al{font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#666)}'
+    +'.an-card .at{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.12;text-transform:uppercase;letter-spacing:.015em}'
+    +'.an-card .ag{margin-top:auto;padding-top:6px;font:500 13px var(--mono);color:var(--k);letter-spacing:.03em}'
+    +'@media (max-width:820px){.an-steps{grid-template-columns:minmax(0,1fr)}}'
+    +'@media (prefers-reduced-motion:reduce){.an-card{transition:none}}'
+    +'}@media print{.an-ic{display:none!important}}';
+    var st=document.createElement('style'); st.id='an-skin'; st.textContent=css; document.head.appendChild(st);
+
+    function cards(){
+      var hero=document.querySelector('header.hero,.hero'); if(!hero||document.querySelector('.an-ic')) return;
+      var nav=document.querySelector('nav.toc,nav.side,#side'); if(!nav) return;
+      var host=nav.closest('.wrap,.shell,.layout'); if(!host||!host.parentNode) return;
+      var items=[],seen={},grp='';
+      [].forEach.call(nav.querySelectorAll('.grp,h5,a[href]'),function(n){
+        if(n.tagName!=='A'){grp=n.textContent.trim(); return;}
+        var h=n.getAttribute('href')||''; if(!h||h.indexOf('#')>-1||/^https?:/.test(h)||/^(index\.html)?$/.test(h)) return;
+        if(seen[h]) return; seen[h]=1;
+        var t=n.textContent.replace(/\s+/g,' ').replace(/^[\s\u2013\u2014\-\u2022\u00b7]+/,'').trim(); if(!t||/^Portada/i.test(t)) return;
+        items.push({h:h,t:t,g:grp});
+      });
+      if(items.length<6) return;
+      function col(g){ if(/empezar|consultar/i.test(g)) return 'var(--fg,#18232b)'; if(/practicar|examen/i.test(g)) return 'color-mix(in srgb,var(--accent,#1f4fd1) 62%,#000)'; return 'var(--accent,#1f4fd1)'; }
+      var sec=el('section','an-ic');
+      var steps=el('div','an-steps');
+      [['Elige un tema de la lista o empieza por <b>«desde cero»</b> si partes de cero.'],['Sigue los temas en orden: <b>teoría, simuladores y vídeos</b>. Marca cada tema al terminarlo.'],['Practica con los <b>problemas y exámenes resueltos</b> antes de presentarte.']].forEach(function(s,i){
+        steps.appendChild(el('div','an-step','<i>'+(i+1)+'</i><p>'+s[0]+'</p>'));
+      });
+      sec.appendChild(steps);
+      sec.appendChild(el('h2',null,'Las '+items.length+' páginas de la guía'));
+      var grid=el('div','an-cards');
+      items.forEach(function(it){
+        var m=it.t.match(/^(?:T|Tema\s*)(\d+)(?:\s*[\u2013\u2014-]\s*T?(\d+))?\b[\s.:·-]*(.*)$/i), code,title,lab=it.g||'Guía';
+        if(m){code='T'+m[1]; title=m[3]||it.t; lab=(it.g?it.g+' · ':'')+(m[2]?'Temas '+m[1]+'–'+m[2]:'Tema '+m[1]);}
+        else{title=it.t; var w=title.replace(/\b(de|del|la|las|los|y|e|en|el|a|para|por|con)\b/gi,'').split(/\s+/).filter(Boolean); code=((w[0]||'')[0]||'')+((w[1]||'')[0]||''); code=code.toUpperCase()||'·';}
+        var a=el('a','an-card','<span class="ac">'+esc(code)+'</span><span class="al">'+esc(lab)+'</span><span class="at">'+esc(title)+'</span><span class="ag">Abrir →</span>');
+        a.href=it.h; a.style.setProperty('--k',col(it.g)); grid.appendChild(a);
+      });
+      sec.appendChild(grid);
+      host.parentNode.insertBefore(sec,host);
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',cards); else cards();
+  })();
 })();
