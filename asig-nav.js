@@ -35,6 +35,9 @@
   +'.an-hub{display:inline-flex;align-items:center;gap:11px;min-width:0;padding:0 6px 0 0;border:0;background:none;color:var(--fg,#111)!important;text-decoration:none;white-space:nowrap;flex:none}'
   +'.an-hub .an-mk{flex:none;width:40px;height:40px;border-radius:12px;background:#1f4fd1;display:grid;place-items:center}'
   +'@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .an-hub .an-mk{background:#7ea4ff}:root:not([data-theme="light"]) .an-hub .an-mk path{stroke:#0f1519}}:root[data-theme="dark"] .an-hub .an-mk{background:#7ea4ff}:root[data-theme="dark"] .an-hub .an-mk path{stroke:#0f1519}'
+  +'.an-hub{--hubc:#1f4fd1}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .an-hub{--hubc:#7ea4ff}}:root[data-theme="dark"] .an-hub{--hubc:#7ea4ff}'
+  +'.an-hub .an-chip{background:none!important;width:58px;height:40px}.an-hub .an-chip svg{width:58px;height:29px}'
+  +'.an-brand .an-mk.an-art{background:var(--surface,#fff)!important;box-shadow:inset 0 0 0 2.5px var(--accent,#1f4fd1);overflow:hidden}.an-art svg{width:36px;height:36px;display:block}.an-art svg *{vector-effect:non-scaling-stroke;stroke-width:1.7px}.an-art svg circle[fill]:not([fill=none]){stroke-width:1px}.an-art .orbit{animation:none!important}.an-hub{margin-right:6px}'
   +'.an-hub b{font-family:var(--display,"Big Shoulders Display","Arial Narrow",Impact,sans-serif);font-weight:800;font-size:25px;line-height:1;letter-spacing:.01em;text-transform:uppercase}'
   +'.an-hub b span{color:#1f4fd1}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .an-hub b span{color:#7ea4ff}}:root[data-theme="dark"] .an-hub b span{color:#7ea4ff}.an-hub:hover .an-mk{filter:brightness(1.15)}.an-hub:hover b{text-decoration:underline;text-underline-offset:5px}'
   +'.an-brand{display:inline-flex;align-items:center;gap:11px;flex:0 1 auto;margin-right:auto;min-width:0;max-width:100%;padding:0 6px 0 0;border:0;background:none;color:var(--fg,#111)!important;text-decoration:none;white-space:nowrap}'
@@ -72,9 +75,10 @@
 
   var bar=el('div','an-bar'); bar.setAttribute('role','navigation'); bar.setAttribute('aria-label','Navegación entre asignaturas');
   var inn=el('div','an-in');
-  var hub=el('a','an-hub','<span class="an-mk"><svg viewBox="-190 -250 380 500" width="19" height="25" aria-hidden="true"><path d="M18 191L122 64L47 -65M-18 -191L-122 -64L-47 65" fill="none" stroke="#fff" stroke-width="90" stroke-miterlimit="6"/></svg></span><b>Guías para <span>aprobar</span></b>'); hub.href=HUB; hub.title='Todas las guías para aprobar'; hub.setAttribute('aria-label','Todas las guías para aprobar');
+  var MARK=null;
+  var hub=el('a','an-hub','<span class="an-mk an-chip"><svg viewBox="-128 -34 256 126" width="50" height="25" aria-hidden="true"><path d="M-109.1 31.0 L-123.0 39.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M109.1 31.0 L123.0 39.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M-84.9 45.0 L-98.7 53.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M84.9 45.0 L98.7 53.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M-60.6 59.0 L-74.5 67.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M60.6 59.0 L74.5 67.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M-36.4 73.0 L-50.2 81.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M36.4 73.0 L50.2 81.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M-12.1 87.0 L-26.0 95.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><path d="M12.1 87.0 L26.0 95.0" stroke="var(--hubc,#1f4fd1)" stroke-width="4" stroke-linecap="round"/><polygon points="-121.2,14.0 0.0,84.0 0.0,100.0 -121.2,30.0" fill="color-mix(in srgb,var(--hubc,#1f4fd1) 20%,var(--surface,#fff))" stroke="var(--hubc,#1f4fd1)" stroke-width="3" stroke-linejoin="round"/><polygon points="121.2,14.0 0.0,84.0 0.0,100.0 121.2,30.0" fill="color-mix(in srgb,var(--hubc,#1f4fd1) 32%,var(--surface,#fff))" stroke="var(--hubc,#1f4fd1)" stroke-width="3" stroke-linejoin="round"/><polygon points="0.0,-56.0 121.2,14.0 0.0,84.0 -121.2,14.0" fill="var(--surface,#fff)" stroke="var(--hubc,#1f4fd1)" stroke-width="3" stroke-linejoin="round"/><polygon points="-95.3,11.0 0.0,66.0 0.0,69.0 -95.3,14.0" fill="color-mix(in srgb,var(--hubc,#1f4fd1) 32%,var(--surface,#fff))" stroke="var(--hubc,#1f4fd1)" stroke-width="1.5" stroke-linejoin="round"/><polygon points="95.3,11.0 0.0,66.0 0.0,69.0 95.3,14.0" fill="color-mix(in srgb,var(--hubc,#1f4fd1) 32%,var(--surface,#fff))" stroke="var(--hubc,#1f4fd1)" stroke-width="1.5" stroke-linejoin="round"/><polygon points="0.0,-44.0 95.3,11.0 0.0,66.0 -95.3,11.0" fill="color-mix(in srgb,var(--hubc,#1f4fd1) 10%,var(--surface,#fff))" stroke="var(--hubc,#1f4fd1)" stroke-width="1.5" stroke-linejoin="round"/><g transform="matrix(0.866 .5 -0.866 .5 0 11)"><g transform="scale(0.27)" fill="none" stroke="var(--hubc,#1f4fd1)" stroke-width="72" stroke-miterlimit="6"><path d="M18 191L122 64L47 -65M-18 -191L-122 -64L-47 65"/></g></g></svg></span><b>Guías para <span>aprobar</span></b>'); hub.href=HUB; hub.title='Todas las guías para aprobar'; hub.setAttribute('aria-label','Todas las guías para aprobar');
   var brand=el('a','an-brand'); brand.href=home; brand.title='Portada de '+title;
-  (function(){var w=title.trim().split(/\s+/),last=w.length>1?w.pop():'',first=w.join(' ');brand.innerHTML='<span class="an-mk"><svg viewBox="-190 -250 380 500" width="19" height="25" aria-hidden="true"><path d="M18 191L122 64L47 -65M-18 -191L-122 -64L-47 65" fill="none" stroke="#fff" stroke-width="90" stroke-miterlimit="6"/></svg></span><b>'+esc(first)+(last?(first?' ':'')+'<span>'+esc(last)+'</span>':'')+'</b>';})();
+  (function(){var w=title.trim().split(/\s+/),last=w.length>1?w.pop():'',first=w.join(' ');brand.innerHTML=(MARK?'<span class="an-mk an-art">'+MARK+'</span>':'<span class="an-mk"><svg viewBox="-190 -250 380 500" width="19" height="25" aria-hidden="true"><path d="M18 191L122 64L47 -65M-18 -191L-122 -64L-47 65" fill="none" stroke="#fff" stroke-width="90" stroke-miterlimit="6"/></svg></span>')+'<b>'+esc(first)+(last?(first?' ':'')+'<span>'+esc(last)+'</span>':'')+'</b>';})();
   var bA=el('button','an-btn','Asignaturas ▾'); bA.type='button'; bA.setAttribute('aria-expanded','false');
   var bP=el('button','an-btn','Progreso'); bP.type='button'; bP.setAttribute('aria-expanded','false');
   var bI=el('button','an-btn','🖨 PDF'); bI.type='button'; bI.title='Imprimir esta página o guardarla como PDF';
@@ -236,5 +240,67 @@
       host.parentNode.insertBefore(sec,host);
     }
     if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',cards); else cards();
+  })();
+  /* ===== Fondo propio de cada asignatura ===== */
+  (function(){
+    if(document.getElementById('an-bg')) return;
+    var S='fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"';
+    function tx(x,y,s,t,r){return '<text x="'+x+'" y="'+y+'" font-size="'+s+'" font-family="Georgia,serif" fill="#000" stroke="none"'+(r?' transform="rotate('+r+' '+x+' '+y+')"':'')+'>'+t+'</text>';}
+    function mo(x,y,s,t,r){return tx(x,y,s,t,r).replace('Georgia,serif','monospace');}
+    function p(d){return '<path d="'+d+'"/>';}
+    function c(x,y,r,f){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'"'+(f?' fill="#000"':'')+'/>';}
+    function r(x,y,w,h,k){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(k||0)+'"/>';}
+    function hex(cx,cy,R){var a=[];for(var i=0;i<6;i++)a.push((cx+R*Math.cos(Math.PI/3*i+Math.PI/6)).toFixed(1)+','+(cy+R*Math.sin(Math.PI/3*i+Math.PI/6)).toFixed(1));return '<polygon points="'+a.join(' ')+'"/>';}
+    function gear(cx,cy,R,n,d){var a=[];for(var i=0;i<n;i++){var b=2*Math.PI*i/n,w=Math.PI/n;[[-.5,R],[-.28,R+d],[.28,R+d],[.5,R]].forEach(function(q){a.push((cx+q[1]*Math.cos(b+q[0]*w)).toFixed(1)+','+(cy+q[1]*Math.sin(b+q[0]*w)).toFixed(1));});}return '<polygon points="'+a.join(' ')+'"/>'+c(cx,cy,R*.35);}
+    function arrow(x1,y1,x2,y2){var a=Math.atan2(y2-y1,x2-x1),L=9;return p('M'+x1+' '+y1+'L'+x2+' '+y2+'M'+x2+' '+y2+'L'+(x2-L*Math.cos(a-.5)).toFixed(1)+' '+(y2-L*Math.sin(a-.5)).toFixed(1)+'M'+x2+' '+y2+'L'+(x2-L*Math.cos(a+.5)).toFixed(1)+' '+(y2-L*Math.sin(a+.5)).toFixed(1));}
+    function sine(x0,y0,A,L,ph,n){var d='';for(var i=0;i<=n;i++){var x=x0+L*i/n,y=y0-A*Math.sin(2*Math.PI*i/n+ph);d+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);}return p(d);}
+    var M=[
+     [/matematicas i$/,function(){return tx(14,70,64,'∫')+tx(120,60,50,'∑')+tx(30,170,46,'π')+tx(130,170,56,'∞')+tx(88,118,26,'√x')+tx(160,108,20,'dx');}],
+     [/matematicas ii$/,function(){return p('M20 30h-10v60h10M80 30h10v60h-10')+tx(30,66,20,'1 0')+tx(30,84,20,'0 1')+arrow(130,40,190,70)+arrow(130,40,170,10)+tx(20,170,22,'A·v = λ·v')+tx(130,130,22,'det')+p('M120 190h70v-30');}],
+     [/fisica i$/,function(){return p('M10 200Q110 -40 210 200')+c(60,128,6,1)+c(110,102,6,1)+c(160,128,6,1)+arrow(110,102,150,102)+arrow(110,102,110,60)+p('M20 30l60 20-60 20z');}],
+     [/fisica ii$/,function(){var o='';for(var i=1;i<4;i++)o+=p('M110 110m-'+i*22+' 0a'+i*22+' '+i*22+' 0 1 0 '+i*44+' 0');return o+tx(100,118,26,'+')+tx(176,40,22,'−')+sine(10,196,10,200,0,24);}],
+     [/quimica/,function(){return hex(70,70,34)+c(70,70,18)+hex(130,106,34)+hex(70,142,34)+p('M164 106h30M44 160l-26 18')+tx(190,112,18,'OH');}],
+     [/informatica/,function(){return mo(12,56,40,'{ }')+mo(110,50,26,'&lt;/&gt;')+mo(20,120,30,'01')+mo(100,126,34,'=&gt;')+mo(20,190,28,'#;')+mo(124,190,24,'0x1F');}],
+     [/expresion grafica/,function(){return p('M110 20l60 34v68l-60 34-60-34V54z M50 54l60 34 60-34 M110 88v68')+p('M20 190h120')+arrow(20,190,30,190)+arrow(140,190,130,190)+p('M20 182v16M140 182v16')+p('M160 170l30-30M170 180l30-30M180 190l30-30');}],
+     [/estadistica/,function(){return p('M10 150C60 150 70 30 110 30s50 120 100 120')+p('M10 150h200')+r(30,128,16,22)+r(52,104,16,46)+r(150,110,16,40)+r(172,132,16,18)+c(110,30,5,1)+tx(30,200,18,'σ μ');}],
+     [/ciencia e ingenieria de materiales/,function(){return r(30,30,70,70)+r(60,60,70,70)+p('M30 30l30 30M100 30l30 30M30 100l30 30M100 100l30 30')+c(30,30,5,1)+c(130,60,5,1)+c(60,130,5,1)+c(130,130,5,1)+p('M150 150l50 20-20 40')+c(150,150,5,1);}],
+     [/analisis de circuitos/,function(){return p('M10 60h40l8-16 12 32 12-32 12 32 8-16h40')+c(10,60,5,1)+c(150,60,5,1)+p('M150 60v50M130 110h40M130 122h40M150 122v40')+tx(14,170,26,'KCL')+tx(100,200,20,'Σi=0');}],
+     [/matematicas iii/,function(){return sine(10,60,24,200,0,28)+sine(10,110,16,200,1.2,28)+tx(14,176,34,'∇²')+tx(100,190,28,'e^iθ')+tx(160,150,30,'ℂ');}],
+     [/electronica industrial/,function(){return p('M10 60h40')+p('M50 40v40l36-20z')+p('M86 40v40')+p('M86 60h30')+sine(120,150,30,90,0,16).replace('<path','<path stroke-dasharray="4 5"')+p('M10 150h40a30 30 0 0 1 60 0h30')+tx(14,200,22,'AC→DC');}],
+     [/mecanica de maquinas/,function(){return gear(70,70,34,12,10)+gear(150,126,22,9,8)+gear(60,170,18,8,7);}],
+     [/termodinamica/,function(){return p('M20 20v170h170')+p('M60 60C100 40 140 70 150 90C140 130 100 150 60 130C50 100 50 80 60 60')+arrow(90,56,110,60)+arrow(150,100,146,118)+tx(160,32,22,'P')+tx(176,210,22,'V');}],
+     [/resistencia de materiales/,function(){return r(20,90,170,16)+p('M20 106l-14 26h28zM190 106l-14 26h28z')+arrow(70,40,70,88)+arrow(110,40,110,88)+arrow(150,40,150,88)+p('M20 170Q105 200 190 170')+tx(86,214,18,'σ = F/A');}],
+     [/ingles tecnico/,function(){return tx(14,60,56,'Aa')+tx(110,50,28,'the')+tx(20,130,52,'“ ”')+tx(110,120,26,'to be')+r(120,150,80,40,12)+p('M140 190l-10 18 24-18')+tx(134,176,16,'EN');}],
+     [/mecanica de fluidos/,function(){return c(110,110,20)+p('M10 70Q80 50 110 60T210 70M10 100Q70 90 90 110T10 130M210 100Q150 90 130 110T210 130M10 160Q80 180 110 160T210 160')+p('M170 30c-8 14-14 22 0 28s14-14 0-28z')+p('M40 186c-6 11-10 18 0 22s10-11 0-22z');}],
+     [/electrotecnia/,function(){return sine(10,50,22,200,0,28)+sine(10,110,22,200,2.09,28)+sine(10,170,22,200,4.19,28)+tx(14,210,18,'3~ 400 V');}],
+     [/diseno y simulacion electronica/,function(){return p('M10 40h70l30 30h100M10 110h50l30-30M60 110v70l30 30M200 40v50l-30 30h-60')+c(10,40,6)+c(210,70,6)+c(10,110,6)+c(90,80,6)+c(110,70,5,1)+c(170,120,6)+tx(130,196,18,'PCB');}],
+     [/transmision del calor/,function(){return p('M30 20q-14 20 0 40t0 40t0 40')+p('M80 20q-14 20 0 40t0 40t0 40')+p('M130 20q-14 20 0 40t0 40t0 40')+arrow(150,160,200,160)+arrow(150,180,200,180)+tx(20,206,20,'q = −k∇T');}],
+     [/regulacion automatica/,function(){return c(40,80,14)+p('M26 80h28M40 66v28')+arrow(0,80,26,80)+arrow(54,80,90,80)+r(90,60,60,40,4)+arrow(150,80,210,80)+p('M180 80v60h-140v-46')+arrow(40,140,40,96)+tx(102,86,18,'G(s)');}],
+     [/organizacion/,function(){return r(80,10,60,30,5)+p('M110 40v22M40 62h140M40 62v22M110 62v22M180 62v22')+r(10,84,60,30,5)+r(80,84,60,30,5)+r(150,84,60,30,5)+p('M40 114v24M180 114v24')+r(10,138,60,30,5)+r(150,138,60,30,5)+p('M20 196h30M20 206h60M20 216h90');}],
+     [/control por computador/,function(){var o=p('M10 110h200M10 10v200');for(var i=1;i<10;i++){var x=10+i*20,h=Math.round(70*Math.exp(-i/4)*Math.cos(i/1.5));o+=p('M'+x+' 110v'+(-h))+c(x,110-h,4);}return o+tx(150,40,24,'z⁻¹')+tx(150,196,20,'ZOH');}],
+     [/tecnologia medioambiental/,function(){return p('M60 120C20 80 40 20 110 20c0 70-20 100-50 100z M60 120C80 90 90 60 110 20')+p('M160 140c-12 20-20 30 0 40s20-20 0-40z')+p('M30 160l30-14M60 146l-8 28M52 174l-30 6')+c(180,60,5)+p('M170 50l30 0M190 40l10 10-10 10');}],
+     [/electronica digital/,function(){return p('M10 40h30M10 70h30M40 30v50h30a25 25 0 0 0 0-50z')+p('M95 55h30')+p('M20 130h30v-26M50 104h30v26h30v-26h30v26h30')+mo(14,200,26,'1 0 1 1')+p('M130 40l30 20-30 20zM160 60h20')+c(184,60,4);}],
+     [/modelado y simulacion/,function(){return c(40,50,22)+c(160,50,22)+c(100,160,22)+arrow(62,50,138,50)+arrow(150,70,116,142)+arrow(84,144,50,70)+tx(32,56,18,'S0')+tx(152,56,18,'S1')+tx(92,166,18,'S2')+tx(90,38,16,'dt');}],
+     [/electronica analogica/,function(){return p('M60 20v80l80-40z')+tx(66,52,22,'−')+tx(66,86,22,'+')+p('M10 44h50M10 84h50M140 60h70M175 60v60')+p('M175 120h-20l8-12 12 24 12-24 8 12z')+p('M20 160h80M60 160v26M40 186h40M50 196h20')+c(210,60,4,1);}],
+     [/sistemas basados en microprocesador/,function(){var o=r(60,60,100,100,8)+c(74,74,4,1);for(var i=0;i<5;i++){var q=76+i*16;o+=p('M'+q+' 60v-22M'+q+' 160v22M60 '+q+'h-22M160 '+q+'h22');}return o+mo(80,118,22,'CPU')+mo(14,16,16,'0x3F');}],
+     [/programacion de sistemas en tiempo real/,function(){return c(60,60,40)+p('M60 60V32M60 60l22 12')+p('M20 130h60v14H20zM60 156h90v14H60zM110 182h90v14h-90z')+arrow(20,210,210,210)+tx(150,50,20,'τ ≤ T')+tx(150,80,20,'RT');}],
+     [/sistemas robotizados/,function(){return r(10,190,70,16,4)+p('M45 190V150')+c(45,142,10)+p('M45 132l60-60')+c(110,66,9)+p('M115 60l50 20')+c(170,82,7)+p('M174 78l24-14M174 88l24 14')+arrow(130,30,180,40);}],
+     [/automatizacion industrial/,function(){return p('M20 10v200M200 10v200')+p('M20 50h50M70 36v28M86 36v28M86 50h70')+c(170,50,14)+tx(164,56,18,'Y')+p('M170 50h30')+p('M20 120h50M70 106v28M86 106v28M86 120h50M146 106l-10 28')+c(170,120,14)+tx(163,126,18,'M')+p('M170 120h30')+tx(30,200,16,'PLC · I0.0');}],
+     [/ingenieria de control/,function(){return p('M10 110h200M110 10v200')+p('M110 110m-70 0a70 70 0 1 0 140 0a70 70 0 1 0 -140 0').replace('<path','<path stroke-dasharray="5 6"')+p('M30 110C70 110 90 60 110 20M30 110C70 110 90 160 110 200')+p('M60 100l12 12M72 100l-12 12M60 120l12 12M72 120l-12 12'.replace(/M60 120.*/,''))+tx(126,34,18,'Im')+tx(186,104,18,'Re');}],
+     [/sistemas de produccion/,function(){return r(10,120,200,18,8)+c(26,150,10)+c(194,150,10)+r(30,90,34,30,3)+r(90,90,34,30,3)+r(150,90,34,30,3)+arrow(20,50,200,50)+p('M110 10v20M110 160v30')+tx(14,208,18,'JIT · OEE');}]
+    ];
+    function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/ñ/g,'n').trim();}
+    var key=norm(title), fn=null;
+    for(var i=0;i<M.length;i++){ if(M[i][0].test(key)){fn=M[i][1];break;} }
+    if(!fn) return;
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220"><g '+S+'>'+fn()+'</g></svg>';
+    var url='url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';
+    var fade='radial-gradient(ellipse 80% 70% at 50% 45%,rgba(0,0,0,.25) 0%,rgba(0,0,0,.55) 55%,#000 100%)';
+    var css='#an-bg{position:fixed;inset:0;z-index:1;pointer-events:none;background:var(--accent,#1f4fd1);opacity:.13;-webkit-mask-image:'+url+','+fade+';-webkit-mask-size:300px 300px,100% 100%;-webkit-mask-repeat:repeat,no-repeat;-webkit-mask-composite:source-in;mask-image:'+url+','+fade+';mask-size:300px 300px,100% 100%;mask-repeat:repeat,no-repeat;mask-composite:intersect}'
+      +'@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #an-bg{opacity:.2}}:root[data-theme="dark"] #an-bg{opacity:.2}'
+      +'@media print{#an-bg{display:none!important}}';
+    var st=document.createElement('style'); st.id='an-bg-css'; st.textContent=css; document.head.appendChild(st);
+    function add(){var b=document.createElement('div');b.id='an-bg';b.setAttribute('aria-hidden','true');document.body.insertBefore(b,document.body.firstChild);}
+    if(document.body) add(); else document.addEventListener('DOMContentLoaded',add);
   })();
 })();
