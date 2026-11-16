@@ -19,24 +19,64 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
 <style id="lectura">
 @media screen{
 :root{--body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif}
-body{font-family:var(--body);font-size:20.5px;line-height:2.1;letter-spacing:.022em;word-spacing:.09em}
-p{margin:0 0 1.75em}
-li{margin:.8em 0}
-p,li{max-width:62ch}
+body{font-family:var(--body);font-size:20px;line-height:1.95;letter-spacing:.014em;word-spacing:.05em}
+p{margin:0 0 1.5em;max-width:64ch;hyphens:auto;-webkit-hyphens:auto}
+li{margin:.72em 0;max-width:64ch}
 .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
-h2{margin-top:92px;margin-bottom:24px;line-height:1.3}
-h3{font-size:24px;margin:58px 0 18px;line-height:1.35}
-h4{margin-top:34px;margin-bottom:10px}
-.box{padding:24px 30px;margin:32px 0}
-table{font-size:18px;line-height:1.75}
-td,th{padding-top:.85em;padding-bottom:.85em}
-figure.fig figcaption{font-size:17px;line-height:1.8;margin-top:12px}
+h2{margin-top:92px;margin-bottom:22px;line-height:1.25}
+h3{font-size:25px;margin:66px 0 20px;line-height:1.3}
+h4{margin:38px 0 12px;line-height:1.4}
+/* ---- entradilla con capitular ---- */
+.zero .lede{font-size:1.05em;line-height:1.86;text-align:left}
+.zero .lede::first-letter{float:left;font-size:3.05em;line-height:.84;font-weight:700;padding:.06em .14em 0 0;color:var(--tc,var(--accent))}
+/* ---- sumario del tema ---- */
+p.obj{max-width:none;text-align:left;margin:0 0 1.7em;padding:14px 20px;border-radius:10px;
+ background:color-mix(in srgb,var(--surface) 62%,transparent);
+ border-left:3px solid var(--tc,var(--accent));font-size:.95em;line-height:1.75}
+p.obj>b:first-child{display:block;font:700 11.5px/1.7 var(--mono,monospace);letter-spacing:.1em;
+ text-transform:uppercase;color:var(--tc,var(--accent))}
+/* ---- términos con entrada, al modo de un manual ---- */
+p.run{margin:0 0 1.38em}
+p.run>b:first-child{display:block;font:700 12px/1.7 var(--mono,monospace);letter-spacing:.09em;
+ text-transform:uppercase;color:var(--tc,var(--accent))}
+/* ---- rótulos internos ---- */
+.zero>.ft{font:700 11.5px/1.6 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase}
+.zero>.ft:not(:first-child){margin-top:2em;font-size:12.5px;color:var(--fg);opacity:.72}
+/* ---- desarrollo teórico ---- */
+.deep h4{position:relative;padding-left:2.35em;font-size:1.03em}
+.deep h4 .hn{position:absolute;left:0;top:.06em;font:700 .84em/1.7 var(--mono,monospace);
+ color:var(--tc,var(--accent));opacity:.8}
+.deep>h4:not(:first-child){border-top:1px solid var(--line);padding-top:30px;margin-top:42px}
+.eqd{margin:1.65em 0;text-align:center;overflow-x:auto;overflow-y:hidden}
+/* ---- notas al margen, sin duplicar el rótulo ---- */
+.box.deepnote{padding:15px 20px;margin:1.5em 0;border-radius:0 10px 10px 0;
+ background:color-mix(in srgb,var(--surface) 76%,transparent)}
+.box.key.deepnote::before,.box.trap.deepnote::before{content:none}
+.box.deepnote>b:first-child{display:block;font:700 11.5px/1.7 var(--mono,monospace);
+ letter-spacing:.1em;text-transform:uppercase;color:var(--tc,var(--accent))}
+.box.trap.deepnote>b:first-child{color:var(--warn)}
+/* ---- resto ---- */
+.box{padding:22px 28px;margin:30px 0}
+table{font-size:18px;line-height:1.7}
+td,th{padding-top:.8em;padding-bottom:.8em}
+figure.fig figcaption{font-size:17px;line-height:1.78;margin-top:12px}
 figure.fig{margin-block:34px}
-.lede{line-height:1.85}
 .toc a{font-size:15.5px;padding:8px 0 8px 10px}
 svg,svg text,canvas,.katex,mjx-container{letter-spacing:normal;word-spacing:normal}
+mjx-container[display]{margin:0!important}
 details>summary{line-height:1.7;padding-block:.5em}
-@media (max-width:600px){body{font-size:19px;line-height:2}}
+.enun p,.inner p{text-align:left}
+@media (min-width:1040px){
+p,li{text-align:justify}
+.zero .lede,.enun p,.inner p,figcaption,.ft{text-align:left}
+}
+@media (max-width:600px){
+body{font-size:18.5px;line-height:1.9}
+p{text-align:left}
+.zero .lede::first-letter{font-size:2.6em}
+.deep h4{padding-left:0}
+.deep h4 .hn{position:static;margin-right:.5em}
+}
 }
 </style>
 </head>
@@ -83,7 +123,7 @@ details>summary{line-height:1.7;padding-block:.5em}
 <section class="sec" style="--tc:var(--c4);--tcs:var(--c4s)">
 <div class="sh"><span class="badge" aria-hidden="true">T4</span><div class="shx"><p class="kick">Tema 4 · Agua</p><h2 id="t4">Depuración y reutilización</h2><div class="tags"><span class="tag">30 págs</span><span class="tag">fangos activos</span><span class="tag w">fórmulas</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 236" role="img" aria-label="Esquema de una estación depuradora de aguas residuales con línea de agua, recirculación y línea de fangos" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="46" width="100" height="58" rx="12" class="il-box"/><text x="62.0" y="71.5" class="il-txt" text-anchor="middle">Pretrata-</text><text x="62.0" y="87.5" class="il-txt" text-anchor="middle">miento</text><line x1="114" y1="75" x2="130.6" y2="75.0" class="il-arrow"/><polygon points="136,75 127.9,78.9 127.9,71.1" class="il-ah"/><rect x="138" y="46" width="100" height="58" rx="12" class="il-box"/><text x="188.0" y="71.5" class="il-txt" text-anchor="middle">Decantador</text><text x="188.0" y="87.5" class="il-txt" text-anchor="middle">primario</text><line x1="240" y1="75" x2="256.6" y2="75.0" class="il-arrow"/><polygon points="262,75 253.9,78.9 253.9,71.1" class="il-ah"/><rect x="264" y="46" width="100" height="58" rx="12" class="il-box"/><text x="314.0" y="71.5" class="il-txt" text-anchor="middle">Reactor</text><text x="314.0" y="87.5" class="il-txt" text-anchor="middle">biológico</text><line x1="366" y1="75" x2="382.6" y2="75.0" class="il-arrow"/><polygon points="388,75 379.9,78.9 379.9,71.1" class="il-ah"/><rect x="390" y="46" width="100" height="58" rx="12" class="il-box"/><text x="440.0" y="71.5" class="il-txt" text-anchor="middle">Decantador</text><text x="440.0" y="87.5" class="il-txt" text-anchor="middle">secundario</text><line x1="492" y1="75" x2="508.6" y2="75.0" class="il-arrow"/><polygon points="514,75 505.9,78.9 505.9,71.1" class="il-ah"/><rect x="516" y="46" width="100" height="58" rx="12" class="il-box"/><text x="566.0" y="79.5" class="il-txt" text-anchor="middle">Desinfección</text><text x="62.0" y="130" class="il-txt-s" text-anchor="middle">agua residual</text><text x="566.0" y="130" class="il-txt-s" text-anchor="middle">vertido / reutilización</text><path d="M440.0 104 V150 H314.0 V108" class="il-line il-thin"/><line x1="314.0" y1="140" x2="314.0" y2="111.4" class="il-arrow"/><polygon points="314.0,106 317.9,114.1 310.1,114.1" class="il-ah"/><text x="377.0" y="168" class="il-txt-s" text-anchor="middle">recirculación de fangos</text><rect x="12" y="176" width="150" height="44" rx="12" class="il-box"/><text x="87.0" y="202.5" class="il-txt-s" text-anchor="middle">Espesamiento</text><rect x="190" y="176" width="150" height="44" rx="12" class="il-box"/><text x="265.0" y="194.5" class="il-txt-s" text-anchor="middle">Digestión</text><text x="265.0" y="210.5" class="il-txt-s" text-anchor="middle">anaerobia</text><rect x="368" y="176" width="150" height="44" rx="12" class="il-box"/><text x="443.0" y="202.5" class="il-txt-s" text-anchor="middle">Deshidratación</text><line x1="164" y1="198" x2="182.6" y2="198.0" class="il-arrow"/><polygon points="188,198 179.9,201.9 179.9,194.1" class="il-ah"/><line x1="342" y1="198" x2="360.6" y2="198.0" class="il-arrow"/><polygon points="366,198 357.9,201.9 357.9,194.1" class="il-ah"/><text x="560" y="198" class="il-txt-s" text-anchor="start">línea de fangos</text></svg><figcaption>La línea de agua elimina sólidos y materia orgánica; los fangos que se generan siguen su propia línea de espesamiento, digestión y deshidratación.</figcaption></figure>
 <div class="zero"><p class="ft">La EDAR en una línea</p>
-<p><b>Pretratamiento</b> (desbaste → desarenado → grasas) → <b>decantación primaria</b> (~2 h) → <b>reactor biológico</b> (fangos activos) → <b>decantador secundario</b> → desinfección. Los fangos se espesan, se <b>digieren</b> y se <b>deshidratan</b>.</p></div>
+<p class="run"><b>Pretratamiento:</b> (desbaste → desarenado → grasas) → <b>decantación primaria</b> (~2 h) → <b>reactor biológico</b> (fangos activos) → <b>decantador secundario</b> → desinfección. Los fangos se espesan, se <b>digieren</b> y se <b>deshidratan</b>.</p></div>
 <h3>Pretratamiento y decantación primaria</h3>
 <ul>
 <li><b>Desbaste</b>: rejas de barras (≈ 25 mm, separación 50–100 mm) y tamices; velocidad de paso <b>0,6–1,0 m/s</b>.</li>
@@ -156,11 +196,11 @@ $$\tfrac{\text{eq-g}}{t}=QN\eta\qquad I=\frac{F\,Q\,N\,\eta}{n\,E_c}\qquad P=R\,
 <li>La electrodiálisis <b>no</b> es lo mismo que la electrocoagulación: una separa iones con membranas, la otra coagula con cationes del ánodo.</li>
 <li>El decantador secundario se dimensiona a <b>caudal punta</b>, no al medio.</li></ul></div>
 <!--deep--><h3 id="t4-profundiza">Desarrollo teórico a fondo</h3><div class="deep">
-<h4>1. Depuración de aguas residuales</h4>
+<h4><span class="hn">1</span>Depuración de aguas residuales</h4>
 <ol class="pasos"><li>Pretratamiento: rejas, desarenado y desengrasado.</li><li>Tratamiento primario: decantación.</li><li>Tratamiento secundario: biológico, por fangos activos.</li><li>Tratamiento terciario: eliminación de nutrientes o de patógenos.</li></ol>
 <details class="dem"><summary><span class="pn">∴</span>Fangos</summary><div class="inner"><p>Los fangos se espesan, se estabilizan (por digestión anaerobia, con producción de biogás) y se deshidratan antes de su destino final.</p>
 <div class="box trap deepnote"><b>Cuidado.</b> Los fangos son residuo y su gestión suele costar más que el agua tratada. No los olvides en un balance de costes.</div></div></details>
-<h4>2. Reutilización</h4>
+<h4><span class="hn">2</span>Reutilización</h4>
 <p>El agua depurada puede reutilizarse para riego, usos industriales o recarga de acuíferos, siempre según el uso y con la calidad exigida.</p>
 </div><!--/deep--></section>
 
