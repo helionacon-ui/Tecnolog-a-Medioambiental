@@ -1,4 +1,4 @@
-# Tecnología Medioambiental · Guía para aprobar
+# Tecnología Medioambiental · Apuntes
 
 **Proyecto iniciado el 5 de noviembre de 2026.**
 
