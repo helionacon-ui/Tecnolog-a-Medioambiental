@@ -1,17 +1,17 @@
 
 /* Layout: columna de lectura con índice lateral fijo en escritorio; el disco unidad del plano z como motivo */
 :root{
-  --bg:#f4f1fb; --lila-soft:#ece6f8; --surface:#ffffff; --fg:#15202b; --muted:#566472; --line:#d3dbe4;
+  --bg:#f3f6f9; --surface:#ffffff; --fg:#15202b; --muted:#566472; --line:#d3dbe4;
   --accent:#1565a8; --accent-soft:#e1edf8; --warn:#b2482a; --warn-soft:#f7e6df;
   --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#141120; --lila-soft:#2a2243; --surface:#161f29; --fg:#e3eaf2; --muted:#98a7b7; --line:#2a3744;
+  --bg:#0e141b; --surface:#161f29; --fg:#e3eaf2; --muted:#98a7b7; --line:#2a3744;
   --accent:#6db3ee; --accent-soft:#12293f; --warn:#ef8a68; --warn-soft:#3a221a; color-scheme:dark; } }
 :root[data-theme="dark"]{
-  --bg:#141120; --lila-soft:#2a2243; --surface:#161f29; --fg:#e3eaf2; --muted:#98a7b7; --line:#2a3744;
+  --bg:#0e141b; --surface:#161f29; --fg:#e3eaf2; --muted:#98a7b7; --line:#2a3744;
   --accent:#6db3ee; --accent-soft:#12293f; --warn:#ef8a68; --warn-soft:#3a221a; color-scheme:dark; }
 
 *{box-sizing:border-box}
@@ -161,7 +161,7 @@ dl.gl .tt{font-family:var(--mono);font-size:12px;color:var(--accent);margin-left
 body{line-height:1.65}
 /* portada */
 header.hero{display:block;max-width:none;border:0;margin:0 calc(-1*max(16px, env(safe-area-inset-left, 0px))) 36px;padding-block:0;
-  background:linear-gradient(135deg,var(--lila-soft),var(--bg) 70%);border-bottom:1px solid var(--line)}
+  background:linear-gradient(135deg,var(--accent-soft),var(--bg) 70%);border-bottom:1px solid var(--line)}
 .hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center;
   padding:48px max(16px, env(safe-area-inset-right, 0px)) 44px max(16px, env(safe-area-inset-left, 0px))}
 @media (max-width:760px){.hero-in{grid-template-columns:minmax(0,1fr);padding-block:32px 28px}.hero-art{display:none}}
@@ -534,3 +534,48 @@ body.home .zart .wv{animation:ola 5s ease-in-out infinite}
 body.home .hgrp h2{font-size:clamp(26px,3.4vw,34px)}
 body.home .hgrp{margin-bottom:56px}
 @media(max-width:760px){body.home .hero-art{display:block;margin-top:28px}body.home .hero-art svg{max-width:260px}}
+
+#t2p{--t2-bg:var(--bg,#f6f8f7);--t2-sf:var(--surface,#fff);--t2-fg:var(--fg,#18232b);--t2-mu:var(--muted,#5b6660);--t2-ln:var(--line,#d3dcdf);--t2-ac:var(--accent,#1f7a5a);--t2-ok:var(--c6,#2f8f4e);--t2-oks:var(--c6s,#e3f4e8);--t2-ko:var(--warn,#b3402a);--t2-kos:var(--warn-soft,#fbe9e4);font-family:inherit;color:var(--t2-fg);max-width:860px;margin:0 auto}
+#t2p *{box-sizing:border-box}
+#t2p .t2-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+#t2p .t2-tab{font:inherit;font-weight:600;padding:10px 16px;border-radius:12px;border:1px solid var(--t2-ln);background:var(--t2-sf);color:var(--t2-fg);cursor:pointer}
+#t2p .t2-tab.on{background:var(--t2-ac);border-color:var(--t2-ac);color:#fff}
+#t2p .t2-bar{display:grid;gap:12px;margin:0 0 14px}
+#t2p .t2-chips{display:flex;flex-wrap:wrap;gap:8px}
+#t2p .t2-chip{font:inherit;font-size:14px;padding:7px 14px;border-radius:999px;border:1px solid var(--t2-ln);background:var(--t2-sf);color:var(--t2-fg);cursor:pointer}
+#t2p .t2-chip.on{background:var(--t2-ac);border-color:var(--t2-ac);color:#fff}
+#t2p .t2-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+#t2p .t2-lab{font-size:14px;color:var(--t2-mu)}
+#t2p select{font:inherit;font-size:14px;padding:7px 10px;border-radius:10px;border:1px solid var(--t2-ln);background:var(--t2-sf);color:var(--t2-fg)}
+#t2p .t2-btn{font:inherit;font-size:14px;font-weight:600;padding:8px 16px;border-radius:10px;border:1px solid var(--t2-ac);background:transparent;color:var(--t2-ac);cursor:pointer}
+#t2p .t2-note{margin:0;font-size:14.5px;color:var(--t2-mu)}
+#t2p .t2-stat{position:sticky;top:0;z-index:5;display:grid;gap:8px;padding:10px 14px;margin:0 0 18px;border:1px solid var(--t2-ln);border-radius:12px;background:var(--t2-sf);font-weight:600;font-size:14.5px}
+#t2p .t2-prog{height:8px;border-radius:99px;background:var(--t2-ln);overflow:hidden}
+#t2p .t2-prog i{display:block;height:100%;background:var(--t2-ac);transition:width .25s}
+#t2p .t2-list{display:grid;gap:18px}
+#t2p .t2-q{padding:18px 20px;border:1px solid var(--t2-ln);border-radius:16px;background:var(--t2-sf)}
+#t2p .t2-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+#t2p .t2-num{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--t2-mu);margin-right:4px}
+#t2p .t2-b{font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--t2-ln);background:var(--t2-bg)}
+#t2p .t2-ap{cursor:help;border-color:var(--t2-ac);color:var(--t2-ac)}
+#t2p .t2-rc{color:var(--t2-mu);font-weight:500}
+#t2p .t2-s{margin:0 0 14px;font-size:16.5px;line-height:1.6;white-space:normal}
+#t2p .t2-fig{margin:0 0 14px;text-align:center}
+#t2p .t2-fig img{max-width:100%;height:auto;max-height:360px;border-radius:10px;border:1px solid var(--t2-ln);background:#fff}
+#t2p .t2-ops{display:grid;gap:8px}
+#t2p .t2-op{font:inherit;text-align:left;line-height:1.5;padding:11px 14px;border-radius:10px;border:1px solid var(--t2-ln);background:var(--t2-bg);color:var(--t2-fg);cursor:pointer}
+#t2p .t2-op:hover:not(:disabled){border-color:var(--t2-ac)}
+#t2p .t2-op:disabled{cursor:default}
+#t2p .t2-op.ok{border-color:var(--t2-ok);background:var(--t2-oks);font-weight:600}
+#t2p .t2-op.ko{border-color:var(--t2-ko);background:var(--t2-kos)}
+#t2p .t2-ex{margin:14px 0 0;padding:12px 14px;border-radius:10px;border-left:4px solid var(--t2-ok);background:var(--t2-oks);font-size:15.5px;line-height:1.6}
+#t2p .t2-ex.bad{border-left-color:var(--t2-ko);background:var(--t2-kos)}
+#t2p .t2-ex p{margin:0 0 6px}
+#t2p .t2-ex p:last-child{margin:0}
+#t2p .t2-v{font-weight:700}
+#t2p .t2-ref{font-size:14px;color:var(--t2-mu)}
+#t2p .t2-w{font-size:14px;font-weight:600}
+#t2p .t2-final{margin:22px 0 0;padding:20px;border:2px solid var(--t2-ac);border-radius:16px;text-align:center;background:var(--t2-sf)}
+#t2p .t2-final h3{margin:0 0 6px;font-size:26px}
+#t2p .t2-final p{margin:0}
+@media (max-width:520px){#t2p .t2-q{padding:14px}#t2p .t2-s{font-size:15.5px}}

@@ -4,104 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>T8 Contaminación de suelos · Tecnología Medioambiental</title>
-<meta name="description" content="Guía no oficial para preparar Tecnología Medioambiental.">
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
 <script>
-window.MathJax={loader:{load:['ui/lazy']}, tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
 <link rel="stylesheet" href="assets/styles.css">
-<script src="asig-nav.js" defer></script>
-<link id="lectura-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap">
-<style id="lectura">
-@media screen{
-:root{--body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif}
-body{font-family:var(--body);font-size:20px;line-height:1.95;letter-spacing:.014em;word-spacing:.05em}
-p{margin:0 0 1.5em;max-width:66ch;text-align:left;hyphens:none;-webkit-hyphens:none;
- text-wrap:pretty;overflow-wrap:break-word;hanging-punctuation:first last}
-li{margin:.72em 0;max-width:66ch;text-wrap:pretty}
-.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
-h2{margin-top:92px;margin-bottom:22px;line-height:1.25}
-h3{font-size:25px;margin:66px 0 20px;line-height:1.3}
-h4{margin:38px 0 12px;line-height:1.4}
-/* ---- entradilla con capitular ---- */
-.zero .lede{font-size:1.05em;line-height:1.86;text-align:left}
-.zero[style] .lede::first-line{font-weight:600;letter-spacing:.03em}
-.zero:not([style]) .lede::first-letter{float:left;font-size:3.05em;line-height:.84;font-weight:700;padding:.06em .14em 0 0;color:var(--tc,var(--accent))}
-/* ---- sumario del tema ---- */
-p.obj{max-width:none;text-align:left;margin:0 0 1.7em;padding:14px 20px;border-radius:10px;
- background:color-mix(in srgb,var(--surface) 62%,transparent);
- border-left:3px solid var(--tc,var(--accent));font-size:.95em;line-height:1.75}
-p.obj>b:first-child{display:block;font-weight:700;font-size:.9em;line-height:1.7;
- letter-spacing:.04em;color:var(--tc,var(--accent))}
-/* ---- términos con entrada, al modo de un manual ---- */
-p.run{margin:0 0 1.38em}
-p.run>b:first-child{display:block;font-weight:700;font-size:.95em;line-height:1.7;
- letter-spacing:.03em;color:var(--tc,var(--accent))}
-/* ---- rótulos internos ---- */
-.zero>.ft{font:700 11.5px/1.6 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase}
-.zero>.ft:not(:first-child){margin-top:2.1em;font-family:var(--body);font-size:1em;
- font-weight:700;letter-spacing:.01em;text-transform:none;color:var(--fg);opacity:.9}
-/* ---- desarrollo teórico ---- */
-.deep h4{position:relative;padding-left:2.35em;font-size:1.03em}
-.deep h4 .hn{position:absolute;left:0;top:.06em;font:700 .84em/1.7 var(--mono,monospace);
- color:var(--tc,var(--accent));opacity:.8}
-.deep>h4:not(:first-child){border-top:1px solid var(--line);padding-top:30px;margin-top:42px}
-/* ---- formulas aparte: bloque propio, con aire ---- */
-.eqd{margin:2.1em 0;padding:24px 26px;border-radius:12px;text-align:center;
- max-width:none;overflow-x:auto;overflow-y:hidden;
- background:color-mix(in srgb,var(--surface) 66%,transparent);
- border-left:3px solid var(--tc,var(--accent))}
-/* ---- formulas dentro del texto: que no se apelotonen ---- */
-mjx-container{font-size:1.05em}
-/* el recuadro envuelve la formula entera: sin line-height forzado, con relleno
-   proporcional a su altura y sin cortes al partir de linea */
-mjx-container:not([display="true"]){
- display:inline-block;padding:.22em .4em;margin:0 .1em;border-radius:7px;
- box-decoration-break:clone;-webkit-box-decoration-break:clone;
- background:color-mix(in srgb,var(--tc,var(--accent)) 9%,transparent)}
-mjx-container:not([display="true"]) svg{overflow:visible}
-.box mjx-container:not([display="true"]),
-.inner mjx-container:not([display="true"]){
- background:color-mix(in srgb,var(--tc,var(--accent)) 13%,transparent)}
-/* la formula aparte manda sobre el panel: ni se recorta ni se encoge */
-.eqd mjx-container{margin:0!important;padding:0;background:none;
- max-width:100%;min-width:0!important;display:inline-block}
-.eqd mjx-container svg{max-width:100%;height:auto}
-p code,li code,td code{padding:.14em .4em;margin:0 .08em;border-radius:6px;font-size:.95em;
- background:color-mix(in srgb,var(--tc,var(--accent)) 10%,transparent)}
-/* las listas y pasos con formula, con mas aire entre renglones */
-li{line-height:2}
-/* ---- notas al margen, sin duplicar el rótulo ---- */
-.box.deepnote{padding:15px 20px;margin:1.5em 0;border-radius:0 10px 10px 0;
- background:color-mix(in srgb,var(--surface) 76%,transparent)}
-.box.key.deepnote::before,.box.trap.deepnote::before{content:none}
-.box.deepnote>b:first-child{display:block;font-weight:700;font-size:.92em;line-height:1.7;
- letter-spacing:.03em;color:var(--tc,var(--accent))}
-.box.trap.deepnote>b:first-child{color:var(--warn)}
-/* ---- resto ---- */
-.box{padding:22px 28px;margin:30px 0}
-table{font-size:18px;line-height:1.7}
-td,th{padding-top:.8em;padding-bottom:.8em}
-figure.fig figcaption{font-size:17px;line-height:1.78;margin-top:12px}
-figure.fig{margin-block:34px}
-.toc a{font-size:15.5px;padding:8px 0 8px 10px}
-svg,svg text,canvas,.katex,mjx-container{letter-spacing:normal;word-spacing:normal}
-mjx-container[display]{margin:0!important}
-details>summary{line-height:1.7;padding-block:.5em}
-@media (max-width:600px){
-body{font-size:18.5px;line-height:1.9}
-.eqd{padding:16px 12px;font-size:.94em}
-mjx-container:not([display="true"]){padding:.2em .32em}
-.zero:not([style]) .lede::first-letter{font-size:2.6em}
-.deep h4{padding-left:0}
-.deep h4 .hn{position:static;margin-right:.5em}
-}
-}
-</style>
 </head>
 <body>
 <div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a><p class="fecha" style="margin:6px 0 0;max-width:none;font:13px/1.45 system-ui,sans-serif;color:var(--muted,#5b6660)">Proyecto iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time> · Última actualización: <time datetime="2026-11-09">9 de noviembre de 2026</time></p></div>
@@ -134,6 +46,7 @@ mjx-container:not([display="true"]){padding:.2em .32em}
   <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
   <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
   <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="test2p.html" style="--tc:var(--c6)">Test del 2.º parcial</a>
   <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
   <div class="grp">Consultar</div>
   <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
@@ -141,12 +54,12 @@ mjx-container:not([display="true"]){padding:.2em .32em}
   <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
 </nav>
 <div style="min-width:0">
-<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T8 Contaminación de suelos</b><span class="np">9 / 21</span></div>
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T8 Contaminación de suelos</b><span class="np">9 / 22</span></div>
 <main class="page">
 <section class="sec" style="--tc:var(--c4);--tcs:var(--c4s)">
 <div class="sh"><span class="badge" aria-hidden="true">T8</span><div class="shx"><p class="kick">Tema 8 · Suelos</p><h2 id="t8">Contaminación de suelos</h2><div class="tags"><span class="tag">18 págs</span><span class="tag">tecnologías in situ</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 222" role="img" aria-label="Perfil del suelo con foco contaminante, lixiviación y volatilización, y tres técnicas de descontaminación" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="20" width="380" height="40" rx="8" class="il-fill2" style="fill-opacity:.35"/><rect x="30" y="60" width="380" height="64" class="il-fill2" style="fill-opacity:.65"/><rect x="30" y="124" width="380" height="40" class="il-fill2" style="fill-opacity:.9"/><rect x="30" y="164" width="380" height="44" rx="8" class="il-venn" style="fill-opacity:.35"/><text x="40" y="44" class="il-txt-s" text-anchor="start">Horizonte superficial</text><text x="40" y="96" class="il-txt-s" text-anchor="start">Suelo (adsorción)</text><text x="40" y="148" class="il-txt-s" text-anchor="start">Zona no saturada</text><text x="40" y="190" class="il-txt" text-anchor="start">Acuífero</text><circle cx="200" cy="42" r="9" class="il-acc"/><text x="214" y="46" class="il-txt-s" text-anchor="start">foco</text><line x1="200" y1="54" x2="200.0" y2="154.6" class="il-arrow"/><polygon points="200,160 196.1,151.9 203.9,151.9" class="il-ah"/><text x="214" y="118" class="il-txt" text-anchor="start">lixiviación</text><line x1="150" y1="38" x2="150.0" y2="15.399999999999999" class="il-arrow"/><polygon points="150,10 153.9,18.1 146.1,18.1" class="il-ah"/><text x="160" y="14" class="il-txt-s" text-anchor="start">volatilización</text><circle cx="240" cy="80" r="5" class="il-acc" style="opacity:.5"/><circle cx="262" cy="96" r="5" class="il-acc" style="opacity:.5"/><circle cx="290" cy="84" r="5" class="il-acc" style="opacity:.5"/><circle cx="318" cy="104" r="5" class="il-acc" style="opacity:.5"/><circle cx="340" cy="88" r="5" class="il-acc" style="opacity:.5"/><text x="486" y="40" class="il-txt" text-anchor="start">Tres técnicas</text><rect x="460" y="56" width="230" height="44" rx="12" class="il-chip"/><text x="476" y="82" class="il-txt il-b" text-anchor="start">Ventilación</text><text x="676" y="82" class="il-txt-s" text-anchor="end">COVs</text><rect x="460" y="110" width="230" height="44" rx="12" class="il-chip"/><text x="476" y="136" class="il-txt il-b" text-anchor="start">Lavado</text><text x="676" y="136" class="il-txt-s" text-anchor="end">inorgánicos</text><rect x="460" y="164" width="230" height="44" rx="12" class="il-chip"/><text x="476" y="190" class="il-txt il-b" text-anchor="start">Landfarming</text><text x="676" y="190" class="il-txt-s" text-anchor="end">biodegradables</text></svg><figcaption>El contaminante se retiene por adsorción, se mueve sobre todo por lixiviación hacia el acuífero y puede volatilizarse. Cada técnica de limpieza encaja con un tipo de contaminante.</figcaption></figure>
 <div class="zero"><p class="ft">Lo esencial en 30 segundos</p>
-<p class="lede">El <b>suelo</b> es la capa superior de la corteza terrestre, entre el lecho rocoso y la superficie (partículas minerales, materia orgánica, agua, aire y organismos vivos): es la <b>interfaz entre tierra, aire y agua</b>. Un <b>suelo contaminado</b> es aquel cuyas características se han alterado por componentes químicos peligrosos de origen humano, en una concentración que supone un <b>riesgo inaceptable</b> para la salud o el medio ambiente (Ley 7/2022 y RD 9/2005).</p>
+<p>El <b>suelo</b> es la capa superior de la corteza terrestre, entre el lecho rocoso y la superficie (partículas minerales, materia orgánica, agua, aire y organismos vivos): es la <b>interfaz entre tierra, aire y agua</b>. Un <b>suelo contaminado</b> es aquel cuyas características se han alterado por componentes químicos peligrosos de origen humano, en una concentración que supone un <b>riesgo inaceptable</b> para la salud o el medio ambiente (Ley 7/2022 y RD 9/2005).</p>
 <p>El <b>nivel genérico de referencia (NGR)</b> es la concentración de una sustancia que no supera el riesgo máximo aceptable para la salud humana o los ecosistemas.</p></div>
 <h3>Cómo se degrada un suelo</h3>
 <div class="tw"><table>
@@ -198,22 +111,13 @@ mjx-container:not([display="true"]){padding:.2em .32em}
 <li>El parámetro más importante del transporte es la <b>lixiviación</b>, no la difusión.</li>
 <li>Ventilación = <b>COVs ligeros</b> (gasolina); lavado = <b>inorgánicos</b>; landfarming = <b>biodegradables</b>.</li>
 <li>Quien declara un suelo contaminado es la <b>comunidad autónoma</b>, no el titular de la actividad.</li></ul></div>
-<!--manim:tm-t8--><figure class="fig manim-fig" id="anim-tm-t8"><p class="ft">Animación · Avance de un vertido en el suelo</p><div class="manim" data-anim="tm-t8"><p class="muted">Activa JavaScript para ver la animación.</p></div><figcaption>Se reproduce sola al llegar a ella. Puedes pausarla, arrastrar la barra para ir a cualquier instante y cambiar la velocidad. Si aparece «Prueba tú», mueve ese control para fijar tú el parámetro. Con «⬇ Vídeo» la descargas en formato vertical.</figcaption></figure><!--/manim-->
-<!--deep--><h3 id="t8-profundiza">Desarrollo teórico a fondo</h3><div class="deep">
-<h4><span class="hn">1</span>Suelos contaminados</h4>
-<div class="box key deepnote"><b>Idea clave.</b> un suelo contaminado acumula sustancias que afectan a la salud o al agua subterránea. La contaminación puede venir de vertidos, fugas o actividades antiguas.</div>
-<ul><li><b>Vía de exposición</b>: contacto, inhalación o ingestión. Sin vía, no hay riesgo.</li><li><b>Movilidad</b>: un contaminante soluble se mueve con el agua y llega al acuífero.</li></ul>
-<details class="dem"><summary><span class="pn">∴</span>Técnicas de remediación</summary><div class="inner"><ul><li><b>Excavación y retirada</b>: rápida, pero cara y genera residuo.</li><li><b>Biorremediación</b>: microorganismos degradan el contaminante. Más lenta, más barata.</li><li><b>Contención</b>: barreras que impiden la movilidad, sin eliminar el contaminante.</li></ul>
-<div class="box trap deepnote"><b>Cuidado.</b> La remediación no siempre es la mejor opción. Un suelo sin vía de exposición puede no necesitar actuación inmediata.</div></div></details>
-</div><!--/deep--></section>
+</section>
 
 <nav class="pn" aria-label="Páginas"><a class="pv" href="t7.html" style="--tc:var(--c7)"><small>← Anterior</small><strong>T7 Control</strong></a><a class="nx" href="t10.html" style="--tc:var(--c3)"><small>Siguiente →</small><strong>T10 Residuos urbanos</strong></a></nav>
 </main>
-<p class="sitefoot">Guía no oficial. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
 </div>
 </div>
 <script src="assets/app.js"></script>
-<script src="anim-manim.js?v=31215" defer></script>
-<script src="anim-temas.js?v=31215" defer></script>
 </body>
 </html>

@@ -4,104 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>T5 Transporte y dispersión · Tecnología Medioambiental</title>
-<meta name="description" content="Guía no oficial para preparar Tecnología Medioambiental.">
+<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
 <script>
-window.MathJax={loader:{load:['ui/lazy']}, tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
 <link rel="stylesheet" href="assets/styles.css">
-<script src="asig-nav.js" defer></script>
-<link id="lectura-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap">
-<style id="lectura">
-@media screen{
-:root{--body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif}
-body{font-family:var(--body);font-size:20px;line-height:1.95;letter-spacing:.014em;word-spacing:.05em}
-p{margin:0 0 1.5em;max-width:66ch;text-align:left;hyphens:none;-webkit-hyphens:none;
- text-wrap:pretty;overflow-wrap:break-word;hanging-punctuation:first last}
-li{margin:.72em 0;max-width:66ch;text-wrap:pretty}
-.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
-h2{margin-top:92px;margin-bottom:22px;line-height:1.25}
-h3{font-size:25px;margin:66px 0 20px;line-height:1.3}
-h4{margin:38px 0 12px;line-height:1.4}
-/* ---- entradilla con capitular ---- */
-.zero .lede{font-size:1.05em;line-height:1.86;text-align:left}
-.zero[style] .lede::first-line{font-weight:600;letter-spacing:.03em}
-.zero:not([style]) .lede::first-letter{float:left;font-size:3.05em;line-height:.84;font-weight:700;padding:.06em .14em 0 0;color:var(--tc,var(--accent))}
-/* ---- sumario del tema ---- */
-p.obj{max-width:none;text-align:left;margin:0 0 1.7em;padding:14px 20px;border-radius:10px;
- background:color-mix(in srgb,var(--surface) 62%,transparent);
- border-left:3px solid var(--tc,var(--accent));font-size:.95em;line-height:1.75}
-p.obj>b:first-child{display:block;font-weight:700;font-size:.9em;line-height:1.7;
- letter-spacing:.04em;color:var(--tc,var(--accent))}
-/* ---- términos con entrada, al modo de un manual ---- */
-p.run{margin:0 0 1.38em}
-p.run>b:first-child{display:block;font-weight:700;font-size:.95em;line-height:1.7;
- letter-spacing:.03em;color:var(--tc,var(--accent))}
-/* ---- rótulos internos ---- */
-.zero>.ft{font:700 11.5px/1.6 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase}
-.zero>.ft:not(:first-child){margin-top:2.1em;font-family:var(--body);font-size:1em;
- font-weight:700;letter-spacing:.01em;text-transform:none;color:var(--fg);opacity:.9}
-/* ---- desarrollo teórico ---- */
-.deep h4{position:relative;padding-left:2.35em;font-size:1.03em}
-.deep h4 .hn{position:absolute;left:0;top:.06em;font:700 .84em/1.7 var(--mono,monospace);
- color:var(--tc,var(--accent));opacity:.8}
-.deep>h4:not(:first-child){border-top:1px solid var(--line);padding-top:30px;margin-top:42px}
-/* ---- formulas aparte: bloque propio, con aire ---- */
-.eqd{margin:2.1em 0;padding:24px 26px;border-radius:12px;text-align:center;
- max-width:none;overflow-x:auto;overflow-y:hidden;
- background:color-mix(in srgb,var(--surface) 66%,transparent);
- border-left:3px solid var(--tc,var(--accent))}
-/* ---- formulas dentro del texto: que no se apelotonen ---- */
-mjx-container{font-size:1.05em}
-/* el recuadro envuelve la formula entera: sin line-height forzado, con relleno
-   proporcional a su altura y sin cortes al partir de linea */
-mjx-container:not([display="true"]){
- display:inline-block;padding:.22em .4em;margin:0 .1em;border-radius:7px;
- box-decoration-break:clone;-webkit-box-decoration-break:clone;
- background:color-mix(in srgb,var(--tc,var(--accent)) 9%,transparent)}
-mjx-container:not([display="true"]) svg{overflow:visible}
-.box mjx-container:not([display="true"]),
-.inner mjx-container:not([display="true"]){
- background:color-mix(in srgb,var(--tc,var(--accent)) 13%,transparent)}
-/* la formula aparte manda sobre el panel: ni se recorta ni se encoge */
-.eqd mjx-container{margin:0!important;padding:0;background:none;
- max-width:100%;min-width:0!important;display:inline-block}
-.eqd mjx-container svg{max-width:100%;height:auto}
-p code,li code,td code{padding:.14em .4em;margin:0 .08em;border-radius:6px;font-size:.95em;
- background:color-mix(in srgb,var(--tc,var(--accent)) 10%,transparent)}
-/* las listas y pasos con formula, con mas aire entre renglones */
-li{line-height:2}
-/* ---- notas al margen, sin duplicar el rótulo ---- */
-.box.deepnote{padding:15px 20px;margin:1.5em 0;border-radius:0 10px 10px 0;
- background:color-mix(in srgb,var(--surface) 76%,transparent)}
-.box.key.deepnote::before,.box.trap.deepnote::before{content:none}
-.box.deepnote>b:first-child{display:block;font-weight:700;font-size:.92em;line-height:1.7;
- letter-spacing:.03em;color:var(--tc,var(--accent))}
-.box.trap.deepnote>b:first-child{color:var(--warn)}
-/* ---- resto ---- */
-.box{padding:22px 28px;margin:30px 0}
-table{font-size:18px;line-height:1.7}
-td,th{padding-top:.8em;padding-bottom:.8em}
-figure.fig figcaption{font-size:17px;line-height:1.78;margin-top:12px}
-figure.fig{margin-block:34px}
-.toc a{font-size:15.5px;padding:8px 0 8px 10px}
-svg,svg text,canvas,.katex,mjx-container{letter-spacing:normal;word-spacing:normal}
-mjx-container[display]{margin:0!important}
-details>summary{line-height:1.7;padding-block:.5em}
-@media (max-width:600px){
-body{font-size:18.5px;line-height:1.9}
-.eqd{padding:16px 12px;font-size:.94em}
-mjx-container:not([display="true"]){padding:.2em .32em}
-.zero:not([style]) .lede::first-letter{font-size:2.6em}
-.deep h4{padding-left:0}
-.deep h4 .hn{position:static;margin-right:.5em}
-}
-}
-</style>
 </head>
 <body>
 <div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a><p class="fecha" style="margin:6px 0 0;max-width:none;font:13px/1.45 system-ui,sans-serif;color:var(--muted,#5b6660)">Proyecto iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time> · Última actualización: <time datetime="2026-11-09">9 de noviembre de 2026</time></p></div>
@@ -134,6 +46,7 @@ mjx-container:not([display="true"]){padding:.2em .32em}
   <a href="problemas.html" style="--tc:var(--c8)">Problemas resueltos</a>
   <a href="autoevaluacion.html" style="--tc:var(--c8)">Autoevaluación</a>
   <a href="banco.html" style="--tc:var(--c5)">Preguntas de años anteriores</a>
+  <a href="test2p.html" style="--tc:var(--c6)">Test del 2.º parcial</a>
   <a href="simulador.html" style="--tc:var(--c1)">Simulador de examen</a>
   <div class="grp">Consultar</div>
   <a href="formulario.html" style="--tc:var(--c0)">Formulario</a>
@@ -141,7 +54,7 @@ mjx-container:not([display="true"]){padding:.2em .32em}
   <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
 </nav>
 <div style="min-width:0">
-<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T5 Transporte y dispersión</b><span class="np">6 / 21</span></div>
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T5 Transporte y dispersión</b><span class="np">6 / 22</span></div>
 <main class="page">
 <section class="sec" style="--tc:var(--c5);--tcs:var(--c5s)">
 <div class="sh"><span class="badge" aria-hidden="true">T5</span><div class="shx"><p class="kick">Tema 5 · Aire</p><h2 id="t5">Transporte y dispersión de contaminantes</h2><div class="tags"><span class="tag">30 págs</span><span class="tag">modelo gaussiano</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 226" role="img" aria-label="Tres formas de penacho según la estabilidad atmosférica" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="14" width="212" height="176" rx="12" class="il-box"/><text x="116" y="38" class="il-txt" text-anchor="middle">Inestable · looping</text><line x1="22" y1="170" x2="210" y2="170" class="il-ax"/><rect x="40" y="108" width="8" height="62" class="il-acc"/><polyline points="48.0,110.0 54.0,113.6 60.0,117.6 66.0,121.2 72.0,123.7 78.0,124.4 84.0,122.7 90.0,118.6 96.0,112.2 102.0,104.2 108.0,95.6 114.0,87.4 120.0,80.9 126.0,77.1 132.0,76.9 138.0,80.5 144.0,87.7 150.0,97.8 156.0,109.5 162.0,121.3 168.0,131.5 174.0,138.5 180.0,141.0 186.0,138.4 192.0,130.5 198.0,118.1" class="il-line"/><rect x="254" y="14" width="212" height="176" rx="12" class="il-box"/><text x="360" y="38" class="il-txt" text-anchor="middle">Neutra · coning</text><line x1="266" y1="170" x2="454" y2="170" class="il-ax"/><rect x="284" y="108" width="8" height="62" class="il-acc"/><polygon points="292.0,110.0 299.5,110.1 307.0,110.2 314.5,110.3 322.0,110.4 329.5,110.5 337.0,110.6 344.5,110.7 352.0,110.8 359.5,110.9 367.0,111.0 374.5,111.1 382.0,111.2 389.5,111.3 397.0,111.4 404.5,111.5 412.0,111.6 419.5,111.7 427.0,111.8 434.5,111.9 442.0,112.0 442.0,168.0 434.5,165.1 427.0,162.2 419.5,159.3 412.0,156.4 404.5,153.5 397.0,150.6 389.5,147.7 382.0,144.8 374.5,141.9 367.0,139.0 359.5,136.1 352.0,133.2 344.5,130.3 337.0,127.4 329.5,124.5 322.0,121.6 314.5,118.7 307.0,115.8 299.5,112.9 292.0,110.0" class="il-plume"/><polyline points="292.0,110.0 299.5,111.5 307.0,113.0 314.5,114.5 322.0,116.0 329.5,117.5 337.0,119.0 344.5,120.5 352.0,122.0 359.5,123.5 367.0,125.0 374.5,126.5 382.0,128.0 389.5,129.5 397.0,131.0 404.5,132.5 412.0,134.0 419.5,135.5 427.0,137.0 434.5,138.5 442.0,140.0" class="il-line il-thin"/><rect x="498" y="14" width="212" height="176" rx="12" class="il-box"/><text x="604" y="38" class="il-txt" text-anchor="middle">Estable · fanning</text><line x1="510" y1="170" x2="698" y2="170" class="il-ax"/><rect x="528" y="108" width="8" height="62" class="il-acc"/><polygon points="536.0,110.0 543.5,109.8 551.0,109.6 558.5,109.4 566.0,109.2 573.5,109.0 581.0,108.8 588.5,108.6 596.0,108.4 603.5,108.2 611.0,108.0 618.5,107.8 626.0,107.6 633.5,107.4 641.0,107.2 648.5,107.0 656.0,106.8 663.5,106.6 671.0,106.4 678.5,106.2 686.0,106.0 686.0,116.0 678.5,115.8 671.0,115.6 663.5,115.4 656.0,115.2 648.5,115.0 641.0,114.8 633.5,114.6 626.0,114.4 618.5,114.2 611.0,114.0 603.5,113.8 596.0,113.6 588.5,113.4 581.0,113.2 573.5,113.0 566.0,112.8 558.5,112.6 551.0,112.4 543.5,112.2 536.0,112.0" class="il-plume"/><text x="116" y="210" class="il-txt-s" text-anchor="middle">se mezcla con fuerza</text><text x="360" y="210" class="il-txt-s" text-anchor="middle">cono simétrico</text><text x="604" y="210" class="il-txt-s" text-anchor="middle">capa fina, no sube ni baja</text></svg><figcaption>La forma del penacho delata la estabilidad del aire: inestable (looping), neutra (coning) y estable (fanning). Es la base del modelo gaussiano.</figcaption></figure>
@@ -224,60 +137,6 @@ $$\sigma_y=a\,x^{0,894}\qquad\sigma_z=c\,x^{d}+f$$
 <tr><td>F estable</td><td>34</td><td>14,35</td><td>0,740</td><td>−0,35</td><td>62,6</td><td>0,180</td><td>−48,6</td></tr>
 </table></div>
 <p class="muted">Tabla 5.4 (Martin, 1976). La clase de estabilidad sale de la velocidad del viento y de la radiación solar (Tabla 5.5 de Pasquill, en los apuntes). Para estimar se suele tomar la clase típica de la región que dé el <b>peor episodio</b>. Ejemplo resuelto en <a href="problemas.html#problemas">Problemas</a>.</p>
-<h3 id="t5-gauss-paso">Concentración a nivel del suelo, paso a paso</h3>
-<p>Para una fuente puntual, la concentración en el eje del penacho a nivel del suelo sale de la fórmula gaussiana con σ_y y σ_z de la clase de estabilidad. La figura resuelve un ejemplo ilustrativo con datos inventados para practicar el método.</p>
-<figure class="fig"><p class="ft">Figura interactiva · Q = 100 g/s, U = 5 m/s, h_s = 50 m, Δh = 30 m, clase D, x = 2 km</p>
-<div id="gau-paso" style="font-family:system-ui,sans-serif"><input id="gau-paso-s" type="range" min="0" max="6" step="1" value="0" style="width:100%"><div id="gau-paso-l" style="font-size:13px;color:#56635e;margin:4px 0">paso de la resolución (0 = enunciado): 0</div><canvas id="gau-paso-c" width="640" height="260" style="width:100%;max-width:640px;height:auto;display:block"></canvas><div id="gau-paso-t" style="font-size:15px;line-height:1.5;margin-top:8px;min-height:110px"></div></div>
-<figcaption>Curva: concentración en el eje y a nivel del suelo en función de la distancia x a la chimenea, con la misma clase D. El punto marca x = 2 km. El eje horizontal muestra la distancia y el vertical la concentración en µg/m³.</figcaption></figure>
-<div class="box trap"><h4>Trampas</h4><ul>
-<li>Usar h_s en lugar de h_e = h_s + Δh: la sobreelevación del penacho cuenta en la exponencial.</li>
-<li>Pasar Q en g/s y σ en m sin convertir: el resultado sale en g/m³, y hay que multiplicar por 10⁶ para µg/m³.</li>
-<li>Usar los coeficientes de σ_z para x > 1 km con x ≤ 1 km, o al revés. La distancia decide la fila de la tabla.</li>
-</ul></div>
-<script>
-(function(){
-  var Q=100,U=5,he=80;
-  function sy(x){return 68*Math.pow(x,0.894);}
-  function sz(x){return x>1 ? 33.2*Math.pow(x,0.725)-1.7 : Math.max(44.5*Math.pow(x,0.516)-13.0,1);}
-  function C(x){return Q/(Math.PI*sy(x)*sz(x)*U)*Math.exp(-he*he/(2*sz(x)*sz(x)))*1e6;}
-  var T=[
-   'Enunciado: fuente puntual con Q = 100 g/s, U = 5 m/s, altura de la chimenea h_s = 50 m y sobreelevación Δh = 30 m. Estabilidad clase D. Se pide la concentración en el eje, a nivel del suelo y a x = 2 km.',
-   'Altura efectiva: h_e = h_s + Δh = 50 + 30 = 80 m. Esta es la altura que entra en la exponencial, no la de la chimenea.',
-   'Coeficientes de la clase D (Martin): σ_y = 68·x^0,894. Para x = 2 km > 1 km, σ_z = 33,2·x^0,725 − 1,7.',
-   'σ_y(2 km) = 68·2^0,894 = 126,4 m. σ_z(2 km) = 33,2·2^0,725 − 1,7 = 33,2·1,653 − 1,7 = 53,2 m.',
-   'Fórmula en el eje y a nivel del suelo: C(x,0,0) = Q/(π·σ_y·σ_z·U) · exp[−h_e²/(2σ_z²)]. A nivel del suelo los dos términos de la llave son iguales, así que 2/(2π) = 1/π.',
-   'Factor de dilución: Q/(π·σ_y·σ_z·U) = 100/(π·126,4·53,2·5) = 9,47·10⁻⁴ g/m³ = 947 µg/m³.',
-   'Exponencial: h_e²/(2σ_z²) = 80²/(2·53,2²) = 1,13, y exp(−1,13) = 0,323. Resultado: C ≈ 947·0,323 ≈ 306 µg/m³ en el suelo, a 2 km del foco.'
-  ];
-  var cv=document.getElementById('gau-paso-c'), g=cv.getContext('2d'), sl=document.getElementById('gau-paso-s'),
-      lb=document.getElementById('gau-paso-l'), tx=document.getElementById('gau-paso-t');
-  var OX=70, OY=230, SX=140, SY=0.45;
-  function X(x){return OX+x*SX;} function Y(c){return OY-c*SY;}
-  function txt(s,x,y,col,sz,al){g.fillStyle=col;g.font=(sz||12)+'px system-ui,sans-serif';g.textAlign=al||'left';g.fillText(s,x,y);}
-  function line(x1,y1,x2,y2,col,w,dash){g.strokeStyle=col;g.lineWidth=w||1.2;g.setLineDash(dash||[]);g.beginPath();g.moveTo(x1,y1);g.lineTo(x2,y2);g.stroke();g.setLineDash([]);}
-  function dot(x,y,col){g.fillStyle=col;g.beginPath();g.arc(x,y,5,0,6.283);g.fill();}
-  function draw(p){
-    g.clearRect(0,0,cv.width,cv.height);
-    line(OX,OY,X(4)+10,OY,'#8a958f',1); line(OX,OY,OX,Y(420),'#8a958f',1);
-    for(var x=0;x<=4;x++){ txt(x+' km',X(x),OY+16,'#56635e',11,'center'); }
-    for(var c=0;c<=400;c+=100){ txt(String(c),OX-8,Y(c)+4,'#56635e',11,'right'); }
-    txt('µg/m³',OX+4,Y(420),'#56635e',11,'left');
-    if(p>=6){
-      g.strokeStyle='#3a63c4';g.lineWidth=2;g.beginPath();var first=true;
-      for(var x=0.1;x<=4.0001;x+=0.05){ var c=C(x); if(c<0) c=0; if(first){g.moveTo(X(x),Y(c));first=false;} else g.lineTo(X(x),Y(c)); }
-      g.stroke();
-    }
-    if(p>=5){ var c2=C(2); dot(X(2),Y(c2),'#b4232f'); line(X(2),OY,X(2),Y(c2),'#b4232f',1,[3,3]);
-      txt('x = 2 km',X(2)+8,OY-6,'#b4232f',11,'left'); if(p>=6) txt('≈ 306 µg/m³',X(2)+8,Y(c2)-8,'#b4232f',12,'left'); }
-    if(p>=3){ var sy2=sy(2), sz2=sz(2); txt('σ_y = '+sy2.toFixed(1)+' m',X(3.2),Y(380),'#1e2320',11,'left');
-      if(p>=4) txt('σ_z = '+sz2.toFixed(1)+' m',X(3.2),Y(380)+16,'#1e2320',11,'left'); }
-    lb.textContent='paso de la resolución (0 = enunciado): '+p;
-    tx.innerHTML='<div>'+T[p]+'</div>';
-  }
-  sl.addEventListener('input',function(){draw(+sl.value);});
-  draw(0);
-})();
-</script>
 <h3>Índice Nacional de Calidad del Aire (ICA)</h3>
 <p>Orden TEC/351/2019, basado en el RD 102/2011. Usa <b>PM₁₀, PM₂,₅, O₃, NO₂ y SO₂</b>; el valor final de la estación lo marca <b>el contaminante con la peor categoría</b>.</p>
 <div class="tw"><table>
@@ -296,24 +155,14 @@ $$\sigma_y=a\,x^{0,894}\qquad\sigma_z=c\,x^{d}+f$$
 <li>Fumigación → riesgo alto en suelo; flotación → casi nada en suelo.</li>
 <li>Las inversiones por radiación son <b>locales y bajas</b>; las de subsidencia son <b>altas y duraderas</b>.</li>
 <li>En el gaussiano, $\sigma$ se calcula con $x$ en <b>km</b>, no en m.</li></ul></div>
-<!--manim:tm-t5--><figure class="fig manim-fig" id="anim-tm-t5"><p class="ft">Animación · Penacho gaussiano</p><div class="manim" data-anim="tm-t5"><p class="muted">Activa JavaScript para ver la animación.</p></div><figcaption>Se reproduce sola al llegar a ella. Puedes pausarla, arrastrar la barra para ir a cualquier instante y cambiar la velocidad. Si aparece «Prueba tú», mueve ese control para fijar tú el parámetro. Con «⬇ Vídeo» la descargas en formato vertical.</figcaption></figure><!--/manim-->
-<!--deep--><h3 id="t5-profundiza">Desarrollo teórico a fondo</h3><div class="deep">
-<h4><span class="hn">1</span>Dispersión de contaminantes</h4>
-<div class="box key deepnote"><b>Idea clave.</b> un contaminante emitido por una chimenea se dispersa por el viento y la turbulencia. La concentración disminuye con la distancia y depende de la altura de emisión y de la estabilidad atmosférica.</div>
-<ul><li><b>Viento</b>: transporta el contaminante.</li><li><b>Turbulencia</b>: lo diluye en el aire.</li><li><b>Estabilidad</b>: con inversión térmica, el contaminante queda atrapado cerca del suelo.</li></ul>
-<details class="dem"><summary><span class="pn">∴</span>Modelo gaussiano de pluma</summary><div class="inner"><p><code>C(x,y,z) = Q / (2 π u σy σz) · exp(−y²/2σy²) · [exp(−(z−H)²/2σz²) + exp(−(z+H)²/2σz²)]</code></p>
-<p>Q es la tasa de emisión, u la velocidad del viento, H la altura efectiva de la chimenea y \sigma_y, \sigma_z los coeficientes de dispersión, que crecen con la distancia.</p>
-<div class="box trap deepnote"><b>Cuidado.</b> Una chimenea más alta reduce la concentración a nivel del suelo, pero no reduce la emisión. Es una solución local, no global.</div></div></details>
-</div><!--/deep--></section>
+</section>
 
 
 <nav class="pn" aria-label="Páginas"><a class="pv" href="t4.html" style="--tc:var(--c4)"><small>← Anterior</small><strong>T4 Depuración y reutilización</strong></a><a class="nx" href="t6.html" style="--tc:var(--c6)"><small>Siguiente →</small><strong>T6 Medida</strong></a></nav>
 </main>
-<p class="sitefoot">Guía no oficial. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
 </div>
 </div>
 <script src="assets/app.js"></script>
-<script src="anim-manim.js?v=31215" defer></script>
-<script src="anim-temas.js?v=31215" defer></script>
 </body>
 </html>
