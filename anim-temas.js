@@ -99,4 +99,9 @@ M.reg('tm-t13',M.base({title:'Huella de carbono: actividad × factor de emisión
   D.text('electricidad renovable: '+nf(r*100,0)+' %',420,240,{s:16,c:C.f});D.rect(420,252,180,14,C.grid,null,1);D.rect(420,252,180*r,14,null,RG(C.ok,.7));
   U.readout(D,['alcance 2 = 40 000 kWh × '+nf(0.2*(1-r),3)+' kg/kWh = '+nf(a2,1)+' t'],470);}));
 
+M.reg('tm-t2b',M.curva({title:'Cinética de la DBO: por qué se mide a 5 días',H:560,dur:18,p:[0.1,0.35],ax:{xr:[0,20],yr:[0,330],xt:[5,10,15,20],yt:[100,200,300],xd:0,yd:0,xl:'t (días)',yl:'DBO (mg/L)'},h:300,
+ curvas:[{f:function(x,k){return 300*(1-Math.exp(-k*x));},c:'m'}],
+ extra:function(D,A,k){D.line(A.X(0),A.Y(300),A.X(20),A.Y(300),C.mut,1,[4,4]);D.text('L₀ (DBO última)',A.X(19.8),A.Y(300)-6,{s:13,c:C.mut,a:'right'});var b5=300*(1-Math.exp(-5*k));D.line(A.X(5),A.Y(0),A.X(5),A.Y(b5),C.hl,1.4,[4,3]);D.dot(A.X(5),A.Y(b5),6,C.hl);},
+ read:function(k){return ['k = '+nf(k,2)+' d⁻¹    DBO_{t} = L₀(1 − e^{−kt})','DBO₅ = '+nf(300*(1-Math.exp(-5*k)),0)+' mg/L  ('+nf(100*(1-Math.exp(-5*k)),0)+' % de la DBO última)'];},
+ caps:[[6,'La demanda bioquímica de oxígeno crece al ir degradándose la materia orgánica, siguiendo una cinética de primer orden.'],[12,'Medir hasta el final llevaría semanas: por convenio se mide a 5 días y 20 °C. La DBO₅ es una fracción de la DBO última L₀.'],[99,'Esa fracción depende de k: con k = 0,23 d⁻¹ es alrededor del 68 %. La DQO, que oxida químicamente, siempre es mayor.']]}));
 })();
