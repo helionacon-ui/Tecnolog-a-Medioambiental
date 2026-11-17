@@ -73,13 +73,14 @@ M.reg('tm-t10',M.base({title:'Residuos: la jerarquía de gestión',H:560,dur:16,
   }));
 
 /* T11 cadena de gestión de residuos peligrosos */
-M.reg('tm-t11',M.pasos({title:'Residuos peligrosos: de quien los produce al tratamiento',H:560,dur:20,y0:118,lines:[
- {s:'1. Productor: identifica el residuo (código LER) y su peligrosidad',it:false,size:18},
- {s:'2. Envasado seguro y etiqueta con pictogramas de peligro',it:false,size:18},
- {s:'3. Almacenamiento temporal en la instalación, con plazo máximo',it:false,size:18},
- {s:'4. Traslado con documento de identificación y notificación previa',it:false,size:18},
- {s:'5. Gestor autorizado: tratamiento físico-químico, valorización o depósito',it:false,size:18},
- {s:'6. Archivo cronológico: trazabilidad completa del residuo',it:false,size:18,c:'m'}]}));
+var TS11=[['Productor',90,'identifica (LER), envasa y etiqueta'],['Almacén',230,'almacenamiento temporal con plazo máximo'],['Transporte',370,'documento de identificación y notificación'],['Gestor',520,'tratamiento autorizado; archivo cronológico']];
+M.reg('tm-t11',M.base({title:'Residuos peligrosos: la cadena de gestión',H:560,dur:20,caps:[[6,'El productor identifica el residuo con su código LER, lo envasa de forma segura y lo etiqueta con los pictogramas de peligro.'],[12,'Puede almacenarlo temporalmente en su instalación, con un plazo máximo. Para trasladarlo hacen falta documento de identificación y notificación previa.'],[99,'Un gestor autorizado lo trata (físico-químico, valorización o depósito). Todos llevan archivo cronológico: el residuo es trazable de principio a fin.']]},
+ function(D,t){var u=seg(t,1,18)*3,k=Math.min(3,Math.floor(u)),f=u-Math.floor(u),y=230,x=lerp(TS11[k][1],TS11[Math.min(3,k+1)][1],k<3?ease(f):0);
+  D.line(60,y+40,580,y+40,C.ax,2);TS11.forEach(function(s,i){var on=i===k;D.rect(s[1]-55,y+50,110,44,on?C.m:C.f,RG(on?C.m:C.f,on?.2:.06),on?2.6:1.4);D.text(s[0],s[1],y+78,{s:15,a:'center',c:on?C.m:C.f,bold:on});});
+  D.rect(x-18,y-12,36,48,C.hl,RG(C.hl,.35),2.2);D.line(x-18,y,x+18,y,C.hl,1.4);D.line(x-18,y+24,x+18,y+24,C.hl,1.4);D.path([[x,y-34],[x+12,y-20],[x,y-6],[x-12,y-20],[x,y-34]],C.bad,2,RG(C.bad,.15));D.text('!',x,y-14,{s:14,a:'center',c:C.bad,bold:true});
+  D.rect(x+26,y-50,30,38,C.ax,RG(C.ax,.06),1.4);for(var i=0;i<4;i++)D.line(x+31,y-42+i*7,x+51,y-42+i*7,C.mut,1);D.text('doc.',x+41,y-56,{s:11,a:'center',c:C.mut});
+  U.readout(D,[TS11[k][2]],400);}));
+
 
 /* T12 matriz de Leopold */
 var LA=['Desbroce','Movim. tierras','Tráfico','Explotación'],LF=['Suelo','Agua','Aire','Fauna','Paisaje','Empleo'],
@@ -91,11 +92,11 @@ M.reg('tm-t12',M.base({title:'Evaluación de impacto: matriz de Leopold',H:560,d
   if(n>=24)D.text('factor más afectado: suelo (Σ −16)',W/2,y0+6*ch+40,{s:18,a:'center',c:C.m});}));
 
 /* T13 huella de carbono */
-M.reg('tm-t13',M.pasos({title:'Huella de carbono: actividad × factor de emisión',H:560,dur:20,y0:115,lines:[
- {s:'Huella = Σ (dato de actividad × factor de emisión)',size:20},
- {s:'Alcance 1 · gasóleo: 2 000 L × 2,7 kg CO₂e/L = 5 400 kg',size:18,c:'hl'},
- {s:'Alcance 2 · electricidad: 40 000 kWh × 0,2 kg/kWh = 8 000 kg',size:18,c:'f'},
- {s:'Alcance 3 · viajes, compras, residuos… (voluntario)',size:18,c:'mut'},
- {s:'Total alcances 1 + 2 = 13,4 t CO₂e',size:21,b:true,c:'m'},
- {s:'(factores ilustrativos: se usan los oficiales del año)',size:15,c:'mut'}]}));
+M.reg('tm-t13',M.base({title:'Huella de carbono: actividad × factor de emisión',H:580,dur:18,caps:[[6,'Cada fuente se calcula como dato de actividad × factor de emisión. Alcance 1: emisiones directas (gasóleo, 2 000 L × 2,7 kg CO₂e/L).'],[12,'Alcance 2: electricidad comprada (40 000 kWh). Su factor depende del mix: con electricidad de origen renovable certificado baja mucho.'],[99,'Mueve «Prueba tú» para cambiar el porcentaje de electricidad renovable y ver cómo cambia el total. (Factores ilustrativos: se usan los oficiales del año.)']]},
+ function(D,t){var r=U.pp(t,18),a1=5.4,a2=8*(1-r),a3=3.2,A=U.axes(D,{xr:[0,3],yr:[0,18],xt:[],yt:[5,10,15],yd:0,xl:'',yl:'t CO₂e'},{x:90,y:96,w:300,h:300,grid:true}),x=A.X(1)-45,y=A.Y(0);
+  [[a1,C.hl,'alcance 1'],[a2,C.f,'alcance 2'],[a3,C.mut,'alcance 3']].forEach(function(s){var h=A.Y(0)-A.Y(s[0]);D.rect(x,y-h,90,h,s[1],RG(s[1],.4),1.6);if(h>18)D.text(nf(s[0],1),x+45,y-h/2+6,{s:15,a:'center',c:s[1],bold:true});D.text(s[2],x+100,y-h/2+5,{s:14,c:s[1]});y-=h;});
+  D.text('total alcances 1 + 2 = '+nf(a1+a2,1)+' t',420,150,{s:18,c:C.m,bold:true});D.text('con alcance 3 = '+nf(a1+a2+a3,1)+' t',420,180,{s:15,c:C.w});
+  D.text('electricidad renovable: '+nf(r*100,0)+' %',420,240,{s:16,c:C.f});D.rect(420,252,180,14,C.grid,null,1);D.rect(420,252,180*r,14,null,RG(C.ok,.7));
+  U.readout(D,['alcance 2 = 40 000 kWh × '+nf(0.2*(1-r),3)+' kg/kWh = '+nf(a2,1)+' t'],470);}));
+
 })();
