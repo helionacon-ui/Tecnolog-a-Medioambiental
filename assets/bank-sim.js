@@ -84,7 +84,7 @@
   function renderExam(){
     const n=ex.items.length;
     box.innerHTML=`<div class="sim-bar"><span id="sim-prog" aria-live="polite">Contestadas: 0/${n}</span><button id="sim-end" type="button">Entregar examen</button></div>`+
-    ex.items.map((q,i)=>`<div class="sim-q" data-i="${i}" style="${sty(q.t)}"><p class="qh">${q.t==='2P'?'2.º parcial':q.t} · pregunta ${i+1}</p><p class="qt">${esc(q.s)}</p><div class="opts">${q.o.map((o,j)=>`<button type="button" class="op" data-j="${j}">${LET[j]}) ${esc(o)}</button>`).join('')}</div></div>`).join('')+
+    ex.items.map((q,i)=>`<div class="sim-q" data-i="${i}" style="${sty(q.t)}"><p class="qh">${q.t==='2P'?'Temas 8 a 13':q.t} · pregunta ${i+1}</p><p class="qt">${esc(q.s)}</p><div class="opts">${q.o.map((o,j)=>`<button type="button" class="op" data-j="${j}">${LET[j]}) ${esc(o)}</button>`).join('')}</div></div>`).join('')+
     `<div class="qbar"><button class="pri" id="sim-end2" type="button">Entregar examen</button></div>`;
   }
   box.addEventListener('click',e=>{
