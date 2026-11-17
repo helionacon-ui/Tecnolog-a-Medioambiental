@@ -4,16 +4,104 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Problemas resueltos · Tecnología Medioambiental</title>
-<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<meta name="description" content="Guía no oficial para preparar Tecnología Medioambiental.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
 <script>
-window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+window.MathJax={loader:{load:['ui/lazy']}, tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
 <link rel="stylesheet" href="assets/styles.css">
+<script src="asig-nav.js" defer></script>
+<link id="lectura-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap">
+<style id="lectura">
+@media screen{
+:root{--body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif}
+body{font-family:var(--body);font-size:20px;line-height:1.95;letter-spacing:.014em;word-spacing:.05em}
+p{margin:0 0 1.5em;max-width:66ch;text-align:left;hyphens:none;-webkit-hyphens:none;
+ text-wrap:pretty;overflow-wrap:break-word;hanging-punctuation:first last}
+li{margin:.72em 0;max-width:66ch;text-wrap:pretty}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+h2{margin-top:92px;margin-bottom:22px;line-height:1.25}
+h3{font-size:25px;margin:66px 0 20px;line-height:1.3}
+h4{margin:38px 0 12px;line-height:1.4}
+/* ---- entradilla con capitular ---- */
+.zero .lede{font-size:1.05em;line-height:1.86;text-align:left}
+.zero[style] .lede::first-line{font-weight:600;letter-spacing:.03em}
+.zero:not([style]) .lede::first-letter{float:left;font-size:3.05em;line-height:.84;font-weight:700;padding:.06em .14em 0 0;color:var(--tc,var(--accent))}
+/* ---- sumario del tema ---- */
+p.obj{max-width:none;text-align:left;margin:0 0 1.7em;padding:14px 20px;border-radius:10px;
+ background:color-mix(in srgb,var(--surface) 62%,transparent);
+ border-left:3px solid var(--tc,var(--accent));font-size:.95em;line-height:1.75}
+p.obj>b:first-child{display:block;font-weight:700;font-size:.9em;line-height:1.7;
+ letter-spacing:.04em;color:var(--tc,var(--accent))}
+/* ---- términos con entrada, al modo de un manual ---- */
+p.run{margin:0 0 1.38em}
+p.run>b:first-child{display:block;font-weight:700;font-size:.95em;line-height:1.7;
+ letter-spacing:.03em;color:var(--tc,var(--accent))}
+/* ---- rótulos internos ---- */
+.zero>.ft{font:700 11.5px/1.6 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase}
+.zero>.ft:not(:first-child){margin-top:2.1em;font-family:var(--body);font-size:1em;
+ font-weight:700;letter-spacing:.01em;text-transform:none;color:var(--fg);opacity:.9}
+/* ---- desarrollo teórico ---- */
+.deep h4{position:relative;padding-left:2.35em;font-size:1.03em}
+.deep h4 .hn{position:absolute;left:0;top:.06em;font:700 .84em/1.7 var(--mono,monospace);
+ color:var(--tc,var(--accent));opacity:.8}
+.deep>h4:not(:first-child){border-top:1px solid var(--line);padding-top:30px;margin-top:42px}
+/* ---- formulas aparte: bloque propio, con aire ---- */
+.eqd{margin:2.1em 0;padding:24px 26px;border-radius:12px;text-align:center;
+ max-width:none;overflow-x:auto;overflow-y:hidden;
+ background:color-mix(in srgb,var(--surface) 66%,transparent);
+ border-left:3px solid var(--tc,var(--accent))}
+/* ---- formulas dentro del texto: que no se apelotonen ---- */
+mjx-container{font-size:1.05em}
+/* el recuadro envuelve la formula entera: sin line-height forzado, con relleno
+   proporcional a su altura y sin cortes al partir de linea */
+mjx-container:not([display="true"]){
+ display:inline-block;padding:.22em .4em;margin:0 .1em;border-radius:7px;
+ box-decoration-break:clone;-webkit-box-decoration-break:clone;
+ background:color-mix(in srgb,var(--tc,var(--accent)) 9%,transparent)}
+mjx-container:not([display="true"]) svg{overflow:visible}
+.box mjx-container:not([display="true"]),
+.inner mjx-container:not([display="true"]){
+ background:color-mix(in srgb,var(--tc,var(--accent)) 13%,transparent)}
+/* la formula aparte manda sobre el panel: ni se recorta ni se encoge */
+.eqd mjx-container{margin:0!important;padding:0;background:none;
+ max-width:100%;min-width:0!important;display:inline-block}
+.eqd mjx-container svg{max-width:100%;height:auto}
+p code,li code,td code{padding:.14em .4em;margin:0 .08em;border-radius:6px;font-size:.95em;
+ background:color-mix(in srgb,var(--tc,var(--accent)) 10%,transparent)}
+/* las listas y pasos con formula, con mas aire entre renglones */
+li{line-height:2}
+/* ---- notas al margen, sin duplicar el rótulo ---- */
+.box.deepnote{padding:15px 20px;margin:1.5em 0;border-radius:0 10px 10px 0;
+ background:color-mix(in srgb,var(--surface) 76%,transparent)}
+.box.key.deepnote::before,.box.trap.deepnote::before{content:none}
+.box.deepnote>b:first-child{display:block;font-weight:700;font-size:.92em;line-height:1.7;
+ letter-spacing:.03em;color:var(--tc,var(--accent))}
+.box.trap.deepnote>b:first-child{color:var(--warn)}
+/* ---- resto ---- */
+.box{padding:22px 28px;margin:30px 0}
+table{font-size:18px;line-height:1.7}
+td,th{padding-top:.8em;padding-bottom:.8em}
+figure.fig figcaption{font-size:17px;line-height:1.78;margin-top:12px}
+figure.fig{margin-block:34px}
+.toc a{font-size:15.5px;padding:8px 0 8px 10px}
+svg,svg text,canvas,.katex,mjx-container{letter-spacing:normal;word-spacing:normal}
+mjx-container[display]{margin:0!important}
+details>summary{line-height:1.7;padding-block:.5em}
+@media (max-width:600px){
+body{font-size:18.5px;line-height:1.9}
+.eqd{padding:16px 12px;font-size:.94em}
+mjx-container:not([display="true"]){padding:.2em .32em}
+.zero:not([style]) .lede::first-letter{font-size:2.6em}
+.deep h4{padding-left:0}
+.deep h4 .hn{position:static;margin-right:.5em}
+}
+}
+</style>
 </head>
 <body>
 <div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a><p class="fecha" style="margin:6px 0 0;max-width:none;font:13px/1.45 system-ui,sans-serif;color:var(--muted,#5b6660)">Proyecto iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time> · Última actualización: <time datetime="2026-11-09">9 de noviembre de 2026</time></p></div>
@@ -54,7 +142,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
 </nav>
 <div style="min-width:0">
-<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>Problemas resueltos</b><span class="np">15 / 22</span></div>
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>Problemas resueltos</b><span class="np">15 / 21</span></div>
 <main class="page">
 <section class="sec" style="--tc:var(--c8);--tcs:var(--c8s)">
 <div class="sh"><span class="badge" aria-hidden="true">Σ</span><div class="shx"><p class="kick">Practicar</p><h2 id="problemas">Problemas resueltos</h2><div class="tags"><span class="tag">19 problemas</span><span class="tag">resultados comprobados con código</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 212" role="img" aria-label="Matraz y método de resolución de problemas" xmlns="http://www.w3.org/2000/svg"><path d="M120 20 H160 V80 L205 170 Q212 190 192 190 H88 Q68 190 75 170 L120 80 Z" class="il-box"/><path d="M92 150 H188 L205 172 Q212 190 192 190 H88 Q68 190 75 172 Z" class="il-fill2"/><text x="390" y="70" class="il-txt" text-anchor="start">Datos → incógnita</text><text x="390" y="106" class="il-txt" text-anchor="start">Fórmula con unidades</text><text x="390" y="142" class="il-txt" text-anchor="start">Cálculo y comprobación</text><text x="390" y="178" class="il-txt" text-anchor="start">Respuesta con sentido físico</text><circle cx="364" cy="66" r="8" class="il-acc"/><circle cx="364" cy="102" r="8" class="il-acc"/><circle cx="364" cy="138" r="8" class="il-acc"/><circle cx="364" cy="174" r="8" class="il-acc"/></svg><figcaption>El método es siempre el mismo: identifica datos e incógnita, elige la fórmula con unidades, calcula y comprueba que el resultado tiene sentido.</figcaption></figure>
@@ -181,7 +269,7 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
 
 <nav class="pn" aria-label="Páginas"><a class="pv" href="parcial-2024.html" style="--tc:var(--c8)"><small>← Anterior</small><strong>Primer parcial 2024 resuelto</strong></a><a class="nx" href="autoevaluacion.html" style="--tc:var(--c8)"><small>Siguiente →</small><strong>Autoevaluación</strong></a></nav>
 </main>
-<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+<p class="sitefoot">Guía no oficial. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
 </div>
 </div>
 <script src="assets/app.js"></script>

@@ -4,16 +4,104 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>T10 Residuos urbanos · Tecnología Medioambiental</title>
-<meta name="description" content="Guía no oficial de la UPCT para preparar Tecnología Medioambiental.">
+<meta name="description" content="Guía no oficial para preparar Tecnología Medioambiental.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script>try{var t=localStorage.getItem('ma-theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
 <script>
-window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
+window.MathJax={loader:{load:['ui/lazy']}, tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, svg: { fontCache: 'global' } };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
 <link rel="stylesheet" href="assets/styles.css">
+<script src="asig-nav.js" defer></script>
+<link id="lectura-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;display=swap">
+<style id="lectura">
+@media screen{
+:root{--body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif}
+body{font-family:var(--body);font-size:20px;line-height:1.95;letter-spacing:.014em;word-spacing:.05em}
+p{margin:0 0 1.5em;max-width:66ch;text-align:left;hyphens:none;-webkit-hyphens:none;
+ text-wrap:pretty;overflow-wrap:break-word;hanging-punctuation:first last}
+li{margin:.72em 0;max-width:66ch;text-wrap:pretty}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+h2{margin-top:92px;margin-bottom:22px;line-height:1.25}
+h3{font-size:25px;margin:66px 0 20px;line-height:1.3}
+h4{margin:38px 0 12px;line-height:1.4}
+/* ---- entradilla con capitular ---- */
+.zero .lede{font-size:1.05em;line-height:1.86;text-align:left}
+.zero[style] .lede::first-line{font-weight:600;letter-spacing:.03em}
+.zero:not([style]) .lede::first-letter{float:left;font-size:3.05em;line-height:.84;font-weight:700;padding:.06em .14em 0 0;color:var(--tc,var(--accent))}
+/* ---- sumario del tema ---- */
+p.obj{max-width:none;text-align:left;margin:0 0 1.7em;padding:14px 20px;border-radius:10px;
+ background:color-mix(in srgb,var(--surface) 62%,transparent);
+ border-left:3px solid var(--tc,var(--accent));font-size:.95em;line-height:1.75}
+p.obj>b:first-child{display:block;font-weight:700;font-size:.9em;line-height:1.7;
+ letter-spacing:.04em;color:var(--tc,var(--accent))}
+/* ---- términos con entrada, al modo de un manual ---- */
+p.run{margin:0 0 1.38em}
+p.run>b:first-child{display:block;font-weight:700;font-size:.95em;line-height:1.7;
+ letter-spacing:.03em;color:var(--tc,var(--accent))}
+/* ---- rótulos internos ---- */
+.zero>.ft{font:700 11.5px/1.6 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase}
+.zero>.ft:not(:first-child){margin-top:2.1em;font-family:var(--body);font-size:1em;
+ font-weight:700;letter-spacing:.01em;text-transform:none;color:var(--fg);opacity:.9}
+/* ---- desarrollo teórico ---- */
+.deep h4{position:relative;padding-left:2.35em;font-size:1.03em}
+.deep h4 .hn{position:absolute;left:0;top:.06em;font:700 .84em/1.7 var(--mono,monospace);
+ color:var(--tc,var(--accent));opacity:.8}
+.deep>h4:not(:first-child){border-top:1px solid var(--line);padding-top:30px;margin-top:42px}
+/* ---- formulas aparte: bloque propio, con aire ---- */
+.eqd{margin:2.1em 0;padding:24px 26px;border-radius:12px;text-align:center;
+ max-width:none;overflow-x:auto;overflow-y:hidden;
+ background:color-mix(in srgb,var(--surface) 66%,transparent);
+ border-left:3px solid var(--tc,var(--accent))}
+/* ---- formulas dentro del texto: que no se apelotonen ---- */
+mjx-container{font-size:1.05em}
+/* el recuadro envuelve la formula entera: sin line-height forzado, con relleno
+   proporcional a su altura y sin cortes al partir de linea */
+mjx-container:not([display="true"]){
+ display:inline-block;padding:.22em .4em;margin:0 .1em;border-radius:7px;
+ box-decoration-break:clone;-webkit-box-decoration-break:clone;
+ background:color-mix(in srgb,var(--tc,var(--accent)) 9%,transparent)}
+mjx-container:not([display="true"]) svg{overflow:visible}
+.box mjx-container:not([display="true"]),
+.inner mjx-container:not([display="true"]){
+ background:color-mix(in srgb,var(--tc,var(--accent)) 13%,transparent)}
+/* la formula aparte manda sobre el panel: ni se recorta ni se encoge */
+.eqd mjx-container{margin:0!important;padding:0;background:none;
+ max-width:100%;min-width:0!important;display:inline-block}
+.eqd mjx-container svg{max-width:100%;height:auto}
+p code,li code,td code{padding:.14em .4em;margin:0 .08em;border-radius:6px;font-size:.95em;
+ background:color-mix(in srgb,var(--tc,var(--accent)) 10%,transparent)}
+/* las listas y pasos con formula, con mas aire entre renglones */
+li{line-height:2}
+/* ---- notas al margen, sin duplicar el rótulo ---- */
+.box.deepnote{padding:15px 20px;margin:1.5em 0;border-radius:0 10px 10px 0;
+ background:color-mix(in srgb,var(--surface) 76%,transparent)}
+.box.key.deepnote::before,.box.trap.deepnote::before{content:none}
+.box.deepnote>b:first-child{display:block;font-weight:700;font-size:.92em;line-height:1.7;
+ letter-spacing:.03em;color:var(--tc,var(--accent))}
+.box.trap.deepnote>b:first-child{color:var(--warn)}
+/* ---- resto ---- */
+.box{padding:22px 28px;margin:30px 0}
+table{font-size:18px;line-height:1.7}
+td,th{padding-top:.8em;padding-bottom:.8em}
+figure.fig figcaption{font-size:17px;line-height:1.78;margin-top:12px}
+figure.fig{margin-block:34px}
+.toc a{font-size:15.5px;padding:8px 0 8px 10px}
+svg,svg text,canvas,.katex,mjx-container{letter-spacing:normal;word-spacing:normal}
+mjx-container[display]{margin:0!important}
+details>summary{line-height:1.7;padding-block:.5em}
+@media (max-width:600px){
+body{font-size:18.5px;line-height:1.9}
+.eqd{padding:16px 12px;font-size:.94em}
+mjx-container:not([display="true"]){padding:.2em .32em}
+.zero:not([style]) .lede::first-letter{font-size:2.6em}
+.deep h4{padding-left:0}
+.deep h4 .hn{position:static;margin-right:.5em}
+}
+}
+</style>
 </head>
 <body>
 <div class="hub-bar" style="max-width:1180px;margin:0 auto;padding:10px 16px 0"><a href="https://helionacon-ui.github.io/GIEIA-UPCT/" style="display:inline-flex;align-items:center;gap:6px;font:600 13.5px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;border:1px solid var(--line,#d3dcdf);background:var(--surface,var(--card,#fff));color:var(--fg,#18232b);text-decoration:none">← Todas las guías GIEyA</a><p class="fecha" style="margin:6px 0 0;max-width:none;font:13px/1.45 system-ui,sans-serif;color:var(--muted,#5b6660)">Proyecto iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time> · Última actualización: <time datetime="2026-11-09">9 de noviembre de 2026</time></p></div>
@@ -54,13 +142,13 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   <a href="plan.html" style="--tc:var(--c0)">Plan de estudio</a>
 </nav>
 <div style="min-width:0">
-<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T10 Residuos urbanos</b><span class="np">10 / 22</span></div>
+<div class="crumb"><a href="index.html">Tecnología Medioambiental</a><span class="sep">/</span><b>T10 Residuos urbanos</b><span class="np">10 / 21</span></div>
 <main class="page">
 <section class="sec" style="--tc:var(--c3);--tcs:var(--c3s)">
 <div class="sh"><span class="badge" aria-hidden="true">T10</span><div class="shx"><p class="kick">Tema 10 · Residuos</p><h2 id="t10">Gestión y tratamiento de residuos urbanos</h2><div class="tags"><span class="tag">39 págs</span><span class="tag">incineración y vertedero</span></div></div></div><figure class="illus"><svg viewBox="0 0 720 222" role="img" aria-label="Jerarquía de gestión de residuos en cinco niveles" xmlns="http://www.w3.org/2000/svg"><rect x="80.0" y="14" width="560" height="34" rx="10" style="fill:var(--c1s);stroke:var(--c1);stroke-width:1.6"/><text x="360" y="36" class="il-txt" text-anchor="middle">1 · Prevención</text><rect x="120.0" y="54" width="480" height="34" rx="10" style="fill:var(--c2s);stroke:var(--c2);stroke-width:1.6"/><text x="360" y="76" class="il-txt" text-anchor="middle">2 · Reutilización</text><rect x="160.0" y="94" width="400" height="34" rx="10" style="fill:var(--c3s);stroke:var(--c3);stroke-width:1.6"/><text x="360" y="116" class="il-txt" text-anchor="middle">3 · Reciclado</text><rect x="200.0" y="134" width="320" height="34" rx="10" style="fill:var(--c4s);stroke:var(--c4);stroke-width:1.6"/><text x="360" y="156" class="il-txt" text-anchor="middle">4 · Valorización</text><rect x="240.0" y="174" width="240" height="34" rx="10" style="fill:var(--c5s);stroke:var(--c5);stroke-width:1.6"/><text x="360" y="196" class="il-txt" text-anchor="middle">5 · Eliminación</text><text x="660" y="30" class="il-txt-s" text-anchor="end">más deseable</text><text x="660" y="196" class="il-txt-s" text-anchor="end">menos deseable</text></svg><figcaption>Se prefiere siempre el escalón más alto posible: prevenir, reutilizar, reciclar, valorizar y, solo al final, eliminar.</figcaption></figure>
 <div class="zero"><p class="ft">Jerarquía de gestión de residuos (Ley 7/2022, art. 8)</p>
 <ol><li><b>Prevención</b>: «el mejor residuo es el que no se produce».</li><li><b>Preparación para la reutilización</b>.</li><li><b>Reciclado</b> (incluye compostaje y biometanización, <i>no</i> la incineración con recuperación de energía).</li><li><b>Otro tipo de valorización</b>, incluida la energética.</li><li><b>Eliminación</b> (vertedero, entre otras).</li></ol>
-<p>El PEMAR 2024-2035 es el plan estatal vigente. Cada español genera unos <b>442 kg/hab·año</b> de residuos, un 9 % menos que la media de la UE.</p></div>
+<p class="lede">El PEMAR 2024-2035 es el plan estatal vigente. Cada español genera unos <b>442 kg/hab·año</b> de residuos, un 9 % menos que la media de la UE.</p></div>
 <h3>Tipos de residuo (Ley 7/2022)</h3>
 <div class="tw"><table>
 <tr><th>Tipo</th><th>Definición breve</th></tr>
@@ -163,13 +251,21 @@ window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
 <li>850 ºC y 2 s; <b>1.100 ºC</b> solo con más del 1 % de organohalogenados.</li>
 <li>Vertedero de peligrosos: espesor ≥ <b>5 m</b>; no peligrosos e inertes: ≥ 1 m. Inertes: k ≤ <b>10⁻⁷</b>.</li>
 <li>Sin separación en origen no hay compost sino <b>material bioestabilizado</b>.</li></ul></div>
-</section>
+<!--manim:tm-t10--><figure class="fig manim-fig" id="anim-tm-t10"><p class="ft">Animación · Jerarquía de residuos</p><div class="manim" data-anim="tm-t10"><p class="muted">Activa JavaScript para ver la animación.</p></div><figcaption>Se reproduce sola al llegar a ella. Puedes pausarla, arrastrar la barra para ir a cualquier instante y cambiar la velocidad. Si aparece «Prueba tú», mueve ese control para fijar tú el parámetro. Con «⬇ Vídeo» la descargas en formato vertical.</figcaption></figure><!--/manim-->
+<!--deep--><h3 id="t10-profundiza">Desarrollo teórico a fondo</h3><div class="deep">
+<h4><span class="hn">1</span>Residuos urbanos</h4>
+<p>Los residuos urbanos incluyen los domésticos y los asimilables. Su gestión incluye recogida selectiva, transporte, tratamiento y eliminación.</p>
+<ul><li><b>Recogida selectiva</b>: separa papel, envases, orgánico y vidrio.</li><li><b>Compostaje</b> y <b>digestión anaerobia</b> para la fracción orgánica.</li><li><b>Vertedero controlado</b>: con impermeabilización, captación de lixiviados y de biogás.</li></ul>
+<div class="box trap deepnote"><b>Cuidado.</b> El vertedero genera lixiviado y biogás durante décadas. Su control continúa mucho después de cerrarse.</div>
+</div><!--/deep--></section>
 
 <nav class="pn" aria-label="Páginas"><a class="pv" href="t8.html" style="--tc:var(--c4)"><small>← Anterior</small><strong>T8 Contaminación de suelos</strong></a><a class="nx" href="t11.html" style="--tc:var(--c5)"><small>Siguiente →</small><strong>T11 Residuos peligrosos, RAEE y pilas</strong></a></nav>
 </main>
-<p class="sitefoot">Guía no oficial de la UPCT. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
+<p class="sitefoot">Guía no oficial. Proyecto personal de estudio iniciado el <time datetime="2026-11-05">5 de noviembre de 2026</time>.</p>
 </div>
 </div>
 <script src="assets/app.js"></script>
+<script src="anim-manim.js?v=31215" defer></script>
+<script src="anim-temas.js?v=31215" defer></script>
 </body>
 </html>
