@@ -1,7 +1,7 @@
 // Guarda la guía para poder leerla sin conexión.
 // Las páginas se piden primero a la red, así que una actualización se ve en cuanto hay cobertura.
-const CACHE = 'tecnolog-a-medioambiental-v1';
-const CORE = ["./", "./anim-manim.js", "./anim-temas.js", "./asig-nav.js", "./autoevaluacion.html", "./banco.html", "./empezar.html", "./formulario.html", "./glosario.html", "./index.html", "./manifest.webmanifest", "./parcial-2024.html", "./piel.css", "./piel.js", "./plan.html", "./problemas.html", "./simulador.html", "./t1.html", "./t10.html", "./t11.html", "./t12.html", "./t13.html", "./t2.html", "./t3.html", "./t4.html", "./t5.html", "./t6.html", "./t7.html", "./t8.html", "./test2p.html"];
+const CACHE = 'tecnolog-a-medioambiental-v1-tip3';
+const CORE = ["./", "./anim-manim.js", "./anim-temas.js", "./asig-nav.js", "./autoevaluacion.html", "./banco.html", "./empezar.html", "./formulario.html", "./glosario.html", "./index.html", "./manifest.webmanifest", "./parcial-2024.html", "./piel.css?v=3", "./piel.js?v=3", "./plan.html", "./problemas.html", "./simulador.html", "./t1.html", "./t10.html", "./t11.html", "./t12.html", "./t13.html", "./t2.html", "./t3.html", "./t4.html", "./t5.html", "./t6.html", "./t7.html", "./t8.html", "./test2p.html"];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE)
     .then(c => Promise.all(CORE.map(u => c.add(new Request(u, {mode: u.startsWith('http') ? 'no-cors' : 'same-origin'})).catch(() => {}))))
